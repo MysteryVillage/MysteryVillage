@@ -11,12 +11,23 @@ public class PlayerMovement : NetworkBehaviour
 {
     public CharacterController player;
     public Transform cam;
+    public Transform tpCam;
     private Vector2 curMovementInput;
     public float moveSpeed = 5f;
     public float smoothTurn = 0.1f;
     public Vector3 fallVelocity;
 
     float smoothTurnVelocity;
+
+    private void Start()
+    {
+        if (!isLocalPlayer)
+        {
+            GetComponent<PlayerInput>().enabled = false;
+            cam.gameObject.SetActive(false);
+            tpCam.gameObject.SetActive(false);
+        }
+    }
 
     /**
      * Read and process movement inputs
