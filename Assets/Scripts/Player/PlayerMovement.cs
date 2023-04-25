@@ -17,14 +17,24 @@ public class PlayerMovement : NetworkBehaviour
     
     private float moveSpeed;
     public float defaultMoveSpeed = 5f;
+
     public float sprintSpeed = 10f;
+    private bool sprint = false;
+
+    public float sneakSpeed = 2f;
+    private bool sneak = false;
+
     public float smoothTurn = 0.1f;
+
+    public float jumpForce = 10f;
+    private bool jump = false;
+
     public Vector3 fallVelocity;
     float smoothTurnVelocity;
-    public float jumpForce = 10f;
+    
     Vector3 moveDirection;
-    private bool jump = false;
-    private bool sprint = false;
+   
+    
 
 
     private void Start()
@@ -83,13 +93,14 @@ public class PlayerMovement : NetworkBehaviour
 
     public void OnPlayerSprint(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started)
-        {
-            sprint = true;
-        }else if(context.phase == InputActionPhase.Canceled)
-        {
-            sprint = false;
-        }
+        if(context.phase == InputActionPhase.Started) { sprint = true;}
+        else if(context.phase == InputActionPhase.Canceled) { sprint = false;}
+    }
+
+    public void OnPlayerSneak(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Performed){ sneak = true; }
+        else if(context.phase == InputActionPhase.Canceled) { sneak = false; }
     }
 
     public void OnPlayerInteract(InputAction.CallbackContext context)
@@ -102,20 +113,27 @@ public class PlayerMovement : NetworkBehaviour
 
     void Update()
     {
+        
         /* ---------------------- Sprint -------------------------- */
         /* Noch ohne Zeitbegrenzung 
          * Sprinten wird beendet wenn die Taste losgelassen wird
          */
-        if (sprint) // Soll der Spieler auch beim Springen weiter sprinten können ? (Sprintsprung) 
-        {
-            moveSpeed = sprintSpeed;
-        }
-        else
-        {
-            moveSpeed = defaultMoveSpeed;
-        }
+        if (sprint && !sneak) // Soll der Spieler auch beim Springen weiter sprinten können ? (Sprintsprung) 
+        {moveSpeed = sprintSpeed;}
+        else if(!sprint && !sneak)
+        { moveSpeed = defaultMoveSpeed;}
 
-        /* ---------------------- Sprint -------------------------- */
+        /* ---------------------- Sneak -------------------------- */
+        /* Spieler Collider wird noch nicht kleiner skaliert
+         * Der Spieler Schleicht solange die Taste gedrückt wird
+         * (Soll die Taste nur einmal gedrückt werden oder die ganze Zeit?)
+         */
+        if (sneak && !sprint) 
+        { moveSpeed = sneakSpeed; }
+        else if(!sneak && !sprint)
+        { moveSpeed = defaultMoveSpeed;}
+
+        /* ---------------------- Jump -------------------------- */
         /* Jump Funktioniert noch nicht so richtig
          * Sprung höhe hängt noch davon ab wie lange die Spacetaste gedrückt wurde
          * Irgendwas muss noch mit der Grvity passiern wenn jump gedrückt wurde
