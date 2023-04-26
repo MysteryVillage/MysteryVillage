@@ -7,6 +7,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     Animator animator;
     float velocityZ = 0.0f;
     float velocityX = 0.0f;
+    float velocityY = 0.0f;
     public float acceleration = 2.0f;
     public float deceleration = 2.0f;
     public float maxWalkVelocity = 0.5f;
@@ -25,6 +26,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         bool leftPressed = Input.GetKey(KeyCode.A);
         bool rightPressed = Input.GetKey(KeyCode.D);
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
+        bool jumpPressed = Input.GetKey(KeyCode.Space);
 
         //set current maxVelocity
         float currentMaxVelocity = runPressed ? maxRunVelocity : maxWalkVelocity;
@@ -32,6 +34,10 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         ChangeVelocity(forwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         LockOrResetVelocity(forwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
 
+        if (jumpPressed == true)
+        {
+            velocityY = 1.0f;
+        }
 
         animator.SetFloat("Velocity Z", velocityZ);
         animator.SetFloat("Velocity X", velocityX);
