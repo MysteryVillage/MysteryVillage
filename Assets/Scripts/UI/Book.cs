@@ -12,12 +12,14 @@ public class Book : MonoBehaviour
     public void RotateNext()
     {
         _index++;
+        _pages[_index].SetAsLastSibling();
         float angle = 180;
         Rotate(angle, -1);
     }
 
     public void RotateBack()
     {
+        _pages[_index].SetAsLastSibling();
         float angle = 0;
         Rotate(angle, 0);
     }
@@ -38,8 +40,6 @@ public class Book : MonoBehaviour
             timeElapsed += Time.deltaTime;
             _pages[_index].rotation = Quaternion.Lerp(_pages[_index].rotation, targetRotation, timeElapsed * _pageSpeed);
             angle1 = Quaternion.Angle(_pages[_index].rotation, targetRotation);
-            print("angle1: " + angle1);
-            print(_pages[_index]);
 
             yield return null;
         }
