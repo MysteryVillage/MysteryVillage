@@ -6,6 +6,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class PlayerMovement : NetworkBehaviour
@@ -26,10 +27,12 @@ public class PlayerMovement : NetworkBehaviour
 
     public float smoothTurn = 0.1f;
 
-    public float jumpForce = 10f;
+    private float jumpHeight = 1.0f;
     private bool jump = false;
+    private float gravityValue = -9.81f;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
 
-    public Vector3 fallVelocity;
     float smoothTurnVelocity;
     
     Vector3 moveDirection;
@@ -71,15 +74,9 @@ public class PlayerMovement : NetworkBehaviour
     {
         if(context.phase == InputActionPhase.Performed)
         {
-
-            if (player.isGrounded)
-            {
-                jump = true;
-            }
-            
-            
+            jump = true;
         }
-        if(context.phase == InputActionPhase.Canceled)
+        else
         {
             jump = false;
         }
@@ -135,16 +132,24 @@ public class PlayerMovement : NetworkBehaviour
 
         /* ---------------------- Jump -------------------------- */
         /* Jump Funktioniert noch nicht so richtig
-         * Sprung höhe hängt noch davon ab wie lange die Spacetaste gedrückt wurde
-         * Irgendwas muss noch mit der Grvity passiern wenn jump gedrückt wurde
-         * Jumpforce erhöhen sieht nicht mehr gut aus
+         * Bug: Wenn die Jump-Taste gedrückt gehalten wird und sich dann bewegt wird dauert es bis die taste wieder Funktioniert
+         *      Auch wenn die Jump-Taste schnell hintereinander gedrückt wird 
          */
-        if (jump)
-        {
-            Vector3 test = Vector3.up;
-            player.Move(test * jumpForce * Time.deltaTime);
 
+        groundedPlayer = player.isGrounded;
+        if(groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
         }
+        if (jump && groundedPlayer)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        }
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        player.Move(playerVelocity * Time.deltaTime);
+
+        if (!player.isGrounded) { jump = false; }
 
 
         // if player is not the local player, don't move it
@@ -153,24 +158,13 @@ public class PlayerMovement : NetworkBehaviour
             return;
         }
 
-        // check if player is grounded
-        // if he is not, apply gravity force
-        if (player.isGrounded)
-        {
-            fallVelocity = new Vector3(0, -1f, 0);
-        }
-        else
-        {
-            fallVelocity -= Physics.gravity * -2 * Time.deltaTime;
-        }
-        
         // get movement inputs
         float horizontal = curMovementInput.x;
         float vertical = curMovementInput.y;
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        
+       
         if(direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -180,17 +174,6 @@ public class PlayerMovement : NetworkBehaviour
              moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             player.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
         }
-
-       
         
-
-        // Apply gravity
-        ApplyGravity();
-
-    }
-
-    private void ApplyGravity()
-    {
-        player.Move(fallVelocity * Time.deltaTime);
     }
 }
