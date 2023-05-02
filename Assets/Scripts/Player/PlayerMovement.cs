@@ -115,7 +115,8 @@ public class PlayerMovement : NetworkBehaviour
         /* Noch ohne Zeitbegrenzung 
          * Sprinten wird beendet wenn die Taste losgelassen wird
          */
-        if (sprint && !sneak) // Soll der Spieler auch beim Springen weiter sprinten können ? (Sprintsprung) 
+
+        if (sprint && !sneak) 
         {moveSpeed = sprintSpeed;}
         else if(!sprint && !sneak)
         { moveSpeed = defaultMoveSpeed;}
@@ -123,8 +124,11 @@ public class PlayerMovement : NetworkBehaviour
         /* ---------------------- Sneak -------------------------- */
         /* Spieler Collider wird noch nicht kleiner skaliert
          * Der Spieler Schleicht solange die Taste gedrückt wird
-         * (Soll die Taste nur einmal gedrückt werden oder die ganze Zeit?)
+         *      *  Soll die Taste nur einmal gedrückt werden oder die ganze Zeit?
+         *      *  Umsehen ist nicht möglich wenn die Sneaktaste gedrückt gehalten werden muss
+         *       
          */
+
         if (sneak && !sprint) 
         { moveSpeed = sneakSpeed; }
         else if(!sneak && !sprint)
