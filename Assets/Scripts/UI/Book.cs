@@ -9,19 +9,39 @@ public class Book : MonoBehaviour
     [SerializeField] List<Transform> _pages;
     int _index = -1;
 
+    private void Start()
+    {
+        InitialState();
+    }
+
+    public void InitialState()
+    {
+        for (int i=0; i<_pages.Count; i++)
+        {
+            _pages[i].transform.rotation = Quaternion.identity;
+        }
+        _pages[0].SetAsLastSibling();
+    }
+
     public void RotateNext()
     {
-        _index++;
-        _pages[_index].SetAsLastSibling();
-        float angle = 180;
-        Rotate(angle, -1);
+        if (_index < _pages.Count-1)
+        {
+            _index++;
+            _pages[_index].SetAsLastSibling();
+            float angle = 180;
+            Rotate(angle, -1);
+        }
     }
 
     public void RotateBack()
     {
-        _pages[_index].SetAsLastSibling();
-        float angle = 0;
-        Rotate(angle, 0);
+        if (_index > - 1)
+        {
+            _pages[_index].SetAsLastSibling();
+            float angle = 0;
+            Rotate(angle, 0);
+        }
     }
 
     private void Rotate(float angle, int direction)
