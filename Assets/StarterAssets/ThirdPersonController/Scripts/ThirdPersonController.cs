@@ -23,7 +23,7 @@ namespace StarterAssets
         public float SprintSpeed = 5.335f;
 
         [Tooltip("How fast the character turns to face movement direction")]
-        [Range(0.0f, 0.3f)]
+        [Range(0.0f, 0.3f)] // Defaualt : 0.0f,0.3f
         public float RotationSmoothTime = 0.12f;
 
         [Tooltip("Acceleration and deceleration")]

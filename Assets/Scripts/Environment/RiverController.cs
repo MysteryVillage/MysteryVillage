@@ -114,6 +114,6 @@ public class RiverController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        AssetDatabase.SaveAssets();
+       // AssetDatabase.SaveAssets();
     }
 }
