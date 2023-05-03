@@ -186,7 +186,7 @@ namespace StarterAssets
             // update animator if using character
             if (_hasAnimator)
             {
-                _animator.SetBool(_animIDGrounded, Grounded);
+                AnimatorSetBoolServerRpc(_animIDGrounded, Grounded);
             }
         }
 
@@ -280,8 +280,8 @@ namespace StarterAssets
             // update animator if using character
             if (_hasAnimator)
             {
-                _animator.SetFloat(_animIDSpeed, _animationBlend);
-                _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+                AnimatorSetFloatServerRpc(_animIDSpeed, _animationBlend);
+                AnimatorSetFloatServerRpc(_animIDMotionSpeed, inputMagnitude);
             }
         }
 
@@ -290,7 +290,24 @@ namespace StarterAssets
             // Hier wird interagiert
         }
 
+        [Command] private void AnimatorSetFloatServerRpc(int animID, float value) => AnimatorSetFloatClientRpc(animID, value);
+        [Command] private void AnimatorSetBoolServerRpc(int animID, bool value) => AnimatorSetBoolClientRpc(animID, value);
 
+        [ClientRpc]
+        private void AnimatorSetFloatClientRpc(int animID, float value)
+        {
+            if (!isOwned) return;
+            
+            _animator.SetFloat(animID, value);
+        }
+
+        [ClientRpc]
+        private void AnimatorSetBoolClientRpc(int animID, bool value)
+        {
+            if (!isOwned) return;
+            
+            _animator.SetBool(animID, value);
+        }
 
         private void JumpAndGravity()
         {
@@ -302,8 +319,8 @@ namespace StarterAssets
                 // update animator if using character
                 if (_hasAnimator)
                 {
-                    _animator.SetBool(_animIDJump, false);
-                    _animator.SetBool(_animIDFreeFall, false);
+                    AnimatorSetBoolServerRpc(_animIDJump, false);
+                    AnimatorSetBoolServerRpc(_animIDFreeFall, false);
                 }
 
                 // stop our velocity dropping infinitely when grounded
@@ -321,7 +338,7 @@ namespace StarterAssets
                     // update animator if using character
                     if (_hasAnimator)
                     {
-                        _animator.SetBool(_animIDJump, true);
+                        AnimatorSetBoolServerRpc(_animIDJump, true);
                     }
                 }
 
@@ -346,7 +363,7 @@ namespace StarterAssets
                     // update animator if using character
                     if (_hasAnimator)
                     {
-                        _animator.SetBool(_animIDFreeFall, true);
+                        AnimatorSetBoolServerRpc(_animIDFreeFall, true);
                     }
                 }
 
