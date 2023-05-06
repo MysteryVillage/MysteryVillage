@@ -150,6 +150,8 @@ namespace StarterAssets
                 CinemachineMainCamera.SetActive(false);
                 CinemachineFollowCamera.SetActive(false);
             }
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
