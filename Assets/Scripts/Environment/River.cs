@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "River", menuName = "New River")]
 public class River : ScriptableObject
 {
-    public string name;
+    public string displayName;
     public List<RiverCheckpointData> checkpoints;
 }
 

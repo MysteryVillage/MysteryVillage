@@ -149,6 +149,7 @@ namespace StarterAssets
                 _playerInput.enabled = false;
                 CinemachineMainCamera.SetActive(false);
                 CinemachineFollowCamera.SetActive(false);
+                CinemachineMainCamera.GetComponent<AudioListener>().enabled = false;
             }
 
             Cursor.lockState = CursorLockMode.Locked;
@@ -158,9 +159,11 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
+            if (isLocalPlayer) {
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+            }
         }
 
         private void LateUpdate()
@@ -301,6 +304,8 @@ namespace StarterAssets
             if (!isOwned) return;
             
             _animator.SetFloat(animID, value);
+
+            Debug.Log("AnimatorSetFloatClientRpc");
         }
 
         [ClientRpc]
@@ -309,6 +314,8 @@ namespace StarterAssets
             if (!isOwned) return;
             
             _animator.SetBool(animID, value);
+            
+            Debug.Log("AnimatorSetBoolClientRpc");
         }
 
         private void JumpAndGravity()

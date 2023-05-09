@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Mirror;
 
-public class ItemObject : MonoBehaviour
+namespace Items
 {
-    public ItemData item;   
-
-    public string GetInteractPrompt()
+    public class ItemObject : NetworkBehaviour, IIinteractable
     {
-        return string.Format("Pickup {0}", item.displayName);
-    }
+        public ItemData item;   
 
-    public void OnInteract()
-    {
-        Destroy(gameObject);
+        public string GetInteractPrompt()
+        {
+            return string.Format("Pickup {0}", item.displayName);
+        }
+
+        public void OnInteract()
+        {
+            NetworkServer.Destroy(gameObject);
+        }
     }
 }

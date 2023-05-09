@@ -29,6 +29,8 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
 		{
+			Debug.Log("Move input");
+			Debug.Log(value.ToString());
 			MoveInput(value.Get<Vector2>());
 		}
 
@@ -63,6 +65,13 @@ namespace StarterAssets
 
 		public void OnPause(InputValue value)
 		{
+			if (Cursor.lockState == CursorLockMode.Locked) {
+				Cursor.lockState = CursorLockMode.None;
+			}
+			else
+			{
+				Cursor.lockState = CursorLockMode.Locked;
+			}
 			PauseInput(value.isPressed);
 		}
 #endif

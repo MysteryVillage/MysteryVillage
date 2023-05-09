@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InteractionManager : MonoBehaviour
+public class InteractionManager : NetworkBehaviour
 {
     public float checkRate = .05f;
     private float lastCheckTime;
@@ -45,13 +46,14 @@ public class InteractionManager : MonoBehaviour
                 curInteractable = null;
                 promptText.gameObject.SetActive(false);
             }
-            Gizmos.DrawRay(ray.origin, ray.direction);
         }
     }
 
     void SetPromptText()
     {
         promptText.gameObject.SetActive(true);
+        Debug.Log(curInteractable.GetInteractPrompt());
+        Debug.Log(promptText.text);
         promptText.text = string.Format("<b>[E]</b> {0}", curInteractable.GetInteractPrompt());
     }
 
@@ -65,7 +67,26 @@ public class InteractionManager : MonoBehaviour
             promptText.gameObject.SetActive(false);
         }
     }
-}
+
+    public void OnInteract()
+    {
+        OnInteractCmd(curInteractable.GetHashCode());
+    }
+
+    [Command]
+    public void OnInteractCmd(int interactable)
+    {
+        GameObject go = GameObject.Find(interactable.ToString());
+        Debug.Log(go.GetHashCode());
+        go.GetComponent<IIinteractable>().OnInteract();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        Gizmos.DrawRay(ray.origin, ray.direction);
+    }}
 
 public interface IIinteractable
 {
