@@ -114,6 +114,8 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+        private bool canMove = true;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -162,7 +164,7 @@ namespace StarterAssets
             if (isLocalPlayer) {
                 JumpAndGravity();
                 GroundedCheck();
-                Move();
+                if (canMove) Move();
             }
         }
 
@@ -418,6 +420,12 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+
+        public void ToggleCursor(bool toggle)
+        {
+            Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+            canMove = !toggle;
         }
     }
 }

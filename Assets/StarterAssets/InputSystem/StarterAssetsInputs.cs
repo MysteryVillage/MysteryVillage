@@ -27,41 +27,41 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+		public void OnMoveInput(InputAction.CallbackContext context)
 		{
-			MoveInput(value.Get<Vector2>());
-		}
-
-		public void OnLook(InputValue value)
-		{
-			if(cursorInputForLook)
+			if (context.phase == InputActionPhase.Performed)
 			{
-				LookInput(value.Get<Vector2>());
+				MoveInput(context.ReadValue<Vector2>());
+			} else if (context.phase == InputActionPhase.Canceled)
+			{
+				MoveInput(Vector2.zero);
 			}
 		}
 
-		public void OnJump(InputValue value)
+		public void OnLookInput(InputAction.CallbackContext context)
 		{
-			JumpInput(value.isPressed);
+			if(cursorInputForLook)
+			{
+				LookInput(context.ReadValue<Vector2>());
+			}
 		}
 
-		public void OnSprint(InputValue value)
+		public void OnJumpInput(InputAction.CallbackContext context)
 		{
-			SprintInput(value.isPressed);
+			JumpInput(context.performed);
 		}
 
-
-		public void OnSneak(InputValue value)
+		public void OnSprintInput(InputAction.CallbackContext context)
 		{
-			SneakInput(value.isPressed);
+			SprintInput(context.performed);
 		}
 
-		public void OnInteract(InputValue value)
+		public void OnSneakInput(InputAction.CallbackContext context)
 		{
-			InteractInput(value.isPressed);
+			SneakInput(context.performed);
 		}
 
-		public void OnPause(InputValue value)
+		public void OnPauseInput(InputAction.CallbackContext context)
 		{
 			if (Cursor.lockState == CursorLockMode.Locked) {
 				Cursor.lockState = CursorLockMode.None;
@@ -70,7 +70,7 @@ namespace StarterAssets
 			{
 				Cursor.lockState = CursorLockMode.Locked;
 			}
-			PauseInput(value.isPressed);
+			PauseInput(context.started);
 		}
 #endif
 
@@ -116,11 +116,6 @@ namespace StarterAssets
 		public void PauseInput(bool newPauseState)
 		{
 			pause = newPauseState;
-		}
-
-		public void InteractInput(bool newInteractState)
-		{
-			interact = newInteractState;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
