@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tree
+  m_Name: Tree3
   m_Shader: {fileID: -6465566751694194690, guid: 956f384e28ad77b498e3a78b27e4fe38, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeafTexture:
-        m_Texture: {fileID: 2800000, guid: 8fcce53ffe7914f47834e894fe2e9c37, type: 3}
+        m_Texture: {fileID: 2800000, guid: d3dd88152c53dbf4d8024983cdd91a2a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -77,7 +77,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 8fcce53ffe7914f47834e894fe2e9c37, type: 3}
+        m_Texture: {fileID: 2800000, guid: e524c9afd4f0664469c2776682aae334, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_2625984d606f49a3b621851f7c340b92_Out_0:
@@ -113,7 +113,7 @@ Material:
     - _AlphaClip: 0
     - _BillboardKwToggle: 0
     - _BillboardShadowFade: 0.5
-    - _BillboardSize: 1.66
+    - _BillboardSize: -4.3
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -128,8 +128,8 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _HueVariationKwToggle: 0
-    - _Inflate: -0.03
-    - _LightSize: 0
+    - _Inflate: 0
+    - _LightSize: 3.32
     - _Metallic: 0
     - _NormalMapKwToggle: 0
     - _OcclusionStrength: 1
@@ -137,7 +137,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0
+    - _Smoothness: 0.07
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -145,21 +145,23 @@ Material:
     - _SubsurfaceKwToggle: 0
     - _Surface: 0
     - _TwoSided: 2
-    - _WindJitter: 0.125
+    - _WindJitter: 0.212
     - _WindQuality: 0
-    - _WindScroll: 0.125
+    - _WindScroll: 0.258
     - _WorkflowMode: 1
+    - _WorldSpaceLightPosition: 1.26
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.25277504, g: 0.3207547, b: 0.074136704, a: 1}
+    - _Color: {r: 0.6320754, g: 0.3945766, b: 0.11031505, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0.1}
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.1}
-    - _LightBlendColor: {r: 0.11629268, g: 0.14899999, b: 0.03452438, a: 1}
+    - _LightBlendColor: {r: 0.433, g: 0.3103275, b: 0.161076, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WorldSpaceLightPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _WorldSpaceLightPosition: {r: 5.21, g: 4.62, b: 2.96, a: 4.94}
+    - _WorldSpaceLightPosition_1: {r: 91.3, g: 3.42, b: 1.86, a: -15.42}
   m_BuildTextureStacks: []
 --- !u!114 &748985270753285494
 MonoBehaviour:
