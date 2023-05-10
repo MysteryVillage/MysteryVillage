@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Book : MonoBehaviour
 {
@@ -12,6 +13,22 @@ public class Book : MonoBehaviour
     private void Start()
     {
         InitialState();
+    }
+
+    public void NextPage(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            RotateNext();
+        }
+    }
+
+    public void PriorPage(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            RotateBack();
+        }
     }
 
     public void InitialState()
