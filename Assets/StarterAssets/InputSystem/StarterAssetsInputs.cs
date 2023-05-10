@@ -29,8 +29,6 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
 		{
-			Debug.Log("Move input");
-			Debug.Log(value.ToString());
 			MoveInput(value.Get<Vector2>());
 		}
 

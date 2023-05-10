@@ -134,18 +134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
-    - target: {fileID: 312070487837780427, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: maxConnections
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 312070487837780427, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 312070487837780427, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: spawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1377036484077850861, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
     - target: {fileID: 312070487837780436, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -190,6 +178,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
+      propertyPath: spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1377036484077850861, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
 --- !u!1001 &1348858855
@@ -215,13 +211,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1377036484077850861, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3020495914191172145, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3020495914191172145, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.69
       objectReference: {fileID: 0}
     - target: {fileID: 3020495914191172145, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
       propertyPath: m_LocalPosition.y
@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519981654}
   - component: {fileID: 1519981653}
+  - component: {fileID: 1519981655}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -355,6 +356,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1519981655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519981652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1563653704
 GameObject:
   m_ObjectHideFlags: 0

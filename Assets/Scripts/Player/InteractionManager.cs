@@ -70,22 +70,30 @@ public class InteractionManager : NetworkBehaviour
 
     public void OnInteract()
     {
-        OnInteractCmd(curInteractable.GetHashCode());
+        if (curInteractGameObject) {
+            OnInteractCmd();
+        }
     }
 
     [Command]
-    public void OnInteractCmd(int interactable)
+    public void OnInteractCmd()
     {
-        GameObject go = GameObject.Find(interactable.ToString());
-        Debug.Log(go.GetHashCode());
-        go.GetComponent<IIinteractable>().OnInteract();
+        var inter = curInteractGameObject.GetComponent<IIinteractable>();
+        if (inter != null)
+        {
+            inter.OnInteract();
+        }
+        else
+        {
+            Debug.LogWarning("Oopsie");
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-        Gizmos.DrawRay(ray.origin, ray.direction);
+        Gizmos.DrawRay(ray.origin, ray.direction * maxCheckDistance);
     }}
 
 public interface IIinteractable

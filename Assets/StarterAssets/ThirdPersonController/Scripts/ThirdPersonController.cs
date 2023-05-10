@@ -105,6 +105,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
 #endif
+        [SerializeField]
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
@@ -128,7 +129,6 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -301,21 +301,13 @@ namespace StarterAssets
         [ClientRpc]
         private void AnimatorSetFloatClientRpc(int animID, float value)
         {
-            if (!isOwned) return;
-            
             _animator.SetFloat(animID, value);
-
-            Debug.Log("AnimatorSetFloatClientRpc");
         }
 
         [ClientRpc]
         private void AnimatorSetBoolClientRpc(int animID, bool value)
         {
-            if (!isOwned) return;
-            
             _animator.SetBool(animID, value);
-            
-            Debug.Log("AnimatorSetBoolClientRpc");
         }
 
         private void JumpAndGravity()

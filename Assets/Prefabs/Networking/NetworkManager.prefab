@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 312070487837780436}
   - component: {fileID: 312070487837780437}
-  - component: {fileID: 312070487837780427}
-  - component: {fileID: 312070487837780426}
+  - component: {fileID: 2054527319961590304}
+  - component: {fileID: 3321022860181916179}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MonoBehaviour:
   debugLog: 0
   statisticsGUI: 0
   statisticsLog: 0
---- !u!114 &312070487837780427
+--- !u!114 &2054527319961590304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 312070487837780425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: afdc0be58a0cc40dc8c51902034b8e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
@@ -84,14 +84,12 @@ MonoBehaviour:
   onlineScene: 
   transport: {fileID: 312070487837780437}
   networkAddress: localhost
-  maxConnections: 100
+  maxConnections: 2
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
-  spawnPrefabs:
-  - {fileID: 3553283377610902746, guid: d212819f853984a76b6f69e2fb6596e7, type: 3}
-  - {fileID: 2550807136752794170, guid: 9e3be11ea569a4ac7b49c40c25fb9cf5, type: 3}
+  spawnPrefabs: []
   snapshotSettings:
     bufferTimeMultiplier: 2
     catchupNegativeThreshold: -1
@@ -103,7 +101,8 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
---- !u!114 &312070487837780426
+  rock: {fileID: 1377036484077850861, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
+--- !u!114 &3321022860181916179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,5 +114,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetX: 0
-  offsetY: 0
+  offsetX: 100
+  offsetY: 100
