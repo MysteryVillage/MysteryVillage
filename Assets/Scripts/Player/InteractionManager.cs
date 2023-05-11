@@ -52,8 +52,6 @@ public class InteractionManager : NetworkBehaviour
     void SetPromptText()
     {
         promptText.gameObject.SetActive(true);
-        Debug.Log(curInteractable.GetInteractPrompt());
-        Debug.Log(promptText.text);
         promptText.text = string.Format("<b>[E]</b> {0}", curInteractable.GetInteractPrompt());
     }
 
@@ -61,32 +59,29 @@ public class InteractionManager : NetworkBehaviour
     {
         if (context.phase == InputActionPhase.Started && curInteractable != null)
         {
-            curInteractable.OnInteract();
-            curInteractGameObject = null;
-            curInteractable = null;
-            promptText.gameObject.SetActive(false);
-        }
-    }
-
-    public void OnInteract()
-    {
-        if (curInteractGameObject) {
-            OnInteractCmd();
+            if (curInteractGameObject) {
+                OnInteractCmd(curInteractGameObject.GetComponent<NetworkIdentity>().netId);
+                curInteractGameObject = null;
+                curInteractable = null;
+                promptText.gameObject.SetActive(false);
+            }
         }
     }
 
     [Command]
-    public void OnInteractCmd()
+    public void OnInteractCmd(uint id)
     {
-        var inter = curInteractGameObject.GetComponent<IIinteractable>();
-        if (inter != null)
+        GameObject interGO;
+        if (curInteractGameObject)
         {
-            inter.OnInteract();
+            interGO = curInteractGameObject;
         }
         else
         {
-            Debug.LogWarning("Oopsie");
+            interGO = NetworkServer.spawned[id].gameObject;
         }
+        var inter = interGO.GetComponent<IIinteractable>();
+        inter.OnInteract(GetComponent<NetworkIdentity>().netId);
     }
 
     private void OnDrawGizmos()
@@ -94,10 +89,12 @@ public class InteractionManager : NetworkBehaviour
         Gizmos.color = Color.red;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         Gizmos.DrawRay(ray.origin, ray.direction * maxCheckDistance);
-    }}
+    }
+    
+}
 
 public interface IIinteractable
 {
     string GetInteractPrompt();
-    void OnInteract();
+    void OnInteract(uint networkIdentifier);
 }
