@@ -49,6 +49,7 @@ public class Inventory : NetworkBehaviour
         // init the slots
         for (int x = 0; x < uiSlots.Length; x++)
         {
+            slots[x] = new ItemSlot();
             uiSlots[x].index = x;
             uiSlots[x].Clear();
         }

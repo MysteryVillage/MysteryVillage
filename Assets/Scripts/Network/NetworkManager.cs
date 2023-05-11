@@ -6,7 +6,14 @@ using UnityEngine;
 public class NetworkManager : Mirror.NetworkManager
 {
 
+    
+    [Header("Only for Testing")]
     public GameObject rock;
+    public Transform[] stoneSpawns;
+    public GameObject stick;
+    public Transform[] stickSpawns;
+    
+    
     private InventoryManager _inventoryManager;
     
     public override void OnStartClient()
@@ -14,10 +21,18 @@ public class NetworkManager : Mirror.NetworkManager
         print("NetworkManager:StartClient");
         base.OnStartServer();
         
-        // Test item
+        // Test items
         if (NetworkServer.active) {
-            var newSceneObject = Instantiate(rock, Vector3.one, Quaternion.Euler(0,0,0));
-            NetworkServer.Spawn(newSceneObject);
+            foreach (Transform spawn in stoneSpawns)
+            {
+                var newSceneObject = Instantiate(rock, spawn.position, Quaternion.Euler(0,0,0));
+                NetworkServer.Spawn(newSceneObject);                
+            }
+            foreach (Transform spawn in stickSpawns)
+            {
+                var newSceneObject = Instantiate(stick, spawn.position, Quaternion.Euler(0,0,0));
+                NetworkServer.Spawn(newSceneObject);                
+            }
         }
         
         // get InventoryManager
