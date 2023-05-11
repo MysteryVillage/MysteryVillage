@@ -8,10 +8,14 @@ public class Book : MonoBehaviour
 {
     [SerializeField] float _pageSpeed = 0.5f;
     [SerializeField] List<Transform> _pages;
+    [SerializeField] GameObject backButton;
+    [SerializeField] GameObject forwardButton;
     int _index = -1;
+    bool rotate = false;
 
     private void Start()
     {
+        backButton.SetActive(false);
         InitialState();
     }
 
@@ -42,22 +46,48 @@ public class Book : MonoBehaviour
 
     public void RotateNext()
     {
-        if (_index < _pages.Count-1)
+        if (_index < _pages.Count-1 && rotate == false)
         {
             _index++;
-            _pages[_index].SetAsLastSibling();
             float angle = 180;
+            ForwardButtonAction();
+            _pages[_index].SetAsLastSibling();
             Rotate(angle, -1);
+        }
+    }
+
+    private void ForwardButtonAction()
+    {
+        if (backButton.activeInHierarchy == false)
+        {
+            backButton.SetActive(true);
+        }
+        if (_index == _pages.Count - 1)
+        {
+            forwardButton.SetActive(false);
         }
     }
 
     public void RotateBack()
     {
-        if (_index > - 1)
+        if (_index > - 1 && rotate == false)
         {
             _pages[_index].SetAsLastSibling();
             float angle = 0;
+            BackButtonAction();
             Rotate(angle, 0);
+        }
+    }
+
+    private void BackButtonAction()
+    {
+        if (forwardButton.activeInHierarchy == false)
+        {
+            forwardButton.SetActive(true);
+        }
+        if (_index - 1 == -1)
+        {
+            backButton.SetActive(false);
         }
     }
 
@@ -73,6 +103,7 @@ public class Book : MonoBehaviour
         float angle1 = 1;
         while (angle1 > 0.1f )
         {
+            rotate = true;
             Quaternion targetRotation = Quaternion.Euler(0, angle, 0);
             timeElapsed += Time.deltaTime;
             _pages[_index].rotation = Quaternion.Lerp(_pages[_index].rotation, targetRotation, timeElapsed * _pageSpeed);
@@ -80,6 +111,8 @@ public class Book : MonoBehaviour
 
             yield return null;
         }
+        rotate = false;
+
         if (direction == 0)
         {
             _index--;
