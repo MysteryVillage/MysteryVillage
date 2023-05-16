@@ -1,3 +1,4 @@
+using Inventory;
 using UnityEngine;
 
 public enum ItemType
@@ -22,17 +23,17 @@ public class ItemData : ScriptableObject
 
     public int GetId()
     {
-        return ServerInventory.Instance().availableItems.FindIndex(x => x.displayName == displayName);
+        return InventoryManager.Instance().availableItems.FindIndex(x => x.displayName == displayName);
     }
 
     public static ItemData FindById(int itemId)
     {
-        return ServerInventory.Instance().availableItems[itemId];
+        return InventoryManager.Instance().availableItems[itemId];
     }
 
     public static int FindId(ItemData item)
     {
-        return ServerInventory.Instance().availableItems.FindIndex(x => x.displayName == item.displayName);
+        return InventoryManager.Instance().availableItems.FindIndex(x => x.displayName == item.displayName);
     }
 
     public override string ToString()

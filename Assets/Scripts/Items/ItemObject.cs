@@ -1,4 +1,4 @@
-using System;
+using Inventory;
 using Mirror;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ namespace Items
             
             Debug.Log("Trying to add item " + item.displayName + " to player with netId " + networkIdentifier + " (" + player.name +")");
             print("Is server: " + isServer);
-            player.GetComponent<ClientInventory>().CollectItem(item.GetId());
+            player.GetComponent<PlayerInventory>().CollectItem(item.GetId());
         }
     }
 }
