@@ -1,70 +1,87 @@
-using System.Collections;
-using System.Collections.Generic;
+using Inventory;
 using Mirror;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NetworkManager : Mirror.NetworkManager
+namespace Network
 {
+    public class NetworkManager : Mirror.NetworkManager
+    {
 
     
-    [Header("Only for Testing")]
-    public GameObject rock;
-    public Transform[] stoneSpawns;
-    public GameObject stick;
-    public Transform[] stickSpawns;
+        [Header("Only for Testing")]
+        public GameObject rock;
+        public Transform[] stoneSpawns;
+        public GameObject stick;
+        public Transform[] stickSpawns;
     
+        private InventoryManager _inventoryManagerManager;
     
-    private InventoryManager _inventoryManager;
-    
-    public override void OnStartClient()
-    {
-        print("NetworkManager:StartClient");
-        base.OnStartServer();
-        
-        // Test items
-        if (NetworkServer.active) {
-            foreach (Transform spawn in stoneSpawns)
-            {
-                var newSceneObject = Instantiate(rock, spawn.position, Quaternion.Euler(0,0,0));
-                NetworkServer.Spawn(newSceneObject);                
-            }
-            foreach (Transform spawn in stickSpawns)
-            {
-                var newSceneObject = Instantiate(stick, spawn.position, Quaternion.Euler(0,0,0));
-                NetworkServer.Spawn(newSceneObject);                
-            }
-        }
-        
-        // get InventoryManager
-        ScanForInventoryManager();
-    }
-
-    public override void OnServerAddPlayer(NetworkConnectionToClient conn)
-    {
-        print("NetworkManager:ServerConnect");
-        base.OnServerAddPlayer(conn);
-        ScanForInventoryManager();
-        uint networkIdentifier = 0;
-        foreach (var identity in conn.owned)
+        public override void OnStartClient()
         {
-            print(identity.netId);
-            if (identity.GetComponent<Inventory>())
+            print("NetworkManager:StartClient");
+            base.OnStartServer();
+        
+            // Test items
+            if (NetworkServer.active) {
+                foreach (Transform spawn in stoneSpawns)
+                {
+                    var newSceneObject = Instantiate(rock, spawn.position, Quaternion.Euler(0,0,0));
+                    NetworkServer.Spawn(newSceneObject);                
+                }
+                foreach (Transform spawn in stickSpawns)
+                {
+                    var newSceneObject = Instantiate(stick, spawn.position, Quaternion.Euler(0,0,0));
+                    NetworkServer.Spawn(newSceneObject);                
+                }
+            }
+        
+            // get InventoryManager
+            ScanForInventoryManager();
+        }
+
+        public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+        {
+            print("NetworkManager:ServerConnect");
+            base.OnServerAddPlayer(conn);
+        
+        
+        
+            // check if scenes match
+            CheckScene(SceneManager.GetActiveScene().handle);
+        
+            // Register player inventory
+            ScanForInventoryManager();
+            uint networkIdentifier = 0;
+            foreach (var identity in conn.owned)
             {
-                networkIdentifier = identity.netId;
+                if (identity.GetComponent<PlayerInventory>())
+                {
+                    networkIdentifier = identity.netId;
+                }
+            }
+            _inventoryManagerManager.RegisterInventory(networkIdentifier);
+        }
+    
+        private void CheckScene(int sceneId)
+        {
+            var id = SceneManager.GetActiveScene().handle;
+            if (id != sceneId)
+            {
+                SceneManager.LoadScene(sceneId);
             }
         }
-        _inventoryManager.RegisterInventory(networkIdentifier);
-    }
 
-    void ScanForInventoryManager()
-    {
-        var inventoryManagerGo = GameObject.Find("InventoryManager");
-        if (inventoryManagerGo) {
-            _inventoryManager = inventoryManagerGo.GetComponent<InventoryManager>();
-        }
-        else
+        void ScanForInventoryManager()
         {
-            Debug.Log("No inventory manager found yet!");
+            var inventoryManagerGo = GameObject.Find("ItemManager");
+            if (inventoryManagerGo) {
+                _inventoryManagerManager = inventoryManagerGo.GetComponent<InventoryManager>();
+            }
+            else
+            {
+                Debug.Log("No inventory manager found yet!");
+            }
         }
     }
 }

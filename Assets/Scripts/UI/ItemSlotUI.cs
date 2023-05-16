@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory;
 using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,6 +52,6 @@ public class ItemSlotUI : MonoBehaviour
 
     public void OnButtonClick()
     {
-        NetworkClient.localPlayer.GetComponent<Inventory>().SelectItem(index);
+        transform.GetComponentInParent<PlayerInventory>().SelectItem(index);
     }
 }

@@ -1,3 +1,4 @@
+using Inventory;
 using Mirror;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ namespace Items
 {
     public class ItemObject : NetworkBehaviour, IIinteractable
     {
-        public ItemData item;   
+        public ItemData item;
 
         public string GetInteractPrompt()
         {
@@ -16,9 +17,10 @@ namespace Items
         {
             NetworkServer.Destroy(gameObject);
             GameObject player = NetworkServer.spawned[networkIdentifier].gameObject;
-            PlayerInventory inventory = InventoryManager.Instance().Get(networkIdentifier);
+            
             Debug.Log("Trying to add item " + item.displayName + " to player with netId " + networkIdentifier + " (" + player.name +")");
-            inventory.AddItem(item);
+            print("Is server: " + isServer);
+            player.GetComponent<PlayerInventory>().CollectItem(item.GetId());
         }
     }
 }

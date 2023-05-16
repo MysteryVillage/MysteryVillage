@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -15,7 +13,7 @@ public class InteractionManager : NetworkBehaviour
     private GameObject curInteractGameObject;
     private IIinteractable curInteractable;
     public TextMeshProUGUI promptText;
-    private Camera cam;
+    public Camera cam;
 
     private void Start()
     {
