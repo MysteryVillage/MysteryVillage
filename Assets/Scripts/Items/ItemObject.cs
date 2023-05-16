@@ -1,5 +1,6 @@
 using Inventory;
 using Mirror;
+using Player;
 using UnityEngine;
 
 namespace Items

@@ -3,9 +3,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
+namespace Player
 {
-	public class StarterAssetsInputs : MonoBehaviour
+	/**
+	 * From Unity Third Person Starter Assets
+	 * https://assetstore.unity.com/packages/essentials/starter-assets-third-person-character-controller-196526
+	 */
+	public class InputHandler : MonoBehaviour
 	{
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -15,8 +19,8 @@ namespace StarterAssets
 		public bool sneak;
 		public bool interact;
 		public bool pause;
-		private bool toggle = false;
-		private float count = 0;
+		private bool _toggle;
+		private float _count;
 		
 
 		[Header("Movement Settings")]
@@ -96,20 +100,20 @@ namespace StarterAssets
 		}
 		public void SneakInput(bool newSneakState)
 		{
-			if (newSneakState && !toggle)
+			if (newSneakState && !_toggle)
 			{
                 sneak = true;
-				toggle = true;
+				_toggle = true;
             }
-			if(newSneakState && toggle)
+			if(newSneakState && _toggle)
 			{
-				count++;
+				_count++;
 			}
-			if(count == 2)
+			if(_count == 2)
 			{
 				sneak = false;
-				count = 0;
-                toggle = false;
+				_count = 0;
+                _toggle = false;
             }
         }
 

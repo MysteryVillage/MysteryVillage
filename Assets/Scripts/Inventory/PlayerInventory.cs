@@ -1,7 +1,8 @@
 using System;
+using Items;
 using Mirror;
 using Network;
-using StarterAssets;
+using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,19 +18,19 @@ namespace Inventory
         public Transform dropPosition;
 
         [Header("Selected Item")] 
-        private ItemSlot selectedItem;
-        private int selectedItemIndex;
+        private ItemSlot _selectedItem;
+        private int _selectedItemIndex;
         public TextMeshProUGUI selectedItemName;
         public TextMeshProUGUI selectedItemDescription;
         public GameObject dropButton;
 
         // components
-        private ThirdPersonController controller;
+        private PlayerController _controller;
 
 
         private void Awake()
         {
-            controller = GetComponent<ThirdPersonController>();
+            _controller = GetComponent<PlayerController>();
         }
 
         private void Start()
@@ -59,13 +60,13 @@ namespace Inventory
             if (inventoryWindow.activeInHierarchy)
             {
                 inventoryWindow.SetActive(false);
-                controller.ToggleCursor(false);
+                _controller.ToggleCursor(false);
             }
             else
             {
                 inventoryWindow.SetActive(true);
                 ClearSelectedItemWindow();
-                controller.ToggleCursor(true);
+                _controller.ToggleCursor(true);
             }
         }
 
@@ -78,7 +79,7 @@ namespace Inventory
         public void OnDropItemButton()
         {
             print("Is server: " + isServer + "(OnDropItemButton)");
-            DropItemCmd(selectedItemIndex, selectedItem.item.GetId());
+            DropItemCmd(_selectedItemIndex, _selectedItem.item.GetId());
             ClearSelectedItemWindow();
         }
 
@@ -116,11 +117,11 @@ namespace Inventory
                 return;
             }
 
-            selectedItem = slots[index].Enrich();
-            selectedItemIndex = index;
+            _selectedItem = slots[index].Enrich();
+            _selectedItemIndex = index;
 
-            selectedItemName.text = selectedItem.item.displayName;
-            selectedItemDescription.text = selectedItem.item.description;
+            selectedItemName.text = _selectedItem.item.displayName;
+            selectedItemDescription.text = _selectedItem.item.description;
         
             dropButton.SetActive(true);
         }
@@ -128,17 +129,12 @@ namespace Inventory
         public void ClearSelectedItemWindow()
         {
             // clear the text elements
-            selectedItem = null;
+            _selectedItem = null;
             selectedItemName.text = string.Empty;
             selectedItemDescription.text = string.Empty;
         
             // disable buttons
             dropButton.SetActive(false);
-        }
-
-        ItemSlot[] Slots()
-        {
-            return InventoryManager.Instance().Get(GetComponent<NetworkIdentity>().netId).slots;
         }
     }
 

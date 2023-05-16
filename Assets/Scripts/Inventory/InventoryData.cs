@@ -1,3 +1,4 @@
+using Items;
 using UnityEngine;
 
 namespace Inventory
@@ -129,7 +130,7 @@ namespace Inventory
             var text = "Items of player " + _player.name + ": \n";
             for (int i = 0; i < slots.Length; i++)
             {
-                text += slots[i].ToString() + "\n";
+                text += slots[i] + "\n";
             }
 
             return text;

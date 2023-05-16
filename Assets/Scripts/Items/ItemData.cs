@@ -1,43 +1,46 @@
 using Inventory;
 using UnityEngine;
 
-public enum ItemType
+namespace Items
 {
-    Resource,
-    Equipable
-}
-
-[CreateAssetMenu(fileName = "Item", menuName = "New Item")]
-public class ItemData : ScriptableObject
-{
-    [Header("Info")] 
-    public string displayName;
-    public string description;
-    public ItemType type;
-    public Sprite icon;
-    public GameObject dropPrefab;
-
-    [Header("Stacking")] 
-    public bool canStack;
-    public int maxStackAmount;
-
-    public int GetId()
+    public enum ItemType
     {
-        return InventoryManager.Instance().availableItems.FindIndex(x => x.displayName == displayName);
+        Resource,
+        Equipable
     }
 
-    public static ItemData FindById(int itemId)
+    [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
+    public class ItemData : ScriptableObject
     {
-        return InventoryManager.Instance().availableItems[itemId];
-    }
+        [Header("Info")] 
+        public string displayName;
+        public string description;
+        public ItemType type;
+        public Sprite icon;
+        public GameObject dropPrefab;
 
-    public static int FindId(ItemData item)
-    {
-        return InventoryManager.Instance().availableItems.FindIndex(x => x.displayName == item.displayName);
-    }
+        [Header("Stacking")] 
+        public bool canStack;
+        public int maxStackAmount;
 
-    public override string ToString()
-    {
-        return displayName;
+        public int GetId()
+        {
+            return InventoryManager.Instance().availableItems.FindIndex(x => x.displayName == displayName);
+        }
+
+        public static ItemData FindById(int itemId)
+        {
+            return InventoryManager.Instance().availableItems[itemId];
+        }
+
+        public static int FindId(ItemData item)
+        {
+            return InventoryManager.Instance().availableItems.FindIndex(x => x.displayName == item.displayName);
+        }
+
+        public override string ToString()
+        {
+            return displayName;
+        }
     }
 }
