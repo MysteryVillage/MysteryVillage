@@ -19,4 +19,24 @@ public class ItemData : ScriptableObject
     [Header("Stacking")] 
     public bool canStack;
     public int maxStackAmount;
+
+    public int GetId()
+    {
+        return ServerInventory.Instance().availableItems.FindIndex(x => x.displayName == displayName);
+    }
+
+    public static ItemData FindById(int itemId)
+    {
+        return ServerInventory.Instance().availableItems[itemId];
+    }
+
+    public static int FindId(ItemData item)
+    {
+        return ServerInventory.Instance().availableItems.FindIndex(x => x.displayName == item.displayName);
+    }
+
+    public override string ToString()
+    {
+        return displayName;
+    }
 }

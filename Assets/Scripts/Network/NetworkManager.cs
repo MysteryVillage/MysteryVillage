@@ -13,8 +13,7 @@ public class NetworkManager : Mirror.NetworkManager
     public GameObject stick;
     public Transform[] stickSpawns;
     
-    
-    private InventoryManager _inventoryManager;
+    private ServerInventory _inventoryManager;
     
     public override void OnStartClient()
     {
@@ -47,8 +46,7 @@ public class NetworkManager : Mirror.NetworkManager
         uint networkIdentifier = 0;
         foreach (var identity in conn.owned)
         {
-            print(identity.netId);
-            if (identity.GetComponent<Inventory>())
+            if (identity.GetComponent<ClientInventory>())
             {
                 networkIdentifier = identity.netId;
             }
@@ -58,9 +56,9 @@ public class NetworkManager : Mirror.NetworkManager
 
     void ScanForInventoryManager()
     {
-        var inventoryManagerGo = GameObject.Find("InventoryManager");
+        var inventoryManagerGo = GameObject.Find("ItemManager");
         if (inventoryManagerGo) {
-            _inventoryManager = inventoryManagerGo.GetComponent<InventoryManager>();
+            _inventoryManager = inventoryManagerGo.GetComponent<ServerInventory>();
         }
         else
         {

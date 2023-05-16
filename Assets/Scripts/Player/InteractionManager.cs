@@ -15,7 +15,7 @@ public class InteractionManager : NetworkBehaviour
     private GameObject curInteractGameObject;
     private IIinteractable curInteractable;
     public TextMeshProUGUI promptText;
-    private Camera cam;
+    public Camera cam;
 
     private void Start()
     {

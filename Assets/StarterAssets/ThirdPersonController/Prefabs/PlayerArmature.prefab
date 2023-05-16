@@ -647,9 +647,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777581934847446265}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: OnDropButton
+      - m_Target: {fileID: 5714619970376937846}
+        m_TargetAssemblyTypeName: ClientInventory, Assembly-CSharp
+        m_MethodName: OnDropItemButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1797,9 +1797,8 @@ GameObject:
   - component: {fileID: 4416926081852918493}
   - component: {fileID: 7324783065207739338}
   - component: {fileID: 5575612958494878713}
-  - component: {fileID: 6802318455504758019}
   - component: {fileID: 669705496407489544}
-  - component: {fileID: 777581934847446265}
+  - component: {fileID: 5714619970376937846}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -2081,7 +2080,7 @@ MonoBehaviour:
     m_ActionName: Player/Sneak[/Keyboard/ctrl]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777581934847446265}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: OnInventoryButton
         m_Mode: 0
@@ -2097,8 +2096,8 @@ MonoBehaviour:
     m_ActionName: Player/Pause[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777581934847446265}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 5714619970376937846}
+        m_TargetAssemblyTypeName: ClientInventory, Assembly-CSharp
         m_MethodName: OnInventoryButton
         m_Mode: 0
         m_Arguments:
@@ -2111,6 +2110,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 532b4ddd-c9c7-4208-b8d1-cd61b6edd9e2
     m_ActionName: Player/OpenInventory[/Keyboard/tab,/DualShock4GamepadHID/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bb03fa1f-3d71-47fe-8e35-b31bd484e48e
+    m_ActionName: UI/Book[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a9bfd17-32a1-439d-9725-04f19f4adb63
+    m_ActionName: UI/GoToNextPage[/Keyboard/n]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca1a9ed9-c629-4bdb-b20a-f6cc5a3a4ece
+    m_ActionName: UI/GoToPreviousPage[/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d0d9e950-3aa3-4f61-95eb-2c1612ed94c5
+    m_ActionName: UI/Map[/Keyboard/m]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2167,23 +2182,6 @@ MonoBehaviour:
   positionPrecision: 0.01
   scalePrecision: 0.01
   timelineOffset: 0
---- !u!114 &6802318455504758019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416926081852918481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  clientAuthority: 0
-  animator: {fileID: 6982812146204527121}
 --- !u!114 &669705496407489544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,7 +2203,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   promptText: {fileID: 8501949439934167364}
---- !u!114 &777581934847446265
+  cam: {fileID: 851956130896533707}
+--- !u!114 &5714619970376937846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2214,7 +2213,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4416926081852918481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d3cbef24b6f645bf8b061e80524b5b0, type: 3}
+  m_Script: {fileID: 11500000, guid: a9c2912f78d154da8b01c6a273b5cf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 0
@@ -2243,12 +2242,6 @@ MonoBehaviour:
   selectedItemName: {fileID: 3345442766620133425}
   selectedItemDescription: {fileID: 2707721280315971568}
   dropButton: {fileID: 1244987030349941296}
-  onOpenInventory:
-    m_PersistentCalls:
-      m_Calls: []
-  onCloseInventory:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

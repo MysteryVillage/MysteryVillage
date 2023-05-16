@@ -26,8 +26,6 @@ public class Inventory : NetworkBehaviour
     public TextMeshProUGUI selectedItemDescription;
     public GameObject dropButton;
 
-    private int curEquipIndex;
-    
     // components
     private ThirdPersonController controller;
 
@@ -233,6 +231,7 @@ public class Inventory : NetworkBehaviour
 public class ItemSlot
 {
     public ItemData item;
+    public int itemId;
     public int quantity;
     public override string ToString()
     {

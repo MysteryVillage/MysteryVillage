@@ -51,6 +51,6 @@ public class ItemSlotUI : MonoBehaviour
 
     public void OnButtonClick()
     {
-        NetworkClient.localPlayer.GetComponent<Inventory>().SelectItem(index);
+        transform.GetComponentInParent<ClientInventory>().SelectItem(index);
     }
 }
