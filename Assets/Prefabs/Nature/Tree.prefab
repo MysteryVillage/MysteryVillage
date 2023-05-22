@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7029729665673944848}
   - component: {fileID: 1537251998558681234}
   - component: {fileID: 9189442112913638468}
+  - component: {fileID: 5219880565610432011}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -87,8 +88,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812531728879684059}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.24163723, y: 9.914874, z: -1.1632195}
-  m_Size: 19.76723
+  m_LocalReferencePoint: {x: 0.24163818, y: 9.914872, z: -1.1632204}
+  m_Size: 19.767225
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
@@ -107,6 +108,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1246109399670679932}
+    - renderer: {fileID: 1108807337375815900}
   m_Enabled: 1
 --- !u!136 &1537251998558681234
 CapsuleCollider:
@@ -118,10 +120,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.68
-  m_Height: 10.75
+  m_Radius: 0.78
+  m_Height: 9.31
   m_Direction: 1
-  m_Center: {x: 0.53, y: 5.27, z: 0.62}
+  m_Center: {x: 0.53, y: 4.67, z: -0.58}
 --- !u!54 &9189442112913638468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -138,6 +140,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &5219880565610432011
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812531728879684059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6.11
+  m_Center: {x: 0.51, y: 14.22, z: 0}
 --- !u!1 &3009936612624407936
 GameObject:
   m_ObjectHideFlags: 0

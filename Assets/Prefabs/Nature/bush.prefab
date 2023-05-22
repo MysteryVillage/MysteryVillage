@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8530591327661618263}
   - component: {fileID: 5874462841391317149}
   - component: {fileID: 4795004301490046094}
+  - component: {fileID: 6719262768691180500}
   m_Layer: 0
   m_Name: bush
   m_TagString: Untagged
@@ -111,3 +112,17 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5874462841391317149}
   m_Enabled: 1
+--- !u!136 &6719262768691180500
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5370178223461310792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.34
+  m_Height: 5.89
+  m_Direction: 1
+  m_Center: {x: -0.20868593, y: 0.97, z: -0.09894055}
