@@ -1882,13 +1882,13 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  MoveSpeed: 2
+  moveSpeed: 2
   sneakSpeed: 1
-  SprintSpeed: 5.335
-  RotationSmoothTime: 0.12
-  SpeedChangeRate: 10
-  LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
-  FootstepAudioClips:
+  sprintSpeed: 5.335
+  rotationSmoothTime: 0.12
+  speedChangeRate: 10
+  landingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
+  footstepAudioClips:
   - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
   - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
   - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
@@ -1899,25 +1899,25 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
   - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
-  FootstepAudioVolume: 0.3
-  JumpHeight: 1.2
-  Gravity: -15
-  JumpTimeout: 0.3
-  FallTimeout: 0.15
-  Grounded: 1
-  GroundedOffset: -0.14
-  GroundedRadius: 0.28
-  GroundLayers:
+  footstepAudioVolume: 0.3
+  jumpHeight: 1.2
+  gravity: -15
+  jumpTimeout: 0.3
+  fallTimeout: 0.15
+  grounded: 1
+  groundedOffset: -0.14
+  groundedRadius: 0.28
+  groundLayers:
     serializedVersion: 2
     m_Bits: 513
-  CinemachineCameraTarget: {fileID: 8338988566280778634}
-  CinemachineFollowCamera: {fileID: 1897370196914165752}
-  CinemachineMainCamera: {fileID: 689362496702715641}
-  TopClamp: 70
-  BottomClamp: -30
-  CameraAngleOverride: 0
-  LockCameraPosition: 0
-  _animator: {fileID: 6982812146204527121}
+  cinemachineCameraTarget: {fileID: 8338988566280778634}
+  cinemachineFollowCamera: {fileID: 1897370196914165752}
+  cinemachineMainCamera: {fileID: 689362496702715641}
+  topClamp: 70
+  bottomClamp: -30
+  cameraAngleOverride: 0
+  lockCameraPosition: 0
+  animator: {fileID: 6982812146204527121}
 --- !u!114 &5885216827943657505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4393,6 +4393,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3086312498518471195}
     m_Modifications:
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5813989136253627340, guid: 4034e54d748f44838805c3a857829657, type: 3}
       propertyPath: m_Name
       value: ItemSlot (2)
@@ -4619,6 +4631,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3086312498518471195}
     m_Modifications:
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5813989136253627340, guid: 4034e54d748f44838805c3a857829657, type: 3}
       propertyPath: m_Name
       value: ItemSlot (3)
@@ -5184,6 +5208,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3086312498518471195}
     m_Modifications:
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5813989136253627340, guid: 4034e54d748f44838805c3a857829657, type: 3}
       propertyPath: m_Name
       value: ItemSlot
@@ -5523,6 +5559,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3086312498518471195}
     m_Modifications:
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5813989136253627340, guid: 4034e54d748f44838805c3a857829657, type: 3}
       propertyPath: m_Name
       value: ItemSlot (1)
@@ -5862,6 +5910,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3086312498518471195}
     m_Modifications:
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035070399956067816, guid: 4034e54d748f44838805c3a857829657, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5813989136253627340, guid: 4034e54d748f44838805c3a857829657, type: 3}
       propertyPath: m_Name
       value: ItemSlot (4)

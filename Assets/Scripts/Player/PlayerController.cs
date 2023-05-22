@@ -23,7 +23,7 @@ namespace Player
         public float sneakSpeed = 1.0f;
 
         [FormerlySerializedAs("SprintSpeed")] [Tooltip("Sprint speed of the character in m/s")]
-        public float sprintSpeed = 5.335f;
+        public float sprintSpeed = 8.0f;
 
         [FormerlySerializedAs("RotationSmoothTime")]
         [Tooltip("How fast the character turns to face movement direction")]
