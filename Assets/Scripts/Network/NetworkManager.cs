@@ -49,11 +49,13 @@ namespace Network
             playerPrefab.GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
             if (conn.connectionId != 0)
             {
-                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";                
+                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
+                playerPrefab.GetComponent<Player.GeometryController>().character = "Boy";
             }
             else
             {
                 playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
+                playerPrefab.GetComponent<Player.GeometryController>().character = "Girl";
             }
 
             base.OnServerAddPlayer(conn);
