@@ -4,16 +4,14 @@ using Player;
 using UnityEngine;
 
 
-/* Script um die Türen im Labyrinth zu öffnen 
+/* Script um die Tï¿½ren im Labyrinth zu ï¿½ffnen 
  * 
- * bei Aktivierung des Schalters wird die Tür, die im Inspector festegelegt wird geöffnet 
- * Momentan wird die Tür für 10 Sekunden nach Untenbewegt ( Nicht schön ) 
+ * bei Aktivierung des Schalters wird die Tï¿½r, die im Inspector festegelegt wird geï¿½ffnet 
+ * Momentan wird die Tï¿½r fï¿½r 10 Sekunden nach Untenbewegt ( Nicht schï¿½n ) 
  */
 
-public class SwitchInteract : MonoBehaviour, IIinteractable
+public class SwitchInteract : NetworkBehaviour, IIinteractable
 {
-
-
     [SerializeField] private GameObject door;
     private bool opening = false;
     private float counter = 0;
@@ -22,19 +20,11 @@ public class SwitchInteract : MonoBehaviour, IIinteractable
     {
         return string.Format("Activate Switch {0}", "here");
     }
-
+    
     public void OnInteract(uint networkIdentifier)
     {
-
         opening = true;
-        Debug.Log("Schalter betätigt");
-
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        Debug.Log("Schalter betÃ¤tigt");
     }
 
     // Update is called once per frame
@@ -43,15 +33,17 @@ public class SwitchInteract : MonoBehaviour, IIinteractable
         if (opening)
         {
             OpenDoor();
-            counter += 1 * Time.deltaTime;
         }
       
     }
+    
+    [ClientRpc]
     private void OpenDoor()
     {
         Vector3 down = new Vector3(0, 0, 0);
         down.y -= 1 * Time.deltaTime;
         door.transform.position += down;
+        counter += 1 * Time.deltaTime;
         if(counter > 10)
         {
             opening = false;
