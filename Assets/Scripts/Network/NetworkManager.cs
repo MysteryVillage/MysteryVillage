@@ -1,6 +1,7 @@
 using Inventory;
 using Mirror;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Network
@@ -43,10 +44,22 @@ namespace Network
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
             print("NetworkManager:ServerConnect");
+            
+            // @TODO: Remove hack to fix player input devices
+            playerPrefab.GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
+            if (conn.connectionId != 0)
+            {
+                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
+                playerPrefab.GetComponent<Player.GeometryController>().character = "Boy";
+            }
+            else
+            {
+                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
+                playerPrefab.GetComponent<Player.GeometryController>().character = "Girl";
+            }
+
             base.OnServerAddPlayer(conn);
-        
-        
-        
+            
             // check if scenes match
             CheckScene(SceneManager.GetActiveScene().handle);
         

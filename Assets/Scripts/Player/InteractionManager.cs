@@ -64,7 +64,7 @@ namespace Player
                     OnInteractCmd(_curInteractGameObject.GetComponent<NetworkIdentity>().netId);
                     _curInteractGameObject = null;
                     _curInteractable = null;
-                    promptText.gameObject.SetActive(false);
+                    interactionPanel.SetActive(false);
                 }
             }
         }
