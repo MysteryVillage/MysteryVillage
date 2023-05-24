@@ -9,6 +9,10 @@ using UnityEngine;
 
 namespace NPC
 {
+    /* Script um mit NPCs zu interagieren 
+     * 
+     * 
+     */
     public class NPCObject : MonoBehaviour, IIinteractable
     {
         public NPCData npc;
@@ -22,8 +26,8 @@ namespace NPC
         private void Awake()
         {
             dialogText = GameObject.Find("NPCText").GetComponent<TMP_Text>();
-           
 
+            
             dialogWindow.SetActive(false);
         }
         private void Start()
@@ -39,7 +43,9 @@ namespace NPC
         {
           
             dialogWindow.SetActive(true);
-            dialogText.SetText(npc.text);
+
+            TypeWrite.Start(dialogText, npc.text);
+            
             start_timer = true;
             timer = 0;
             Debug.Log("Interact!!!");
@@ -53,6 +59,7 @@ namespace NPC
             if(timer > npc.text.Length /2)
             {
                 dialogWindow.SetActive(false);
+                
             }
         }
     }
