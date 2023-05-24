@@ -431,6 +431,15 @@ namespace Player
         {
             Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
             _canMove = !toggle;
+            var playerInput = GetComponent<PlayerInput>();
+            if (toggle)
+            {
+                playerInput.SwitchCurrentActionMap("UI");
+            }
+            else
+            {
+                playerInput.SwitchCurrentActionMap("Player");
+            }
         }
     }
 }

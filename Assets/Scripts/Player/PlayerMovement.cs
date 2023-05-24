@@ -36,9 +36,6 @@ public class PlayerMovement : NetworkBehaviour
     float smoothTurnVelocity;
     
     Vector3 moveDirection;
-   
-    
-
 
     private void Start()
     {
@@ -85,7 +82,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public void OnPlayerPause(InputAction.CallbackContext context)
     {
-        // Menü Einblenden 
+        // Menï¿½ Einblenden 
     }
 
     public void OnPlayerSprint(InputAction.CallbackContext context)
@@ -123,9 +120,9 @@ public class PlayerMovement : NetworkBehaviour
 
         /* ---------------------- Sneak -------------------------- */
         /* Spieler Collider wird noch nicht kleiner skaliert
-         * Der Spieler Schleicht solange die Taste gedrückt wird
-         *      *  Soll die Taste nur einmal gedrückt werden oder die ganze Zeit?
-         *      *  Umsehen ist nicht möglich wenn die Sneaktaste gedrückt gehalten werden muss
+         * Der Spieler Schleicht solange die Taste gedrï¿½ckt wird
+         *      *  Soll die Taste nur einmal gedrï¿½ckt werden oder die ganze Zeit?
+         *      *  Umsehen ist nicht mï¿½glich wenn die Sneaktaste gedrï¿½ckt gehalten werden muss
          *       
          */
 
@@ -136,8 +133,8 @@ public class PlayerMovement : NetworkBehaviour
 
         /* ---------------------- Jump -------------------------- */
         /* Jump Funktioniert noch nicht so richtig
-         * Bug: Wenn die Jump-Taste gedrückt gehalten wird und sich dann bewegt wird dauert es bis die taste wieder Funktioniert
-         *      Auch wenn die Jump-Taste schnell hintereinander gedrückt wird 
+         * Bug: Wenn die Jump-Taste gedrï¿½ckt gehalten wird und sich dann bewegt wird dauert es bis die taste wieder Funktioniert
+         *      Auch wenn die Jump-Taste schnell hintereinander gedrï¿½ckt wird 
          */
 
         groundedPlayer = player.isGrounded;

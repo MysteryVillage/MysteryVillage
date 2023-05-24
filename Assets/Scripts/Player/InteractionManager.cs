@@ -15,6 +15,7 @@ namespace Player
         private GameObject _curInteractGameObject;
         private IIinteractable _curInteractable;
         public TextMeshProUGUI promptText;
+        public GameObject interactionPanel;
         public Camera cam;
 
         private void Start()
@@ -44,15 +45,15 @@ namespace Player
                 {
                     _curInteractGameObject = null;
                     _curInteractable = null;
-                    promptText.gameObject.SetActive(false);
+                    interactionPanel.SetActive(false);
                 }
             }
         }
 
         void SetPromptText()
         {
-            promptText.gameObject.SetActive(true);
-            promptText.text = string.Format("<b>[E]</b> {0}", _curInteractable.GetInteractPrompt());
+            interactionPanel.SetActive(true);
+            promptText.text = string.Format("{0}", _curInteractable.GetInteractPrompt());
         }
 
         public void OnInteractInput(InputAction.CallbackContext context)
