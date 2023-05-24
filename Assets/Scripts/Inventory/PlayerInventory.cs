@@ -136,6 +136,12 @@ namespace Inventory
             // disable buttons
             dropButton.SetActive(false);
         }
+
+        public void Close()
+        {
+            inventoryWindow.SetActive(false);
+            _controller.ToggleCursor(false);
+        }
     }
 
     [Serializable]
