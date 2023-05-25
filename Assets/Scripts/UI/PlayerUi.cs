@@ -124,4 +124,12 @@ public class PlayerUi : MonoBehaviour
         HideAll();
         _playerController.ToggleCursor(false);
     }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.started && _menuIndex == 2)
+        {
+            transform.parent.GetComponent<PlayerInventory>().OnDropItemButton();
+        }
+    }
 }

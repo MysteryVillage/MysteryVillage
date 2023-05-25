@@ -78,6 +78,7 @@ namespace Inventory
 
         public void OnDropItemButton()
         {
+            if (_selectedItem == null) return;
             print("Is server: " + isServer + "(OnDropItemButton)");
             DropItemCmd(_selectedItemIndex, _selectedItem.item.GetId());
             ClearSelectedItemWindow();
