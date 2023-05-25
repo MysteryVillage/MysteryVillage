@@ -1,6 +1,7 @@
 ﻿ using Mirror;
  using UnityEngine;
  using UnityEngine.Serialization;
+ using UnityEngine.UI;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -73,6 +74,8 @@ namespace Player
         public GameObject cinemachineCameraTarget;
         [FormerlySerializedAs("CinemachineFollowCamera")] public GameObject cinemachineFollowCamera;
         [FormerlySerializedAs("CinemachineMainCamera")] public GameObject cinemachineMainCamera;
+        public GameObject minimapCamera;
+        public SpriteRenderer playerIcon;
 
         [FormerlySerializedAs("TopClamp")] [Tooltip("How far in degrees can you move the camera up")]
         public float topClamp = 70.0f;
@@ -159,6 +162,8 @@ namespace Player
                 cinemachineMainCamera.SetActive(false);
                 cinemachineFollowCamera.SetActive(false);
                 cinemachineMainCamera.GetComponent<AudioListener>().enabled = false;
+                minimapCamera.SetActive(false);
+                playerIcon.color = Color.green;
             }
 
             Cursor.lockState = CursorLockMode.Locked;
