@@ -40,6 +40,8 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     [ClientRpc]
     private void OpenDoor()
     {
+        if (door == null) return;
+        
         Vector3 down = new Vector3(0, 0, 0);
         down.y -= 1 * Time.deltaTime;
         door.transform.position += down;
