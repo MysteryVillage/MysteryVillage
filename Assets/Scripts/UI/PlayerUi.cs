@@ -8,6 +8,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -15,13 +16,10 @@ public class PlayerUi : MonoBehaviour
 {
     [Header("Menu")] 
     public Transform playUi;
-    public Transform book;
-    public Transform map;
-    private bool menuUi;
-    private bool _menu;
     private PlayerController _playerController;
-    private List<Transform> _menuList;
-    int _index = 0;
+    public List<Transform> menuList;
+    private int _menuIndex = 0;
+    private bool _menuOpen = false;
 
     [Header("Debug")] 
     public TextMeshProUGUI inputDevice;
@@ -29,13 +27,7 @@ public class PlayerUi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menuUi = false;
-        _menu = false;
         _playerController = transform.parent.GetComponent<PlayerController>();
-        /*for (int i = 0; i <= 1; i++)
-        {
-            _menuList[i] = transform.GetChild(i+2);
-        }*/
     }
 
     private void Update()
@@ -43,42 +35,64 @@ public class PlayerUi : MonoBehaviour
         inputDevice.text = transform.parent.GetComponent<PlayerInput>().currentControlScheme;
     }
 
-    public void SwitchToBook (InputAction.CallbackContext context)
+    public void SwitchTo(int index)
     {
-        if (context.phase == InputActionPhase.Started)
+        HideAll();
+        menuList[index].gameObject.SetActive(true);
+    }
+
+    public void HideAll()
+    {
+        for (int i = 0; i < menuList.Count; i++)
         {
-            menuUi = !menuUi;
-            playUi.gameObject.SetActive(menuUi);
-            book.gameObject.SetActive(!menuUi);
-            map.gameObject.SetActive(false);
-            _playerController.ToggleCursor(!menuUi);
-            _menu = true;
+            menuList[i].gameObject.SetActive(false);
         }
     }
 
-    public void SwitchToMap(InputAction.CallbackContext context)
+    public void OpenBookButton(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.started)
         {
-            menuUi = !menuUi;
-            playUi.gameObject.SetActive(menuUi);
-            map.gameObject.SetActive(!menuUi);
-            book.gameObject.SetActive(false);
-            _playerController.ToggleCursor(!menuUi);
-            _menu = true;
+            _menuIndex = 0;
+            Open(_menuIndex);
         }
+    }
+
+    public void OpenMapButton(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _menuIndex = 1;
+            Open(_menuIndex);
+        }
+    }
+
+    public void OpenInventoryButton(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _menuIndex = 2;
+            Open(_menuIndex);
+            transform.parent.GetComponent<PlayerInventory>().ClearSelectedItemWindow();
+        }
+    }
+
+    public void Open(int index)
+    {
+        _menuOpen = true;
+        menuList[index].gameObject.SetActive(true);
+        playUi.gameObject.SetActive(false);
+        _playerController.ToggleCursor(true);
     }
 
     public void MenuSwitchRight(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.started)
         {
-            Debug.Log(_menu);
-            if (_index < 2 - 1 && _menu)
+            if (_menuIndex < menuList.Count - 1)
             {
-                _index++;
-                /*_menuList[_index - 1].gameObject.SetActive(false);
-                _menuList[_index].gameObject.SetActive(true);*/
+                _menuIndex++;
+                SwitchTo(_menuIndex);
             }
         }
     }
@@ -87,12 +101,10 @@ public class PlayerUi : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            Debug.Log(_menu);
-            if (_index > -1 && _menu)
+            if (_menuIndex > 0)
             {
-                _index--;
-                /*_menuList[_index + 1].gameObject.SetActive(false);
-                _menuList[_index].gameObject.SetActive(true);*/
+                _menuIndex--;
+                SwitchTo(_menuIndex);
             }
         }
     }
@@ -107,13 +119,9 @@ public class PlayerUi : MonoBehaviour
 
     void HideUIElements()
     {
-        menuUi = false;
-        _menu = false;
-        playUi.gameObject.SetActive(!menuUi);
-        map.gameObject.SetActive(menuUi);
-        book.gameObject.SetActive(menuUi);
-        _playerController.ToggleCursor(menuUi);
-        transform.parent.GetComponent<PlayerInventory>().Close();
+        _menuOpen = false;
+        playUi.gameObject.SetActive(true);
+        HideAll();
+        _playerController.ToggleCursor(false);
     }
-
 }

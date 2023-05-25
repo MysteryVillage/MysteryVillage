@@ -94,24 +94,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchMenuL",
-                    "type": "Button",
-                    "id": "83665a83-343b-4c9c-824e-7066abb0d93c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SwitchMenuR",
-                    "type": "Button",
-                    "id": "4fc52037-771c-43d4-990b-e302c4b46c4c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -422,28 +404,6 @@
                     "action": "Map",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a71ba4fa-7948-42e9-b51f-7a3aaeacf313",
-                    "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "SwitchMenuL",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "03c787cf-5fda-45ea-bebd-29fcbba37749",
-                    "path": "<Keyboard>/l",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchMenuR",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -473,6 +433,24 @@
                     "name": "CloseUI",
                     "type": "Button",
                     "id": "3ef71a43-e36e-4fa1-a2e2-fb56b8106895",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchMenuL",
+                    "type": "Button",
+                    "id": "bdea677e-11d9-4a91-9ac9-5605c1e4ec72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchMenuR",
+                    "type": "Button",
+                    "id": "6a5f401d-f4bf-4360-b0c0-c7349aa6891b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -543,6 +521,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "CloseUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "192fa22f-98b2-47f3-a386-33d640739729",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "SwitchMenuL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a80a35a-9fca-4d99-b9b4-28e9efa6bea7",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SwitchMenuL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36bc24e8-f7e0-4a89-86f7-18a5047e6a1b",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMenuR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bed09267-7584-4db6-9045-90b5b97d513c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SwitchMenuR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
