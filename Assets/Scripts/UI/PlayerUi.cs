@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
+using Yarn.Unity;
 using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerUi : MonoBehaviour
@@ -21,6 +22,11 @@ public class PlayerUi : MonoBehaviour
     private int _menuIndex = 0;
     private bool _menuOpen = false;
 
+    [Header("Dialogue")]
+    private DialogueRunner _dialogue;
+    public GameObject dialogueText;
+    public GameObject dialogueOptions;
+
     [Header("Debug")] 
     public TextMeshProUGUI inputDevice;
 
@@ -28,6 +34,9 @@ public class PlayerUi : MonoBehaviour
     void Start()
     {
         _playerController = transform.parent.GetComponent<PlayerController>();
+        _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueRunner>();
+        _dialogue.dialogueViews[0] = dialogueText.GetComponent<LineView>();
+        _dialogue.dialogueViews[1] = dialogueOptions.GetComponent<OptionsListView>();
     }
 
     private void Update()

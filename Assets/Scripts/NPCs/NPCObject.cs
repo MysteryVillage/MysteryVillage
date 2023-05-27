@@ -3,8 +3,10 @@ using Items;
 using Mirror;
 using Player;
 using System.Threading;
+using Network;
 using TMPro;
 using UnityEngine;
+using Yarn.Unity;
 
 
 namespace NPC
@@ -13,27 +15,13 @@ namespace NPC
      * 
      * 
      */
-    public class NPCObject : MonoBehaviour, IIinteractable
+    public class NPCObject : NetworkBehaviour, IIinteractable
     {
         public NPCData npc;
-        [SerializeField] private GameObject dialogWindow;
-        private TMP_Text dialogText;
-        private bool start_timer=false;
-        private float timer;
-       
+        public DialogueRunner dialogue;
+        public string[] dialogueFlow;
+        public int currentDialogue = 0;
         
-
-        private void Awake()
-        {
-            dialogText = GameObject.Find("NPCText").GetComponent<TMP_Text>();
-
-            
-            dialogWindow.SetActive(false);
-        }
-        private void Start()
-        {
-            
-        }
         public string GetInteractPrompt()
         {
             return string.Format("Talk to {0}", npc.displayName);
@@ -41,26 +29,27 @@ namespace NPC
 
         public void OnInteract(uint networkIdentifier)
         {
-          
-            dialogWindow.SetActive(true);
-
-            TypeWrite.Start(dialogText, npc.text);
-            
-            start_timer = true;
-            timer = 0;
-            Debug.Log("Interact!!!");
+            Debug.Log("ON INTERACT: " + isServer);
+            StartDialogue();
         }
-        private void Update()
+
+        [ClientRpc]
+        private void StartDialogue()
         {
-            if (start_timer)
+            Debug.Log("StartDialogue: " + isServer);
+            var dia = GameObject.Find("Dialogue");
+            if (dia.GetComponent<DialogueRunner>() != null)
             {
-                timer += 1 * Time.deltaTime;
+                NetworkClient.localPlayer.GetComponent<PlayerController>().ToggleCursor(true);
+                dia.GetComponent<DialogueRunner>().StartDialogue(dialogueFlow[currentDialogue]);
             }
-            if(timer > npc.text.Length /2)
-            {
-                dialogWindow.SetActive(false);
-                
-            }
+        }
+
+        [YarnCommand("set_dialogue")]
+        public void SetDialogue(int key)
+        {
+            Debug.Log("Setting dialogue key of " + gameObject.name + " to " + key);
+            currentDialogue = key;
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿title: Arnold
+position: -140,-97
+---
+Arnold: Habt ihr schon von dem Labyrinth im Süden der Stadt gehört?
+Arnold: Es heißt, eine alte Zivilisation hätte es gebaut.
+Arnold: Nachdem es vor ein paar Jahren entdeckt wurde, hat die ganze Stadt davon gesprochen.
+Arnold: Aber nun ist es, als hätte es diesen Fund niemals gegeben..
+Arnold: Vielleicht ist es ja für euch interessant. Am Ende seid ihr ja vielleicht so diejenigen, die das Rätsel lösen?
+<<jump labPosition>>
+===
+title: labPosition
+position: -315,162
+---
+Arnold: Um das Labyrinth zu finden, müsst ihr in Richtung Süden zum Leuchtturm laufen.
+Arnold: Am linken Rand des Weges werdet ihr es finden.
+<<jump goodLuck>>
+===
+
+title: goodLuck
+position: 28,112
+---
+Arnold: Viel Erfolg!
+<<set_dialogue Arnold 1>>
+===
+title: Hubert
+position: -245,-418
+---
+Hubert: Arnold ist ganz besessen von diesem Labyrinth..
+Hubert: Vielleicht solltet ihr euch das mal anschauen.
+===
+title: ArnoldGenervt
+position: 253,-89
+---
+Arnold: Nun geht schon!
+===
+title: LabyrinthGeschafft
+position: 251,57
+---
+Arnold: Wow, ich habt tatsächlich das Labyrinth gelöst! Beeindruckend!
+===
