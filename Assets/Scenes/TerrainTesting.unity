@@ -6980,6 +6980,34 @@ PrefabInstance:
       propertyPath: dialogueViews.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 238038140}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Network.DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571860903880563405, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6876746421411652660, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
       propertyPath: m_RootOrder
       value: 18
