@@ -100,13 +100,7 @@ namespace Network
         public override void OnStopHost()
         {
             ScanForInventoryManager();
-            _inventoryManager.ClearInventories();
-        }
-
-        public override void OnStopClient()
-        {
-            ScanForInventoryManager();
-            _inventoryManager.ClearInventories();
+            if (NetworkServer.active) _inventoryManager.ClearInventories();
         }
     }
 }
