@@ -602,6 +602,45 @@
             ]
         },
         {
+            "name": "Pause",
+            "id": "0df070f5-cbf9-4c23-b8a5-f6461f8140fe",
+            "actions": [
+                {
+                    "name": "CloseUI",
+                    "type": "Button",
+                    "id": "deac4ec6-e4bf-4de5-8eab-88fe477a2f5d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9ff49705-8c30-43bc-b338-8d6a0f2f094d",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "CloseUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99689ed8-b366-4f58-a0ca-9b14cafed5cc",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CloseUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Dialogue",
             "id": "bce59c00-68cf-4f03-8465-673d5f8616ae",
             "actions": [

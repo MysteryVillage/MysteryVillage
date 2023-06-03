@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using Inventory;
+using Mirror;
 using Player;
 using TMPro;
 using Unity.VisualScripting;
@@ -12,6 +13,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Yarn.Unity;
 using static UnityEngine.Rendering.DebugUI;
+using NetworkManager = Network.NetworkManager;
 
 public class PlayerUi : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class PlayerUi : MonoBehaviour
     public List<Transform> menuList;
     private int _menuIndex = 0;
     private bool _menuOpen = false;
+    public GameObject pauseMenu;
 
     [Header("Dialogue")]
     private DialogueRunner _dialogue;
@@ -145,5 +148,49 @@ public class PlayerUi : MonoBehaviour
     public void AdvanceText(InputAction.CallbackContext context)
     {
         if (context.started) dialogueText.GetComponent<LineView>().UserRequestedViewAdvancement();
+    }
+
+    public void PauseButton(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (pauseMenu.activeInHierarchy)
+            {
+                _playerController.SetActionMap("Player");
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                _playerController.SetActionMap("Pause");
+                pauseMenu.SetActive(true);
+            }
+        }
+    }
+
+    public void DisconnectButton()
+    {
+        var manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+        if (NetworkServer.active)
+        {
+            manager.StopHost();
+        }
+
+        if (NetworkClient.active)
+        {
+            manager.StopClient();
+        }
+    }
+
+    public void ResetButton()
+    {
+        // ..
+        Debug.Log("Reset scene..");
+    }
+
+    public void InputChangeButton()
+    {
+        // ..
+        var input = transform.parent.GetComponent<PlayerInput>();
+        Debug.Log(input.currentControlScheme);
     }
 }

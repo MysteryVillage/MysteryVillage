@@ -8,14 +8,6 @@ namespace Network
 {
     public class NetworkManager : Mirror.NetworkManager
     {
-
-    
-        [Header("Only for Testing")]
-        public GameObject rock;
-        public Transform[] stoneSpawns;
-        public GameObject stick;
-        public Transform[] stickSpawns;
-    
         private InventoryManager _inventoryManager;
     
         public override void OnStartClient()
@@ -23,22 +15,8 @@ namespace Network
             print("NetworkManager:StartClient");
             base.OnStartServer();
         
-            // Test items
-            if (NetworkServer.active) {
-                foreach (Transform spawn in stoneSpawns)
-                {
-                    var newSceneObject = Instantiate(rock, spawn.position, Quaternion.Euler(0,0,0));
-                    NetworkServer.Spawn(newSceneObject);                
-                }
-                foreach (Transform spawn in stickSpawns)
-                {
-                    var newSceneObject = Instantiate(stick, spawn.position, Quaternion.Euler(0,0,0));
-                    NetworkServer.Spawn(newSceneObject);                
-                }
-            }
-        
-            // get InventoryManager
-            ScanForInventoryManager();
+            // get InventoryManager & spawn test items
+            if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
         }
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
@@ -85,7 +63,7 @@ namespace Network
             }
         }
 
-        void ScanForInventoryManager()
+        bool ScanForInventoryManager()
         {
             var inventoryManagerGo = GameObject.Find("ItemManager");
             if (inventoryManagerGo) {
@@ -95,6 +73,8 @@ namespace Network
             {
                 Debug.Log("No inventory manager found yet!");
             }
+
+            return (inventoryManagerGo);
         }
 
         public override void OnStopHost()

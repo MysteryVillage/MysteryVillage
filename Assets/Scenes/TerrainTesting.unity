@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 229402120}
+  m_LightingDataAsset: {fileID: 112000000, guid: abcd5198640484bf9a0fa33fde5070c1, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 82b85b25b8a674b3983cf965178a7625, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -905,68 +905,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014025677, y: 0.014172788, z: 0.04305941}
   m_Center: {x: 0.00003223563, y: 0.000014451797, z: -0.000043964938}
---- !u!850595691 &229402120
-LightingSettings:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 4
-  m_GIWorkflowMode: 1
-  m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 0
-  m_RealtimeEnvironmentLighting: 1
-  m_BounceScale: 1
-  m_AlbedoBoost: 1
-  m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
-  m_BakeBackend: 2
-  m_LightmapMaxSize: 1024
-  m_BakeResolution: 40
-  m_Padding: 2
-  m_LightmapCompression: 3
-  m_AO: 0
-  m_AOMaxDistance: 1
-  m_CompAOExponent: 1
-  m_CompAOExponentDirect: 0
-  m_ExtractAO: 0
-  m_MixedBakeMode: 2
-  m_LightmapsBakeMode: 1
-  m_FilterMode: 1
-  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
-  m_ExportTrainingData: 0
-  m_TrainingDataDestination: TrainingData
-  m_RealtimeResolution: 2
-  m_ForceWhiteAlbedo: 0
-  m_ForceUpdates: 0
-  m_FinalGather: 0
-  m_FinalGatherRayCount: 256
-  m_FinalGatherFiltering: 1
-  m_PVRCulling: 1
-  m_PVRSampling: 1
-  m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 512
-  m_PVREnvironmentSampleCount: 256
-  m_PVREnvironmentReferencePointCount: 2048
-  m_LightProbeSampleCountMultiplier: 4
-  m_PVRBounces: 2
-  m_PVRMinBounces: 1
-  m_PVREnvironmentMIS: 1
-  m_PVRFilteringMode: 1
-  m_PVRDenoiserTypeDirect: 1
-  m_PVRDenoiserTypeIndirect: 1
-  m_PVRDenoiserTypeAO: 1
-  m_PVRFilterTypeDirect: 0
-  m_PVRFilterTypeIndirect: 0
-  m_PVRFilterTypeAO: 0
-  m_PVRFilteringGaussRadiusDirect: 1
-  m_PVRFilteringGaussRadiusIndirect: 5
-  m_PVRFilteringGaussRadiusAO: 2
-  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-  m_PVRFilteringAtrousPositionSigmaIndirect: 2
-  m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_PVRTiledBaking: 0
 --- !u!1 &238038137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2227155527882409504, guid: eda1d99f593254bdd81dc6b856cca2c7, type: 3}
@@ -3895,6 +3833,114 @@ PrefabInstance:
       propertyPath: sceneId
       value: 93345101
       objectReference: {fileID: 0}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: rock
+      value: 
+      objectReference: {fileID: 1377036484077850861, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stick
+      value: 
+      objectReference: {fileID: 2398747112285538861, guid: 26918f296040147e8899bf13ec2a0b2b, type: 3}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1276208329}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[1]
+      value: 
+      objectReference: {fileID: 358055338}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[2]
+      value: 
+      objectReference: {fileID: 819399374}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[3]
+      value: 
+      objectReference: {fileID: 2016685221}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[4]
+      value: 
+      objectReference: {fileID: 855469152}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[5]
+      value: 
+      objectReference: {fileID: 620762299}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[6]
+      value: 
+      objectReference: {fileID: 729578238}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[7]
+      value: 
+      objectReference: {fileID: 678186466}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[8]
+      value: 
+      objectReference: {fileID: 1270133664}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[9]
+      value: 
+      objectReference: {fileID: 273108623}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 170518639}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[1]
+      value: 
+      objectReference: {fileID: 1404925977}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[2]
+      value: 
+      objectReference: {fileID: 1011246654}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[3]
+      value: 
+      objectReference: {fileID: 638983105}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[4]
+      value: 
+      objectReference: {fileID: 1727522647}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[5]
+      value: 
+      objectReference: {fileID: 603561393}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[6]
+      value: 
+      objectReference: {fileID: 206750493}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stoneSpawns.Array.data[7]
+      value: 
+      objectReference: {fileID: 149489930}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[10]
+      value: 
+      objectReference: {fileID: 1491016490}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[11]
+      value: 
+      objectReference: {fileID: 451383459}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[12]
+      value: 
+      objectReference: {fileID: 1846978511}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[13]
+      value: 
+      objectReference: {fileID: 1075912243}
+    - target: {fileID: 6491011278193309701, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
+      propertyPath: stickSpawns.Array.data[14]
+      value: 
+      objectReference: {fileID: 1018153654}
     m_RemovedComponents:
     - {fileID: 2622044209232560964, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 64f8e7f37e84d48fd9b0bc30f2331d17, type: 3}
@@ -5150,22 +5196,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: stick
-      value: 
-      objectReference: {fileID: 2398747112285538861, guid: 26918f296040147e8899bf13ec2a0b2b, type: 3}
-    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: stickSpawns.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: stoneSpawns.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
       propertyPath: stickSpawns.Array.data[0]
       value: 
       objectReference: {fileID: 1276208329}
@@ -5237,14 +5267,6 @@ PrefabInstance:
       propertyPath: stoneSpawns.Array.data[7]
       value: 
       objectReference: {fileID: 149489930}
-    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: spawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1377036484077850861, guid: 578bb14bb7bc94c198f0915d34f01660, type: 3}
-    - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
-      propertyPath: spawnPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 2398747112285538861, guid: 26918f296040147e8899bf13ec2a0b2b, type: 3}
     - target: {fileID: 2054527319961590304, guid: e411dce4963fe48ce96dbf90433c65a2, type: 3}
       propertyPath: stickSpawns.Array.data[10]
       value: 

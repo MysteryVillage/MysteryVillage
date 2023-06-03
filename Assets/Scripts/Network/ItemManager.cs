@@ -6,6 +6,12 @@ namespace Network
 {
     public class ItemManager : NetworkBehaviour
     {
+        [Header("Only for Testing")]
+        public GameObject rock;
+        public Transform[] stoneSpawns;
+        public GameObject stick;
+        public Transform[] stickSpawns;
+        
         private static ItemManager _instance;
 
         private ItemManager()
@@ -32,6 +38,23 @@ namespace Network
             Debug.Log(position);
             var newItem = Instantiate(item.dropPrefab, position, rotation);
             NetworkServer.Spawn(newItem);
+        }
+
+        public void SpawnItems()
+        {
+            // Test items
+            if (NetworkServer.active) {
+                foreach (Transform spawn in stoneSpawns)
+                {
+                    var newSceneObject = Instantiate(rock, spawn.position, Quaternion.Euler(0,0,0));
+                    NetworkServer.Spawn(newSceneObject);                
+                }
+                foreach (Transform spawn in stickSpawns)
+                {
+                    var newSceneObject = Instantiate(stick, spawn.position, Quaternion.Euler(0,0,0));
+                    NetworkServer.Spawn(newSceneObject);                
+                }
+            }
         }
     }
 }
