@@ -28,8 +28,8 @@ namespace Player
             if (Time.time - _lastCheckTime > checkRate)
             {
                 _lastCheckTime = Time.time;
-
-                Ray ray = cam.ScreenPointToRay(new(Screen.width / 2, Screen.height / 2, 0));
+                
+                Ray ray = new Ray(transform.position + Vector3.up*1.5f, transform.TransformDirection(Vector3.forward));
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
@@ -88,7 +88,7 @@ namespace Player
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            Ray ray = new Ray(transform.position + 1.5f*Vector3.up, transform.TransformDirection(Vector3.forward));
             Gizmos.DrawRay(ray.origin, ray.direction * maxCheckDistance);
         }
     
