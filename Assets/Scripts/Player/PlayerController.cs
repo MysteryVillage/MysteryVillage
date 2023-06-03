@@ -126,6 +126,8 @@ namespace Player
 
         private bool _canMove = true;
 
+        public PlayerUi playerUi;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -176,7 +178,8 @@ namespace Player
             if (isLocalPlayer) {
                 JumpAndGravity();
                 GroundedCheck();
-                if (_canMove) Move();
+                // if (_canMove) 
+                Move();
             }
         }
 
@@ -436,14 +439,19 @@ namespace Player
         {
             Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
             _canMove = !toggle;
+        }
+
+        public void SetActionMap(string actionMap)
+        {
             var playerInput = GetComponent<PlayerInput>();
-            if (toggle)
+            playerInput.SwitchCurrentActionMap(actionMap);
+            if (actionMap == "Player")
             {
-                playerInput.SwitchCurrentActionMap("UI");
+                ToggleCursor(false);
             }
             else
             {
-                playerInput.SwitchCurrentActionMap("Player");
+                ToggleCursor(true);
             }
         }
     }

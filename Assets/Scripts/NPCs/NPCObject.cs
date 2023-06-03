@@ -40,7 +40,7 @@ namespace NPC
             var dia = GameObject.Find("Dialogue");
             if (dia.GetComponent<DialogueRunner>() != null)
             {
-                NetworkClient.localPlayer.GetComponent<PlayerController>().ToggleCursor(true);
+                NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Dialogue");
                 dia.GetComponent<DialogueRunner>().StartDialogue(dialogueFlow[currentDialogue]);
             }
         }

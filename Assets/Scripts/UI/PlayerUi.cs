@@ -91,7 +91,7 @@ public class PlayerUi : MonoBehaviour
         _menuOpen = true;
         menuList[index].gameObject.SetActive(true);
         playUi.gameObject.SetActive(false);
-        _playerController.ToggleCursor(true);
+        _playerController.SetActionMap("UI");
     }
 
     public void MenuSwitchRight(InputAction.CallbackContext context)
@@ -131,7 +131,7 @@ public class PlayerUi : MonoBehaviour
         _menuOpen = false;
         playUi.gameObject.SetActive(true);
         HideAll();
-        _playerController.ToggleCursor(false);
+        _playerController.SetActionMap("Player");
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -140,5 +140,10 @@ public class PlayerUi : MonoBehaviour
         {
             transform.parent.GetComponent<PlayerInventory>().OnDropItemButton();
         }
+    }
+
+    public void AdvanceText(InputAction.CallbackContext context)
+    {
+        if (context.started) dialogueText.GetComponent<LineView>().UserRequestedViewAdvancement();
     }
 }

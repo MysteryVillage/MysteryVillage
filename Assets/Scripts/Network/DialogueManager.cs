@@ -12,7 +12,7 @@ namespace Network
         [ClientRpc]
         public void EndDialogue()
         {
-            NetworkClient.localPlayer.GetComponent<PlayerController>().ToggleCursor(false);
+            NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Player");
         }
     }
 }

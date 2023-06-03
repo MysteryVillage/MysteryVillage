@@ -60,13 +60,13 @@ namespace Inventory
             if (inventoryWindow.activeInHierarchy)
             {
                 inventoryWindow.SetActive(false);
-                _controller.ToggleCursor(false);
+                _controller.SetActionMap("Player");
             }
             else
             {
                 inventoryWindow.SetActive(true);
                 ClearSelectedItemWindow();
-                _controller.ToggleCursor(true);
+                _controller.SetActionMap("UI");
             }
         }
 
@@ -141,7 +141,7 @@ namespace Inventory
         public void Close()
         {
             inventoryWindow.SetActive(false);
-            _controller.ToggleCursor(false);
+            _controller.SetActionMap("Player");
         }
     }
 
