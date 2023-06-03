@@ -16,7 +16,7 @@ namespace Network
         public GameObject stick;
         public Transform[] stickSpawns;
     
-        private InventoryManager _inventoryManagerManager;
+        private InventoryManager _inventoryManager;
     
         public override void OnStartClient()
         {
@@ -73,7 +73,7 @@ namespace Network
                     networkIdentifier = identity.netId;
                 }
             }
-            _inventoryManagerManager.RegisterInventory(networkIdentifier);
+            _inventoryManager.RegisterInventory(networkIdentifier);
         }
     
         private void CheckScene(int sceneId)
@@ -89,12 +89,24 @@ namespace Network
         {
             var inventoryManagerGo = GameObject.Find("ItemManager");
             if (inventoryManagerGo) {
-                _inventoryManagerManager = inventoryManagerGo.GetComponent<InventoryManager>();
+                _inventoryManager = inventoryManagerGo.GetComponent<InventoryManager>();
             }
             else
             {
                 Debug.Log("No inventory manager found yet!");
             }
+        }
+
+        public override void OnStopHost()
+        {
+            ScanForInventoryManager();
+            _inventoryManager.ClearInventories();
+        }
+
+        public override void OnStopClient()
+        {
+            ScanForInventoryManager();
+            _inventoryManager.ClearInventories();
         }
     }
 }

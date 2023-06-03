@@ -32,6 +32,11 @@ namespace Inventory
             Inventories.Add(netId, playerInventory);
         }
 
+        public void ClearInventories()
+        {
+            Inventories.Clear();
+        }
+
         public static InventoryManager Instance()
         {
             return _instance;
