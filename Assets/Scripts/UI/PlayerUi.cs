@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Inputs;
 using Inventory;
 using Mirror;
 using Player;
@@ -19,6 +20,8 @@ namespace UI
         private int _menuIndex = 0;
         private bool _menuOpen = false;
         public GameObject pauseMenu;
+
+        public InputIconMap iconMap;
 
         [Header("Dialogue")]
         private DialogueRunner _dialogue;
