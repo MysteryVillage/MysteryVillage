@@ -29,7 +29,7 @@ namespace Player
             {
                 _lastCheckTime = Time.time;
                 
-                Ray ray = new Ray(transform.position + Vector3.up*1.5f, transform.TransformDirection(Vector3.forward));
+                Ray ray = new Ray(transform.position + Vector3.up, transform.TransformDirection(Vector3.forward));
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
@@ -88,7 +88,7 @@ namespace Player
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Ray ray = new Ray(transform.position + 1.5f*Vector3.up, transform.TransformDirection(Vector3.forward));
+            Ray ray = new Ray(transform.position + Vector3.up, transform.TransformDirection(Vector3.forward));
             Gizmos.DrawRay(ray.origin, ray.direction * maxCheckDistance);
         }
     

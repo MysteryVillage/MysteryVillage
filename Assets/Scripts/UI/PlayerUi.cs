@@ -189,8 +189,6 @@ public class PlayerUi : MonoBehaviour
     public void ResetButton()
     {
         var pos = GameObject.Find("NetworkManager").GetComponent<NetworkManager>().GetStartPosition();
-        Debug.Log(pos);
-        // transform.parent.transform.position = pos.position;
         transform.parent.GetComponent<NetworkTransformReliable>().RpcTeleport(pos.position);
         ClosePauseMenu();
     }
