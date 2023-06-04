@@ -36,13 +36,22 @@ namespace Player
                 {
                     if (hit.collider.gameObject != _curInteractGameObject)
                     {
+                        if (_curInteractGameObject != null)
+                        {
+                            _curInteractGameObject.GetComponent<Highlight>()?.ToggleHighlight(false);
+                        }
                         _curInteractGameObject = hit.collider.gameObject;
                         _curInteractable = hit.collider.GetComponent<IIinteractable>();
+                        _curInteractGameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
                         SetPromptText();
                     }
                 }
                 else
                 {
+                    if (_curInteractGameObject != null)
+                    {
+                        _curInteractGameObject.GetComponent<Highlight>()?.ToggleHighlight(false);
+                    }
                     _curInteractGameObject = null;
                     _curInteractable = null;
                     interactionPanel.SetActive(false);
