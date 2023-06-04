@@ -185,9 +185,16 @@ namespace UI
 
         public void InputChangeButton()
         {
-            // ..
             var input = transform.parent.GetComponent<PlayerInput>();
-            Debug.Log(input.currentControlScheme);
+            if (input.currentControlScheme == "Gamepad")
+            {
+                input.SwitchCurrentControlScheme("KeyboardMouse");
+                input.SwitchCurrentControlScheme(Keyboard.current, Mouse.current);
+            }
+            else
+            {
+                input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
+            }
         }
     }
 }
