@@ -156,8 +156,7 @@ public class PlayerUi : MonoBehaviour
         {
             if (pauseMenu.activeInHierarchy)
             {
-                _playerController.SetActionMap("Player");
-                pauseMenu.SetActive(false);
+                ClosePauseMenu();
             }
             else
             {
@@ -165,6 +164,12 @@ public class PlayerUi : MonoBehaviour
                 pauseMenu.SetActive(true);
             }
         }
+    }
+
+    public void ClosePauseMenu()
+    {
+        _playerController.SetActionMap("Player");
+        pauseMenu.SetActive(false);
     }
 
     public void DisconnectButton()
@@ -183,8 +188,9 @@ public class PlayerUi : MonoBehaviour
 
     public void ResetButton()
     {
-        // ..
-        Debug.Log("Reset scene..");
+        var pos = GameObject.Find("NetworkManager").GetComponent<NetworkManager>().GetStartPosition();
+        transform.parent.GetComponent<NetworkTransformReliable>().RpcTeleport(pos.position);
+        ClosePauseMenu();
     }
 
     public void InputChangeButton()
