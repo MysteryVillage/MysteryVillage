@@ -1,4 +1,5 @@
 ﻿ using Mirror;
+ using UI;
  using UnityEngine;
  using UnityEngine.Serialization;
  using UnityEngine.UI;
@@ -165,6 +166,7 @@ namespace Player
                 cinemachineFollowCamera.SetActive(false);
                 cinemachineMainCamera.GetComponent<AudioListener>().enabled = false;
                 minimapCamera.SetActive(false);
+                playerUi.gameObject.SetActive(false);
                 playerIcon.color = Color.green;
             }
 
