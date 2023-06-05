@@ -590,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e1d7c1e7987c24891ab729a087268b88, type: 2}
+    - target: {fileID: 881955055684609824, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e80fc2c79f7a4317a3a9625c61b8663, type: 2}
     - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
       propertyPath: dialogue
       value: 
@@ -638,14 +642,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3386655555540253021, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9365f9b725ccd4aeb97785e80373f75b, type: 2}
+    - target: {fileID: 3729819092696118139, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a74be58f922c49dcafc49512ef71d6d, type: 2}
+    - target: {fileID: 4793982848478265941, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d41d3920f81c926488a08dff6f3daebe, type: 2}
     - target: {fileID: 5157724860812301314, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
       propertyPath: m_Name
       value: Adult_Man_NPC_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6166969039580202907, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6267f094add7b493399db35ea706621e, type: 2}
+    - target: {fileID: 6538592353967330447, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9a74be58f922c49dcafc49512ef71d6d, type: 2}
+    - target: {fileID: 6962527475128309788, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e681336679a8a214fa0d3b837fc384dc, type: 2}
     - target: {fileID: 8630016284524986775, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
       propertyPath: sceneId
       value: 873618938
       objectReference: {fileID: 0}
+    - target: {fileID: 8859366538243469768, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9365f9b725ccd4aeb97785e80373f75b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
 --- !u!1 &149489929
@@ -4233,7 +4265,6 @@ MonoBehaviour:
   - {fileID: 396888294}
   - {fileID: 1390087436}
   - {fileID: 1236954519}
-  color: {r: 1, g: 1, b: 1, a: 1}
   thickness: 0.01
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!137 &1132218503 stripped
