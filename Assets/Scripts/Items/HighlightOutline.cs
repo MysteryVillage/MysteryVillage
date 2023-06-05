@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HighlightOutline : MonoBehaviour
 {
+    [Header("Das Outline Material muss im Renderer ganz unten stehen!")]
     //assign all renderers
     [SerializeField]
     private List<Renderer> renderers;
