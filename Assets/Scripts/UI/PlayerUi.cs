@@ -193,7 +193,7 @@ namespace UI
             }
             else
             {
-                input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
+                if (Gamepad.current != null) input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
             }
         }
     }
