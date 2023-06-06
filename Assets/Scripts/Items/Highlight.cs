@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class Highlight : MonoBehaviour
 {
-    //we assign all the renderers here through the inspector
+    //assign all renderers
     [SerializeField]
     private List<Renderer> renderers;
     [SerializeField]
     private Color color = Color.white;
 
-    //helper list to cache all the materials ofd this object
     private List<Material> materials;
 
-    //Gets all the materials from each renderer
+    //Get materials from each renderer
     private void Awake()
     {
         materials = new List<Material>();
         foreach (var renderer in renderers)
         {
-            //A single child-object might have mutliple materials on it
-            //that is why we need to all materials with "s"
             materials.AddRange(new List<Material>(renderer.materials));
         }
     }
