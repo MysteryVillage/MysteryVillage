@@ -1,6 +1,8 @@
 using Inventory;
 using Mirror;
 using Player;
+using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 
@@ -13,8 +15,16 @@ using UnityEngine;
 public class SwitchInteract : NetworkBehaviour, IIinteractable
 {
     [SerializeField] private GameObject door;
+    [SerializeField] private GameObject lever;
+    [SerializeField] private Animator levlerAnimation = null;
+    
+
+
+
     private bool opening = false;
     private float counter = 0;
+    private float speed = 30f;
+  
 
     public string GetInteractPrompt()
     {
@@ -24,6 +34,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     public void OnInteract(uint networkIdentifier)
     {
         opening = true;
+        AnimateSwitch();
         Debug.Log("Schalter betätigt");
     }
 
@@ -32,6 +43,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     {
         if (opening)
         {
+            
             OpenDoor();
         }
       
@@ -41,15 +53,16 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     private void OpenDoor()
     {
         if (door == null) return;
-        
-        Vector3 down = new Vector3(0, 0, 0);
-        down.y -= 1 * Time.deltaTime;
-        door.transform.position += down;
-        counter += 1 * Time.deltaTime;
-        if(counter > 10)
+        if(door.transform.localScale.y > 0)
         {
-            opening = false;
-            counter = 0;
+            door.transform.localScale += new Vector3(0, -(1 * Time.deltaTime * speed), 0);
+            door.transform.position += new Vector3(0, -(1 * Time.deltaTime * (speed/100)), 0); 
         }
+    }
+    private void AnimateSwitch()
+    {
+        if (lever == null && levlerAnimation == null) return;
+        levlerAnimation.Play("Switch_Animation", 0, 0.0f);
+        
     }
 }
