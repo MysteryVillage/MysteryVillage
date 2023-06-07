@@ -61,8 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7983925007542676754, guid: ba13c90dac1541248aacb398a2bb4b47, type: 3}
-  - {fileID: 2100000, guid: bcce96c5d004e2b4a904d06720405528, type: 2}
+  - {fileID: 2100000, guid: 7f46efa3bb98bb44ea780a4a417b4f75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +97,6 @@ GameObject:
   - component: {fileID: 664561387535553202}
   - component: {fileID: 7360468634795953892}
   - component: {fileID: 2293818644715986938}
-  - component: {fileID: 8334954744095448227}
   m_Layer: 10
   m_Name: Rock
   m_TagString: Untagged
@@ -197,19 +195,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 0.63, z: 0.67}
   m_Center: {x: 0, y: 0.42, z: 0}
---- !u!114 &8334954744095448227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377036484077850861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1240900d1b15f848a16acd45b610ee4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderers:
-  - {fileID: 9035465444924642136}
-  thickness: 0.01
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}

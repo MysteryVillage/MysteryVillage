@@ -38,11 +38,11 @@ namespace Player
                     {
                         if (_curInteractGameObject != null)
                         {
-                            _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(false);
+                            _curInteractGameObject.GetComponent<Highlight>()?.ToggleHighlight(false);
                         }
                         _curInteractGameObject = hit.collider.gameObject;
                         _curInteractable = hit.collider.GetComponent<IIinteractable>();
-                        _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(true);
+                        _curInteractGameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
                         SetPromptText();
                     }
                 }
@@ -50,7 +50,7 @@ namespace Player
                 {
                     if (_curInteractGameObject != null)
                     {
-                        _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(false);
+                        _curInteractGameObject.GetComponent<Highlight>()?.ToggleHighlight(false);
                     }
                     _curInteractGameObject = null;
                     _curInteractable = null;
