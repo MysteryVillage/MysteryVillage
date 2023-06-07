@@ -298,7 +298,7 @@
                 {
                     "name": "",
                     "id": "c099a333-45b0-49be-8eff-78d29d6efe0b",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -309,7 +309,7 @@
                 {
                     "name": "",
                     "id": "14046316-98f4-4d69-86be-6dcfb4a990cb",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -464,6 +464,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Navigate",
+                    "type": "PassThrough",
+                    "id": "b614372b-7185-4de7-9592-e5cc93945a5a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "027ffb3c-4c4c-45c3-9dd5-0deb520b6b92",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -596,6 +614,28 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "925cf5b7-ee6e-474d-9390-2583450aeeb9",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Xbox Controller;PS4 Controller",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6dba848-3e53-47ab-98d0-be19409f5065",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
