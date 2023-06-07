@@ -1,29 +1,41 @@
 using Inventory;
 using Mirror;
 using Player;
+using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 
-/* Script um die T�ren im Labyrinth zu �ffnen 
+/* Script um die T�ren im Labyrinth zu Öffnen 
  * 
- * bei Aktivierung des Schalters wird die T�r, die im Inspector festegelegt wird ge�ffnet 
- * Momentan wird die T�r f�r 10 Sekunden nach Untenbewegt ( Nicht sch�n ) 
+ * bei Aktivierung des Schalters wird die Tür, die im Inspector festegelegt wird ge�ffnet 
+ * Momentan wird die Tür für 10 Sekunden nach Untenbewegt ( Nicht sch�n ) 
  */
 
 public class SwitchInteract : NetworkBehaviour, IIinteractable
 {
-    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject doorOpen1,doorClose,doorOpen2;
+    [SerializeField] private GameObject red_finish;
+    //[SerializeField] private GameObject lever;
+    [SerializeField] private Animator levlerAnimation = null;
+
+
+
+
     private bool opening = false;
     private float counter = 0;
+    private float speed = 30f;
+
 
     public string GetInteractPrompt()
     {
         return string.Format("Activate Switch {0}", "here");
     }
-    
+
     public void OnInteract(uint networkIdentifier)
     {
         opening = true;
+        AnimateSwitch();
         Debug.Log("Schalter betätigt");
     }
 
@@ -32,24 +44,26 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     {
         if (opening)
         {
+
             OpenDoor();
         }
-      
+
     }
-    
+
     [ClientRpc]
     private void OpenDoor()
     {
-        if (door == null) return;
-        
-        Vector3 down = new Vector3(0, 0, 0);
-        down.y -= 1 * Time.deltaTime;
-        door.transform.position += down;
-        counter += 1 * Time.deltaTime;
-        if(counter > 10)
+        if (doorOpen1 == null) return;
+        if (doorOpen1.transform.localScale.y > 0)
         {
-            opening = false;
-            counter = 0;
+            doorOpen1.transform.localScale += new Vector3(0, -(1 * Time.deltaTime * speed), 0);
+            doorOpen1.transform.position += new Vector3(0, -(1 * Time.deltaTime * (speed / 100)), 0);
         }
+    }
+    private void AnimateSwitch()
+    {
+        if ( levlerAnimation == null) return;
+        levlerAnimation.Play("SwitchAnimation", 0, 0.0f);
+
     }
 }
