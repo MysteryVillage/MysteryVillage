@@ -27,8 +27,6 @@ namespace UI
         private void Start()
         {
             connectionTimestamp = DateTime.Now;
-            Debug.Log(connectionTimestamp);
-            Debug.Log(DateTime.Now);
         }
 
         private void Update()
