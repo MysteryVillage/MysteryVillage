@@ -19,19 +19,21 @@ namespace NPC
         
         public string GetInteractPrompt()
         {
-            return string.Format("Talk to {0}", npc.displayName);
+            if (PlayerController.GetPlayerSeperation() > 10f)
+            {
+                return string.Format("Ihr seid zu weit voneinander entfernt, um {0} anzusprechen!", npc.displayName);
+            }
+            return string.Format("{0} ansprechen", npc.displayName);
         }
 
         public void OnInteract(uint networkIdentifier)
         {
-            Debug.Log("ON INTERACT: " + isServer);
-            StartDialogue();
+            if (PlayerController.GetPlayerSeperation() <= 10f) StartDialogue();
         }
 
         [ClientRpc]
         private void StartDialogue()
         {
-            Debug.Log("StartDialogue: " + isServer);
             var dia = GameObject.Find("Dialogue");
             if (dia.GetComponent<DialogueRunner>() != null)
             {

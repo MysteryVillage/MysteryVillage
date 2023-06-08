@@ -1,4 +1,4 @@
-﻿ using Mirror;
+ using Mirror;
  using UI;
  using UnityEngine;
  using UnityEngine.Serialization;
@@ -477,6 +477,17 @@ namespace Player
             {
                 if (miniMap != null) miniMap.SetActive(true);
             }
+        }
+
+        public static float GetPlayerSeperation()
+        {
+            var players = FindObjectsOfType<PlayerController>();
+            if (players.Length == 2)
+            {
+                return (players[0].GetComponent<Transform>().position - players[1].GetComponent<Transform>().position)
+                    .magnitude;
+            }
+            return 0f;
         }
     }
 }
