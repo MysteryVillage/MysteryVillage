@@ -141,8 +141,12 @@ namespace Player
             }
         }
 
+       [SerializeField] private GameObject miniMap;
         private void Start()
         {
+
+           
+
             _cinemachineTargetYaw = cinemachineCameraTarget.transform.rotation.eulerAngles.y;
             _hasAnimator = TryGetComponent(out animator);
             _controller = GetComponent<CharacterController>();
@@ -454,6 +458,24 @@ namespace Player
             else
             {
                 ToggleCursor(true);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("NoMiniMap"))
+            {
+               
+                if (miniMap != null) miniMap.SetActive(false);
+            }
+
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("NoMiniMap"))
+            {
+                if (miniMap != null) miniMap.SetActive(true);
             }
         }
     }

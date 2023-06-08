@@ -1,10 +1,5 @@
-using Inventory;
-using Items;
 using Mirror;
 using Player;
-using System.Threading;
-using Network;
-using TMPro;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -48,7 +43,6 @@ namespace NPC
         [YarnCommand("set_dialogue")]
         public void SetDialogue(int key)
         {
-            Debug.Log("Setting dialogue key of " + gameObject.name + " to " + key);
             currentDialogue = key;
         }
     }

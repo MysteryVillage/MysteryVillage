@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Inventory;
 using Mirror;
 using UnityEngine;
@@ -37,10 +38,7 @@ namespace Network
             }
 
             base.OnServerAddPlayer(conn);
-            
-            // check if scenes match
-            CheckScene(SceneManager.GetActiveScene().handle);
-        
+
             // Register player inventory
             ScanForInventoryManager();
             uint networkIdentifier = 0;
@@ -53,7 +51,7 @@ namespace Network
             }
             _inventoryManager.RegisterInventory(networkIdentifier);
         }
-    
+
         private void CheckScene(int sceneId)
         {
             var id = SceneManager.GetActiveScene().handle;
