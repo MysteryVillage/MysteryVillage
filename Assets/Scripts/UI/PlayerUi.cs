@@ -28,6 +28,9 @@ namespace UI
         public GameObject dialogueText;
         public GameObject dialogueOptions;
 
+        [Header("Items")] 
+        public ItemPickupController itemPickupController;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -195,6 +198,11 @@ namespace UI
             {
                 if (Gamepad.current != null) input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
             }
+        }
+
+        public void PickupNotification(int itemId)
+        {
+            itemPickupController.AddItemNotice(itemId);
         }
     }
 }
