@@ -74,6 +74,7 @@ namespace Inventory
             }
         
             // @TODO
+            // Drop again if inventory is full
             // inventory.ThrowItem(item);
         }
 
@@ -96,10 +97,10 @@ namespace Inventory
 
         void RefreshInventory()
         {
-            Debug.Log("Refresh Inventory");
+            SortInventory();
             if (InventoryManager.Instance().isServer)
             {
-                Debug.Log("Update Ui from Server");
+                // Debug.Log("Update Ui from Server");
                 Inventory.UpdateUi(GetStrippedItemSlots());
             }
         }
@@ -112,17 +113,53 @@ namespace Inventory
             {
                 if (slots[i].item != null)
                 {
-                    Debug.Log("Strip slot: " + slots[i].item.GetId());
+                    // Debug.Log("Strip slot: " + slots[i].item.GetId());
                     strippedSlots[i] = new StrippedItemSlot(slots[i].item.GetId(), slots[i].quantity);                
                 }
                 else
                 {
-                    Debug.Log("Strip slot: empty");
+                    // Debug.Log("Strip slot: empty");
                     strippedSlots[i] = new StrippedItemSlot(-1, 0);
                 }
             }
 
             return strippedSlots;
+        }
+
+        void SortInventory()
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (slots[i].item == null)
+                {
+                    SwapWithNextUsedSlot(i);
+                }
+            }
+        }
+
+        void SwapWithNextUsedSlot(int index)
+        {
+            var nextUsedSlotIndex = GetNextUsedSlot(index);
+            if (nextUsedSlotIndex == -1)
+            {
+                return;
+            }
+
+            slots[index].Set(slots[nextUsedSlotIndex].item, slots[nextUsedSlotIndex].quantity);
+            slots[nextUsedSlotIndex].Clear();
+        }
+
+        int GetNextUsedSlot(int index)
+        {
+            if (slots.Length > index + 2) {
+                if (slots[index + 1].item != null)
+                {
+                    return index + 1;
+                }
+                return GetNextUsedSlot(index + 1);
+            }
+
+            return -1;
         }
 
         public override string ToString()

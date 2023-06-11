@@ -50,7 +50,6 @@ namespace Inventory
             
             // Retrieve connectionId by inventory component
             var connId = inventory.Inventory.GetComponent<NetworkIdentity>().connectionToClient.connectionId;
-            Debug.Log("Server - connId: " + connId);
             
             // Add item to inventory
             inventory.AddItem(itemId);
@@ -62,13 +61,11 @@ namespace Inventory
         [TargetRpc]
         public void PickupNotification(NetworkConnectionToClient target, int itemId)
         {
-            Debug.Log("Target - connId: " + target.connectionId);
             target.identity.GetComponent<PlayerController>().playerUi.PickupNotification(itemId);
         }
 
         public void RemoveItemFromInventoryByIndex(int index, uint netId)
         {
-            print("Is server: " + isServer + "(RemoveItemFromInventoryByIndex)");
             var inventory = Get(netId);
             inventory.RemoveItemFromIndex(index);
         }

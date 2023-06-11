@@ -1,57 +1,78 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Inventory;
-using Mirror;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ItemSlotUI : MonoBehaviour
+namespace UI
 {
-    public Button button;
-    public Image icon;
-    public TextMeshProUGUI quantityText;
-    private ItemSlot curSlot;
-    private Outline outline;
-
-    public int index;
-    public bool equipped;
-
-    private void Awake()
+    public class ItemSlotUI : MonoBehaviour, ISelectHandler
     {
-        outline = GetComponent<Outline>();
-    }
+        public Button button;
+        public Image icon;
+        public TextMeshProUGUI quantityText;
+        private ItemSlot curSlot;
+        private Outline outline;
 
-    private void OnEnable()
-    {
-        outline.enabled = equipped;
-    }
+        public int index;
+        public bool equipped;
 
-    public void Set(ItemSlot slot)
-    {
-        curSlot = slot;
-        
-        icon.gameObject.SetActive(true);
-        icon.sprite = slot.item.icon;
-        quantityText.text = slot.quantity > 1 ? slot.quantity.ToString() : String.Empty;
+        private void Awake()
+        {
+            outline = GetComponent<Outline>();
+        }
 
-        if (outline != null)
+        private void OnEnable()
         {
             outline.enabled = equipped;
         }
-    }
 
-    public void Clear()
-    {
-        curSlot = null;
-            
-        icon.gameObject.SetActive(false);
-        quantityText.text = String.Empty;
-    }
+        public void Set(ItemSlot slot)
+        {
+            curSlot = slot;
 
-    public void OnButtonClick()
-    {
-        transform.GetComponentInParent<PlayerInventory>().SelectItem(index);
+            icon.gameObject.SetActive(true);
+            icon.sprite = slot.item.icon;
+            quantityText.text = slot.quantity > 1 ? slot.quantity.ToString() : String.Empty;
+
+            if (outline != null)
+            {
+                outline.enabled = equipped;
+            }
+
+            button.interactable = true;
+        }
+
+        public void Set(StrippedItemSlot slot)
+        {
+            Set(slot.Enrich());
+        }
+
+        public void Clear()
+        {
+            curSlot = null;
+
+            icon.gameObject.SetActive(false);
+            quantityText.text = String.Empty;
+
+            button.interactable = false;
+        }
+
+        public void OnButtonClick()
+        {
+            Select();
+        }
+
+        public void OnSelect(BaseEventData eventData)
+        {
+            Select();
+        }
+
+        private void Select()
+        {
+            transform.GetComponentInParent<PlayerInventory>().SelectItem(index);
+        }
+
     }
 }

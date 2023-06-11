@@ -34,8 +34,6 @@ namespace Network
         public void Spawn(int itemId, Vector3 position, Quaternion rotation)
         {
             var item = ItemData.FindById(itemId);
-            Debug.Log(itemId);
-            Debug.Log(position);
             var newItem = Instantiate(item.dropPrefab, position, rotation);
             NetworkServer.Spawn(newItem);
         }

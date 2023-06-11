@@ -4,7 +4,9 @@ using Mirror;
 using Network;
 using Player;
 using TMPro;
+using UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Inventory
@@ -47,29 +49,6 @@ namespace Inventory
             ClearSelectedItemWindow();
         }
 
-        public void OnInventoryButton(InputAction.CallbackContext context)
-        {
-            if (context.phase == InputActionPhase.Started)
-            {
-                Toggle();
-            }
-        }
-
-        public void Toggle()
-        {
-            if (inventoryWindow.activeInHierarchy)
-            {
-                inventoryWindow.SetActive(false);
-                _controller.SetActionMap("Player");
-            }
-            else
-            {
-                inventoryWindow.SetActive(true);
-                ClearSelectedItemWindow();
-                _controller.SetActionMap("UI");
-            }
-        }
-
         public void CollectItem(int itemId)
         {
             print("Is server2: " + isServer);
@@ -81,7 +60,12 @@ namespace Inventory
             if (_selectedItem == null) return;
             print("Is server: " + isServer + "(OnDropItemButton)");
             DropItemCmd(_selectedItemIndex, _selectedItem.item.GetId());
-            ClearSelectedItemWindow();
+            
+            // If is last of its kind
+            if (slots[_selectedItemIndex].quantity < 2)
+            {
+                ClearSelectedItemWindow();
+            }
         }
 
         [Command]
@@ -107,12 +91,37 @@ namespace Inventory
                 else
                 {
                     uiSlots[x].Clear();
+                    
+                    var selected = EventSystem.current.currentSelectedGameObject;
+
+                    if (selected != uiSlots[x].gameObject || selected == null) continue;
+                    
+                    var lastSlot = GetLastUsedSlot();
+                    Debug.Log(lastSlot);
+                    if (lastSlot != null)
+                    {
+                        EventSystem.current.SetSelectedGameObject(lastSlot.gameObject);
+                    }
                 }
             }
         }
 
+        ItemSlotUI GetLastUsedSlot()
+        {
+            for (int i = uiSlots.Length; i >= 0; i--)
+            {
+                if (slots[i - 1].itemId != -1)
+                {
+                    return uiSlots[i - 1];
+                }
+            }
+            return null;
+        }
+
         public void SelectItem(int index)
         {
+            // Debug.Log("Select item: " + index);
+            // Debug.Log("Select item: " + slots[index].itemId);
             if (slots[index].itemId == -1)
             {
                 return;
@@ -133,7 +142,7 @@ namespace Inventory
             _selectedItem = null;
             selectedItemName.text = string.Empty;
             selectedItemDescription.text = string.Empty;
-        
+            
             // disable buttons
             dropButton.SetActive(false);
         }
@@ -158,6 +167,31 @@ namespace Inventory
                 return "Empty";
             }
             return item.displayName + "(x" + quantity + ")";
+        }
+
+        public void Set(ItemData item)
+        {
+            if (item == null)
+            {
+                Clear();
+                return;
+            }
+            
+            Set(item, 1);
+        }
+
+        public void Set(ItemData item, int quantity)
+        {
+            this.item = item;
+            this.quantity = quantity;
+            itemId = item.GetId();
+        }
+
+        public void Clear()
+        {
+            item = null;
+            itemId = -1;
+            quantity = 0;
         }
     }
 }

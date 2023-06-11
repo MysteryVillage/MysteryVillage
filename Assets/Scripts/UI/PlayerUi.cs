@@ -3,7 +3,6 @@ using Inputs;
 using Inventory;
 using Mirror;
 using Player;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Yarn.Unity;
@@ -17,8 +16,7 @@ namespace UI
         public Transform playUi;
         private PlayerController _playerController;
         public List<Transform> menuList;
-        private int _menuIndex = 0;
-        private bool _menuOpen = false;
+        private int _menuIndex;
         public GameObject pauseMenu;
 
         public InputIconMap iconMap;
@@ -43,14 +41,14 @@ namespace UI
         public void SwitchTo(int index)
         {
             HideAll();
-            menuList[index].gameObject.SetActive(true);
+            menuList[index].GetComponent<Menu>().Open();
         }
 
         public void HideAll()
         {
-            for (int i = 0; i < menuList.Count; i++)
+            foreach (var menu in menuList)
             {
-                menuList[i].gameObject.SetActive(false);
+                menu.GetComponent<Menu>().Close();
             }
         }
 
@@ -78,14 +76,12 @@ namespace UI
             {
                 _menuIndex = 2;
                 Open(_menuIndex);
-                transform.parent.GetComponent<PlayerInventory>().ClearSelectedItemWindow();
             }
         }
 
         public void Open(int index)
         {
-            _menuOpen = true;
-            menuList[index].gameObject.SetActive(true);
+            SwitchTo(index);
             playUi.gameObject.SetActive(false);
             _playerController.SetActionMap("UI");
         }
@@ -124,7 +120,6 @@ namespace UI
 
         void HideUIElements()
         {
-            _menuOpen = false;
             playUi.gameObject.SetActive(true);
             HideAll();
             _playerController.SetActionMap("Player");
@@ -154,7 +149,7 @@ namespace UI
                 else
                 {
                     _playerController.SetActionMap("Pause");
-                    pauseMenu.SetActive(true);
+                    pauseMenu.GetComponent<Menu>().Open();
                 }
             }
         }
@@ -162,7 +157,7 @@ namespace UI
         public void ClosePauseMenu()
         {
             _playerController.SetActionMap("Player");
-            pauseMenu.SetActive(false);
+            pauseMenu.GetComponent<Menu>().Close();
         }
 
         public void DisconnectButton()

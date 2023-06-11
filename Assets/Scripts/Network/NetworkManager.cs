@@ -13,7 +13,6 @@ namespace Network
     
         public override void OnStartClient()
         {
-            print("NetworkManager:StartClient");
             base.OnStartServer();
         
             // get InventoryManager & spawn test items
@@ -22,8 +21,6 @@ namespace Network
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
-            print("NetworkManager:ServerConnect");
-            
             // @TODO: Remove hack to fix player input devices
             playerPrefab.GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
             if (conn.connectionId != 0)
