@@ -481,13 +481,18 @@ namespace Player
 
         public static float GetPlayerSeperation()
         {
-            var players = FindObjectsOfType<PlayerController>();
+            var players = GetPlayers();
             if (players.Length == 2)
             {
                 return (players[0].GetComponent<Transform>().position - players[1].GetComponent<Transform>().position)
                     .magnitude;
             }
             return 0f;
+        }
+
+        public static PlayerController[] GetPlayers()
+        {
+            return FindObjectsOfType<PlayerController>();
         }
     }
 }
