@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Mirror;
 using Player;
@@ -11,13 +12,12 @@ public class PlayerDistance : MonoBehaviour
     public float minRange = 10f;
     private PlayerController[] players;
     private GameObject otherPlayer;
-    private Camera mainCamera;
+    public Camera mainCamera;
     private bool isPlayerVisible;
 
     private void Start()
     {
         _networkManager = FindObjectOfType<Network.NetworkManager>();
-        mainCamera = Camera.main;
         distanceText.enabled = false;
     }
 
@@ -54,18 +54,19 @@ public class PlayerDistance : MonoBehaviour
                 }
             }
         }
-
+        
         if (otherPlayer != null && distanceText != null)
         {
             // ist der spieler im sichtfeld?
-            Vector3 targetScreenPosition = mainCamera.WorldToScreenPoint(otherPlayer.transform.position);
+            var otherPlayerPos = otherPlayer.transform.position;
+            Vector3 targetScreenPosition = mainCamera.WorldToScreenPoint(otherPlayerPos);
             isPlayerVisible = targetScreenPosition.z > 0 && targetScreenPosition.x > 0 && targetScreenPosition.x < Screen.width && targetScreenPosition.y > 0 && targetScreenPosition.y < Screen.height;
             
-            // y-offset f�r textfeld
-            Vector3 targetPosition = otherPlayer.transform.position + new Vector3(0f, yOffset, 0f);
+            // y-offset für textfeld
+            Vector3 targetPosition = otherPlayerPos + new Vector3(0f, yOffset, 0f);
 
-            // text position �ndern
-            distanceText.transform.position = Camera.main.WorldToScreenPoint(targetPosition);
+            // text position ändern
+            distanceText.transform.position = mainCamera.WorldToScreenPoint(targetPosition);
         }
     }
 }

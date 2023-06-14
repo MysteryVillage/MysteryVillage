@@ -6373,7 +6373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 330, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 260, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &4902023088428031606
@@ -7232,6 +7232,7 @@ MonoBehaviour:
   distanceText: {fileID: 3101734803940124997}
   yOffset: 2
   minRange: 10
+  mainCamera: {fileID: 851956130896533707}
 --- !u!1 &4430401860833009719
 GameObject:
   m_ObjectHideFlags: 0
