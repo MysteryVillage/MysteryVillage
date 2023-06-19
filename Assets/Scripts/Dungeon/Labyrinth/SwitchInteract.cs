@@ -1,9 +1,11 @@
 using Inventory;
 using Mirror;
 using Player;
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 /* Script um die T�ren im Labyrinth zu Öffnen 
@@ -32,8 +34,9 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
 
     private bool _hasAnimator = false;
     private int _animID;
-   
 
+    private Gamepad gamepad;
+    private Coroutine stopRumbleAfterTime;
 
     private void Start()
     {
@@ -78,6 +81,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     
     private void OpenDoor()
     {
+        
         setDoorAnimation(true);
      
     }
@@ -136,17 +140,45 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     {
         if (DoorOpen)
         {
+            RumblePulse(0.15f, 0.15f, 1f);
+            if (doorAnimationRight == null || doorAnimationLeft == null) return;
+            
             doorAnimationLeft.Play("DoorLeft_Open", 0, 0.0f);
             doorAnimationRight.Play("DoorRight_Open", 0, 0.0f);
             Debug.Log("Tür Öffnen");
         }
         else
         {
+            RumblePulse(0.15f, 0.15f, 1f);
+            if (doorAnimationRight == null || doorAnimationLeft == null) return;
+            
             doorAnimationLeft.Play("DoorLeft_Close", 0, 0.0f);
             doorAnimationRight.Play("DoorRight_Close", 0, 0.0f);
             Debug.Log("Tür Schließen");
         }
     }
     
+    private void RumblePulse(float lowFrequency, float highFrequency, float duration)
+    {
+        gamepad = Gamepad.current;
+        if (gamepad != null)
+        {
+            gamepad.SetMotorSpeeds(lowFrequency, highFrequency);
+            stopRumbleAfterTime = StartCoroutine(StopRumble(duration, gamepad));
+        }
+        else Debug.Log("Kein GamePad Angeschlossen");
+    }
+
+    private IEnumerator StopRumble(float duration, Gamepad pad)
+    {
+        float elapesedTime = 0f;
+        while (elapesedTime < duration)
+        {
+            elapesedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        pad.SetMotorSpeeds(0f, 0f);
+    }
    
 }
