@@ -14,13 +14,13 @@ using UnityEngine;
 
 public class SwitchInteract : NetworkBehaviour, IIinteractable
 {
-    [SerializeField] private GameObject doorOpen1,doorClose,doorOpen2;
-    [SerializeField] private GameObject red_finish;
-    
-    [SerializeField] private Animator levlerAnimation = null;
-    [SerializeField] private float doorScale = 700;
 
-    private Renderer renderer;
+    [SerializeField] private Animator doorAnimationLeft = null;
+    [SerializeField] private Animator doorAnimationRight = null;
+    [SerializeField] private Animator levlerAnimation = null;
+  
+
+   
     private Color32 red = new Color32(197,73,73,255);
     private Color32 white = new Color32(227,227,227,255);
 
@@ -38,7 +38,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     private void Start()
     {
         
-        if (red_finish != null) renderer = red_finish.GetComponent<Renderer>();
+       
 
         if (levlerAnimation != null) _hasAnimator = true;
         _animID = Animator.StringToHash("Switch");
@@ -53,21 +53,15 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
         opening = true;
         // SwitchState true == wenn der Schalter oben ist
         // toggle false == wenn die Tür runter geht
-        if (switchState == true && !toggle)
+        if (switchState == true )
         {
             AnimateSwitchDown(); // Schalter Oben -> Unten
-            if (renderer != null)
-            {
-                renderer.material.color = red;
-            }
+            OpenDoor();
         }
-        else if(!switchState && toggle)
+        else if(!switchState )
         {
             AnimateSwitchUp(); // Schalter Unten -> Oben 
-            if (renderer != null)
-            {
-                renderer.material.color = white;
-            }
+            CloseDoor();
         }
         
         
@@ -76,12 +70,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     // Update is called once per frame
     void Update()
     {
-        if(levlerAnimation != null)_hasAnimator = true;
-        if (opening)
-        {
-            OpenDoor();
-            CloseDoor();
-        }
+       
         
 
     }
@@ -89,94 +78,13 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     
     private void OpenDoor()
     {
-        if (!toggle) // Tür geht runter
-        {
-            if (doorOpen1 == null) return;
-            if (doorOpen1.transform.localScale.z > 0)
-            {
-                doorOpen1.transform.localScale += new Vector3(0, 0, -(1 * Time.deltaTime * speed));
-                doorOpen1.transform.position += new Vector3(0, -(1 * Time.deltaTime * (speed / 200)), 0);
-            }
-            else
-            {
-                toggle = true;
-                opening = false;
-            }
-
-            if (doorOpen2 == null) return;
-            if (doorOpen2.transform.localScale.z > 0)
-            {
-                doorOpen2.transform.localScale += new Vector3(0, 0, -(1 * Time.deltaTime * speed));
-                doorOpen2.transform.position += new Vector3(0, -(1 * Time.deltaTime * (speed / 200)), 0);
-            }
-            else
-            {
-                toggle = true;
-                opening = false;
-            }
-        }
-        else
-        {
-            if (doorOpen1 == null) return;
-            if (doorOpen1.transform.localScale.z < doorScale)
-            {
-                doorOpen1.transform.localScale -= new Vector3(0, 0, -(1 * Time.deltaTime * speed));
-                doorOpen1.transform.position -= new Vector3(0, -(1 * Time.deltaTime * (speed / 200)), 0);
-            }
-            else
-            {
-                toggle = false;
-                opening = false;
-            }
-
-            if (doorOpen2 == null) return;
-            if (doorOpen2.transform.localScale.z < doorScale)
-            {
-                doorOpen2.transform.localScale -= new Vector3(0, 0, -(1 * Time.deltaTime * speed));
-                doorOpen2.transform.position -= new Vector3(0, -(1 * Time.deltaTime * (speed / 200)), 0);
-            }
-            else
-            {
-                toggle = false;
-                opening = false;
-            }
-        }
+        setDoorAnimation(true);
      
     }
 
     private void CloseDoor()
     {
-        if (doorClose == null) return;
-        if (!toggle)
-        {
-            if (doorClose.transform.localScale.z < doorScale)
-            {
-                doorClose.transform.localScale -= new Vector3(0, 0, -(1 * Time.deltaTime * speed));
-                doorClose.transform.position -= new Vector3(0, -(1 * Time.deltaTime * (speed / 200)), 0);
-            }
-            else
-            {
-                toggle = true;
-                opening = false;
-            }
-        }
-        else
-        {
-            if (doorClose.transform.localScale.z > 0)
-            {
-                doorClose.transform.localScale += new Vector3(0, 0, -(1 * Time.deltaTime * speed));
-                doorClose.transform.position += new Vector3(0, -(1 * Time.deltaTime * (speed / 200)), 0);
-            }
-            else
-            {
-                toggle = true;
-                opening = false;
-            }
-        }
-        
-
-        
-       
+        setDoorAnimation(false);
 
     }
     private void AnimateSwitchDown()
@@ -202,7 +110,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
        if (_hasAnimator)
         {
             setSwitchAnimation(false); // Animator Updaten
-
+            
 
         }
     }
@@ -212,13 +120,32 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     {
         if (SwitchDown)
         {
-            levlerAnimation.Play("SwitchAnimation_Down", 0, 0.0f);
+            levlerAnimation.Play("Switch_Down", 0, 0.0f);
+            Debug.Log("Switch Down");
         }
         else
         {
-            levlerAnimation.Play("SwitchAnimation_Up", 0, 0.0f);
+            Debug.Log("Switch Up");
+            levlerAnimation.Play("Switch_Up", 0, 0.0f);
         }
         
+    }
+
+    [ClientRpc]
+    private void setDoorAnimation(bool DoorOpen)
+    {
+        if (DoorOpen)
+        {
+            doorAnimationLeft.Play("DoorLeft_Open", 0, 0.0f);
+            doorAnimationRight.Play("DoorRight_Open", 0, 0.0f);
+            Debug.Log("Tür Öffnen");
+        }
+        else
+        {
+            doorAnimationLeft.Play("DoorLeft_Close", 0, 0.0f);
+            doorAnimationRight.Play("DoorRight_Close", 0, 0.0f);
+            Debug.Log("Tür Schließen");
+        }
     }
     
    
