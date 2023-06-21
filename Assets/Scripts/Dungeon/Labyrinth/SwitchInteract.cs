@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 
 /* Script um die T�ren im Labyrinth zu Öffnen 
@@ -20,7 +21,8 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     [SerializeField] private Animator doorAnimationLeft = null;
     [SerializeField] private Animator doorAnimationRight = null;
     [SerializeField] private Animator levlerAnimation = null;
-  
+    [SerializeField] private RawImage switchUp, switchDown, doorOpen, doorClose;
+    [SerializeField] private RawImage switchImage, doorImage;
 
    
     private Color32 red = new Color32(197,73,73,255);
@@ -60,11 +62,13 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
         {
             AnimateSwitchDown(); // Schalter Oben -> Unten
             OpenDoor();
+            setSwitchandDoorImage(true); // Tür ist offen und Schalter unten
         }
         else if(!switchState )
         {
             AnimateSwitchUp(); // Schalter Unten -> Oben 
             CloseDoor();
+            setSwitchandDoorImage(false); // Tür ist zu und Schalter oben 
         }
         
         
@@ -116,6 +120,21 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
             setSwitchAnimation(false); // Animator Updaten
             
 
+        }
+    }
+
+    [ClientRpc]
+    private void setSwitchandDoorImage(bool state)
+    {
+        if (state)
+        {
+            doorImage = doorOpen;
+            switchImage = switchDown;
+        }
+        else
+        {
+            doorImage = doorClose;
+            switchImage = switchUp;
         }
     }
     
