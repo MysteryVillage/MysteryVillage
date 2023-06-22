@@ -21,8 +21,8 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     [SerializeField] private Animator doorAnimationLeft = null;
     [SerializeField] private Animator doorAnimationRight = null;
     [SerializeField] private Animator levlerAnimation = null;
-    [SerializeField] private RawImage switchUp, switchDown, doorOpen, doorClose;
-    [SerializeField] private RawImage switchImage, doorImage;
+    [SerializeField] private Sprite switchUp, switchDown, doorOpen, doorClose;
+    [SerializeField] private Image switchImage, doorImage;
 
    
     private Color32 red = new Color32(197,73,73,255);
@@ -128,13 +128,14 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     {
         if (state)
         {
-            doorImage = doorOpen;
-            switchImage = switchDown;
+           if(doorImage != null && doorOpen != null)    doorImage.sprite = doorOpen;
+           if(switchImage != null && switchDown != null)  switchImage.sprite = switchDown;
         }
         else
         {
-            doorImage = doorClose;
-            switchImage = switchUp;
+            if(doorImage != null && doorClose != null)  doorImage.sprite = doorClose;
+            if(switchImage != null && switchUp != null) switchImage.sprite = switchUp;
+
         }
     }
     
