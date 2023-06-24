@@ -32,6 +32,8 @@ namespace UI
         // Start is called before the first frame update
         void Start()
         {
+            var networkManager = GameObject.Find("NetworkManager");
+            networkManager.GetComponent<NetworkManager>().HideLoadingScreen();
             _playerController = transform.parent.GetComponent<PlayerController>();
             if (GameObject.Find("Dialogue") != null)
             {

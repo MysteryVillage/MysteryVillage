@@ -144,9 +144,6 @@ namespace Player
        [SerializeField] private GameObject miniMap;
         private void Start()
         {
-
-           
-
             _cinemachineTargetYaw = cinemachineCameraTarget.transform.rotation.eulerAngles.y;
             _hasAnimator = TryGetComponent(out animator);
             _controller = GetComponent<CharacterController>();
