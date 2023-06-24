@@ -33,9 +33,12 @@ namespace UI
         void Start()
         {
             _playerController = transform.parent.GetComponent<PlayerController>();
-            _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueRunner>();
-            _dialogue.dialogueViews[0] = dialogueText.GetComponent<LineView>();
-            _dialogue.dialogueViews[1] = dialogueOptions.GetComponent<OptionsListView>();
+            if (GameObject.Find("Dialogue") != null)
+            {
+                _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueRunner>();
+                _dialogue.dialogueViews[0] = dialogueText.GetComponent<LineView>();
+                _dialogue.dialogueViews[1] = dialogueOptions.GetComponent<OptionsListView>();
+            }
         }
 
         public void SwitchTo(int index)
