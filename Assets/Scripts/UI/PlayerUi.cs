@@ -182,7 +182,10 @@ namespace UI
         public void ResetButton()
         {
             var pos = GameObject.Find("NetworkManager").GetComponent<NetworkManager>().GetStartPosition();
-            transform.parent.GetComponent<NetworkTransformReliable>().RpcTeleport(pos.position);
+            var netTransform = transform.parent.GetComponent<NetworkTransformReliable>();
+            _playerController.enabled = false;
+            netTransform.RpcTeleport(pos.position);
+            _playerController.enabled = true;
             ClosePauseMenu();
         }
 
