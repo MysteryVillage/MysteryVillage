@@ -3683,7 +3683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1856177639174554819
 Transform:
   m_ObjectHideFlags: 0
@@ -19251,9 +19251,17 @@ PrefabInstance:
       value: 3392110647
       objectReference: {fileID: 0}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchUp
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 932f271df02f19b4a949b4de32e239aa, type: 3}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
       objectReference: {fileID: 6141409317920099210}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchDown
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 2d920e2f736455943a4345298bd55414, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 
@@ -19422,7 +19430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5551958676075008322, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_Name
-      value: "T\xFCr__Braun_Stern"
+      value: "T\xFCr__Braun_Donut"
       objectReference: {fileID: 0}
     - target: {fileID: 5848800357568881990, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: _assetId
@@ -19671,7 +19679,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: a37fbf4c8b1da794ebc6a58991962adb, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 85f72cdb84c87ad43909448eb48360be, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -19679,7 +19687,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchDown
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 7aa2b6d5b8e49ba459966c93e6c2dff3, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: c6c56ea8059b0f942978642da4ca4a53, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 
@@ -19804,7 +19812,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2279939033836323313, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: m_Name
-      value: Schalter_Braun_Stern
+      value: Schalter_Braun_Donut
       objectReference: {fileID: 0}
     - target: {fileID: 2694690865750875463, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: _assetId
@@ -19813,7 +19821,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: a37fbf4c8b1da794ebc6a58991962adb, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: fcb4315668e00ee419d35962129b92d0, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -19821,7 +19829,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchDown
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 7aa2b6d5b8e49ba459966c93e6c2dff3, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 5a7fd05418f350f4b9cb965287d8ff32, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 
@@ -19966,15 +19974,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324103316006534795, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 125.3
+      value: 122.9
       objectReference: {fileID: 0}
     - target: {fileID: 4324103316006534795, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 207.10742
+      value: 203.14047
       objectReference: {fileID: 0}
     - target: {fileID: 4324103316006534795, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 120.480774
+      value: 118.17307
       objectReference: {fileID: 0}
     - target: {fileID: 4324103316006534795, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19986,7 +19994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324103316006534795, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.110012
+      value: -20.08
       objectReference: {fileID: 0}
     - target: {fileID: 4324103316006534795, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20284,9 +20292,17 @@ PrefabInstance:
       value: 3392110647
       objectReference: {fileID: 0}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchUp
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 25b6ea7307a55fa44ae274651f13dc0a, type: 3}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
       objectReference: {fileID: 2367038009410998962}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchDown
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: ad386d50c9d62514589ff768ac7351a4, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 
@@ -20578,6 +20594,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1836766754047212634}
     m_Modifications:
+    - target: {fileID: 344813127414193872, guid: 0da570ae47c4bde4ca314625aa70db22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 344813127414193872, guid: 0da570ae47c4bde4ca314625aa70db22, type: 3}
       propertyPath: orthographic size
       value: 28.3
@@ -21010,9 +21030,17 @@ PrefabInstance:
       value: 3392110647
       objectReference: {fileID: 0}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchUp
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 974a1812f75ce09429d5aef7e85c105c, type: 3}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
       objectReference: {fileID: 4999805509310073134}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchDown
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 67710ca6db203ac43bc7354e8abbe598, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 

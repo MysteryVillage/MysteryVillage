@@ -40,6 +40,10 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     private Gamepad gamepad;
     private Coroutine stopRumbleAfterTime;
 
+    private void Awake()
+    {
+        if (switchImage != null && switchDown != null) switchImage.sprite = switchUp;
+    }
     private void Start()
     {
         
