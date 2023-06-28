@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using NetworkManager = Network.NetworkManager;
+using UnityEngine.EventSystems;
 
 namespace UI
 {
@@ -15,7 +16,12 @@ namespace UI
         [Header("Connect Window")]
         public TMP_InputField ipAddress;
         public GameObject connectWindow;
-        
+
+        [Header("MenuControls")]
+        public GameObject optionsScreen;
+        public GameObject optionsFirstButton,
+        optionsClosedButton;
+
         public void QuitApplication()
         {
             Application.Quit();
@@ -35,6 +41,26 @@ namespace UI
         public void ToggleConnectWindow()
         {
             connectWindow.SetActive(!connectWindow.activeInHierarchy);
+        }
+
+        public void OpenOption()
+        {
+            optionsScreen.SetActive(true);
+
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //set new selected object
+            EventSystem.current.SetSelectedGameObject(optionsFirstButton);
+        }
+
+        public void CloseOption()
+        {
+            optionsScreen.SetActive(false);
+
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //set new selected object
+            EventSystem.current.SetSelectedGameObject(optionsClosedButton);
         }
     }
 }
