@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38794604, g: 0.7272919, b: 0.7332165, a: 1}
+  m_IndirectSpecularColor: {r: 0.38810045, g: 0.7278148, b: 0.7324987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2177,18 +2177,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365222808637286033, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6365222808637286033, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: b8c692e2c58fb374486e7a1792a05be4, type: 2}
+      objectReference: {fileID: 8400000, guid: fcb9bc90d5d87f34ba9e6ba40318c1c8, type: 2}
     - target: {fileID: 6365222808637286033, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6365222808637286046, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365222808637286046, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: m_RenderShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409683700651632805, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
