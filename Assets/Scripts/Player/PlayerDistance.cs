@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using Mirror;
 using Player;
 using TMPro;
 
@@ -37,7 +35,6 @@ public class PlayerDistance : MonoBehaviour
             {
                 distanceText.enabled = true;
             }
-            // Debug.Log("Distance between players: " + distance);
 
             // Überprüfe, ob der zweite Spieler beigetreten ist
             if (players.Length == 2 && otherPlayer == null)
@@ -47,7 +44,6 @@ public class PlayerDistance : MonoBehaviour
                     if (player.gameObject != gameObject)
                     {
                         otherPlayer = player.gameObject;
-                        Debug.Log("Der zweite Spieler ist beigetrete");
                         distanceText.enabled = true;
                         break;
                     }

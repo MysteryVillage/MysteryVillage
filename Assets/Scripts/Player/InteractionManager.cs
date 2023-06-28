@@ -1,3 +1,4 @@
+using Items;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -25,36 +26,39 @@ namespace Player
 
         private void Update()
         {
-            if (Time.time - _lastCheckTime > checkRate)
-            {
-                _lastCheckTime = Time.time;
-                
-                Ray ray = new Ray(transform.position + Vector3.up, transform.TransformDirection(Vector3.forward));
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
+            if (isLocalPlayer) {
+                if (Time.time - _lastCheckTime > checkRate)
                 {
-                    if (hit.collider.gameObject != _curInteractGameObject)
+                    _lastCheckTime = Time.time;
+                    
+                    Ray ray = new Ray(transform.position + Vector3.up, transform.TransformDirection(Vector3.forward));
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
+                    {
+                        if (hit.collider.gameObject != _curInteractGameObject)
+                        {
+                            if (_curInteractGameObject != null)
+                            {
+                                _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(false);
+                            }
+                            _curInteractGameObject = hit.collider.gameObject;
+                            _curInteractable = hit.collider.GetComponent<IIinteractable>();
+                            Debug.Log("Is Server: " + isServer);
+                            _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(true);
+                            SetPromptText();
+                        }
+                    }
+                    else
                     {
                         if (_curInteractGameObject != null)
                         {
                             _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(false);
                         }
-                        _curInteractGameObject = hit.collider.gameObject;
-                        _curInteractable = hit.collider.GetComponent<IIinteractable>();
-                        _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(true);
-                        SetPromptText();
+                        _curInteractGameObject = null;
+                        _curInteractable = null;
+                        interactionPanel.SetActive(false);
                     }
-                }
-                else
-                {
-                    if (_curInteractGameObject != null)
-                    {
-                        _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(false);
-                    }
-                    _curInteractGameObject = null;
-                    _curInteractable = null;
-                    interactionPanel.SetActive(false);
                 }
             }
         }
