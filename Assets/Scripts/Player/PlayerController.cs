@@ -129,6 +129,8 @@ namespace Player
 
         public PlayerUi playerUi;
 
+        public AudioSource audioSource;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -425,7 +427,7 @@ namespace Player
                 if (footstepAudioClips.Length > 0)
                 {
                     var index = Random.Range(0, footstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(footstepAudioClips[index], transform.TransformPoint(_controller.center), footstepAudioVolume);
+                    audioSource.PlayOneShot(footstepAudioClips[index], footstepAudioVolume);
                 }
             }
         }
@@ -434,7 +436,7 @@ namespace Player
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(landingAudioClip, transform.TransformPoint(_controller.center), footstepAudioVolume);
+                audioSource.PlayOneShot(landingAudioClip, footstepAudioVolume);
             }
         }
 
