@@ -7206,7 +7206,7 @@ AudioSource:
   m_GameObject: {fileID: 4416926081852918481}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6128057748676802045, guid: d800c990f01ccbb428e34ed95de85367, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -16734,6 +16734,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8606380974445091073, guid: 00adf98fd6e38409385a18502d8b0766, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cffbaa876b9b7554ba521c84c9d844e4, type: 2}
+    - target: {fileID: 8606380974445091073, guid: 00adf98fd6e38409385a18502d8b0766, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2851304147486948479, guid: cffbaa876b9b7554ba521c84c9d844e4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00adf98fd6e38409385a18502d8b0766, type: 3}
 --- !u!224 &214905913974476744 stripped
