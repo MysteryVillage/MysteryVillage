@@ -6,6 +6,7 @@ namespace UI
     {
         public Transform player;
         public Transform cam;
+        public RectTransform compass;
 
         private void LateUpdate()
         {
@@ -14,6 +15,8 @@ namespace UI
             transform.position = newPosition;
 
             transform.rotation = Quaternion.Euler(90f, cam.eulerAngles.y, 0f);
+
+            compass.localRotation = Quaternion.Euler(0f, 0f, cam.eulerAngles.y);
         }
     }
 }

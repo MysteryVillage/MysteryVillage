@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Inventory;
 using Mirror;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,11 +10,43 @@ namespace Network
 {
     public class NetworkManager : Mirror.NetworkManager
     {
+        [Header("Loading Screen")] 
+        public Camera loadingCam;
+        public GameObject loadingScreen;
+
         private InventoryManager _inventoryManager;
+        
+        // Overrides the base singleton so we don't
+        // have to cast to this type everywhere.
+        public static new NetworkManager singleton { get; private set; }
+
+        /// <summary>
+        /// Runs on both Server and Client
+        /// Networking is NOT initialized when this fires
+        /// </summary>
+        public override void Awake()
+        {
+            base.Awake();
+            singleton = this;
+        }
+        
+        public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
+        {
+            Debug.Log("OnClientChangeScene");
+            base.OnClientChangeScene(newSceneName, sceneOperation, customHandling);
+            loadingCam.gameObject.SetActive(true);
+            loadingScreen.SetActive(true);
+        }
+
+        public void HideLoadingScreen()
+        {
+            loadingCam.gameObject.SetActive(false);
+            loadingScreen.SetActive(false);
+        }
     
         public override void OnStartClient()
         {
-            base.OnStartServer();
+            base.OnStartClient();
         
             // get InventoryManager & spawn test items
             if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
@@ -47,15 +80,6 @@ namespace Network
                 }
             }
             _inventoryManager.RegisterInventory(networkIdentifier);
-        }
-
-        private void CheckScene(int sceneId)
-        {
-            var id = SceneManager.GetActiveScene().handle;
-            if (id != sceneId)
-            {
-                SceneManager.LoadScene(sceneId);
-            }
         }
 
         bool ScanForInventoryManager()

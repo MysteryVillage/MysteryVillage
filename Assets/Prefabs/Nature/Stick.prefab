@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3246094620630826268}
   - component: {fileID: 5519134211954630992}
   - component: {fileID: 1410420341500146044}
-  - component: {fileID: 5939794038383713944}
   - component: {fileID: 8440853715501187198}
   - component: {fileID: 9061139542842026349}
   - component: {fileID: 289588213756021474}
+  - component: {fileID: 1890338310117811191}
   m_Layer: 10
   m_Name: Stick
   m_TagString: Untagged
@@ -71,19 +71,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   item: {fileID: 11400000, guid: 1f00b56e719354af98bfd1961700b850, type: 2}
---- !u!135 &5939794038383713944
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2398747112285538861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!54 &8440853715501187198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +116,20 @@ MonoBehaviour:
   - {fileID: 5591330330955947844}
   thickness: 0.01
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!136 &1890338310117811191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2398747112285538861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!1 &6239905783355588241
 GameObject:
   m_ObjectHideFlags: 0

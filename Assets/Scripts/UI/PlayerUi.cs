@@ -32,10 +32,15 @@ namespace UI
         // Start is called before the first frame update
         void Start()
         {
+            var networkManager = GameObject.Find("NetworkManager");
+            networkManager.GetComponent<NetworkManager>().HideLoadingScreen();
             _playerController = transform.parent.GetComponent<PlayerController>();
-            _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueRunner>();
-            _dialogue.dialogueViews[0] = dialogueText.GetComponent<LineView>();
-            _dialogue.dialogueViews[1] = dialogueOptions.GetComponent<OptionsListView>();
+            if (GameObject.Find("Dialogue") != null)
+            {
+                _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueRunner>();
+                _dialogue.dialogueViews[0] = dialogueText.GetComponent<LineView>();
+                _dialogue.dialogueViews[1] = dialogueOptions.GetComponent<OptionsListView>();
+            }
         }
 
         public void SwitchTo(int index)
@@ -177,7 +182,10 @@ namespace UI
         public void ResetButton()
         {
             var pos = GameObject.Find("NetworkManager").GetComponent<NetworkManager>().GetStartPosition();
-            transform.parent.GetComponent<NetworkTransformReliable>().RpcTeleport(pos.position);
+            var netTransform = transform.parent.GetComponent<NetworkTransformReliable>();
+            _playerController.enabled = false;
+            netTransform.RpcTeleport(pos.position);
+            _playerController.enabled = true;
             ClosePauseMenu();
         }
 
