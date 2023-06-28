@@ -27,7 +27,7 @@ namespace Network
         [Server]
         public void Spawn(int itemId, Vector3 position)
         {
-            Spawn(itemId, position, Quaternion.Euler(Vector3.one * Random.value * 360.0f));
+            Spawn(itemId, position, Quaternion.Euler(Vector3.one));
         }
     
         [Server]

@@ -93,12 +93,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3020495914191172145}
-  - component: {fileID: 8484916108252274308}
   - component: {fileID: 3692990467360629125}
   - component: {fileID: 664561387535553202}
   - component: {fileID: 7360468634795953892}
   - component: {fileID: 2293818644715986938}
   - component: {fileID: 8334954744095448227}
+  - component: {fileID: 1431585196491559951}
   m_Layer: 10
   m_Name: Rock
   m_TagString: Untagged
@@ -122,19 +122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8484916108252274308
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377036484077850861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &3692990467360629125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +169,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &2293818644715986938
 BoxCollider:
@@ -213,3 +200,17 @@ MonoBehaviour:
   - {fileID: 9035465444924642136}
   thickness: 0.01
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!136 &1431585196491559951
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377036484077850861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.18, z: 0}
