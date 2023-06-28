@@ -37,7 +37,7 @@ public class PlayerDistance : MonoBehaviour
             {
                 distanceText.enabled = true;
             }
-            Debug.Log("Distance between players: " + distance);
+            // Debug.Log("Distance between players: " + distance);
 
             // Überprüfe, ob der zweite Spieler beigetreten ist
             if (players.Length == 2 && otherPlayer == null)

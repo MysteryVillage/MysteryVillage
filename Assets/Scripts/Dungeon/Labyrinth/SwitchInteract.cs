@@ -28,7 +28,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     private Color32 red = new Color32(197,73,73,255);
     private Color32 white = new Color32(227,227,227,255);
 
-    private bool opening = false;
+    
     private float speed = 80f;
     private bool switchState = true;
     private bool toggle = false;
@@ -55,16 +55,15 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
 
     public void OnInteract(uint networkIdentifier)
     {
-        opening = true;
-        // SwitchState true == wenn der Schalter oben ist
-        // toggle false == wenn die Tür runter geht
-        if (switchState == true )
+        
+        
+        if (switchState == true && !toggle )
         {
             AnimateSwitchDown(); // Schalter Oben -> Unten
             OpenDoor();
             setSwitchandDoorImage(true); // Tür ist offen und Schalter unten
         }
-        else if(!switchState )
+        else if(!switchState && toggle)
         {
             AnimateSwitchUp(); // Schalter Unten -> Oben 
             CloseDoor();
@@ -100,7 +99,6 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
         
         if ( levlerAnimation == null) return;
         
-       // levlerAnimation.Play("SwitchAnimation_Down", 0, 0.0f);
         switchState = false; // Schalter ist unten 
 
         if (_hasAnimator)
@@ -144,16 +142,31 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     {
         if (SwitchDown)
         {
+            StartCoroutine(SwitchDelayDown(levlerAnimation.GetCurrentAnimatorStateInfo(0).length));
             levlerAnimation.Play("Switch_Down", 0, 0.0f);
-            Debug.Log("Switch Down");
         }
         else
         {
-            Debug.Log("Switch Up");
+            StartCoroutine(SwitchDelayUp(levlerAnimation.GetCurrentAnimatorStateInfo(0).length));
             levlerAnimation.Play("Switch_Up", 0, 0.0f);
         }
         
     }
+
+    IEnumerator  SwitchDelayUp(float delay = 0)
+    {
+        yield return new WaitForSeconds(delay);
+        toggle = false;
+    }
+
+    IEnumerator SwitchDelayDown(float delay = 0)
+    {
+        yield return new WaitForSeconds(delay);
+        toggle = true;
+    }
+
+
+
 
     [ClientRpc]
     private void setDoorAnimation(bool DoorOpen)
@@ -165,7 +178,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
             
             doorAnimationLeft.Play("DoorLeft_Open", 0, 0.0f);
             doorAnimationRight.Play("DoorRight_Open", 0, 0.0f);
-            Debug.Log("Tür Öffnen");
+            
         }
         else
         {
@@ -174,7 +187,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
             
             doorAnimationLeft.Play("DoorLeft_Close", 0, 0.0f);
             doorAnimationRight.Play("DoorRight_Close", 0, 0.0f);
-            Debug.Log("Tür Schließen");
+            
         }
     }
     

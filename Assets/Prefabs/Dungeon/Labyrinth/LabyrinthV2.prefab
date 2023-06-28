@@ -19669,9 +19669,17 @@ PrefabInstance:
       value: 3392110647
       objectReference: {fileID: 0}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchUp
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: a37fbf4c8b1da794ebc6a58991962adb, type: 3}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
       objectReference: {fileID: 6966455461238732120}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchDown
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 7aa2b6d5b8e49ba459966c93e6c2dff3, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 
@@ -19803,9 +19811,17 @@ PrefabInstance:
       value: 3392110647
       objectReference: {fileID: 0}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchUp
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: a37fbf4c8b1da794ebc6a58991962adb, type: 3}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
       objectReference: {fileID: 1999638485214836296}
+    - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: switchDown
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 7aa2b6d5b8e49ba459966c93e6c2dff3, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorAnimationLeft
       value: 
@@ -20613,6 +20629,10 @@ PrefabInstance:
     - target: {fileID: 344813127414193886, guid: 0da570ae47c4bde4ca314625aa70db22, type: 3}
       propertyPath: m_Name
       value: Labyrinth-Cam
+      objectReference: {fileID: 0}
+    - target: {fileID: 344813127414193887, guid: 0da570ae47c4bde4ca314625aa70db22, type: 3}
+      propertyPath: m_RenderShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0da570ae47c4bde4ca314625aa70db22, type: 3}
