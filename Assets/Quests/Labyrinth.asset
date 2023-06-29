@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7832362548740153401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafaff00d31b48c7924416241dc314fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Geh hin
+  RequiredAmount: 1
+  QuestGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  target: {fileID: 8663433656098616267, guid: 9d626f92d8ad54eb69064bf96f50bb7c, type: 3}
+  type: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
+  m_Name: Labyrinth
+  m_EditorClassIdentifier: 
+  Information:
+    name: Labyrinth
+    description: Gehe zum Labyrinth
+  goals:
+  - {fileID: -7832362548740153401}

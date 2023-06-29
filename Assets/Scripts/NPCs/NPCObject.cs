@@ -1,6 +1,7 @@
 using Mirror;
 using Player;
 using UnityEngine;
+using UnityEngine.Events;
 using Yarn.Unity;
 
 
@@ -16,7 +17,9 @@ namespace NPC
         public DialogueRunner dialogue;
         public string[] dialogueFlow;
         public int currentDialogue = 0;
-        
+
+        public UnityEvent OnTalk;
+
         public string GetInteractPrompt()
         {
             if (PlayerController.GetPlayerSeperation() > 10f)
@@ -28,6 +31,7 @@ namespace NPC
 
         public void OnInteract(uint networkIdentifier)
         {
+            OnTalk.Invoke();
             if (PlayerController.GetPlayerSeperation() <= 10f) StartDialogue();
         }
 

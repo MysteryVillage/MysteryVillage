@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3642915958682820974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf0bbed49ae4111b8e9bb0d1d4c22c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Sprich Arnold an
+  RequiredAmount: 1
+  QuestGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  npc: {fileID: 1621466806945478623, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
+  m_Name: TalkToArnold
+  m_EditorClassIdentifier: 
+  Information:
+    name: Eine neue Aufgabe
+    description: Sprich mit Arnold
+  goals:
+  - {fileID: -3642915958682820974}
