@@ -6565,6 +6565,7 @@ GameObject:
   - component: {fileID: 4416926081852918490}
   - component: {fileID: 5885216827943657505}
   - component: {fileID: 135756642000475821}
+  - component: {fileID: 923073649531285395}
   - component: {fileID: 4416926081852918493}
   - component: {fileID: 7324783065207739338}
   - component: {fileID: 5575612958494878713}
@@ -6737,6 +6738,20 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &923073649531285395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f606b2456d51886458aa4a5bd10a634e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 6462949273253005894}
+  senitivity: 10
 --- !u!114 &4416926081852918493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7058,6 +7073,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 027ffb3c-4c4c-45c3-9dd5-0deb520b6b92
     m_ActionName: UI/Point
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 923073649531285395}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: OnZoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b308e99e-585c-415c-acdc-8ee0bd72c37d
+    m_ActionName: Player/Zoom[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player
