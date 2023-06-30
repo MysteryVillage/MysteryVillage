@@ -1,5 +1,6 @@
 using Items;
 using Mirror;
+using Quests;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -96,6 +97,12 @@ namespace Player
             }
             var inter = interGo.GetComponent<IIinteractable>();
             inter.OnInteract(GetComponent<NetworkIdentity>().netId);
+        }
+
+        [Command]
+        public void AddQuest(Quest quest)
+        {
+            QuestManager.Current.AddQuest(quest);
         }
 
         private void OnDrawGizmos()

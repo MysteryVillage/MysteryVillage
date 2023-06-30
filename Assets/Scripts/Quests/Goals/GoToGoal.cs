@@ -9,11 +9,12 @@ namespace Quests.Goals
         public new void Init()
         {
             base.Init();
-            Debug.Log("Go To Goal: Init()");
+            
             var triggers = FindObjectsOfType<QuestGoalTrigger>();
+            
             foreach (var trigger in triggers)
             {
-                if (trigger.goal == this)
+                if (trigger.goal.Description == Description)
                 {
                     trigger.OnGoalTrigger.AddListener(TargetReached);
                 }
@@ -22,7 +23,6 @@ namespace Quests.Goals
 
         public void TargetReached()
         {
-            Debug.Log("Target Reached");
             CurrentAmount++;
             Evaluate();
         }

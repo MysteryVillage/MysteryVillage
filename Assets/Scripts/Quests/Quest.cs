@@ -9,7 +9,7 @@ using UnityEngine.Events;
 namespace Quests
 {
     [Serializable]
-    public class Quest : ScriptableObject
+    public class Quest : ScriptableObject, IEquatable<Quest>
     {
         [Serializable]
         public struct Info
@@ -40,6 +40,9 @@ namespace Quests
                 } else if (goal is TalkToGoal talkToGoal)
                 {
                     talkToGoal.Init();
+                } else if (goal is CollectGoal collectGoal)
+                {
+                    collectGoal.Init();
                 }
                 else
                 {
@@ -63,6 +66,12 @@ namespace Quests
         public override string ToString()
         {
             return Information.name;
+        }
+
+        public bool Equals(Quest other)
+        {
+            if (other == null) return false;
+            return Information.name == other.Information.name;
         }
     }
 

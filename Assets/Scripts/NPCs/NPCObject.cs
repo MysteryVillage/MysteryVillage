@@ -31,8 +31,9 @@ namespace NPC
 
         public void OnInteract(uint networkIdentifier)
         {
-            OnTalk.Invoke();
-            if (PlayerController.GetPlayerSeperation() <= 10f) StartDialogue();
+            if (PlayerController.GetPlayerSeperation() > 10f) return; 
+            OnTalk.Invoke(); 
+            StartDialogue();
         }
 
         [ClientRpc]
