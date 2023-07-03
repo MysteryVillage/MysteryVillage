@@ -1,3 +1,5 @@
+using Items;
+using Mirror;
 using NPC;
 using UnityEngine;
 
@@ -15,12 +17,10 @@ namespace Quests.Goals
             var NPCs = GameObject.FindObjectsOfType<NPCObject>();
             foreach (var npc in NPCs)
             {
-                Debug.Log(npc.name);
-                Debug.Log(this.npc.name);
                 if (npc.name == this.npc.name)
                 {
-                    npc.OnTalk.AddListener(Talk);
                     target = npc;
+                    target.OnTalk.AddListener(Talk);
                 }
             }
         }
@@ -35,6 +35,29 @@ namespace Quests.Goals
         
         public TalkToGoal(string description, int currentAmount, int requiredAmount, bool completed) : base(description, currentAmount, requiredAmount, completed)
         {
+        }
+
+        public static void WriteTalkToGoal(NetworkWriter writer, QuestGoal goal)
+        {
+            TalkToGoal talkToGoal = goal as TalkToGoal;
+            if (talkToGoal == null) return;
+            
+            NetworkIdentity networkIdentity = talkToGoal.target.GetComponent<NetworkIdentity>();
+            writer.WriteNetworkIdentity(networkIdentity);
+        }
+
+        public static TalkToGoal ReadTalkToGoal(NetworkReader reader)
+        {
+            var goal = CreateInstance<TalkToGoal>();
+
+            NetworkIdentity networkIdentity = reader.ReadNetworkIdentity();
+            NPCObject target = networkIdentity != null
+                ? networkIdentity.GetComponent<NPCObject>()
+                : null;
+
+            goal.target = target;
+
+            return goal;
         }
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using EventSystem = Events.EventSystem;
 
 namespace UI
 {

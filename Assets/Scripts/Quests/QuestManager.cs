@@ -1,7 +1,9 @@
 using System;
 using Mirror;
+using Quests.Goals;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 namespace Quests
 {
@@ -15,6 +17,7 @@ namespace Quests
 
         public UnityEvent<Quest> OnQuestChanged;
         public UnityEvent OnQuestListChanged;
+        public UnityEvent<QuestGoal> OnGoalUpdated;
 
         [Header("Testing")]
         public Quest startQuest;
@@ -34,17 +37,16 @@ namespace Quests
                 AddQuest(startQuest);
                 SelectQuest(startQuest);
             }
+
+            var eventSystem = EventSystem.current as Events.EventSystem;
+            
+            OnGoalUpdated.AddListener(QuestGoalUpdated);
         }
         
         public void SelectQuest(Quest quest)
         {
             currentQuest = quest;
             OnQuestChanged.Invoke(quest);
-        }
-
-        public void AddQuestCmd(Quest quest)
-        {
-            AddQuest(quest);
         }
         
         public void AddQuest(Quest quest)
@@ -70,12 +72,30 @@ namespace Quests
         public void QuestFinished(Quest quest)
         {
             Debug.Log("Quest finished: " + quest.Information.name);
-            currentQuest = null;
+
+            var nextQuest = GetNextQuest();
+            currentQuest = nextQuest;
+            
             RefreshUI();
             
             // @TODO
             // visual and audio feedback
             PlaySound(questFinishedSound);
+        }
+
+        public void QuestGoalUpdated(QuestGoal goal)
+        {
+            RefreshUI();
+        }
+
+        private Quest GetNextQuest()
+        {
+            foreach (var quest in Quests)
+            {
+                if (!quest.Completed) return quest;
+            }
+
+            return null;
         }
 
         [ClientRpc]
@@ -87,7 +107,7 @@ namespace Quests
         
         void PlaySound(AudioClip clip)
         {
-            NetworkClient.localPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
+            if (NetworkClient.localPlayer != null) NetworkClient.localPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
         }
     }
 }

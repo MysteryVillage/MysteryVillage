@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NetworkManager = Network.NetworkManager;
 using UnityEngine.EventSystems;
+using EventSystem = Events.EventSystem;
 
 namespace UI
 {

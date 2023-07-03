@@ -29,6 +29,7 @@ namespace Quests.Goals
         public void Init()
         {
             Completed = false;
+            CurrentAmount = 0;
             QuestGoalCompleted = new UnityEvent();
         }
 
@@ -54,16 +55,53 @@ public static class CustomReadWriteFunctions
 {
     public static void WriteQuestGoal(this NetworkWriter writer, QuestGoal questGoal)
     {
+        // Write type of quest goal
+        writer.WriteString(questGoal.GetType().ToString());
+        
+        
+        // determine type and execute type-specific write method
+        if (questGoal.GetType() == typeof(CollectGoal))
+        {
+            CollectGoal.WriteCollectGoal(writer, questGoal);
+        } else if (questGoal.GetType() == typeof(TalkToGoal))
+        {
+            TalkToGoal.WriteTalkToGoal(writer, questGoal);
+        } else if (questGoal.GetType() == typeof(GoToGoal))
+        {
+            GoToGoal.WriteGoToGoal(writer, questGoal);
+        }
+        
+        // write general data
         writer.WriteString(questGoal.Description);
         writer.WriteInt(questGoal.CurrentAmount);
         writer.WriteInt(questGoal.RequiredAmount);
         writer.WriteBool(questGoal.Completed);
-        // writer.Write(questGoal.Completed);
     }
 
     public static QuestGoal ReadQuestGoal(this NetworkReader reader)
     {
-        var goal = ScriptableObject.CreateInstance<GoToGoal>();
+        // read quest goal type
+        var type = reader.ReadString();
+        var classType = Type.GetType(type);
+
+        QuestGoal goal = null;
+        
+        // determine type and execute type-specific read method
+        if (classType == typeof(CollectGoal))
+        {
+            goal = CollectGoal.ReadCollectGoal(reader);
+        } else if (classType == typeof(TalkToGoal))
+        {
+            goal = TalkToGoal.ReadTalkToGoal(reader);
+        } else if (classType == typeof(GoToGoal))
+        {
+            goal = GoToGoal.ReadGoToGoal(reader);
+        }
+
+        // if goal was not initialized at this point, abort
+        if (goal == null) return null;
+
+        // read general data
         goal.Description = reader.ReadString();
         goal.CurrentAmount = reader.ReadInt();
         goal.RequiredAmount = reader.ReadInt();

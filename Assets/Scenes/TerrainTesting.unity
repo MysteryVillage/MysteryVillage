@@ -144,10 +144,18 @@ PrefabInstance:
       objectReference: {fileID: 238038138}
     - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
       propertyPath: dialogueFlow.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: dialogueFlow.Array.data[0]
+      value: HubertQuest
       objectReference: {fileID: 0}
     - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
       propertyPath: dialogueFlow.Array.data[1]
+      value: Hubert
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: dialogueFlow.Array.data[2]
       value: HubertGoodLuck
       objectReference: {fileID: 0}
     - target: {fileID: 2077092110878363376, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
@@ -1586,10 +1594,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1222893407594541308, guid: 918f2f3d15fa04ed4bbbc51de4b9c520, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_FirstSelected
       value: 
       objectReference: {fileID: 5813989136253627340, guid: 4034e54d748f44838805c3a857829657, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1222893407594541310, guid: 918f2f3d15fa04ed4bbbc51de4b9c520, type: 3}
       propertyPath: m_Name
       value: EventSystem
@@ -3875,6 +3887,27 @@ Transform:
   m_Father: {fileID: 2006716116}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2100400016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5157724860812301314, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+  m_PrefabInstance: {fileID: 149271001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2100400022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100400016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f8a72f1f341e2a251333371c8a973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  quest: {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
 --- !u!1 &2122129888
 GameObject:
   m_ObjectHideFlags: 0

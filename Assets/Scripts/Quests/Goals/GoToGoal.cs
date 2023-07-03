@@ -1,3 +1,5 @@
+using Mirror;
+using NPC;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -29,6 +31,18 @@ namespace Quests.Goals
 
         public GoToGoal(string description, int currentAmount, int requiredAmount, bool completed) : base(description, currentAmount, requiredAmount, completed)
         {
+        }
+
+        public static void WriteGoToGoal(NetworkWriter writer, QuestGoal goal)
+        {
+            
+        }
+
+        public static GoToGoal ReadGoToGoal(NetworkReader reader)
+        {
+            var goal = CreateInstance<GoToGoal>();
+
+            return goal;
         }
     }
 }
