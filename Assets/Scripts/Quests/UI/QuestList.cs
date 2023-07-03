@@ -1,26 +1,28 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Quests.UI
 {
     public class QuestList : MonoBehaviour
     {
-        private QuestManager _qm;
         public GameObject questListItem;
         public List<GameObject> questList;
         public QuestListInfo questInfo;
+
+        public Menu menu;
         
         private void Start()
         {
-            _qm = QuestManager.Current;
-            _qm.OnQuestListChanged.AddListener(UpdateList);
+            QuestManager.Current.OnQuestListChanged.AddListener(UpdateList);
         }
 
         public void UpdateList()
         {
-            var quests = _qm.Quests;
+            var quests = QuestManager.Current.Quests;
             
             ClearList();
 
@@ -28,6 +30,12 @@ namespace Quests.UI
             {
                 var item = Instantiate(questListItem, transform);
                 item.GetComponent<QuestListItem>().Init(quest);
+                questList.Add(item);
+            }
+
+            if (questList.First() != null)
+            {
+                menu.startButton = questList.First().GetComponentInChildren<Button>()?.gameObject;
             }
         }
 
