@@ -22,8 +22,6 @@ namespace Quests.UI
                 gameObject.SetActive(false); 
                 return;
             }
-
-            Debug.Log("Set stuff");
             
             gameObject.SetActive(true);
             description.text = questGoal.Description;
