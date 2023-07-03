@@ -6640,7 +6640,7 @@ CharacterController:
   m_Radius: 0.28
   m_SlopeLimit: 45
   m_StepOffset: 0.25
-  m_SkinWidth: 0.02
+  m_SkinWidth: 0.1
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!114 &4416926081852918490
@@ -6751,7 +6751,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 6462949273253005894}
-  senitivity: 10
 --- !u!114 &4416926081852918493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7090,7 +7089,7 @@ MonoBehaviour:
     m_ActionId: b308e99e-585c-415c-acdc-8ee0bd72c37d
     m_ActionName: Player/Zoom[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: KeyboardMouse
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -7221,7 +7220,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  character: Girl
+  character: Boy
   boy: {fileID: 1491990710179738292}
   girl: {fileID: 4551563240004911691}
   animator: {fileID: 6982812146204527121}
