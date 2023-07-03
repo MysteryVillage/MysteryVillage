@@ -8,7 +8,7 @@ namespace Quests
     public class QuestManager : NetworkBehaviour
     {
         public readonly SyncList<Quest> Quests = new();
-        [SerializeField]
+        [SerializeField, SyncVar]
         public Quest currentQuest;
 
         public static QuestManager Current;
@@ -30,21 +30,31 @@ namespace Quests
 
         private void Start()
         {
-            AddQuest(startQuest);
-            SelectQuest(startQuest);
+            if (isServer) {
+                AddQuest(startQuest);
+                SelectQuest(startQuest);
+            }
         }
-
+        
         public void SelectQuest(Quest quest)
         {
             currentQuest = quest;
             OnQuestChanged.Invoke(quest);
         }
 
+        public void AddQuestCmd(Quest quest)
+        {
+            AddQuest(quest);
+        }
+        
         public void AddQuest(Quest quest)
         {
-            Quests.Add(quest);
-            quest.Init();
-            quest.QuestCompleted.AddListener(QuestFinished);
+            if (!Quests.Contains(quest))
+            {
+                Quests.Add(quest);
+                quest.Init();
+                quest.QuestCompleted.AddListener(QuestFinished);
+            }
             RefreshUI();
 
             if (currentQuest == null)
@@ -59,21 +69,22 @@ namespace Quests
 
         public void QuestFinished(Quest quest)
         {
+            Debug.Log("Quest finished: " + quest.Information.name);
             currentQuest = null;
-            OnQuestListChanged.Invoke();
-            OnQuestChanged.Invoke(null);
+            RefreshUI();
             
             // @TODO
             // visual and audio feedback
             PlaySound(questFinishedSound);
         }
 
+        [ClientRpc]
         void RefreshUI()
         {
             OnQuestListChanged.Invoke();
             OnQuestChanged.Invoke(currentQuest);
         }
-
+        
         void PlaySound(AudioClip clip)
         {
             NetworkClient.localPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
