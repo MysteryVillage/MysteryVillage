@@ -12,6 +12,11 @@ namespace UI
         public UnityEvent onOpen;
         public UnityEvent onClose;
 
+        [Header("MenuControls")]
+        public GameObject optionsScreen;
+        public GameObject optionsFirstButton,
+        optionsClosedButton;
+
         public void Open()
         {
             gameObject.SetActive(true);
@@ -27,6 +32,26 @@ namespace UI
             
             // Allow further events
             onClose.Invoke();
+        }
+
+        public void OpenOption()
+        {
+            optionsScreen.SetActive(true);
+
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //set new selected object
+            EventSystem.current.SetSelectedGameObject(optionsFirstButton);
+        }
+
+        public void CloseOption()
+        {
+            optionsScreen.SetActive(false);
+
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //set new selected object
+            EventSystem.current.SetSelectedGameObject(optionsClosedButton);
         }
     }
 }
