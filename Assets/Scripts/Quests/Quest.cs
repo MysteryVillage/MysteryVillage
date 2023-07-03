@@ -9,7 +9,7 @@ using UnityEngine.Events;
 namespace Quests
 {
     [Serializable]
-    public class Quest : ScriptableObject
+    public class Quest : ScriptableObject, IEquatable<Quest>
     {
         [Serializable]
         public struct Info
@@ -26,6 +26,8 @@ namespace Quests
 
         public List<QuestGoal> goals = new List<QuestGoal>();
 
+        public Quest followUpQuest;
+
         public virtual void Init()
         {
             Debug.Log("Init Quest: " + Information.name + ". Number of Goals: " + goals.Count);
@@ -34,15 +36,23 @@ namespace Quests
 
             foreach (var goal in goals)
             {
+                Debug.Log(goal.GetType());
                 if (goal is GoToGoal goToGoal)
                 {
+                    Debug.Log("Try to init go to goal");
                     goToGoal.Init();
                 } else if (goal is TalkToGoal talkToGoal)
                 {
+                    Debug.Log("Try to init talk to goal");
                     talkToGoal.Init();
+                } else if (goal is CollectGoal collectGoal)
+                {
+                    Debug.Log("Try to init collect goal");
+                    collectGoal.Init();
                 }
                 else
                 {
+                    Debug.Log("Try to init default goal");
                     goal.Init();
                 }
                 goal.QuestGoalCompleted.AddListener(CheckGoals);
@@ -57,12 +67,19 @@ namespace Quests
             {
                 Debug.Log(name + ": All goals completed");
                 QuestCompleted.Invoke(this);
+                if (followUpQuest != null) QuestManager.Current.AddQuest(followUpQuest);
             }
         }
 
         public override string ToString()
         {
             return Information.name;
+        }
+
+        public bool Equals(Quest other)
+        {
+            if (other == null) return false;
+            return Information.name == other.Information.name;
         }
     }
 

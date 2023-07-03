@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,11 +78,8 @@ namespace Quests
                 SerializedObject obj = new SerializedObject(item.objectReferenceValue);
                 
                 CreateCachedEditor(item.objectReferenceValue, null, ref ed);
-                var m_NameOfGoal = obj.FindProperty("m_Name");
-                EditorGUILayout.PropertyField(m_NameOfGoal, new GUIContent("Name Info"));
                 
                 ed.OnInspectorGUI();
-                m_NameOfGoal.stringValue = obj.FindProperty("Description").stringValue;
                 EditorGUILayout.EndVertical();
 
                 if (GUILayout.Button("-", GUILayout.Width(32)))
@@ -104,3 +103,5 @@ namespace Quests
         }
     }
 }
+
+#endif

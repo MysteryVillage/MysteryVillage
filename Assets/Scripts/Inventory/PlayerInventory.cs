@@ -8,6 +8,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using EventSystem = Events.EventSystem;
 
 namespace Inventory
 {

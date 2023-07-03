@@ -1,23 +1,19 @@
 using System;
+using Mirror;
+using Player;
 using UnityEngine;
 using Yarn.Unity;
 
 namespace Quests
 {
-    public class QuestGiver : MonoBehaviour
+    public class QuestGiver : NetworkBehaviour
     {
         public Quest quest;
-        private QuestManager _questManager;
-
-        private void Start()
-        {
-            _questManager = QuestManager.Current;
-        }
 
         [YarnCommand("give_quest")]
         public void Give()
         {
-            _questManager.AddQuest(quest);
+            NetworkClient.localPlayer.GetComponent<InteractionManager>().AddQuest(quest);
         }
     }
 }

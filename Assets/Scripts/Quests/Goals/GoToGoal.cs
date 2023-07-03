@@ -1,3 +1,5 @@
+using Mirror;
+using NPC;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -9,11 +11,12 @@ namespace Quests.Goals
         public new void Init()
         {
             base.Init();
-            Debug.Log("Go To Goal: Init()");
+            
             var triggers = FindObjectsOfType<QuestGoalTrigger>();
+            
             foreach (var trigger in triggers)
             {
-                if (trigger.goal == this)
+                if (trigger.goal.Description == Description)
                 {
                     trigger.OnGoalTrigger.AddListener(TargetReached);
                 }
@@ -22,13 +25,24 @@ namespace Quests.Goals
 
         public void TargetReached()
         {
-            Debug.Log("Target Reached");
             CurrentAmount++;
             Evaluate();
         }
 
         public GoToGoal(string description, int currentAmount, int requiredAmount, bool completed) : base(description, currentAmount, requiredAmount, completed)
         {
+        }
+
+        public static void WriteGoToGoal(NetworkWriter writer, QuestGoal goal)
+        {
+            
+        }
+
+        public static GoToGoal ReadGoToGoal(NetworkReader reader)
+        {
+            var goal = CreateInstance<GoToGoal>();
+
+            return goal;
         }
     }
 }
