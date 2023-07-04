@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Inventory;
 using Mirror;
+using Quests;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -50,6 +51,10 @@ namespace Network
         
             // get InventoryManager & spawn test items
             if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
+            
+            // Hand out first quest
+            QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
+            QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
         }
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)

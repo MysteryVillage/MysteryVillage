@@ -19,19 +19,19 @@ namespace UI
 
         public void Open()
         {
-            gameObject.SetActive(true);
-            if (startButton != null) EventSystem.current.SetSelectedGameObject(startButton);
-
             // Allow further events
             onOpen.Invoke();
+            
+            gameObject.SetActive(true);
+            if (startButton != null) EventSystem.current.SetSelectedGameObject(startButton);
         }
 
         public void Close()
         {
-            gameObject.SetActive(false);
-            
             // Allow further events
             onClose.Invoke();
+            
+            gameObject.SetActive(false);
         }
 
         public void OpenOption()

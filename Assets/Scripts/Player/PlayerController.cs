@@ -125,7 +125,7 @@ namespace Player
 
         private bool _hasAnimator;
 
-        private bool _canMove = true;
+        public bool _canMove = true;
 
         public PlayerUi playerUi;
 
@@ -184,6 +184,11 @@ namespace Player
                 JumpAndGravity();
                 GroundedCheck();
                 // if (_canMove) 
+                if (!_canMove)
+                {
+                    _input.move = Vector2.zero;
+                    _input.jump = false;
+                }
                 Move();
             }
         }
@@ -492,6 +497,11 @@ namespace Player
         public static PlayerController[] GetPlayers()
         {
             return FindObjectsOfType<PlayerController>();
+        }
+
+        public void ToggleMovement(bool val)
+        {
+            _canMove = val;
         }
     }
 }

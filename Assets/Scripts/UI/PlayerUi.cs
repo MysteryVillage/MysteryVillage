@@ -84,6 +84,15 @@ namespace UI
             }
         }
 
+        public void OpenQuestButton(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                _menuIndex = 3;
+                Open(_menuIndex);
+            }
+        }
+
         public void Open(int index)
         {
             SwitchTo(index);

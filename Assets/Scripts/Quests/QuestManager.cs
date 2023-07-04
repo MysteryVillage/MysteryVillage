@@ -34,8 +34,8 @@ namespace Quests
         private void Start()
         {
             if (isServer) {
-                AddQuest(startQuest);
-                SelectQuest(startQuest);
+                // AddQuest(startQuest);
+                // SelectQuest(startQuest);
             }
 
             var eventSystem = EventSystem.current as Events.EventSystem;

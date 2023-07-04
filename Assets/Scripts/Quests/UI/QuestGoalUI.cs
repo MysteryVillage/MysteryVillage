@@ -1,6 +1,7 @@
 using Quests.Goals;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Quests.UI
 {
@@ -8,11 +9,14 @@ namespace Quests.UI
     {
         public TextMeshProUGUI description;
         public TextMeshProUGUI status;
+        public Image checkmark;
+
+        public Sprite done;
+        public Sprite todo;
 
         public void Init(QuestGoal questGoal)
         {
-            description.text = questGoal.Description;
-            status.text = $"{questGoal.CurrentAmount}/{questGoal.RequiredAmount}";
+            SetInfo(questGoal);
         }
 
         public void UpdateSlot(QuestGoal questGoal)
@@ -22,12 +26,28 @@ namespace Quests.UI
                 gameObject.SetActive(false); 
                 return;
             }
-
-            Debug.Log("Set stuff");
             
             gameObject.SetActive(true);
+            SetInfo(questGoal);
+        }
+
+        void SetInfo(QuestGoal questGoal)
+        {
             description.text = questGoal.Description;
-            status.text = $"{questGoal.CurrentAmount}/{questGoal.RequiredAmount}";
+            if (questGoal.RequiredAmount == 1)
+            {
+                checkmark.gameObject.SetActive(true);
+                status.gameObject.SetActive(false);
+
+                checkmark.sprite = questGoal.CurrentAmount < 1 ? todo : done;
+            }
+            else
+            {
+                checkmark.gameObject.SetActive(false);
+                status.gameObject.SetActive(true);
+                
+                status.text = $"{questGoal.CurrentAmount}/{questGoal.RequiredAmount}";
+            }
         }
     }
 }
