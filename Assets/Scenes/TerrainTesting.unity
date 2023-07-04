@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38810045, g: 0.7278148, b: 0.7324987, a: 1}
+  m_IndirectSpecularColor: {r: 0.38794604, g: 0.7272919, b: 0.7332165, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,45 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &92283085 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3017739484934163800, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
-  m_PrefabInstance: {fileID: 1194926127}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &92283089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92283085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &149271001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2728,6 +2689,10 @@ PrefabInstance:
     - target: {fileID: 6365222808637286033, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385271574285270290, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: m_Priority
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409683700651632805, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: sceneId
