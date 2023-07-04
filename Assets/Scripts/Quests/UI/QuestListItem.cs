@@ -1,9 +1,5 @@
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 namespace Quests.UI
 {
@@ -26,12 +22,6 @@ namespace Quests.UI
         public void OnSelect()
         {
             Debug.Log("Select button: " + quest.Information.name);
-            transform.GetComponentInParent<QuestList>().questInfo.SetInfo(quest);
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            Debug.Log("Click button: " + quest.Information.name);
             transform.GetComponentInParent<QuestList>().questInfo.SetInfo(quest);
         }
     }

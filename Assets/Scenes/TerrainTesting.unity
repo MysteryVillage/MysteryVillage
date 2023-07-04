@@ -2577,9 +2577,17 @@ PrefabInstance:
       propertyPath: sceneId
       value: 1943925662
       objectReference: {fileID: 0}
+    - target: {fileID: 668682249278352414, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 841242925149547567, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: sceneId
       value: 523882685
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207747581036942492, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: sceneId
+      value: 2357280409
       objectReference: {fileID: 0}
     - target: {fileID: 1312325457911965408, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_Name
@@ -2649,33 +2657,49 @@ PrefabInstance:
       propertyPath: sceneId
       value: 1980865843
       objectReference: {fileID: 0}
+    - target: {fileID: 3017739484934163798, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017739484934163798, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017739484934163798, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017739484934163798, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: orthographic size
+      value: 27.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -98.53125
+      value: 13.150001
       objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1875005
+      value: 3.4200013
       objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -257.8125
+      value: -20.050001
       objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000002319445
+      value: -0.7047011
       objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000007357747
+      value: -0.035739873
       objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9531903
+      value: -0.707694
       objectReference: {fileID: 0}
     - target: {fileID: 3017739484934163799, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.30237114
+      value: 0.035891663
       objectReference: {fileID: 0}
     - target: {fileID: 3310640018782239225, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: sceneId
@@ -2693,6 +2717,10 @@ PrefabInstance:
       propertyPath: sceneId
       value: 2119247692
       objectReference: {fileID: 0}
+    - target: {fileID: 5182548500524262446, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+      propertyPath: foiCamera
+      value: 
+      objectReference: {fileID: 1239994650}
     - target: {fileID: 5559729258583524167, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: sceneId
       value: 3592530603
@@ -3027,14 +3055,14 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1474156076}
   m_Follow: {fileID: 1474156076}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 27.6
-    NearClipPlane: 0
+    NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -3065,6 +3093,17 @@ Transform:
   m_Father: {fileID: 1474156076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239994650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6385271574285270290, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
+  m_PrefabInstance: {fileID: 1194926127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253294505
 GameObject:
   m_ObjectHideFlags: 0
