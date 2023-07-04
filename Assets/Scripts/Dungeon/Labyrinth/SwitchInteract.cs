@@ -43,6 +43,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     private void Awake()
     {
         if (switchImage != null && switchDown != null) switchImage.sprite = switchUp;
+        if (doorImage != null && doorClose != null) doorImage.sprite = doorClose; 
     }
     private void Start()
     {
