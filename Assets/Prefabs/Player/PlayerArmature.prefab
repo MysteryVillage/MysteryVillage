@@ -10377,6 +10377,7 @@ GameObject:
   - component: {fileID: 788476724465324060}
   - component: {fileID: 8018174092183544938}
   - component: {fileID: 4063424919711572399}
+  - component: {fileID: 5514603645922713144}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -11175,6 +11176,20 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+--- !u!136 &5514603645922713144
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &4430401860833009719
 GameObject:
   m_ObjectHideFlags: 0
