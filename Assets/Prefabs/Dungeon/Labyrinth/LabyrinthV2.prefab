@@ -19146,7 +19146,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorOpen
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 7aa2b6d5b8e49ba459966c93e6c2dff3, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 970c0185290e37842b6f515f628e5332, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
@@ -19154,7 +19154,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorClose
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: bb31a73d9b8486047be9bb8a1f1dac8d, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 476d71f393f368e4ba511ba34f35b7da, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -19268,7 +19268,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorOpen
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 6de82b277b4c6614790e1e940a09d69e, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 71e4e48d18ab9f443bc80dfcd81fbf6a, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
@@ -19276,7 +19276,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorClose
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 78d80e8344df9f548a41f066a3870367, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: addab018b43d835439e0c93e2e3f82b6, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -19464,6 +19464,14 @@ PrefabInstance:
       value: "T\xFCr_links_Braun_Stern"
       objectReference: {fileID: 0}
     - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -19636,7 +19644,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorOpen
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 84cf812e992069e4dbd3c74931a0b0c5, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: edc6bacf5b385d14b92d967296a2b816, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
@@ -19644,7 +19652,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorClose
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 483bb8c4bd7dd114b9c484da321d61da, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: d6dfc14f5eb2d4c478a9954397bf5e2d, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -19761,6 +19769,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5791018857508264155, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
 --- !u!4 &7758813116167427498 stripped
@@ -19786,7 +19798,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorOpen
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: fb105cec8c9c8f04eb1e449a37dd6dcf, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 4b3ef043f3ef2c543843392b29f17dc8, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
@@ -19794,7 +19806,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorClose
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 0db7b22074ab3b144bdc6738f1621ea4, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 11e125058a455644b8c9334cbd3fa113, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -19923,6 +19935,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5791018857508264155, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
 --- !u!4 &9013533428129514952 stripped
@@ -19937,6 +19953,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1734573269081858567}
     m_Modifications:
+    - target: {fileID: 3372342152650235059, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
+      propertyPath: _assetId
+      value: 3392110647
+      objectReference: {fileID: 0}
     - target: {fileID: 3983888667987420209, guid: fedab251f97d2e2499fb70db949a602a, type: 3}
       propertyPath: m_Name
       value: LabMapFrame
@@ -20206,6 +20226,14 @@ PrefabInstance:
       value: "T\xFCr_links_Gelb_Sechseck"
       objectReference: {fileID: 0}
     - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -20220,6 +20248,10 @@ PrefabInstance:
     - target: {fileID: 8825710349144423453, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_Name
       value: "T\xFCr_rechts_Gelb_Sechseck"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202436371918186598, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
@@ -20267,7 +20299,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorOpen
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: c8d932f5f1f13c048909da72ac9633dc, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 6ffc389205eb4084395bdac8e4f9928e, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
@@ -20275,7 +20307,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorClose
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 9c46ea999ce2a5e4a8789e4cf47145a8, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: be9438ae2aafe36418d1cd52675d5692, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -20437,6 +20469,10 @@ PrefabInstance:
     - target: {fileID: 8825710349144423453, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_Name
       value: "T\xFCr_rechts_Orange_Herz"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202436371918186598, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
@@ -20725,6 +20761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "T\xFCr_rechts_Rot_Dreieck"
       objectReference: {fileID: 0}
+    - target: {fileID: 9202436371918186598, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
 --- !u!95 &84467007529746737 stripped
@@ -20830,15 +20870,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623202625387572522, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8825710349144423453, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_Name
@@ -20952,6 +20996,14 @@ PrefabInstance:
       value: "T\xFCr_links _Pink_Kreis"
       objectReference: {fileID: 0}
     - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167732722793649027, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -20966,6 +21018,10 @@ PrefabInstance:
     - target: {fileID: 8825710349144423453, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
       propertyPath: m_Name
       value: "T\xFCr_rechts_Pink_Kreis"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202436371918186598, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1024157aefd3741b6763583acefa94, type: 3}
@@ -21013,7 +21069,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorOpen
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: a37fbf4c8b1da794ebc6a58991962adb, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: 08627b660aba00341bb4479d86994fe4, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: switchUp
       value: 
@@ -21021,7 +21077,7 @@ PrefabInstance:
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorClose
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 9954d70d39fe26846854df28f0c618d4, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: a900924944afd0a49afdd26e2cceafbc, type: 3}
     - target: {fileID: 3015688731253913777, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: doorImage
       value: 
@@ -21109,6 +21165,10 @@ PrefabInstance:
     - target: {fileID: 5000422206208369858, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5791018857508264155, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc80c2e790d20e54e99d735f71290874, type: 3}
