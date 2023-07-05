@@ -79,7 +79,7 @@ namespace Quests
         public bool Equals(Quest other)
         {
             if (other == null) return false;
-            return Information.name == other.Information.name;
+            return Information.name + Information.description == other.Information.name + other.Information.description;
         }
     }
 

@@ -84,6 +84,7 @@ namespace Quests
         {
             currentQuest = null;
             AddQuest(quest);
+            Debug.Log("Set new quest: "+quest.name);
         }
 
         public void QuestFinished(Quest quest)

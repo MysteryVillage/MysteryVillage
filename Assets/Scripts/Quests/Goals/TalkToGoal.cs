@@ -14,14 +14,15 @@ namespace Quests.Goals
         {
             base.Init();
 
-            var NPCs = GameObject.FindObjectsOfType<NPCObject>();
-            foreach (var npc in NPCs)
+            var NPCs = FindObjectsOfType<NPCObject>();
+            foreach (var npcObject in NPCs)
             {
-                if (npc.name == this.npc.name)
-                {
-                    target = npc;
-                    target.OnTalk.AddListener(Talk);
-                }
+                Debug.Log(npcObject);
+                Debug.Log(npc);
+                if (npcObject == null || npc == null) continue;
+                if (npcObject.name != npc.name) continue;
+                target = npcObject;
+                target.OnTalk.AddListener(Talk);
             }
         }
 
