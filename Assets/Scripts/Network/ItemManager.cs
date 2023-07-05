@@ -52,6 +52,11 @@ namespace Network
                     var newSceneObject = Instantiate(stick, spawn.position, Quaternion.Euler(0,0,0));
                     NetworkServer.Spawn(newSceneObject);                
                 }
+
+                foreach (Spawner spawner in FindObjectsOfType<Spawner>())
+                {
+                    spawner.SpawnItem();
+                }
             }
         }
     }
