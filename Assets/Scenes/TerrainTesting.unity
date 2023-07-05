@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38810045, g: 0.7278148, b: 0.7324987, a: 1}
+  m_IndirectSpecularColor: {r: 0.38794604, g: 0.7272919, b: 0.7332165, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 238038138}
+    - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
+      propertyPath: currentDialogue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1630494559697653905, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
       propertyPath: dialogueFlow.Array.size
       value: 3
@@ -4577,7 +4581,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  quest: {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
+  quest: {fileID: 0}
   waypoint: {fileID: 0}
   waypoint2D: {fileID: 0}
 --- !u!1 &2122129888

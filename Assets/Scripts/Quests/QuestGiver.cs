@@ -18,12 +18,14 @@ namespace Quests
 
         public void EvaluateWaypoint(WaypointManager waypointManager)
         {
-            _waypointManager = waypointManager;
-            var icon = QuestManager.Current.newQuestWaypoint;
-            waypoint = _waypointManager.AddWaypoint(icon, transform);
-            
-            waypoint2D = Instantiate(_waypointManager.waypoint2DPrefab, transform).GetComponent<Waypoint2D>();
-            waypoint2D.waypointImage.sprite = icon;
+            if (quest != null) {
+                _waypointManager = waypointManager;
+                var icon = QuestManager.Current.newQuestWaypoint;
+                waypoint = _waypointManager.AddWaypoint(icon, transform);
+                
+                waypoint2D = Instantiate(_waypointManager.waypoint2DPrefab, transform).GetComponent<Waypoint2D>();
+                waypoint2D.waypointImage.sprite = icon;
+            }
         }
 
         [YarnCommand("give_quest")]
