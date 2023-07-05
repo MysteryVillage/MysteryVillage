@@ -43,15 +43,13 @@ namespace UI
             float maxY = Screen.height - minY;
 
             // Temporary variable to store the converted position from 3D world point to 2D screen point
-            Vector2 pos = Camera.main.WorldToScreenPoint(target.position + offset);            
-            Debug.Log("Prev - X:" + pos.x + " | Y: " + pos.y);
+            Vector2 pos = Camera.main.WorldToScreenPoint(target.position + offset);
 
             // var heading = cam.transform
             
             // Check if the target is behind us, to only show the icon once the target is in front
             if(Vector3.Dot((target.position - cam.transform.position), cam.transform.forward) < 0)
             {
-                Debug.Log("Target behind us");
                 // Check if the target is on the left side of the screen
                 if(pos.x < Screen.width / 2)
                 {
@@ -68,8 +66,6 @@ namespace UI
             // Limit the X and Y positions
             pos.x = Mathf.Clamp(pos.x, minX, maxX);
             pos.y = Mathf.Clamp(pos.y, minY, maxY);
-            
-            Debug.Log("Final - X:" + pos.x + " | Y: " + pos.y);
 
             // Update the marker's position
             waypointImage.transform.position = pos;

@@ -41,8 +41,8 @@ namespace Quests.Goals
         {
             TalkToGoal talkToGoal = goal as TalkToGoal;
             if (talkToGoal == null) return;
-            
-            NetworkIdentity networkIdentity = talkToGoal.target.GetComponent<NetworkIdentity>();
+
+            NetworkIdentity networkIdentity = talkToGoal.target == null ? null : talkToGoal.target.GetComponent<NetworkIdentity>();
             writer.WriteNetworkIdentity(networkIdentity);
         }
 
