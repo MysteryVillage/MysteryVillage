@@ -2,6 +2,7 @@ using System;
 using Mirror;
 using Quests.Goals;
 using Quests.UI;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -27,6 +28,11 @@ namespace Quests
         public AudioClip questFinishedSound;
         public AudioClip questReceivedSound;
 
+        [Header("Waypoints")] 
+        public Sprite newQuestWaypoint;
+        public Sprite questTargetWaypoint;
+
+        [DoNotSerialize]
         public QuestNotificationUI notifier;
 
         private void Awake()
@@ -129,7 +135,7 @@ namespace Quests
             notifier.QuestDone(title);
         }
         
-        void PlaySound(AudioClip clip)
+        public void PlaySound(AudioClip clip)
         {
             if (NetworkClient.localPlayer != null) NetworkClient.localPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
         }

@@ -46,8 +46,11 @@ namespace Quests.UI
         {
             info.gameObject.SetActive(true);
             questTitle.gameObject.SetActive(true);
-            info.text = notification.Info;
+            info.text = notification.IsNewQuest ? "Neue Aufgabe" : "Aufgabe erledigt";
             questTitle.text = notification.Title;
+
+            var qm = QuestManager.Current;
+            qm.PlaySound(notification.IsNewQuest ? qm.questReceivedSound : qm.questFinishedSound);
         }
 
         void ClearUI()
@@ -60,22 +63,22 @@ namespace Quests.UI
 
         public void NewQuest(string title)
         {
-            queue.Push(new QuestNotification("Eine neue Aufgabe", title));
+            queue.Push(new QuestNotification(true, title));
         }
 
         public void QuestDone(string title)
         {
-            queue.Push(new QuestNotification("Aufgabe erledigt", title));
+            queue.Push(new QuestNotification(false, title));
         }
 
         public class QuestNotification
         {
-            public string Info;
+            public bool IsNewQuest;
             public string Title;
 
-            public QuestNotification(string info, string title)
+            public QuestNotification(bool isNewQuest, string title)
             {
-                Info = info;
+                IsNewQuest = isNewQuest;
                 Title = title;
             }
         }

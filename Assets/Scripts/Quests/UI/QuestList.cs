@@ -28,6 +28,8 @@ namespace Quests.UI
 
             foreach (var quest in quests)
             {
+                if (quest.Completed) continue;
+                
                 var item = Instantiate(questListItem, transform);
                 item.GetComponent<QuestListItem>().Init(quest);
                 questList.Add(item);
