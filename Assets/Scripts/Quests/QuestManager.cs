@@ -76,7 +76,7 @@ namespace Quests
             
             // @TODO
             // audio and visual feedback
-            PlaySound(questReceivedSound);
+            // PlaySound(questReceivedSound);
             QuestRecievedVisual(quest.Information.name);
         }
 
@@ -97,7 +97,7 @@ namespace Quests
             
             // @TODO
             // visual and audio feedback
-            PlaySound(questFinishedSound);
+            // PlaySound(questFinishedSound);
             QuestFinishedVisual(quest.Information.name);
         }
 

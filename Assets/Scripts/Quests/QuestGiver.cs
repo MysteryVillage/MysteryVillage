@@ -12,13 +12,18 @@ namespace Quests
     {
         public Quest quest;
         public Waypoint waypoint;
+        public Waypoint2D waypoint2D;
 
         private WaypointManager _waypointManager;
 
         public void EvaluateWaypoint(WaypointManager waypointManager)
         {
             _waypointManager = waypointManager;
-            waypoint = _waypointManager.AddWaypoint(QuestManager.Current.newQuestWaypoint, transform);
+            var icon = QuestManager.Current.newQuestWaypoint;
+            waypoint = _waypointManager.AddWaypoint(icon, transform);
+            
+            waypoint2D = Instantiate(_waypointManager.waypoint2DPrefab, transform).GetComponent<Waypoint2D>();
+            waypoint2D.waypointImage.sprite = icon;
         }
 
         [YarnCommand("give_quest")]
@@ -26,6 +31,7 @@ namespace Quests
         {
             NetworkClient.localPlayer.GetComponent<InteractionManager>().AddQuest(quest);
             _waypointManager.RemoveWaypoint(waypoint);
+            Destroy(waypoint2D.gameObject);
         }
     }
 }
