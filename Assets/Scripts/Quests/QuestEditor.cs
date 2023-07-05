@@ -13,7 +13,7 @@ namespace Quests
     public class QuestEditor : Editor
     {
         private SerializedProperty m_QuestInfoProperty;
-        private SerializedProperty m_NameInfoProperty;
+        private SerializedProperty m_QuestFollowUpProperty;
 
         private List<string> m_QuestGoalType;
         private SerializedProperty m_QuestGoalListProperty;
@@ -32,7 +32,7 @@ namespace Quests
 
             m_QuestGoalListProperty = serializedObject.FindProperty(nameof(Quest.goals));
 
-            m_NameInfoProperty = serializedObject.FindProperty("m_Name");
+            m_QuestFollowUpProperty = serializedObject.FindProperty(nameof(Quest.followUpQuest));
 
             var lookup = typeof(QuestGoal);
             m_QuestGoalType = AppDomain.CurrentDomain.GetAssemblies()
@@ -54,6 +54,8 @@ namespace Quests
                 EditorGUILayout.PropertyField(child, true);
                 child.NextVisible(false);
             }
+            
+            EditorGUILayout.PropertyField(m_QuestFollowUpProperty.Copy(), true);
 
             int choice = EditorGUILayout.Popup("Add new Quest Goal", -1, m_QuestGoalType.ToArray());
 

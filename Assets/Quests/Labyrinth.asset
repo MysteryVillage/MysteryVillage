@@ -17,8 +17,6 @@ MonoBehaviour:
   QuestGoalCompleted:
     m_PersistentCalls:
       m_Calls: []
-  target: {fileID: 8663433656098616267, guid: 9d626f92d8ad54eb69064bf96f50bb7c, type: 3}
-  type: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,3 +34,4 @@ MonoBehaviour:
     description: Gehe zum Labyrinth
   goals:
   - {fileID: -7832362548740153401}
+  followUpQuest: {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}

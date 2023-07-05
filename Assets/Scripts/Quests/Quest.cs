@@ -67,7 +67,7 @@ namespace Quests
             {
                 Debug.Log(name + ": All goals completed");
                 QuestCompleted.Invoke(this);
-                if (followUpQuest != null) QuestManager.Current.AddQuest(followUpQuest);
+                if (followUpQuest != null) QuestManager.Current.SetNewQuest(followUpQuest);
             }
         }
 

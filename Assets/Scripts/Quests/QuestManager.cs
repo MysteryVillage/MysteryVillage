@@ -1,6 +1,7 @@
 using System;
 using Mirror;
 using Quests.Goals;
+using Quests.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -25,6 +26,8 @@ namespace Quests
         [Header("AudioFeedback")] 
         public AudioClip questFinishedSound;
         public AudioClip questReceivedSound;
+
+        public QuestNotificationUI notifier;
 
         private void Awake()
         {
@@ -57,16 +60,24 @@ namespace Quests
                 quest.Init();
                 quest.QuestCompleted.AddListener(QuestFinished);
             }
-            RefreshUI();
 
             if (currentQuest == null)
             {
                 SelectQuest(quest);
             }
             
+            RefreshUI();
+            
             // @TODO
             // audio and visual feedback
             PlaySound(questReceivedSound);
+            QuestRecievedVisual(quest.Information.name);
+        }
+
+        public void SetNewQuest(Quest quest)
+        {
+            currentQuest = null;
+            AddQuest(quest);
         }
 
         public void QuestFinished(Quest quest)
@@ -81,6 +92,7 @@ namespace Quests
             // @TODO
             // visual and audio feedback
             PlaySound(questFinishedSound);
+            QuestFinishedVisual(quest.Information.name);
         }
 
         public void QuestGoalUpdated(QuestGoal goal)
@@ -103,6 +115,18 @@ namespace Quests
         {
             OnQuestListChanged.Invoke();
             OnQuestChanged.Invoke(currentQuest);
+        }
+
+        [ClientRpc]
+        void QuestRecievedVisual(string title)
+        {
+            notifier.NewQuest(title);
+        }
+
+        [ClientRpc]
+        void QuestFinishedVisual(string title)
+        {
+            notifier.QuestDone(title);
         }
         
         void PlaySound(AudioClip clip)
