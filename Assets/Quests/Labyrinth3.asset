@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
+  m_Name: Labyrinth3
+  m_EditorClassIdentifier: 
+  Information:
+    name: Labyrinth
+    description: "Sammle den Schl\xFCssel ein"
+  goals:
+  - {fileID: 2270169259580826647}
+  followUpQuest: {fileID: 11400000, guid: 89329ffc1eabd465cafc5e73941e586b, type: 2}
+--- !u!114 &2270169259580826647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3da5692b04549f99f9064a0ff0966a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: "Nehme den Schl\xFCssel"
+  RequiredAmount: 1
+  QuestGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  item: {fileID: 11400000, guid: 8835e03322da44e43ab0f89e69813977, type: 2}

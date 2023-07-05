@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7832362548740153401
+--- !u!114 &-5338685401637814784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafaff00d31b48c7924416241dc314fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: Geh hin
+  Description: "Finde den Schl\xFCssel"
   RequiredAmount: 1
   QuestGoalCompleted:
     m_PersistentCalls:
@@ -27,11 +27,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
-  m_Name: Labyrinth
+  m_Name: Labyrinth2
   m_EditorClassIdentifier: 
   Information:
     name: Labyrinth
-    description: Gehe zum Labyrinth
+    description: "Finde den Schl\xFCssel"
   goals:
-  - {fileID: -7832362548740153401}
-  followUpQuest: {fileID: 11400000, guid: 478a1675292ae4aabadb8abec8ddcabe, type: 2}
+  - {fileID: -5338685401637814784}
+  followUpQuest: {fileID: 11400000, guid: 9697a751efd774736a2ea44b6338d178, type: 2}
