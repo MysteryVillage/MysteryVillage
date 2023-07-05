@@ -2410,6 +2410,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   quest: {fileID: 11400000, guid: f45de22a77a484ece980673d39b0a9e1, type: 2}
+  waypoint: {fileID: 0}
 --- !u!1 &1137534659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,7 +3066,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228830059}
-  m_LocalRotation: {x: 0.30237114, y: 0.000000023194454, z: -0.0000000073577477, w: 0.9531903}
+  m_LocalRotation: {x: 0.30237114, y: -0.00000002319445, z: 0.000000007357747, w: 0.9531903}
   m_LocalPosition: {x: 0, y: 2.7299995, z: -3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3336,6 +3337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8dcceeb55f4ff7b1c9762354f75ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   foiCamera: {fileID: 1228830060}
 --- !u!1 &1491016489
 GameObject:
@@ -4049,6 +4053,8 @@ MonoBehaviour:
   startQuest: {fileID: 11400000, guid: e017e14b15047455a852cb1da6358047, type: 2}
   questFinishedSound: {fileID: 8300000, guid: 722977501ec3c47cca9aed3ccebe8904, type: 3}
   questReceivedSound: {fileID: 0}
+  newQuestWaypoint: {fileID: 21300000, guid: a67b58d6cddcd4345b1e001340de5a76, type: 3}
+  questTargetWaypoint: {fileID: 21300000, guid: 3999034958d54364da380a8839a11050, type: 3}
   notifier: {fileID: 0}
 --- !u!114 &1993836718
 MonoBehaviour:
@@ -4180,6 +4186,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   quest: {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
+  waypoint: {fileID: 0}
 --- !u!1 &2122129888
 GameObject:
   m_ObjectHideFlags: 0

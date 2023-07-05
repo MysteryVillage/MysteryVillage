@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using Player;
 using TMPro;
@@ -17,6 +18,7 @@ public class PlayerDistance : MonoBehaviour
     {
         _networkManager = FindObjectOfType<Network.NetworkManager>();
         distanceText.enabled = false;
+        CinemachineCore.CameraUpdatedEvent.AddListener(SetScreenPosition);
     }
 
     private void Update()
@@ -50,7 +52,10 @@ public class PlayerDistance : MonoBehaviour
                 }
             }
         }
-        
+    }
+
+    public void SetScreenPosition(CinemachineBrain brain)
+    {
         if (otherPlayer != null && distanceText != null)
         {
             // ist der spieler im sichtfeld?

@@ -29,6 +29,9 @@ namespace UI
         [Header("Items")] 
         public ItemPickupController itemPickupController;
 
+        [Header("Waypoints")] 
+        public WaypointManager waypointManager;
+
         // Start is called before the first frame update
         void Start()
         {
