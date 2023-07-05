@@ -10,6 +10,8 @@ namespace UI
     public class WaypointManager : MonoBehaviour
     {
         public GameObject waypointPrefab;
+        public GameObject waypoint2DPrefab;
+        
         public List<Waypoint> activeWaypoints;
 
         private void Start()

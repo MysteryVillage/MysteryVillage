@@ -1,11 +1,10 @@
-using System;
 using Cinemachine;
 using Mirror;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Quests.UI
+namespace UI
 {
     public class Waypoint : MonoBehaviour
     {
