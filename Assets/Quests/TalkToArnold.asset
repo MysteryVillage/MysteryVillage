@@ -18,6 +18,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   npc: {fileID: 1621466806945478623, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
+  target: {fileID: 0}
+  npcName: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,3 +37,4 @@ MonoBehaviour:
     description: Sprich mit Arnold
   goals:
   - {fileID: -3642915958682820974}
+  followUpQuest: {fileID: 0}

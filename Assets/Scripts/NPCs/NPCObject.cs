@@ -17,6 +17,13 @@ namespace NPC
         public DialogueRunner dialogue;
         public string[] dialogueFlow;
         public int currentDialogue = 0;
+        public NpcName npcName;
+
+        public enum NpcName
+        {
+            Arnold,
+            Hubert
+        }
 
         public UnityEvent OnTalk;
 

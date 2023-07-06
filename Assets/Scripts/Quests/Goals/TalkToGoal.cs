@@ -9,6 +9,7 @@ namespace Quests.Goals
     {
         public GameObject npc;
         public NPCObject target;
+        public NPCObject.NpcName npcName;
         
         public new void Init()
         {
@@ -17,10 +18,7 @@ namespace Quests.Goals
             var NPCs = FindObjectsOfType<NPCObject>();
             foreach (var npcObject in NPCs)
             {
-                Debug.Log(npcObject);
-                Debug.Log(npc);
-                if (npcObject == null || npc == null) continue;
-                if (npcObject.name != npc.name) continue;
+                if (npcName != npcObject.npcName) continue;
                 target = npcObject;
                 target.OnTalk.AddListener(Talk);
             }
