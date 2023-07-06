@@ -59,7 +59,15 @@ namespace Network
             QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
             
             // disable debug cam
-            debugCam.SetActive(false);
+            if (debugCam == null)
+            {
+                debugCam = GameObject.Find("DebugCam");
+                
+            }
+            if (debugCam != null)
+            {
+                debugCam.SetActive(false);
+            }
         }
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
