@@ -17,6 +17,7 @@ namespace NPC
         public DialogueRunner dialogue;
         public string[] dialogueFlow;
         public int currentDialogue = 0;
+        public string nextDialogueOverwrite = "";
         public NpcName npcName;
 
         public enum NpcName
@@ -50,7 +51,7 @@ namespace NPC
             if (dia.GetComponent<DialogueRunner>() != null)
             {
                 NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Dialogue");
-                dia.GetComponent<DialogueRunner>().StartDialogue(dialogueFlow[currentDialogue]);
+                dia.GetComponent<DialogueRunner>().StartDialogue(nextDialogueOverwrite != "" ? nextDialogueOverwrite : dialogueFlow[currentDialogue]);
             }
         }
 

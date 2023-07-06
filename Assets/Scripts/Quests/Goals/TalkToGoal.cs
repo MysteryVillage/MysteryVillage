@@ -10,6 +10,8 @@ namespace Quests.Goals
         public GameObject npc;
         public NPCObject target;
         public NPCObject.NpcName npcName;
+
+        public string dialogueScript = "";
         
         public new void Init()
         {
@@ -20,6 +22,10 @@ namespace Quests.Goals
             {
                 if (npcName != npcObject.npcName) continue;
                 target = npcObject;
+                if (dialogueScript != "")
+                {
+                    target.nextDialogueOverwrite = dialogueScript;
+                }
                 target.OnTalk.AddListener(Talk);
             }
         }
@@ -43,6 +49,7 @@ namespace Quests.Goals
 
             NetworkIdentity networkIdentity = talkToGoal.target == null ? null : talkToGoal.target.GetComponent<NetworkIdentity>();
             writer.WriteNetworkIdentity(networkIdentity);
+            writer.WriteString(talkToGoal.dialogueScript);
         }
 
         public static TalkToGoal ReadTalkToGoal(NetworkReader reader)
@@ -55,6 +62,7 @@ namespace Quests.Goals
                 : null;
 
             goal.target = target;
+            goal.dialogueScript = reader.ReadString();
 
             return goal;
         }

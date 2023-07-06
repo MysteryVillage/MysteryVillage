@@ -1079,7 +1079,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470326580}
-  m_LocalRotation: {x: 0.00000010291401, y: 0.7706549, z: -0.63725275, w: 0.00000012445796}
+  m_LocalRotation: {x: -0.000000039221653, y: 0.7706549, z: -0.63725275, w: -0.00000004743229}
   m_LocalPosition: {x: -53.336002, y: 20.072557, z: -148.46344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3005,19 +3005,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7039538
+      value: 0.70395386
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06670096
+      value: -0.066701114
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7039538
+      value: 0.70395386
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.066701196
+      value: 0.06670103
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3197,6 +3197,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: bcce96c5d004e2b4a904d06720405528, type: 2}
+    - target: {fileID: 2697442112755211713, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
+      propertyPath: quest
+      value: 
+      objectReference: {fileID: 11400000, guid: f45de22a77a484ece980673d39b0a9e1, type: 2}
     - target: {fileID: 3215766256094435472, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
