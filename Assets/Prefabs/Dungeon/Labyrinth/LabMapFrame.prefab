@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624141129158423008}
-  m_LocalRotation: {x: -0.035739873, y: -0.707694, z: 0.035891663, w: -0.7047011}
-  m_LocalPosition: {x: -0.03802773, y: 0.0023396786, z: 0.00016756762}
+  m_LocalRotation: {x: -0.030833416, y: 0.70643425, z: 0.03083378, w: 0.70643425}
+  m_LocalPosition: {x: -0.0408, y: -0.00474, z: 0.000000015981652}
   m_LocalScale: {x: 0.0130921565, y: 0.0076470342, z: 0.012505062}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -3.020805, y: 0.3072014, z: 0.01280212}
+  m_FollowOffset: {x: -0.6197581, y: 3.241022, z: 0.0000002808829}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -265,6 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8dcceeb55f4ff7b1c9762354f75ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   foiCamera: {fileID: 0}
 --- !u!65 &2994009747903428116
 BoxCollider:

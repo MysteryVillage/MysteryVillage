@@ -16,6 +16,8 @@ namespace Network
         public GameObject loadingScreen;
 
         private InventoryManager _inventoryManager;
+
+        public GameObject debugCam;
         
         // Overrides the base singleton so we don't
         // have to cast to this type everywhere.
@@ -55,6 +57,9 @@ namespace Network
             // Hand out first quest
             QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
             QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
+            
+            // disable debug cam
+            debugCam.SetActive(false);
         }
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
