@@ -58,16 +58,7 @@ namespace Network
             QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
             QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
             
-            // disable debug cam
-            if (debugCam == null)
-            {
-                debugCam = GameObject.Find("DebugCam");
-                
-            }
-            if (debugCam != null)
-            {
-                debugCam.SetActive(false);
-            }
+            RemoveDebugCam();
         }
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
@@ -118,6 +109,20 @@ namespace Network
         {
             ScanForInventoryManager();
             if (NetworkServer.active) _inventoryManager.ClearInventories();
+        }
+
+        public void RemoveDebugCam()
+        {
+            // disable debug cam
+            if (debugCam == null)
+            {
+                debugCam = GameObject.Find("DebugCam");
+                
+            }
+            if (debugCam != null)
+            {
+                debugCam.SetActive(false);
+            }
         }
     }
 }

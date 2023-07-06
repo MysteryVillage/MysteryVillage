@@ -3,6 +3,7 @@
  using UnityEngine;
  using UnityEngine.Serialization;
  using UnityEngine.UI;
+ using NetworkManager = Network.NetworkManager;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -174,6 +175,8 @@ namespace Player
             }
 
             Cursor.lockState = CursorLockMode.Locked;
+            
+            NetworkManager.singleton.RemoveDebugCam();
         }
 
         private void Update()

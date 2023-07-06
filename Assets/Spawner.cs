@@ -10,6 +10,7 @@ public class Spawner : NetworkBehaviour
     
     public void SpawnItem()
     {
-        Instantiate(item, spawnPosition.transform.position, transform.rotation, transform);
+        var itemObject = Instantiate(item, spawnPosition.transform.position, transform.rotation);
+        NetworkServer.Spawn(itemObject);
     }
 }
