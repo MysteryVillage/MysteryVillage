@@ -56,6 +56,7 @@ namespace Quests
                     goal.Init();
                 }
                 goal.QuestGoalCompleted.AddListener(CheckGoals);
+
             }
         }
 

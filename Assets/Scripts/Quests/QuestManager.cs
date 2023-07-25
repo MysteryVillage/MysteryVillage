@@ -11,6 +11,8 @@ namespace Quests
 {
     public class QuestManager : NetworkBehaviour
     {
+        Animator doorAnimationLeft = null;
+        Animator doorAnimationRight = null;
         public readonly SyncList<Quest> Quests = new();
         [SerializeField, SyncVar]
         public Quest currentQuest;
@@ -65,6 +67,7 @@ namespace Quests
                 Quests.Add(quest);
                 quest.Init();
                 quest.QuestCompleted.AddListener(QuestFinished);
+              
             }
 
             if (currentQuest == null)
@@ -77,8 +80,20 @@ namespace Quests
             // @TODO
             // audio and visual feedback
             // PlaySound(questReceivedSound);
+            if(quest.Information.name == "Labyrinth" && quest.Information.description == "Gehe zum Labyrinth")
+            {
+                Debug.Log("Labyrinth Eingang Öffnen");
+             
+                doorAnimationLeft = GameObject.Find("Tür_Lab_eingang_links").GetComponent<Animator>();
+                doorAnimationRight = GameObject.Find("Tür_Lab_eingang_rechts").GetComponent<Animator>();
+                if(doorAnimationLeft != null && doorAnimationRight != null)
+                {
+                    OpenLabDoor();
+                }
+            }
             QuestRecievedVisual(quest.Information.name);
         }
+      
 
         public void SetNewQuest(Quest quest)
         {
@@ -139,6 +154,12 @@ namespace Quests
         public void PlaySound(AudioClip clip)
         {
             if (NetworkClient.localPlayer != null) NetworkClient.localPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
+        }
+        [ClientRpc]
+        private void OpenLabDoor()
+        {
+            doorAnimationLeft.Play("DoorLeft_Open", 0, 0.0f);
+            doorAnimationRight.Play("DoorRight_Open", 0, 0.0f);
         }
     }
 }
