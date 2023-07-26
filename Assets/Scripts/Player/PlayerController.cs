@@ -22,11 +22,11 @@ namespace Player
         [FormerlySerializedAs("MoveSpeed")]
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
-        public float moveSpeed = 2.0f;
+        public float moveSpeed = 8.0f; 
         public float sneakSpeed = 1.0f;
 
         [FormerlySerializedAs("SprintSpeed")] [Tooltip("Sprint speed of the character in m/s")]
-        public float sprintSpeed = 8.0f;
+        public float sprintSpeed = 16.0f;
 
         [FormerlySerializedAs("RotationSmoothTime")]
         [Tooltip("How fast the character turns to face movement direction")]
