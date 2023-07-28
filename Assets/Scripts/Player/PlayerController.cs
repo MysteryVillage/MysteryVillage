@@ -130,6 +130,8 @@ namespace Player
 
         public PlayerUi playerUi;
 
+        public bool isBoy;
+
         public AudioSource audioSource;
 
         private bool IsCurrentDeviceMouse

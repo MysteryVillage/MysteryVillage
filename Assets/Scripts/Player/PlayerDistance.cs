@@ -2,6 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using Player;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerDistance : MonoBehaviour
 {
@@ -11,8 +12,12 @@ public class PlayerDistance : MonoBehaviour
     public float minRange = 10f;
     private PlayerController[] players;
     private GameObject otherPlayer;
-    public Camera mainCamera;
     private bool isPlayerVisible;
+    public Image playerIcon;
+
+    [Header("Icons")]
+    public Sprite boyIcon;
+    public Sprite girlIcon;
 
     private void Start()
     {
@@ -29,13 +34,15 @@ public class PlayerDistance : MonoBehaviour
             float distance = PlayerController.GetPlayerSeperation();
             players = PlayerController.GetPlayers();
             distanceText.text = "" + Mathf.FloorToInt(distance)+ "m";
-            if (distance < minRange || !isPlayerVisible)
+            if (distance < minRange)
             {
                 distanceText.enabled = false;
+                playerIcon.gameObject.SetActive(false);
             }
             else
             {
                 distanceText.enabled = true;
+                playerIcon.gameObject.SetActive(true);
             }
 
             // Überprüfe, ob der zweite Spieler beigetreten ist
@@ -47,6 +54,15 @@ public class PlayerDistance : MonoBehaviour
                     {
                         otherPlayer = player.gameObject;
                         distanceText.enabled = true;
+                        playerIcon.gameObject.SetActive(true);
+                        if (otherPlayer.GetComponent<PlayerController>().isBoy)
+                        {
+                            playerIcon.sprite = boyIcon;
+                        }
+                        else
+                        {
+                            playerIcon.sprite = girlIcon;
+                        }
                         break;
                     }
                 }
@@ -58,16 +74,11 @@ public class PlayerDistance : MonoBehaviour
     {
         if (otherPlayer != null && distanceText != null)
         {
-            // ist der spieler im sichtfeld?
-            var otherPlayerPos = otherPlayer.transform.position;
-            Vector3 targetScreenPosition = mainCamera.WorldToScreenPoint(otherPlayerPos);
-            isPlayerVisible = targetScreenPosition.z > 0 && targetScreenPosition.x > 0 && targetScreenPosition.x < Screen.width && targetScreenPosition.y > 0 && targetScreenPosition.y < Screen.height;
+            var pos = GetComponent<PlayerController>().playerUi
+                .GetScreenPosition(otherPlayer.transform, playerIcon, Vector3.up * yOffset);
             
-            // y-offset für textfeld
-            Vector3 targetPosition = otherPlayerPos + new Vector3(0f, yOffset, 0f);
-
             // text position ändern
-            distanceText.transform.position = mainCamera.WorldToScreenPoint(targetPosition);
+            distanceText.transform.parent.position = pos;
         }
     }
 }

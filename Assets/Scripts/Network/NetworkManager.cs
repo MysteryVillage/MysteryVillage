@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Inventory;
 using Mirror;
+using Player;
 using Quests;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -69,11 +70,13 @@ namespace Network
             {
                 playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
                 playerPrefab.GetComponent<Player.GeometryController>().character = "Boy";
+                playerPrefab.GetComponent<PlayerController>().isBoy = true;
             }
             else
             {
                 playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
                 playerPrefab.GetComponent<Player.GeometryController>().character = "Girl";
+                playerPrefab.GetComponent<PlayerController>().isBoy = false;
             }
 
             base.OnServerAddPlayer(conn);
