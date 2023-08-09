@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace Network
 {
-    public class NetworkManager : Mirror.NetworkManager
+    public class NetworkManager : NetworkRoomManager
     {
         [Header("Loading Screen")] 
         public Camera loadingCam;
@@ -56,8 +56,10 @@ namespace Network
             if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
             
             // Hand out first quest
-            QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
-            QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
+            if (QuestManager.Current != null) {
+                QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
+                QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
+            }
             
             RemoveDebugCam();
         }
@@ -91,7 +93,7 @@ namespace Network
                     networkIdentifier = identity.netId;
                 }
             }
-            _inventoryManager.RegisterInventory(networkIdentifier);
+            if (_inventoryManager != null) _inventoryManager.RegisterInventory(networkIdentifier);
         }
 
         bool ScanForInventoryManager()
