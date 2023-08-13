@@ -1,3 +1,4 @@
+ using Inventory;
  using Mirror;
  using UI;
  using UnityEngine;
@@ -130,6 +131,7 @@ namespace Player
 
         public PlayerUi playerUi;
 
+        [SyncVar]
         public bool isBoy;
 
         public AudioSource audioSource;
@@ -179,6 +181,29 @@ namespace Player
             Cursor.lockState = CursorLockMode.Locked;
             
             NetworkManager.singleton.RemoveDebugCam();
+
+            if (isServer)
+            {
+                if (isLocalPlayer)
+                {
+                    isBoy = false;
+                    GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
+                }
+                else
+                {
+                    isBoy = true;
+                    GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
+                }
+                GetComponent<GeometryController>().SetGeometry();
+
+                var inventoryManagerGo = GameObject.Find("ItemManager");
+                if (inventoryManagerGo) {
+                    var inventoryManager = inventoryManagerGo.GetComponent<InventoryManager>();
+                    inventoryManager.RegisterInventory(netId);
+                }
+                
+
+            }
         }
 
         private void Update()

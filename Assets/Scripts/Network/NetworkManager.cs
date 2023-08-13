@@ -64,38 +64,6 @@ namespace Network
             RemoveDebugCam();
         }
 
-        public override void OnServerAddPlayer(NetworkConnectionToClient conn)
-        {
-            // @TODO: Remove hack to fix player input devices
-            playerPrefab.GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
-            if (conn.connectionId != 0)
-            {
-                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
-                playerPrefab.GetComponent<Player.GeometryController>().character = "Boy";
-                playerPrefab.GetComponent<PlayerController>().isBoy = true;
-            }
-            else
-            {
-                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
-                playerPrefab.GetComponent<Player.GeometryController>().character = "Girl";
-                playerPrefab.GetComponent<PlayerController>().isBoy = false;
-            }
-
-            base.OnServerAddPlayer(conn);
-
-            // Register player inventory
-            ScanForInventoryManager();
-            uint networkIdentifier = 0;
-            foreach (var identity in conn.owned)
-            {
-                if (identity.GetComponent<PlayerInventory>())
-                {
-                    networkIdentifier = identity.netId;
-                }
-            }
-            if (_inventoryManager != null) _inventoryManager.RegisterInventory(networkIdentifier);
-        }
-
         bool ScanForInventoryManager()
         {
             var inventoryManagerGo = GameObject.Find("ItemManager");
