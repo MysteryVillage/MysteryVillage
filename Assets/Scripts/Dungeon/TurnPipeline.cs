@@ -22,6 +22,25 @@ public class TurnPipeline : MonoBehaviour
         }*/
     }
 
+    public string GetInteractPrompt()
+    {
+        return string.Format("Turned Tube {0}", "here");
+    }
+
+    public void OnInteract(uint networkIdentifier)
+    {
+        if(isMoving)
+        {
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            StopAllCoroutines();
+            StartCoroutine(Turn());
+        }
+    }
+
     IEnumerator Turn()
     {
         isMoving = true;
