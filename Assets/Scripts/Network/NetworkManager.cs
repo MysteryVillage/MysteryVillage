@@ -47,21 +47,28 @@ namespace Network
             loadingCam.gameObject.SetActive(false);
             loadingScreen.SetActive(false);
         }
-    
+
+        public override void OnRoomServerSceneChanged(string sceneName)
+        {
+            if (sceneName == GameplayScene)
+            {
+                // get InventoryManager & spawn test items
+                if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
+                
+                // Hand out first quest
+                if (QuestManager.Current != null) {
+                    QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
+                    QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
+                }
+
+                RemoveDebugCam();
+            }
+            base.OnRoomServerSceneChanged(sceneName);
+        }
+
         public override void OnStartClient()
         {
             base.OnStartClient();
-        
-            // get InventoryManager & spawn test items
-            if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
-            
-            // Hand out first quest
-            if (QuestManager.Current != null) {
-                QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
-                QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
-            }
-            
-            RemoveDebugCam();
         }
 
         bool ScanForInventoryManager()
