@@ -13,7 +13,7 @@ public class NPCController : MonoBehaviour
     private float currentWaitTime = 0f;
     private bool isWaiting = false;
 
-    private Animator animator; // Verweis auf den Animator des NPCs
+    private Animator animator;
 
     void Start()
     {
@@ -22,39 +22,37 @@ public class NPCController : MonoBehaviour
             SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
         }
 
-        animator = GetComponent<Animator>(); // Animator-Komponente holen
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // Vor der Aktualisierung der Animation, sicherstellen, dass die Position des Agents und des NPCs synchron sind
         transform.position = agent.transform.position;
 
         if (isWaiting)
         {
-            animator.SetBool("IsWaiting", true); // Aktiviert die Idle-Animation
+            animator.SetBool("IsWaiting", true);
             currentWaitTime -= Time.deltaTime;
             if (currentWaitTime <= 0f)
             {
                 isWaiting = false;
-                animator.SetBool("IsWaiting", false); // Deaktiviert die Idle-Animation, wenn der NPC weitergeht
+                animator.SetBool("IsWaiting", false);
                 GoToNextWaypoint();
             }
-            return; // Warten, bis die Verzögerung abgelaufen ist
+            return; // warten auf waypoint delay
         }
 
         if (agent.remainingDistance < 0.1f)
         {
             if (waypoints[currentWaypointIndex].delayTime > 0)
             {
-                // Der aktuelle Waypoint hat eine Verzögerung, aktiviere die Idle-Animation
+                // idle animation bei delay
                 animator.SetBool("IsWaiting", true);
                 currentWaitTime = waypoints[currentWaypointIndex].delayTime;
                 isWaiting = true;
             }
             else
             {
-                // Der aktuelle Waypoint hat keine Verzögerung, aktiviere die Laufanimation
                 animator.SetBool("IsWaiting", false);
 
                 if (isLooping)
