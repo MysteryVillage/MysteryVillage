@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public NPCWaypoint[] waypoints; // Jetzt verwenden wir den Typ NPCWaypoint
+    public NPCWaypoint[] waypoints;
     private int currentWaypointIndex = 0;
 
     public bool isLooping = true;
@@ -15,44 +13,66 @@ public class NPCController : MonoBehaviour
     private float currentWaitTime = 0f;
     private bool isWaiting = false;
 
+    private Animator animator; // Verweis auf den Animator des NPCs
+
     void Start()
     {
         if (waypoints.Length > 0)
         {
             SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
         }
+
+        animator = GetComponent<Animator>(); // Animator-Komponente holen
     }
 
     void Update()
     {
+        // Vor der Aktualisierung der Animation, sicherstellen, dass die Position des Agents und des NPCs synchron sind
+        transform.position = agent.transform.position;
+
         if (isWaiting)
         {
+            animator.SetBool("IsWaiting", true); // Aktiviert die Idle-Animation
             currentWaitTime -= Time.deltaTime;
             if (currentWaitTime <= 0f)
             {
                 isWaiting = false;
+                animator.SetBool("IsWaiting", false); // Deaktiviert die Idle-Animation, wenn der NPC weitergeht
                 GoToNextWaypoint();
             }
-            return;
+            return; // Warten, bis die Verzögerung abgelaufen ist
         }
 
         if (agent.remainingDistance < 0.1f)
         {
-            if (isLooping)
+            if (waypoints[currentWaypointIndex].delayTime > 0)
             {
-                GoToNextWaypoint();
+                // Der aktuelle Waypoint hat eine Verzögerung, aktiviere die Idle-Animation
+                animator.SetBool("IsWaiting", true);
+                currentWaitTime = waypoints[currentWaypointIndex].delayTime;
+                isWaiting = true;
             }
             else
             {
-                currentWaypointIndex += direction;
+                // Der aktuelle Waypoint hat keine Verzögerung, aktiviere die Laufanimation
+                animator.SetBool("IsWaiting", false);
 
-                if (currentWaypointIndex >= waypoints.Length || currentWaypointIndex < 0)
+                if (isLooping)
                 {
-                    direction *= -1;
-                    currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
+                    GoToNextWaypoint();
                 }
+                else
+                {
+                    currentWaypointIndex += direction;
 
-                SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
+                    if (currentWaypointIndex >= waypoints.Length || currentWaypointIndex < 0)
+                    {
+                        direction *= -1;
+                        currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
+                    }
+
+                    SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
+                }
             }
         }
     }
@@ -72,10 +92,5 @@ public class NPCController : MonoBehaviour
     void SetDestinationToWaypoint(NPCWaypoint waypoint)
     {
         agent.SetDestination(waypoint.transform.position);
-        if (waypoint.delayTime > 0)
-        {
-            currentWaitTime = waypoint.delayTime;
-            isWaiting = true;
-        }
     }
 }
