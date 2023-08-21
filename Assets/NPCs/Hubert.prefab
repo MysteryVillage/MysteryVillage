@@ -1147,7 +1147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2482387937356222187}
+  HeadRig: {fileID: 0}
   Radius: 10
+  RetargetSpeed: 5
+  MaxAngle: 90
 --- !u!1 &2771433312171706578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1319,7 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: 45, y: 0, z: 0}
+    m_Offset: {x: 0, y: 0, z: 0}
     m_MinLimit: -180
     m_MaxLimit: 180
     m_AimAxis: 4
@@ -2163,6 +2166,7 @@ GameObject:
   - component: {fileID: 8817209559030209537}
   - component: {fileID: 8734787151602839826}
   - component: {fileID: 6825775539318216946}
+  - component: {fileID: 1644074673903017681}
   m_Layer: 10
   m_Name: Hubert
   m_TagString: NPC
@@ -2303,6 +2307,23 @@ MonoBehaviour:
   - m_Rig: {fileID: 5259454094097834649}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &1644074673903017681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157724860812301314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f1da2008a9e24458d905ba3b792516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 2482387937356222187}
+  HeadRig: {fileID: 5259454094097834649}
+  Radius: 10
+  RetargetSpeed: 5
+  MaxAngle: 90
 --- !u!1 &5248263855343998219
 GameObject:
   m_ObjectHideFlags: 0
