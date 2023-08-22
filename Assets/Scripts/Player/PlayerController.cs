@@ -181,11 +181,13 @@ namespace Player
             Cursor.lockState = CursorLockMode.Locked;
             
             NetworkManager.singleton.RemoveDebugCam();
+            
+            GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = false;
 
             if (isServer)
             {
                 RoomPlayer roomPlayer;
-                var isLocalGame = GameSettings.Get().isLocalGame;
+                var isLocalGame = NetworkManager.singleton.GetComponent<GameSettings>().isLocalGame;
 
                 if (isLocalPlayer)
                 {
