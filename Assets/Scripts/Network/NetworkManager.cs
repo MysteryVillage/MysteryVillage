@@ -104,5 +104,25 @@ namespace Network
                 debugCam.SetActive(false);
             }
         }
+
+        public RoomPlayer GetRoomHost()
+        {
+            if (roomSlots.Count > 0)
+            {
+                return roomSlots[0] as RoomPlayer;
+            }
+
+            return null;
+        }
+        
+        public RoomPlayer GetRoomClient()
+        {
+            if (roomSlots.Count > 1)
+            {
+                return roomSlots[1] as RoomPlayer;
+            }
+
+            return null;
+        }
     }
 }

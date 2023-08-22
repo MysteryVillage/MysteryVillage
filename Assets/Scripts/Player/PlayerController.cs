@@ -1,9 +1,9 @@
  using Inventory;
  using Mirror;
+ using Network;
  using UI;
  using UnityEngine;
  using UnityEngine.Serialization;
- using UnityEngine.UI;
  using NetworkManager = Network.NetworkManager;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
@@ -184,15 +184,33 @@ namespace Player
 
             if (isServer)
             {
+                RoomPlayer roomPlayer;
+                var isLocalGame = GameSettings.Get().isLocalGame;
+
                 if (isLocalPlayer)
                 {
-                    isBoy = false;
-                    GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
+                    roomPlayer = NetworkManager.singleton.GetRoomHost();
+                    
+                    if (isLocalGame)
+                    {
+                        GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
+                        GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
+                    }
                 }
                 else
                 {
-                    isBoy = true;
-                    GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
+                    roomPlayer = NetworkManager.singleton.GetRoomClient();
+                    
+                    if (isLocalGame)
+                    {
+                        GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
+                        GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
+                    }
+                }
+
+                if (roomPlayer != null)
+                {
+                    isBoy = roomPlayer.character == "Collin" ? true : false;
                 }
                 GetComponent<GeometryController>().SetGeometry();
 
