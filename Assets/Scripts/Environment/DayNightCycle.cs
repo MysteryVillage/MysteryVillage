@@ -1,9 +1,10 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DayNightCycle : MonoBehaviour
+public class DayNightCycle : NetworkBehaviour
 {
     // Start is called before the first frame update
     [Header("Einstellungen SkyBox")]
@@ -12,7 +13,7 @@ public class DayNightCycle : MonoBehaviour
 
 
     [Range(0.0f,1.0f)]
-    public float time;
+    [SyncVar] public float time;
     public float fullDayLength; // in Seconds 
     public float startTime = 0.4f;
     private float timeRate;

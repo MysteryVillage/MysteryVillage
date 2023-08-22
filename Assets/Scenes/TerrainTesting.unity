@@ -2303,7 +2303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &846936479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,6 +2743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b42a6f9143c3b040a387dd44e93c696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   AktivateCycle: 0
   useDefaultSkyBox: 0
   time: 0
@@ -4323,7 +4326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228830059}
-  m_LocalRotation: {x: 0.30237114, y: -1e-45, z: -0, w: 0.9531903}
+  m_LocalRotation: {x: 0.30237114, y: 3e-45, z: -1e-45, w: 0.9531903}
   m_LocalPosition: {x: 0, y: 2.7299995, z: -3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
