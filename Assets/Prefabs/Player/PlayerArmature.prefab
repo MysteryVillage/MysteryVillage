@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 932770753006522290}
-  HeadRig: {fileID: 1728773908756628689}
+  HeadRig: {fileID: 2643366053326905543}
   Radius: 10
   RetargetSpeed: 5
   MaxAngle: 90
@@ -6411,7 +6411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8794352401584378662}
-  - component: {fileID: 1485302834549214059}
+  - component: {fileID: 697353980276950811}
   m_Layer: 10
   m_Name: BoyHeadRig
   m_TagString: Untagged
@@ -6437,7 +6437,7 @@ Transform:
   m_Father: {fileID: 6069404550514950821}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1485302834549214059
+--- !u!114 &697353980276950811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6450,15 +6450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Weight: 1
-  m_Effectors:
-  - m_Transform: {fileID: 4381602423991526335}
-    m_Style:
-      shape: {fileID: 4711208715938537054, guid: ba13c90dac1541248aacb398a2bb4b47, type: 3}
-      color: {r: 1, g: 0, b: 0, a: 0.5}
-      size: 14.4
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
+  m_Effectors: []
 --- !u!1 &3003251539628076796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7674,7 +7666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3476999569895752029}
-  - component: {fileID: 1728773908756628689}
+  - component: {fileID: 2643366053326905543}
   m_Layer: 10
   m_Name: GirlHeadRig
   m_TagString: Untagged
@@ -7700,7 +7692,7 @@ Transform:
   m_Father: {fileID: 8802644387655185127}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1728773908756628689
+--- !u!114 &2643366053326905543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7713,15 +7705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Weight: 1
-  m_Effectors:
-  - m_Transform: {fileID: 932770753006522290}
-    m_Style:
-      shape: {fileID: 4711208715938537054, guid: ba13c90dac1541248aacb398a2bb4b47, type: 3}
-      color: {r: 1, g: 0, b: 0, a: 0.5}
-      size: 14.4
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
+  m_Effectors: []
 --- !u!1 &3882049529771904456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9617,10 +9601,13 @@ MonoBehaviour:
   boy: {fileID: 6877291182219925535}
   girl: {fileID: 8170258434926946397}
   animator: {fileID: 6982812146204527121}
+  rig: {fileID: 1428777657969283995}
   boyAvatar: {fileID: 9000000, guid: fae08b2b356664a45926bd4cda7f4e7d, type: 2}
   girlAvatar: {fileID: 9000000, guid: 4689565da45235445af7a4873a79c8d4, type: 2}
   boyAnimatorController: {fileID: 9100000, guid: 58db934662133c94197d8db6580a6488, type: 2}
   girlAnimatorController: {fileID: 9100000, guid: 724835aefd17d584998714fa24718b3d, type: 2}
+  boyRig: {fileID: 0}
+  girlRig: {fileID: 0}
 --- !u!82 &788476724465324060
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9777,7 +9764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigLayers:
-  - m_Rig: {fileID: 1728773908756628689}
+  - m_Rig: {fileID: 2643366053326905543}
     m_Active: 1
   m_Effectors: []
 --- !u!1 &4434418497906903494
@@ -12323,7 +12310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4381602423991526335}
-  HeadRig: {fileID: 1485302834549214059}
+  HeadRig: {fileID: 697353980276950811}
   Radius: 10
   RetargetSpeed: 5
   MaxAngle: 90
@@ -14610,7 +14597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6069404550514950821}
-  - component: {fileID: 205748984850454751}
+  - component: {fileID: 7032583665814991604}
   m_Layer: 0
   m_Name: Boy_Model
   m_TagString: Untagged
@@ -14647,26 +14634,20 @@ Transform:
   m_Father: {fileID: 8002264680419333305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &205748984850454751
-Animator:
-  serializedVersion: 4
+--- !u!114 &7032583665814991604
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6877291182219925535}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 94d5a046309ac164cb96b05ec521308c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Effectors: []
 --- !u!1 &6882711342423871855
 GameObject:
   m_ObjectHideFlags: 0
@@ -18701,7 +18682,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8338988566280778634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f19b75bf078197418557a29d838045d, type: 3}
   m_Name: 
