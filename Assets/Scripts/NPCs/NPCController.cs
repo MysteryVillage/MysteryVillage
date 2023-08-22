@@ -7,7 +7,7 @@ public class NPCController : MonoBehaviour
     public NPCWaypoint[] waypoints;
     private int currentWaypointIndex = 0;
 
-    public bool isLooping = true;
+    public bool isLooping = true; // loop npc path
 
     private int direction = 1;
     private float currentWaitTime = 0f;
