@@ -1874,8 +1874,6 @@ GameObject:
   - component: {fileID: 1630494559697653905}
   - component: {fileID: 2455637919294649110}
   - component: {fileID: 8817209559030209537}
-  - component: {fileID: 8734787151602839826}
-  - component: {fileID: 6825775539318216946}
   m_Layer: 10
   m_Name: Hubert
   m_TagString: NPC
@@ -1972,46 +1970,6 @@ MonoBehaviour:
   - {fileID: 0}
   thickness: 0.01
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!95 &8734787151602839826
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5157724860812301314}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 3605651457bf07048a8cd720c433b80e, type: 2}
-  m_Controller: {fileID: 9100000, guid: 4a1fa785b290e6c40946730036dce3db, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:Neck'\n\tTransform 'mixamorig:Head'\n\tTransform
-    'mixamorig:Neck'\n\tTransform 'mixamorig:Head'\n\tTransform 'mixamorig:Neck'\n\tTransform
-    'mixamorig:Head'"
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6825775539318216946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5157724860812301314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RigLayers:
-  - m_Rig: {fileID: 5259454094097834649}
-    m_Active: 1
-  m_Effectors: []
 --- !u!1 &5205825119299948594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,7 +3301,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8085776740209941535}
-  - component: {fileID: 2798529558304360037}
+  - component: {fileID: 2869858904447868942}
+  - component: {fileID: 1117981916087191097}
   m_Layer: 0
   m_Name: HubertModel
   m_TagString: Untagged
@@ -3371,7 +3330,7 @@ Transform:
   m_Father: {fileID: 2077092110878363376}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2798529558304360037
+--- !u!95 &2869858904447868942
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -3380,9 +3339,9 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8898448442039469733}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 26e2d9f4d24c83a4882ef4ecfa101f9f, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Avatar: {fileID: 9000000, guid: 3605651457bf07048a8cd720c433b80e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4a1fa785b290e6c40946730036dce3db, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -3391,6 +3350,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1117981916087191097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898448442039469733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 5259454094097834649}
+    m_Active: 1
+  m_Effectors: []
 --- !u!1 &9004183838519714360
 GameObject:
   m_ObjectHideFlags: 0
