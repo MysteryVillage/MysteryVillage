@@ -1,0 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+using UnityEngine.Animations.Rigging;
+
+public class HeadTracking : MonoBehaviour
+{
+    public Transform Target;
+    public Rig HeadRig;
+    public Camera MyCamera;
+
+    public float Radius = 10f;
+    public float RetargetSpeed = 5f;
+    public float MaxAngle = 90f;
+
+    List<PointOfInterest> POIs;
+    float RadiusSqr;
+    // Start is called before the first frame update
+    void Start()
+    {
+        //POIs = FindObjectsOfType<PointOfInterest>().ToList();
+        RadiusSqr = Radius * Radius;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        POIs = FindObjectsOfType<PointOfInterest>().ToList();
+        Transform tracking = null;
+        Vector3 targetPos = transform.position + (transform.forward * 2f);
+        float rigWeight = 0;
+
+        foreach (PointOfInterest poi in POIs)
+        {
+            Vector3 delta = poi.transform.position - transform.position;
+            if (delta.sqrMagnitude < RadiusSqr)
+            {
+                float angle = Vector3.Angle(transform.forward, delta);
+                if (angle < MaxAngle)
+                {
+                    tracking = poi.transform;
+                }
+                else
+                {
+                    targetPos = transform.position + (transform.forward * 2f);
+                    rigWeight = 0;
+                }
+            }
+        }
+        
+       
+        if (tracking != null)
+        {
+            targetPos = tracking.position;
+            rigWeight = 1;
+        }
+        else
+        {
+            float angle = Vector3.Angle(transform.forward, MyCamera.transform.forward);
+            if (angle < MaxAngle)
+            {
+                targetPos = transform.position + MyCamera.transform.forward;
+                rigWeight = 1;
+            }
+        }
+        Target.position = Vector3.Lerp(Target.position, targetPos, Time.deltaTime * RetargetSpeed);
+        HeadRig.weight = Mathf.Lerp(HeadRig.weight, rigWeight, Time.deltaTime * 2);
+    }
+}

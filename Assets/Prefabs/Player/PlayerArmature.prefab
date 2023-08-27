@@ -2316,7 +2316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243192401250881461}
-  - component: {fileID: 3635074382981805571}
+  - component: {fileID: 6514631408586757210}
   m_Layer: 10
   m_Name: HeadTracking
   m_TagString: Untagged
@@ -2339,7 +2339,7 @@ Transform:
   m_Father: {fileID: 3476999569895752029}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3635074382981805571
+--- !u!114 &6514631408586757210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2348,14 +2348,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1192969645869253032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f1da2008a9e24458d905ba3b792516, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a0e2557175ad48459d2c84c869b3ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 932770753006522290}
   HeadRig: {fileID: 2643366053326905543}
+  MyCamera: {fileID: 851956130896533707}
   Radius: 10
   RetargetSpeed: 5
-  MaxAngle: 90
+  MaxAngle: 105
 --- !u!1 &1214221894037828793
 GameObject:
   m_ObjectHideFlags: 0
@@ -9601,13 +9602,10 @@ MonoBehaviour:
   boy: {fileID: 6877291182219925535}
   girl: {fileID: 8170258434926946397}
   animator: {fileID: 6982812146204527121}
-  rig: {fileID: 1428777657969283995}
   boyAvatar: {fileID: 9000000, guid: fae08b2b356664a45926bd4cda7f4e7d, type: 2}
   girlAvatar: {fileID: 9000000, guid: 4689565da45235445af7a4873a79c8d4, type: 2}
   boyAnimatorController: {fileID: 9100000, guid: 58db934662133c94197d8db6580a6488, type: 2}
   girlAnimatorController: {fileID: 9100000, guid: 724835aefd17d584998714fa24718b3d, type: 2}
-  boyRig: {fileID: 0}
-  girlRig: {fileID: 0}
 --- !u!82 &788476724465324060
 AudioSource:
   m_ObjectHideFlags: 0
