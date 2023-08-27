@@ -5,15 +5,17 @@ public class NPCController : MonoBehaviour
 {
     public NavMeshAgent agent;
     public NPCWaypoint[] waypoints;
+    public Animator animator;
+
+    public float detectionRadius = 5f; // Der Radius, in dem der NPC den Spieler erkennt.
+    public string playerTag = "Player";
+
     private int currentWaypointIndex = 0;
-
-    public bool isLooping = true; // loop npc path
-
+    public bool isLooping = true;
     private int direction = 1;
     private float currentWaitTime = 0f;
-    private bool isWaiting = false;
-
-    private Animator animator;
+    private float speed = 0f;
+    private bool isRotating = false;
 
     void Start()
     {
@@ -21,67 +23,73 @@ public class NPCController : MonoBehaviour
         {
             SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
         }
-
-        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         transform.position = agent.transform.position;
 
-        if (isWaiting)
+        GameObject player = GameObject.FindWithTag(playerTag);
+        if (player != null)
         {
-            animator.SetBool("IsWaiting", true);
-            currentWaitTime -= Time.deltaTime;
-            if (currentWaitTime <= 0f)
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            if (distanceToPlayer <= detectionRadius)
             {
-                isWaiting = false;
-                animator.SetBool("IsWaiting", false);
-                GoToNextWaypoint();
-            }
-            return; // warten auf waypoint delay
-        }
-
-        if (agent.remainingDistance < 0.1f)
-        {
-            if (waypoints[currentWaypointIndex].delayTime > 0)
-            {
-                // idle animation bei delay
-                animator.SetBool("IsWaiting", true);
-                currentWaitTime = waypoints[currentWaypointIndex].delayTime;
-                isWaiting = true;
+                agent.isStopped = true;
             }
             else
             {
-                animator.SetBool("IsWaiting", false);
+                agent.isStopped = false;
 
-                if (isLooping)
+               
+                if (currentWaitTime > 0f || isRotating)
                 {
-                    GoToNextWaypoint();
+                    currentWaitTime -= Time.deltaTime;
+                    if (currentWaitTime <= 0f)
+                    {
+                        currentWaitTime = 0f;
+                        isRotating = false;
+                        GoToNextWaypoint();
+                    }
                 }
                 else
                 {
-                    currentWaypointIndex += direction;
-
-                    if (currentWaypointIndex >= waypoints.Length || currentWaypointIndex < 0)
+                    if (agent.remainingDistance < 0.1f)
                     {
-                        direction *= -1;
-                        currentWaypointIndex = Mathf.Clamp(currentWaypointIndex, 0, waypoints.Length - 1);
-                    }
+                        if (waypoints[currentWaypointIndex].delayTime > 0)
+                        {
+                            currentWaitTime = waypoints[currentWaypointIndex].delayTime;
+                        }
+                        else
+                        {
+                            GoToNextWaypoint();
 
-                    SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
+                            if (!isLooping && (currentWaypointIndex == 0 || currentWaypointIndex == waypoints.Length - 1))
+                            {
+                                direction *= -1; // Richtung umkehren
+                            }
+                        }
+                    }
                 }
             }
         }
+
+        // Setze den Speed-Parameter im Animator auf die Geschwindigkeit des NPCs.
+        speed = agent.velocity.magnitude / agent.speed;
+        animator.SetFloat("Speed", speed);
     }
 
     void GoToNextWaypoint()
     {
-        currentWaypointIndex = (currentWaypointIndex + direction) % waypoints.Length;
+        currentWaypointIndex += direction;
 
-        if (currentWaypointIndex == 0 && direction == -1)
+        if (currentWaypointIndex >= waypoints.Length)
         {
-            direction = 1;
+            currentWaypointIndex = 0;
+        }
+        else if (currentWaypointIndex < 0)
+        {
+            currentWaypointIndex = waypoints.Length - 1;
         }
 
         SetDestinationToWaypoint(waypoints[currentWaypointIndex]);
@@ -90,5 +98,14 @@ public class NPCController : MonoBehaviour
     void SetDestinationToWaypoint(NPCWaypoint waypoint)
     {
         agent.SetDestination(waypoint.transform.position);
+    }
+
+    void RotateTowardsNextWaypoint()
+    {
+        isRotating = true;
+        Vector3 directionToNextWaypoint = waypoints[currentWaypointIndex].transform.position - transform.position;
+        directionToNextWaypoint.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(directionToNextWaypoint);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * agent.angularSpeed);
     }
 }
