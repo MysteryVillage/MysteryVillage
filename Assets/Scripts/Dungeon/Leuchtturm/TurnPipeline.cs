@@ -1,10 +1,16 @@
+using Items;
+using Mirror;
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class TurnPipeline : MonoBehaviour
+public class TurnPipeline : NetworkBehaviour, IIinteractable
 {
+
+
     public int speed = 300;
     bool isMoving = false;
 
@@ -33,12 +39,9 @@ public class TurnPipeline : MonoBehaviour
         {
             return;
         }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Turn());
-        }
+        Debug.Log("turn tube");
+        StopAllCoroutines();
+        StartCoroutine(Turn());
     }
 
     IEnumerator Turn()
