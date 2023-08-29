@@ -8,6 +8,7 @@ public class DoorController : NetworkBehaviour, IIinteractable
 {
     private Animator animator;
     private bool isOpen = false;
+    private string prompt;
 
     // Start is called before the first frame update
     void Start()
@@ -18,33 +19,38 @@ public class DoorController : NetworkBehaviour, IIinteractable
     // Update is called once per frame
     void Update()
     {
-        GetInteractPrompt();
+       
     }
 
     public string GetInteractPrompt()
     {
         
-        if (!isOpen)
-        {
-            return string.Format("÷ffnen");
-        }
-        else
-        {
-            return string.Format("Schlieﬂen");
-        }
+            return string.Format(prompt);
+    
     }
 
     public void OnInteract(uint networkIdentifier)
     {
-        if(!isOpen) { 
+
+        Door();
+    }
+
+    [ClientRpc]
+    public void Door()
+    {
+        if (!isOpen)
+        {
             isOpen = true;
             animator.SetBool("isOpen", isOpen);
+            prompt = "÷ffnen";
+            GetInteractPrompt();
         }
         else
         {
             isOpen = false;
             animator.SetBool("isOpen", isOpen);
+            prompt = "Schlieﬂen";
+            GetInteractPrompt();
         }
-       
     }
 }
