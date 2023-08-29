@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace Network
 {
-    public class NetworkManager : Mirror.NetworkManager
+    public class NetworkManager : NetworkRoomManager
     {
         [Header("Loading Screen")] 
         public Camera loadingCam;
@@ -47,51 +47,28 @@ namespace Network
             loadingCam.gameObject.SetActive(false);
             loadingScreen.SetActive(false);
         }
-    
+
+        public override void OnRoomServerSceneChanged(string sceneName)
+        {
+            if (sceneName == GameplayScene)
+            {
+                // get InventoryManager & spawn test items
+                if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
+                
+                // Hand out first quest
+                if (QuestManager.Current != null) {
+                    QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
+                    QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
+                }
+
+                RemoveDebugCam();
+            }
+            base.OnRoomServerSceneChanged(sceneName);
+        }
+
         public override void OnStartClient()
         {
             base.OnStartClient();
-        
-            // get InventoryManager & spawn test items
-            if (ScanForInventoryManager()) _inventoryManager.GetComponent<ItemManager>().SpawnItems();
-            
-            // Hand out first quest
-            QuestManager.Current.AddQuest(QuestManager.Current.startQuest);
-            QuestManager.Current.SelectQuest(QuestManager.Current.startQuest);
-            
-            RemoveDebugCam();
-        }
-
-        public override void OnServerAddPlayer(NetworkConnectionToClient conn)
-        {
-            // @TODO: Remove hack to fix player input devices
-            playerPrefab.GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
-            if (conn.connectionId != 0)
-            {
-                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
-                playerPrefab.GetComponent<Player.GeometryController>().character = "Boy";
-                playerPrefab.GetComponent<PlayerController>().isBoy = true;
-            }
-            else
-            {
-                playerPrefab.GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
-                playerPrefab.GetComponent<Player.GeometryController>().character = "Girl";
-                playerPrefab.GetComponent<PlayerController>().isBoy = false;
-            }
-
-            base.OnServerAddPlayer(conn);
-
-            // Register player inventory
-            ScanForInventoryManager();
-            uint networkIdentifier = 0;
-            foreach (var identity in conn.owned)
-            {
-                if (identity.GetComponent<PlayerInventory>())
-                {
-                    networkIdentifier = identity.netId;
-                }
-            }
-            _inventoryManager.RegisterInventory(networkIdentifier);
         }
 
         bool ScanForInventoryManager()
@@ -126,6 +103,26 @@ namespace Network
             {
                 debugCam.SetActive(false);
             }
+        }
+
+        public RoomPlayer GetRoomHost()
+        {
+            if (roomSlots.Count > 0)
+            {
+                return roomSlots[0] as RoomPlayer;
+            }
+
+            return null;
+        }
+        
+        public RoomPlayer GetRoomClient()
+        {
+            if (roomSlots.Count > 1)
+            {
+                return roomSlots[1] as RoomPlayer;
+            }
+
+            return null;
         }
     }
 }
