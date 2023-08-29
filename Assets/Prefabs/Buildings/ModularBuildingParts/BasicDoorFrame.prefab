@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 891356014473121592}
   - component: {fileID: 8760853395885790456}
   - component: {fileID: 8348472141619941634}
-  - component: {fileID: 8308700319491152704}
-  - component: {fileID: 538434744703890621}
-  m_Layer: 0
+  - component: {fileID: 2912512311544807392}
+  - component: {fileID: 6334632890960070011}
+  - component: {fileID: 9127079383691048682}
+  - component: {fileID: 8063452450219467620}
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,6 +68,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 43fdce269c1af324c8e0f3d7c5299c40, type: 2}
+  - {fileID: 2100000, guid: bcce96c5d004e2b4a904d06720405528, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,58 +103,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014, y: 0.0011008014, z: 0.0195}
   m_Center: {x: -0.007076578, y: 0.0000000012223611, z: 0.000000002793968}
---- !u!54 &8308700319491152704
-Rigidbody:
+--- !u!95 &2912512311544807392
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964393612306769985}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!59 &538434744703890621
-HingeJoint:
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16ba8e9745f9dc84e85a2b64019f9ac0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6334632890960070011
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964393612306769985}
-  m_ConnectedBody: {fileID: 5640192204132625389}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 100}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0094354395, y: 0.0011008007, z: 0.010000001}
-  m_UseSpring: 1
-  m_Spring:
-    spring: 5
-    damper: 5
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 0
-  m_Limits:
-    min: -180
-    max: 90
-    bounciness: 0.1
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e679f87e5bc274e9538196c41453d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+--- !u!114 &9127079383691048682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964393612306769985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 382659774
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &8063452450219467620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964393612306769985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1240900d1b15f848a16acd45b610ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 8760853395885790456}
+  - {fileID: 5151185903251178765}
+  thickness: 0.01
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5351112590353672294
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +184,6 @@ GameObject:
   - component: {fileID: 8549788903230012793}
   - component: {fileID: 5855247948522785203}
   - component: {fileID: 8098418710626682042}
-  - component: {fileID: 5640192204132625389}
-  - component: {fileID: 5075599158977265440}
   m_Layer: 0
   m_Name: BasicDoorFrame
   m_TagString: Untagged
@@ -254,37 +272,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5672996501598742128, guid: 48a9eec5b35913b4287157756067abc7, type: 3}
---- !u!54 &5640192204132625389
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5351112590353672294}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!138 &5075599158977265440
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5351112590353672294}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &7383579712077496473
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +334,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -1581533359340128922, guid: 24d14b1a5577b7c45aa905d2f1f02de5, type: 3}
+  - {fileID: 2100000, guid: bcce96c5d004e2b4a904d06720405528, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
