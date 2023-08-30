@@ -214,7 +214,7 @@ namespace Player
                 {
                     isBoy = roomPlayer.character == "Collin" ? true : false;
                 }
-                GetComponent<GeometryController>().SetGeometry();
+                // GetComponent<GeometryController>().SetGeometry();
 
                 var inventoryManagerGo = GameObject.Find("ItemManager");
                 if (inventoryManagerGo) {

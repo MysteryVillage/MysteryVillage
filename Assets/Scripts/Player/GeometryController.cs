@@ -29,6 +29,7 @@ namespace Player
 
         public void SetGeometry()
         {
+            return;
             if (GetComponent<PlayerController>().isBoy)
             {
                 character = "Boy";

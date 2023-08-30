@@ -19,6 +19,9 @@ namespace Network
         private InventoryManager _inventoryManager;
 
         public GameObject debugCam;
+
+        public GameObject girlPrefab;
+        public GameObject boyPrefab;
         
         // Overrides the base singleton so we don't
         // have to cast to this type everywhere.
@@ -123,6 +126,12 @@ namespace Network
             }
 
             return null;
+        }
+
+        public override GameObject OnRoomServerCreateGamePlayer(NetworkConnectionToClient conn, GameObject roomPlayer)
+        {
+            playerPrefab = roomPlayer.GetComponent<RoomPlayer>().character == "Collin" ? boyPrefab : girlPrefab;
+            return base.OnRoomServerCreateGamePlayer(conn, roomPlayer);
         }
     }
 }
