@@ -11,7 +11,6 @@ namespace NPC
         [Header("Info")]
         public string displayName;
         public string description;
-        public string text;
 
         public override string ToString()
         {

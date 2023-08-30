@@ -71,6 +71,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   item: {fileID: 11400000, guid: 1f00b56e719354af98bfd1961700b850, type: 2}
+  eventSystem: {fileID: 0}
+  OnCollect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &8440853715501187198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191,7 +195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2782bd09fb749e4f8c457cb9c8cc6cd, type: 2}
+  - {fileID: 2100000, guid: d41d3920f81c926488a08dff6f3daebe, type: 2}
   - {fileID: 2100000, guid: bcce96c5d004e2b4a904d06720405528, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
