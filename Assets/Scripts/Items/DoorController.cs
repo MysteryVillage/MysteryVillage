@@ -14,6 +14,8 @@ public class DoorController : NetworkBehaviour, IIinteractable
     void Start()
     {
         animator = GetComponent<Animator>();
+        prompt = "÷ffnen";
+        GetInteractPrompt();
     }
 
     // Update is called once per frame
@@ -42,14 +44,14 @@ public class DoorController : NetworkBehaviour, IIinteractable
         {
             isOpen = true;
             animator.SetBool("isOpen", isOpen);
-            prompt = "÷ffnen";
+            prompt = "Schlieﬂen";
             GetInteractPrompt();
         }
         else
         {
             isOpen = false;
             animator.SetBool("isOpen", isOpen);
-            prompt = "Schlieﬂen";
+            prompt = "÷ffnen";
             GetInteractPrompt();
         }
     }
