@@ -304,12 +304,12 @@ namespace Player
             //laufen bremsen
             if (_input.move == Vector2.zero && _animationBlend > 0.0f)
             {
-                _animationBlend -= Time.deltaTime * speedChangeRate;
+                _animationBlend -= Time.deltaTime * (speedChangeRate * 2.0f);
             }
             //sprinten bremsen
             if (_input.move != Vector2.zero && _animationBlend > 2.0f && targetSpeed != sprintSpeed)
             {
-                _animationBlend -= Time.deltaTime * (speedChangeRate * 1.5f) ;
+                _animationBlend -= Time.deltaTime * (speedChangeRate * 2.0f);
             }
             //negativer wert
             if (_input.move == Vector2.zero && _animationBlend < 0.0f)
@@ -317,7 +317,7 @@ namespace Player
                 _animationBlend = 0.0f;
             }
             
-            //Debug.Log("Speed" + _animationBlend);
+            Debug.Log("Speed" + _animationBlend);
 
             //_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
             //if (_animationBlend < 0.01f) _animationBlend = 0f;
