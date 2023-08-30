@@ -3412,6 +3412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2300000023011825662}
+  - component: {fileID: 3113487352088202458}
   m_Layer: 0
   m_Name: ArmTracking
   m_TagString: Untagged
@@ -3427,13 +3428,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4785344456197231331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.00398, z: 0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8118855860970057893}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3113487352088202458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4785344456197231331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16832e296674d1448cd83fad82bb7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 9780123164403303}
+  ArmRig: {fileID: 2565149029091927131}
+  MyCamera: {fileID: 7246573229000092616}
+  RotationAngle: 0
+  RetargetSpeed: 15
+  MaxAngle: 100
 --- !u!1 &4792151539685409692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,7 +4012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5906913929845231355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00367}
+  m_LocalPosition: {x: 0, y: 0.00398, z: 0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
