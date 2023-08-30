@@ -335,8 +335,39 @@ namespace Player
                 _speed = targetSpeed;
             }
 
-            _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
-            if (_animationBlend < 0.01f) _animationBlend = 0f;
+            //Animation �berblenden
+            //laufen
+            if(_input.move != Vector2.zero && _animationBlend < 2.0f && targetSpeed != sprintSpeed)
+            {
+                _animationBlend += Time.deltaTime * speedChangeRate;                
+            }
+            //sprinten
+            if (_input.move != Vector2.zero && _animationBlend < 6.0f && targetSpeed == sprintSpeed)
+            {
+                _animationBlend += Time.deltaTime * speedChangeRate;
+            }
+            //laufen bremsen
+            if (_input.move == Vector2.zero && _animationBlend > 0.0f)
+            {
+                _animationBlend -= Time.deltaTime * (speedChangeRate * 2.0f);
+            }
+            //sprinten bremsen
+            if (_input.move != Vector2.zero && _animationBlend > 2.0f && targetSpeed != sprintSpeed)
+            {
+                _animationBlend -= Time.deltaTime * (speedChangeRate * 2.0f);
+            }
+            //negativer wert
+            if (_input.move == Vector2.zero && _animationBlend < 0.0f)
+            {
+                _animationBlend = 0.0f;
+            }
+            
+            Debug.Log("Speed" + _animationBlend);
+
+            //_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
+            //if (_animationBlend < 0.01f) _animationBlend = 0f;
+
+
 
             // normalise input direction
             Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
