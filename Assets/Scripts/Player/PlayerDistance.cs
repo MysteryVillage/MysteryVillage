@@ -1,4 +1,5 @@
 using Cinemachine;
+using Mirror;
 using UnityEngine;
 using Player;
 using TMPro;
@@ -8,6 +9,7 @@ public class PlayerDistance : MonoBehaviour
 {
     private Network.NetworkManager _networkManager;
     public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI playerNameText;
     public float yOffset = 2f;
     public float minRange = 10f;
     private PlayerController[] players;
@@ -24,6 +26,19 @@ public class PlayerDistance : MonoBehaviour
         _networkManager = FindObjectOfType<Network.NetworkManager>();
         distanceText.enabled = false;
         CinemachineCore.CameraUpdatedEvent.AddListener(SetScreenPosition);
+
+        RoomPlayer roomPlayer;
+        // set player name
+        if (NetworkServer.active)
+        {
+            roomPlayer = _networkManager.GetRoomClient();
+        }
+        else
+        {
+            roomPlayer = _networkManager.GetRoomHost();
+        }
+        
+        if (roomPlayer != null) playerNameText.text = roomPlayer.playerName;
     }
 
     private void Update()
@@ -37,11 +52,13 @@ public class PlayerDistance : MonoBehaviour
             if (distance < minRange)
             {
                 distanceText.enabled = false;
+                playerNameText.enabled = false;
                 playerIcon.gameObject.SetActive(false);
             }
             else
             {
                 distanceText.enabled = true;
+                playerNameText.enabled = true;
                 playerIcon.gameObject.SetActive(true);
             }
 

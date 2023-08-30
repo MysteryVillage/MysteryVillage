@@ -1,8 +1,9 @@
+ using Inventory;
  using Mirror;
+ using Network;
  using UI;
  using UnityEngine;
  using UnityEngine.Serialization;
- using UnityEngine.UI;
  using NetworkManager = Network.NetworkManager;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
@@ -130,6 +131,7 @@ namespace Player
 
         public PlayerUi playerUi;
 
+        [SyncVar]
         public bool isBoy;
 
         public AudioSource audioSource;
@@ -179,6 +181,49 @@ namespace Player
             Cursor.lockState = CursorLockMode.Locked;
             
             NetworkManager.singleton.RemoveDebugCam();
+            
+            GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = false;
+
+            if (isServer)
+            {
+                RoomPlayer roomPlayer;
+                var isLocalGame = NetworkManager.singleton.GetComponent<GameSettings>().isLocalGame;
+
+                if (isLocalPlayer)
+                {
+                    roomPlayer = NetworkManager.singleton.GetRoomHost();
+                    
+                    if (isLocalGame)
+                    {
+                        GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
+                        GetComponent<PlayerInput>().defaultControlScheme = "KeyboardMouse";
+                    }
+                }
+                else
+                {
+                    roomPlayer = NetworkManager.singleton.GetRoomClient();
+                    
+                    if (isLocalGame)
+                    {
+                        GetComponent<PlayerInput>().neverAutoSwitchControlSchemes = true;
+                        GetComponent<PlayerInput>().defaultControlScheme = "Gamepad";
+                    }
+                }
+
+                if (roomPlayer != null)
+                {
+                    isBoy = roomPlayer.character == "Collin" ? true : false;
+                }
+                // GetComponent<GeometryController>().SetGeometry();
+
+                var inventoryManagerGo = GameObject.Find("ItemManager");
+                if (inventoryManagerGo) {
+                    var inventoryManager = inventoryManagerGo.GetComponent<InventoryManager>();
+                    inventoryManager.RegisterInventory(netId);
+                }
+                
+
+            }
         }
 
         private void Update()
