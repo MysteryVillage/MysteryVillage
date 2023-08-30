@@ -317,7 +317,7 @@ namespace Player
                 _animationBlend = 0.0f;
             }
             
-            Debug.Log("Speed" + _animationBlend);
+            //Debug.Log("Speed" + _animationBlend);
 
             //_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * speedChangeRate);
             //if (_animationBlend < 0.01f) _animationBlend = 0f;
