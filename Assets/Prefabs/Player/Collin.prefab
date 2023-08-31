@@ -2696,8 +2696,8 @@ MonoBehaviour:
     m_ActionName: Player/Sneak[/Keyboard/ctrl]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: PauseButton
         m_Mode: 0
         m_Arguments:
@@ -2712,8 +2712,8 @@ MonoBehaviour:
     m_ActionName: Player/Pause[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: OpenInventoryButton
         m_Mode: 0
         m_Arguments:
@@ -2728,8 +2728,8 @@ MonoBehaviour:
     m_ActionName: Player/OpenInventory[/Keyboard/tab,/DualShock4GamepadHID/select]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: OpenBookButton
         m_Mode: 0
         m_Arguments:
@@ -2744,8 +2744,8 @@ MonoBehaviour:
     m_ActionName: Player/Book[/Keyboard/b,/DualShock4GamepadHID/dpad/left]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: OpenMapButton
         m_Mode: 0
         m_Arguments:
@@ -2760,9 +2760,9 @@ MonoBehaviour:
     m_ActionName: Player/Map[/Keyboard/m,/DualShock4GamepadHID/dpad/down]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4333773835421890717}
         m_TargetAssemblyTypeName: Book, Assembly-CSharp
-        m_MethodName: NextPage
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2776,9 +2776,9 @@ MonoBehaviour:
     m_ActionName: UI/GoToNextPage[/Keyboard/n,/DualShock4GamepadHID/leftStick/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4333773836121668137}
         m_TargetAssemblyTypeName: Book, Assembly-CSharp
-        m_MethodName: PriorPage
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2792,8 +2792,8 @@ MonoBehaviour:
     m_ActionName: UI/GoToPreviousPage[/Keyboard/v,/DualShock4GamepadHID/leftStick/left]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: CloseUI
         m_Mode: 0
         m_Arguments:
@@ -2808,8 +2808,8 @@ MonoBehaviour:
     m_ActionName: UI/CloseUI[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: MenuSwitchLeft
         m_Mode: 0
         m_Arguments:
@@ -2824,8 +2824,8 @@ MonoBehaviour:
     m_ActionName: UI/SwitchMenuL[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: MenuSwitchRight
         m_Mode: 0
         m_Arguments:
@@ -2840,8 +2840,8 @@ MonoBehaviour:
     m_ActionName: UI/SwitchMenuR[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -2856,8 +2856,8 @@ MonoBehaviour:
     m_ActionName: UI/Interact[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
+      - m_Target: {fileID: 4333773835421890694}
+        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: PauseButton
         m_Mode: 0
         m_Arguments:
@@ -2872,7 +2872,7 @@ MonoBehaviour:
     m_ActionName: Pause/CloseUI[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1370256764465334820}
         m_TargetAssemblyTypeName: UI.DialogueController, Assembly-CSharp
         m_MethodName: AdvanceLine
         m_Mode: 0
@@ -2912,7 +2912,7 @@ MonoBehaviour:
     m_ActionName: Player/Zoom[/Mouse/scroll]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4333773835421890694}
         m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
         m_MethodName: OpenQuestButton
         m_Mode: 0
@@ -6505,6 +6505,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1612688022849317371, guid: 50d4810710c6941569180ced649cf585, type: 3}
   m_PrefabInstance: {fileID: 2165220015577278557}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1370256764465334820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 939081222863512185, guid: 50d4810710c6941569180ced649cf585, type: 3}
+  m_PrefabInstance: {fileID: 2165220015577278557}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85f844fa43f54e8a95a6ae6d19f364b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1386663570190940833 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 950825814779761404, guid: 50d4810710c6941569180ced649cf585, type: 3}
@@ -6581,7 +6592,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2461428811212296411, guid: 50d4810710c6941569180ced649cf585, type: 3}
   m_PrefabInstance: {fileID: 2165220015577278557}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4333773835421890717}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f07bf1a5776fc6441b3c12858e731b94, type: 3}
@@ -6590,6 +6601,16 @@ MonoBehaviour:
 --- !u!224 &4333773835421890713 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2461428811212296388, guid: 50d4810710c6941569180ced649cf585, type: 3}
+  m_PrefabInstance: {fileID: 2165220015577278557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4333773835421890717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2461428811212296384, guid: 50d4810710c6941569180ced649cf585, type: 3}
+  m_PrefabInstance: {fileID: 2165220015577278557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4333773836121668137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2461428810871296628, guid: 50d4810710c6941569180ced649cf585, type: 3}
   m_PrefabInstance: {fileID: 2165220015577278557}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4399517410320952554 stripped

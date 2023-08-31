@@ -13,18 +13,18 @@ public class CameraController : MonoBehaviour
     public void OnZoom(InputAction.CallbackContext context)
     {
         if (virtualCamera == null) return;
+        
         if (virtualCamera.m_Lens.FieldOfView == 40)
         {
             virtualCamera.m_Lens.FieldOfView = 70;
             return;
             
-        }else if (virtualCamera.m_Lens.FieldOfView == 70)
+        } 
+        
+        if (virtualCamera.m_Lens.FieldOfView == 70)
         {
             virtualCamera.m_Lens.FieldOfView = 40;
-            return;
         }
-        
-       
     }
 
 }
