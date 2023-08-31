@@ -87,6 +87,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Flashlight",
+                    "type": "Button",
+                    "id": "95e06e16-f5fd-4e34-8c32-645b9b4a8199",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Map",
                     "type": "Button",
                     "id": "16b5b1bc-fc1a-43e7-b8b7-02f685ef87e9",
@@ -464,6 +473,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Quests",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0bf8021e-9f5f-412e-8525-384291ca600b",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Flashlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "351f8e17-7d66-40be-a7d2-4ebc7d148281",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Flashlight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
