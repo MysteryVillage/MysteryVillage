@@ -2727,35 +2727,11 @@ MonoBehaviour:
     m_ActionId: 532b4ddd-c9c7-4208-b8d1-cd61b6edd9e2
     m_ActionName: Player/OpenInventory[/Keyboard/tab,/DualShock4GamepadHID/select]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4333773835421890694}
-        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
-        m_MethodName: OpenBookButton
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 59a58f42-cb70-4d8b-a5fb-d879b142d392
     m_ActionName: Player/Book[/Keyboard/b,/DualShock4GamepadHID/dpad/left]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4333773835421890694}
-        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
-        m_MethodName: OpenMapButton
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 16b5b1bc-fc1a-43e7-b8b7-02f685ef87e9
     m_ActionName: Player/Map[/Keyboard/m,/DualShock4GamepadHID/dpad/down]
   - m_PersistentCalls:
@@ -2911,19 +2887,7 @@ MonoBehaviour:
     m_ActionId: b308e99e-585c-415c-acdc-8ee0bd72c37d
     m_ActionName: Player/Zoom[/Mouse/scroll]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4333773835421890694}
-        m_TargetAssemblyTypeName: UI.PlayerUi, Assembly-CSharp
-        m_MethodName: OpenQuestButton
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 51a602e8-44a1-4bf2-a099-84646985d756
     m_ActionName: Player/Quests[/Keyboard/q,/DualShock4GamepadHID/dpad/left]
   - m_PersistentCalls:
@@ -6155,6 +6119,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2461428811212296411, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: menuList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461428811212296411, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: menuList.Array.data[0]
+      value: 
+      objectReference: {fileID: 3402566491751764375}
     - target: {fileID: 2517349071956296844, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6587,6 +6559,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &3402566491751764375 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3545511667906279882, guid: 50d4810710c6941569180ced649cf585, type: 3}
+  m_PrefabInstance: {fileID: 2165220015577278557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4333773835421890694 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2461428811212296411, guid: 50d4810710c6941569180ced649cf585, type: 3}
