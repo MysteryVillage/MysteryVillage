@@ -8,11 +8,14 @@ using UnityEngine.UI;
 public class FlashlightController : MonoBehaviour
 {
     public GameObject lightSource;
+    public AudioClip audioClip;
+
     private RigBuilder rigBuilder;
     private InputAction flashlight;
     private Animator animator;
+    private AudioSource audioSource;
     private bool flashlightOn = false;
-   
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,9 @@ public class FlashlightController : MonoBehaviour
         rigBuilder.layers[1].active = false;
         animator.SetLayerWeight(1, 0.0f);
         lightSource.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
+
     }
 
     // Update is called once per frame
@@ -41,6 +47,7 @@ public class FlashlightController : MonoBehaviour
             animator.SetLayerWeight(1, 0.8f);
             lightSource.SetActive(true);
             flashlightOn = true;
+            audioSource.Play();
 
             Debug.Log("Taschenlampe an");
         }
@@ -50,6 +57,7 @@ public class FlashlightController : MonoBehaviour
             animator.SetLayerWeight(1, 0.0f);
             lightSource.SetActive(false);
             flashlightOn = false;
+            audioSource.Play();
 
             Debug.Log("Taschenlampe aus");
         }
