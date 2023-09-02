@@ -1,4 +1,5 @@
 using Items;
+using Quests;
 using UnityEngine.Events;
 
 namespace Events
@@ -8,5 +9,8 @@ namespace Events
         // public static new EventSystem Current { get; private set; }
         
         public UnityEvent<ItemData> OnItemPickup;
+
+        public UnityEvent<Quest> onQuestStart;
+        public UnityEvent<Quest> onQuestFinish;
     }
 }

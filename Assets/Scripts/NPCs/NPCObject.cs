@@ -51,7 +51,7 @@ namespace NPC
             if (dia.GetComponent<DialogueRunner>() != null)
             {
                 NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Dialogue");
-                dia.GetComponent<DialogueRunner>().StartDialogue(nextDialogueOverwrite != "" ? nextDialogueOverwrite : dialogueFlow[currentDialogue]);
+                dia.GetComponent<DialogueRunner>().StartDialogue(!string.IsNullOrEmpty(nextDialogueOverwrite) ? nextDialogueOverwrite : dialogueFlow[currentDialogue]);
             }
         }
 
