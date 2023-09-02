@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Inputs;
 using Inventory;
@@ -5,6 +6,7 @@ using Mirror;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Yarn.Unity;
 using NetworkManager = Network.NetworkManager;
@@ -13,10 +15,11 @@ namespace UI
 {
     public class PlayerUi : MonoBehaviour
     {
-        [Header("Menu")] 
+        [Header("Menu Navigation")] 
         public Transform playUi;
         private PlayerController _playerController;
-        public List<Transform> menuList;
+        public List<GameObject> menuOrder;
+        public MenuList menuList;
         private int _menuIndex;
         public GameObject pauseMenu;
 
@@ -50,23 +53,36 @@ namespace UI
         public void SwitchTo(int index)
         {
             HideAll();
-            menuList[index].GetComponent<Menu>().Open();
+            menuOrder[index].GetComponent<Menu>().Open();
+            _menuIndex = index;
         }
 
         public void HideAll()
         {
-            foreach (var menu in menuList)
+            foreach (var menu in menuOrder)
             {
                 menu.GetComponent<Menu>().Close();
             }
+        }
+
+        private int FindIndexFor(GameObject menu)
+        {
+            var i = 0;
+            foreach (var item in menuOrder)
+            {
+                if (item.Equals(menu)) return i;
+                i++;
+            }
+
+            return -1;
         }
 
         public void OpenBookButton(InputAction.CallbackContext context)
         {
             if (context.started)
             {
-                _menuIndex = 0;
-                Open(_menuIndex);
+                var index = FindIndexFor(menuList.book);
+                if (index >= 0) Open(index);
             }
         }
 
@@ -74,8 +90,8 @@ namespace UI
         {
             if (context.started)
             {
-                _menuIndex = 1;
-                Open(_menuIndex);
+                var index = FindIndexFor(menuList.map);
+                if (index >= 0) Open(index);
             }
         }
 
@@ -83,8 +99,8 @@ namespace UI
         {
             if (context.started)
             {
-                _menuIndex = 2;
-                Open(_menuIndex);
+                var index = FindIndexFor(menuList.inventory);
+                if (index >= 0) Open(index);
             }
         }
 
@@ -92,8 +108,8 @@ namespace UI
         {
             if (context.started)
             {
-                _menuIndex = 3;
-                Open(_menuIndex);
+                var index = FindIndexFor(menuList.quests);
+                if (index >= 0) Open(index);
             }
         }
 
@@ -108,22 +124,24 @@ namespace UI
         {
             if (context.started)
             {
-                if (_menuIndex < menuList.Count - 1)
+                // TryMenuSwitch(_menuIndex, true);
+                
+                if (_menuIndex < menuOrder.Count - 1)
                 {
-                    _menuIndex++;
-                    SwitchTo(_menuIndex);
+                    SwitchTo(_menuIndex + 1);
                 }
             }
         }
 
         public void MenuSwitchLeft(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started)
+            if (context.started)
             {
+                // TryMenuSwitch(_menuIndex, false);
+
                 if (_menuIndex > 0)
                 {
-                    _menuIndex--;
-                    SwitchTo(_menuIndex);
+                    SwitchTo(_menuIndex - 1);
                 }
             }
         }
@@ -221,9 +239,8 @@ namespace UI
             itemPickupController.AddItemNotice(itemId);
         }
 
-        public Vector2 GetScreenPosition(Transform target, Image waypointImage, Vector3 offset)
+        public Vector2 GetScreenPosition(Transform target, Image waypointImage, Vector3 offset, Camera cam)
         {
-            var cam = Camera.main;
             // Giving limits to the icon so it sticks on the screen
             // Below calculations witht the assumption that the icon anchor point is in the middle
             // Minimum X position: half of the icon width
@@ -263,5 +280,14 @@ namespace UI
 
             return pos;
         }
+    }
+
+    [Serializable]
+    public class MenuList
+    {
+        public GameObject quests;
+        public GameObject inventory;
+        public GameObject book;
+        public GameObject map;
     }
 }

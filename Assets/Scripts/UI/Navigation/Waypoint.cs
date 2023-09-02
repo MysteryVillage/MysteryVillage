@@ -24,13 +24,12 @@ namespace UI
         private void Start()
         {
             CinemachineCore.CameraUpdatedEvent.AddListener(Calculate);
-            cam = NetworkClient.localPlayer.GetComponent<PlayerController>().cinemachineMainCamera.GetComponent<Camera>();
             waypointImage.sprite = icon;
         }
 
         public void Calculate(CinemachineBrain brain)
         {
-            var pos = GetComponentInParent<PlayerUi>().GetScreenPosition(target, waypointImage, offset); 
+            var pos = GetComponentInParent<PlayerUi>().GetScreenPosition(target, waypointImage, offset, cam); 
 
             // Update the marker's position
             waypointImage.transform.position = pos;
