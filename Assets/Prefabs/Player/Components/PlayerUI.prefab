@@ -1406,6 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypointPrefab: {fileID: 4140976538986509038, guid: a7e3c4f485f5a4754a90d6a38a4cbb04, type: 3}
   waypoint2DPrefab: {fileID: 6147426714030420865, guid: 7ed13d78987ea4bcd9e49b25e0da58d8, type: 3}
+  useMapCam: 0
   activeWaypoints: []
 --- !u!1 &2013565594130094745
 GameObject:
@@ -2622,6 +2623,7 @@ MonoBehaviour:
   optionsScreen: {fileID: 0}
   optionsFirstButton: {fileID: 0}
   optionsClosedButton: {fileID: 0}
+  menuType: 0
 --- !u!1 &2461428810872637527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +3046,7 @@ MonoBehaviour:
   optionsScreen: {fileID: 0}
   optionsFirstButton: {fileID: 0}
   optionsClosedButton: {fileID: 0}
+  menuType: 0
 --- !u!1 &2461428811212296384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,11 +3174,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playUi: {fileID: 2461428810332384472}
+  menuOrder: []
   menuList:
-  - {fileID: 2461428810871296587}
-  - {fileID: 2461428811137418984}
-  - {fileID: 3545511667906279882}
-  - {fileID: 8573284042211132384}
+    quests: {fileID: 4021932764664734283}
+    inventory: {fileID: 8030454119600427672}
+    book: {fileID: 2461428810871296628}
+    map: {fileID: 2461428811137418985}
+  availableMenus: 0
   pauseMenu: {fileID: 3374529205368840146}
   iconMap: {fileID: 11400000, guid: 706c88d99699c469992faf07882e2c15, type: 2}
   dialogueText: {fileID: 222792662213292174}
@@ -4049,6 +4054,7 @@ MonoBehaviour:
   optionsScreen: {fileID: 217614620098744092}
   optionsFirstButton: {fileID: 6645541242001615216}
   optionsClosedButton: {fileID: 1190238561119635041}
+  menuType: 0
 --- !u!1 &3926094845619749588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,6 +4439,7 @@ MonoBehaviour:
   optionsScreen: {fileID: 0}
   optionsFirstButton: {fileID: 0}
   optionsClosedButton: {fileID: 0}
+  menuType: 0
 --- !u!1 &4077135651196548400
 GameObject:
   m_ObjectHideFlags: 0
@@ -8024,6 +8031,7 @@ MonoBehaviour:
   optionsScreen: {fileID: 0}
   optionsFirstButton: {fileID: 0}
   optionsClosedButton: {fileID: 0}
+  menuType: 0
 --- !u!1 &8063567413733607272
 GameObject:
   m_ObjectHideFlags: 0

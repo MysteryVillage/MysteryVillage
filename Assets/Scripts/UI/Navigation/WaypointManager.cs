@@ -11,6 +11,7 @@ namespace UI
     {
         public GameObject waypointPrefab;
         public GameObject waypoint2DPrefab;
+        public bool useMapCam;
         
         public List<Waypoint> activeWaypoints;
 
@@ -26,9 +27,12 @@ namespace UI
 
         public Waypoint AddWaypoint(Sprite icon, Transform position)
         {
+            Camera mapCam = useMapCam ? GameObject.Find("CameraMap").GetComponent<Camera>() : null ;
+            
             var newWaypoint = Instantiate(waypointPrefab, transform).GetComponent<Waypoint>();
             newWaypoint.icon = icon;
             newWaypoint.target = position;
+            newWaypoint.cam = useMapCam ? mapCam : Camera.main;
             
             activeWaypoints.Add(newWaypoint);
 

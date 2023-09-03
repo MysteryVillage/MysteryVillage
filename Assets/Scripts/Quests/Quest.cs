@@ -5,6 +5,7 @@ using Mirror;
 using Quests.Goals;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 namespace Quests
 {
@@ -58,6 +59,9 @@ namespace Quests
                 goal.QuestGoalCompleted.AddListener(CheckGoals);
 
             }
+
+            var eventsystem = EventSystem.current as Events.EventSystem;
+            if (eventsystem != null) eventsystem.onQuestStart.Invoke(this);
         }
 
         protected void CheckGoals()
