@@ -18,6 +18,7 @@ namespace Quests.UI
         private void Start()
         {
             QuestManager.Current.OnQuestListChanged.AddListener(UpdateList);
+            menu.onClose.AddListener(ClearWindow);
         }
 
         public void UpdateList()
@@ -35,7 +36,7 @@ namespace Quests.UI
                 questList.Add(item);
             }
 
-            if (questList.First() != null)
+            if (questList.Count > 0)
             {
                 menu.startButton = questList.First().GetComponentInChildren<Button>()?.gameObject;
             }
@@ -48,6 +49,11 @@ namespace Quests.UI
                 questList.Remove(item);
                 Destroy(item);
             }
+        }
+
+        public void ClearWindow()
+        {
+            questInfo.Clear();
         }
     }
 }

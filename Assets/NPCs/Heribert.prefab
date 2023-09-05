@@ -451,8 +451,11 @@ GameObject:
   - component: {fileID: 3956325673266996140}
   - component: {fileID: 7385308995753330952}
   - component: {fileID: 2083320940969646114}
+  - component: {fileID: 7988276370171236949}
+  - component: {fileID: 3055705326280870391}
+  - component: {fileID: 942122450383044885}
   m_Layer: 10
-  m_Name: Cousin
+  m_Name: Heribert
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,6 +507,67 @@ MonoBehaviour:
   - {fileID: 5759284778922291857}
   thickness: 0.01
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &7988276370171236949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126663781578650093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 828012456
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &3055705326280870391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126663781578650093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f8a72f1f341e2a251333371c8a973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  quest: {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
+  waypoint: {fileID: 0}
+  waypoint2D: {fileID: 0}
+--- !u!114 &942122450383044885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126663781578650093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49ff986d4a8a2841ba9076798865df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  npc: {fileID: 11400000, guid: efa7969df52ce494bbce34af53c6eee0, type: 2}
+  dialogue: {fileID: 0}
+  dialogueFlow:
+  - Lagerfeuer
+  - LagerfeuerQuest
+  currentDialogue: 0
+  nextDialogueOverwrite: 
+  npcName: 3
+  OnTalk:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1163913957918600209
 GameObject:
   m_ObjectHideFlags: 0

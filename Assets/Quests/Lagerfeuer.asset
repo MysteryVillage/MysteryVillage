@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
-  m_Name: Collect
+  m_Name: Lagerfeuer
   m_EditorClassIdentifier: 
   Information:
     name: Lagerfeuer-Material
@@ -18,6 +18,7 @@ MonoBehaviour:
   goals:
   - {fileID: 3225712861103335294}
   - {fileID: 2718558698996876460}
+  followUpQuest: {fileID: 11400000, guid: de53769986f91457492ebfc4ca2c7acf, type: 2}
 --- !u!114 &2718558698996876460
 MonoBehaviour:
   m_ObjectHideFlags: 0

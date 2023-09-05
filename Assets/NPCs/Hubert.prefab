@@ -2107,10 +2107,12 @@ MonoBehaviour:
   npc: {fileID: 11400000, guid: 9b240ce3036c9674a9492c947cb5a0f5, type: 2}
   dialogue: {fileID: 0}
   dialogueFlow:
+  - HubertQuest
   - Hubert
+  - HubertGoodLuck
   currentDialogue: 0
   nextDialogueOverwrite: 
-  npcName: 1
+  npcName: 2
   OnTalk:
     m_PersistentCalls:
       m_Calls: []

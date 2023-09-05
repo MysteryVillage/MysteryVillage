@@ -20,12 +20,6 @@ namespace NPC
         public string nextDialogueOverwrite = "";
         public NpcName npcName;
 
-        public enum NpcName
-        {
-            Arnold,
-            Hubert
-        }
-
         public UnityEvent OnTalk;
 
         public string GetInteractPrompt()
@@ -60,6 +54,14 @@ namespace NPC
         {
             currentDialogue = key;
         }
+    }
+
+    public enum NpcName
+    {
+        Empty,
+        Arnold,
+        Hubert,
+        Heribert
     }
 }
 

@@ -31,6 +31,7 @@ namespace Quests
         [YarnCommand("give_quest")]
         public void Give()
         {
+            Debug.Log("Give new Quest: " + quest.Information.name);
             NetworkClient.localPlayer.GetComponent<InteractionManager>().AddQuest(quest);
             _waypointManager.RemoveWaypoint(waypoint);
             Destroy(waypoint2D.gameObject);

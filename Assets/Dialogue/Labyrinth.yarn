@@ -54,3 +54,22 @@ position: 251,57
 ---
 Arnold: Wow, ihr habt tatsächlich das Labyrinth gelöst! Beeindruckend!
 ===
+title: Lagerfeuer
+position: 251,57
+---
+Heribert: Lasst uns doch ein Lagerfeuer für unser Camp machen! Dafür bräuchten wir allerdings ein paar Steine und Äste.
+<<give_quest Heribert>>
+<<set_dialogue Heribert 1>>
+<<jump LagerfeuerQuest>>
+===
+title: LagerfeuerQuest
+position: 251,57
+---
+Heribert: Am Waldrand beim Dorf hatte ich vorhin einige brauchbare Dinge gesehen, vielleicht schaut ihr da mal nach. Ich warte hier auf euch.
+===
+title: LagerfeuerQuestFinished
+position: 251,57
+---
+Collin: Hier, wir haben alles gesammelt.
+Heribert: Prima! Dann können wir uns ja jetzt aufwärmen! 
+===

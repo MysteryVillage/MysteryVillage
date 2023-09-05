@@ -34,7 +34,7 @@ namespace Quests.UI
                 questGoalRows.Add(goalRow.gameObject);
             }
         }
-
+        
         public void Clear()
         {
             title.text = "";
