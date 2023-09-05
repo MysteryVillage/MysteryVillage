@@ -14,23 +14,9 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
     public int speed = 300;
     bool isMoving = false;
 
-    void Update()
-    {
-        /*if (isMoving)
-        {
-            return;
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Turn());
-        }*/
-    }
-
     public string GetInteractPrompt()
     {
-        return string.Format("Turned Tube {0}", "here");
+        return "Turned Tube";
     }
 
     public void OnInteract(uint networkIdentifier)
@@ -39,7 +25,6 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
         {
             return;
         }
-        Debug.Log("turn tube");
         StopAllCoroutines();
         StartCoroutine(Turn());
     }
