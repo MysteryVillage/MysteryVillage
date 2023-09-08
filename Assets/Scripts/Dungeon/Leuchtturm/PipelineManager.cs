@@ -11,6 +11,18 @@ public class PipelineManager : MonoBehaviour
     private Color red = new Color32(197, 73, 73, 255);
     private Color white = new Color32(227, 227, 227, 255);
 
+    private bool D;
+    private bool U;
+    private bool Moon;
+    private bool Drop;
+    private bool Dot;
+    private bool S;
+    private bool horizontal ;
+    private bool vertical;
+    private bool Square;
+    private bool circle;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,24 +38,23 @@ public class PipelineManager : MonoBehaviour
             //Debug.Log("tube" + i + ":" + rotation[i]);
         }
 
-        if (rotation[1] > 269 || rotation[1] < 10)
+        if ((rotation[1] > 269 || rotation[1] < 10) || (rotation[0] > 89 && rotation[0] < 181))
         {
             _lamps[0].material.color = red;
-            //Debug.Log("tube" + 1 + ":" + rotation[1]);
-
-            if (rotation[0] > 89 && rotation[0] < 181)
-            {
-                _lamps[0].material.color = red;
-            }
-            else
-            {
-                _lamps[0].material.color = white;
-            }
         }
         else
         {
             _lamps[0].material.color = white;
         }
+
+        /*if (rotation[0] > 89 && rotation[0] < 181)
+        {
+            _lamps[0].material.color = red;
+        }
+        else
+        {
+            _lamps[0].material.color = white;
+        }*/
 
     }
 }
