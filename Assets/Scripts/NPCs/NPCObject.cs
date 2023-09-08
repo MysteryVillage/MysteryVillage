@@ -17,6 +17,7 @@ namespace NPC
         public DialogueRunner dialogue;
         public string[] dialogueFlow;
         public int currentDialogue = 0;
+        [SyncVar]
         public string nextDialogueOverwrite = "";
         public NpcName npcName;
 
