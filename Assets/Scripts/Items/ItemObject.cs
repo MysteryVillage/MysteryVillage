@@ -23,13 +23,18 @@ namespace Items
 
         public string GetInteractPrompt()
         {
-            return $"Pickup {item.displayName}";
+            if (!NetworkClient.localPlayer.GetComponent<PlayerController>().isBoy)
+            {
+                return $"Nur Collin kann {item.displayName} einsammeln.";
+            }
+            return $"{item.displayName} einsammeln";
         }
 
         public void OnInteract(uint networkIdentifier)
         {
-            NetworkServer.Destroy(gameObject);
             var player = NetworkServer.spawned[networkIdentifier].gameObject;
+            if (!player.GetComponent<PlayerController>().isBoy) return;
+            NetworkServer.Destroy(gameObject);
             
             Debug.Log("Trying to add item " + item.displayName + " to player with netId " + networkIdentifier + " (" + player.name +")");
             player.GetComponent<PlayerInventory>().CollectItem(item.GetId());
