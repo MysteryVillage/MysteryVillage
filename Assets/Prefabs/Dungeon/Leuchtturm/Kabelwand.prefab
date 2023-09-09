@@ -10123,6 +10123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6732027421039022277}
+  - component: {fileID: 8276283854434652043}
   m_Layer: 0
   m_Name: Kabelwand
   m_TagString: Untagged
@@ -10267,6 +10268,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8276283854434652043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207974493362063999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456100f8788baeb46993f8b1322500dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tubes:
+  - {fileID: 8210411182398011086}
+  - {fileID: 6981035363423389681}
+  - {fileID: 8443246526063847377}
+  - {fileID: 115190046733436495}
+  - {fileID: 2629267004777528866}
+  - {fileID: 7282993721286949606}
+  - {fileID: 3409493128377010096}
+  - {fileID: 2600305883684362458}
+  - {fileID: 8516657935589775830}
+  - {fileID: 8018533416665852212}
+  _lamps:
+  - {fileID: 2776879363709219237}
+  - {fileID: 4062984956035031693}
+  - {fileID: 8076062240176508227}
+  - {fileID: 2816331666492286204}
+  - {fileID: 2505789717973983742}
+  - {fileID: 913708040606270737}
+  - {fileID: 8286733038533803934}
+  - {fileID: 6412199683312224409}
+  - {fileID: 6601053851603077076}
+  - {fileID: 3853112862766584447}
 --- !u!1 &6215614200194318928
 GameObject:
   m_ObjectHideFlags: 0
@@ -12704,9 +12739,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7914281212273785474}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.042, y: -0.085, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.000000029802322, y: -0.7071069, z: 0.70710677, w: -0.000000029802322}
+  m_LocalPosition: {x: -0.0008411584, y: 0.0006306038, z: -0.0017026522}
+  m_LocalScale: {x: -0.020030843, y: -0.020030849, z: -0.06301076}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1168768044720523272}
@@ -14697,8 +14732,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9022526558909650751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.081, y: 0.062, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.784009, y: 4.2089987, z: 0.04503709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
