@@ -37,7 +37,7 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
         while (remainingAngle > 0)
         {
             float rotationAngle = Mathf.Min(Time.deltaTime * speed, remainingAngle);
-            transform.Rotate(0, rotationAngle, 0);
+            transform.Rotate(0, 0, rotationAngle);
             remainingAngle -= rotationAngle;
             yield return null;
         }

@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115190046733436495}
+  - component: {fileID: 762073393239172367}
+  - component: {fileID: 4943420488185267675}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +37,39 @@ Transform:
   m_Father: {fileID: 5944313033171423280}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762073393239172367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351834190274503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &4943420488185267675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351834190274503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &73343810610713725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,8 +3432,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5817007689728550619}
+  - component: {fileID: 8123842688778708761}
+  - component: {fileID: 5171085657306998254}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3423,6 +3460,39 @@ Transform:
   m_Father: {fileID: 4427139552678547977}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8123842688778708761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854730275717730459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &5171085657306998254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854730275717730459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &1877973824207309707
 GameObject:
   m_ObjectHideFlags: 0
@@ -6486,8 +6556,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3409493128377010096}
+  - component: {fileID: 4346417583446943047}
+  - component: {fileID: 5144026535559906245}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6512,6 +6584,39 @@ Transform:
   m_Father: {fileID: 9135184329408291574}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &4346417583446943047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175881469635915617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &5144026535559906245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175881469635915617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &4284304931455272594
 GameObject:
   m_ObjectHideFlags: 0
@@ -8098,8 +8203,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7282993721286949606}
+  - component: {fileID: 6094029411905321523}
+  - component: {fileID: 2592494833995414350}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8123,6 +8230,39 @@ Transform:
   m_Father: {fileID: 2256276132726495894}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6094029411905321523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461156814872211556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &2592494833995414350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461156814872211556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &5484801709301600593
 GameObject:
   m_ObjectHideFlags: 0
@@ -9862,8 +10002,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2629267004777528866}
+  - component: {fileID: 3432080813849180516}
+  - component: {fileID: 491367317526521519}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9888,6 +10030,39 @@ Transform:
   m_Father: {fileID: 8105529696782252951}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3432080813849180516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215614200194318928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &491367317526521519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215614200194318928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &6276974942611977681
 GameObject:
   m_ObjectHideFlags: 0
@@ -10681,7 +10856,7 @@ GameObject:
   - component: {fileID: 2493628019050380526}
   - component: {fileID: 4289320940566260617}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11445,8 +11620,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8210411182398011086}
+  - component: {fileID: 4266328761676228280}
+  - component: {fileID: 4036586261996853420}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11471,6 +11648,39 @@ Transform:
   m_Father: {fileID: 5348274857949726648}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4266328761676228280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742591284009984463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &4036586261996853420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742591284009984463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &7748434432807114316
 GameObject:
   m_ObjectHideFlags: 0
@@ -12144,8 +12354,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6981035363423389681}
+  - component: {fileID: 9189554862784230078}
+  - component: {fileID: 7063413711897947270}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12169,6 +12381,39 @@ Transform:
   m_Father: {fileID: 3941710828397168160}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9189554862784230078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914281212273785474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &7063413711897947270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914281212273785474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &7962029214551749190
 GameObject:
   m_ObjectHideFlags: 0
@@ -12925,8 +13170,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2600305883684362458}
+  - component: {fileID: 5195672091004763544}
+  - component: {fileID: 908090621358820565}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12951,6 +13198,39 @@ Transform:
   m_Father: {fileID: 2908799339180914248}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5195672091004763544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434748375317807751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &908090621358820565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434748375317807751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &8503660316045577353
 GameObject:
   m_ObjectHideFlags: 0
@@ -13873,8 +14153,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8516657935589775830}
+  - component: {fileID: 850585655902166816}
+  - component: {fileID: 3606925688341863334}
   m_Layer: 0
-  m_Name: Drehpunkt
+  m_Name: Drehpunkt_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13898,6 +14180,39 @@ Transform:
   m_Father: {fileID: 8567421480525694620}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &850585655902166816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022526558909650751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1365777352
+  serverOnly: 0
+  visible: 0
+  hasSpawned: 0
+--- !u!114 &3606925688341863334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022526558909650751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522f23d97eb86e642ab253dafc9f52c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  speed: 300
 --- !u!1 &9055565258368553270
 GameObject:
   m_ObjectHideFlags: 0
