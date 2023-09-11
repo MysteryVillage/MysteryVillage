@@ -38,14 +38,46 @@ public class PipelineManager : MonoBehaviour
             //Debug.Log("tube" + i + ":" + rotation[i]);
         }
 
-        if ((rotation[1] > 269 || rotation[1] < 10) || (rotation[0] > 89 && rotation[0] < 181))
+        //---- linke seite ----
+
+        if (rotation[0] < 10)
         {
-            _lamps[0].material = _red;
+            if (rotation[1] < 10)
+            {
+                _lamps[8].material = _green;
+            }
+            else
+            {
+                _lamps[8].material = _red;
+            }
+
+            if (rotation[3] < 10 || (rotation[3] > 170 && rotation[3] < 190))
+            {
+                if (rotation[2] > 260)
+                {
+                    _lamps[7].material = _red;
+                }
+                else
+                {
+                    _lamps[7].material = _green;
+                }
+            }
+            else
+            {
+                _lamps[7].material = _red;
+            }
+
+            if (rotation[3] > 80 && rotation[3] < 190)
+            {
+                _lamps[6].material = _green;
+            }
+            else
+            {
+                _lamps[6].material = _red;
+            }
         }
-        else
-        {
-            _lamps[0].material = _green;
-        }
+
+        //---- mitte ----
 
         /*if (rotation[0] > 89 && rotation[0] < 181)
         {
