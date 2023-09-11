@@ -6,10 +6,10 @@ public class PipelineManager : MonoBehaviour
 {
     [SerializeField] List<Transform> _tubes;
     [SerializeField] List<Renderer> _lamps;
+    [SerializeField] Material _red;
+    [SerializeField] Material _green;
 
     private float[] rotation;
-    private Color red = new Color32(197, 73, 73, 255);
-    private Color white = new Color32(227, 227, 227, 255);
 
     private bool D;
     private bool U;
@@ -34,17 +34,17 @@ public class PipelineManager : MonoBehaviour
     {
         for (int i=0; i<_tubes.Count; i++)
         {
-            rotation[i] = (_tubes[i].eulerAngles.y);
+            rotation[i] = (_tubes[i].eulerAngles.z);
             //Debug.Log("tube" + i + ":" + rotation[i]);
         }
 
         if ((rotation[1] > 269 || rotation[1] < 10) || (rotation[0] > 89 && rotation[0] < 181))
         {
-            _lamps[0].material.color = red;
+            _lamps[0].material = _red;
         }
         else
         {
-            _lamps[0].material.color = white;
+            _lamps[0].material = _green;
         }
 
         /*if (rotation[0] > 89 && rotation[0] < 181)
