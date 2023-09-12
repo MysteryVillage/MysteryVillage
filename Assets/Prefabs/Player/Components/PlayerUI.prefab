@@ -1972,7 +1972,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2461428810455770101}
   - component: {fileID: 2461428810455770059}
-  - component: {fileID: 2461428810455770100}
+  - component: {fileID: 239217396899532912}
+  - component: {fileID: 3002384937161073221}
   m_Layer: 5
   m_Name: MapImage
   m_TagString: Untagged
@@ -2008,7 +2009,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2461428810455770102}
   m_CullTransparentMesh: 1
---- !u!114 &2461428810455770100
+--- !u!114 &239217396899532912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2017,7 +2018,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2461428810455770102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -2028,16 +2029,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1262d84e9876de489be2cb3f9d09848, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_Texture: {fileID: 8400000, guid: f5f1ac0ed61bb41d9bcab3aa32ad0b43, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &3002384937161073221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461428810455770102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cfc0ba668c4718bfc2b1345faf2e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldCamera: {fileID: 0}
+  worldImage: {fileID: 2461428810455770101}
+  markerPrefab: {fileID: 2438106567490409952, guid: 0cf9d51b2038d4df5998757a3485fb45, type: 3}
+  girlSprite: {fileID: 3286163911610860551, guid: 0cefa2b10e9b9e94abc776deea0a1236, type: 3}
+  boySprite: {fileID: 3286163911610860551, guid: 437e22584b996fa46b8f4de16680532a, type: 3}
 --- !u!1 &2461428810474816926
 GameObject:
   m_ObjectHideFlags: 0
