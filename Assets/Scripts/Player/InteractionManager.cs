@@ -67,7 +67,15 @@ namespace Player
         void SetPromptText()
         {
             interactionPanel.SetActive(true);
-            promptText.text = string.Format("{0}", _curInteractable.GetInteractPrompt());
+            if(_curInteractable == null) { 
+                promptText.text = null;
+                interactionPanel.SetActive(false);
+            }
+            else
+            {
+                promptText.text = string.Format("{0}", _curInteractable.GetInteractPrompt());
+            }
+           
         }
 
         public void OnInteractInput(InputAction.CallbackContext context)
