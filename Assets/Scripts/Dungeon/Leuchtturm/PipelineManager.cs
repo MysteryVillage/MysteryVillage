@@ -25,13 +25,11 @@ public class PipelineManager : NetworkBehaviour
     private bool circle;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rotation = new float[_tubes.Count];
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i=0; i<_tubes.Count; i++)
@@ -44,54 +42,72 @@ public class PipelineManager : NetworkBehaviour
 
         if (rotation[0] < 10)
         {
-            if (rotation[1] < 10)
-            {
-                _lamps[8].material = _green;
-                // AnimateDoor(1,true); // Tür 1 wird geöffnet 
-                // AnimateDoor(1,false); // Tür 1 wird geschlossen
-            }
-            else
-            {
-                _lamps[8].material = _red;
-            }
-
-            if (rotation[3] < 10 || (rotation[3] > 170 && rotation[3] < 190))
-            {
-                if (rotation[2] > 260)
-                {
-                    _lamps[7].material = _red;
-                }
-                else
-                {
-                    _lamps[7].material = _green;
-                }
-            }
-            else
-            {
-                _lamps[7].material = _red;
-            }
-
-            if (rotation[3] > 80 && rotation[3] < 190)
-            {
-                _lamps[6].material = _green;
-            }
-            else
-            {
-                _lamps[6].material = _red;
-            }
+            CheckTheLeftLeftPath();
+            CheckTheLeftmiddlePath();
+            _lamps[0].material = _red;
+        }
+        if (rotation[0] > 80 && rotation[0] <100)
+        {
+            _lamps[0].material = _red;
+            _lamps[6].material = _red;
+            _lamps[7].material = _red;
+            _lamps[8].material = _red;
+        }
+        if (rotation[0] > 100 && rotation[0] < 190)
+        {
+            CheckTheLeftmiddlePath();
+            _lamps[0].material = _green;
+        }
+        if (rotation[0] > 190 && rotation[0] < 280)
+        {
+            CheckTheLeftLeftPath();
+            _lamps[0].material = _green;
         }
 
         //---- mitte ----
 
-        /*if (rotation[0] > 89 && rotation[0] < 181)
+    }
+
+    private void CheckTheLeftLeftPath()
+    {
+        if (rotation[1] < 10)
         {
-            _lamps[0].material.color = red;
+            _lamps[8].material = _green;
+            // AnimateDoor(1,true); // Tür 1 wird geöffnet 
+            // AnimateDoor(1,false); // Tür 1 wird geschlossen
         }
         else
         {
-            _lamps[0].material.color = white;
-        }*/
+            _lamps[8].material = _red;
+        }
+    }
 
+    private void CheckTheLeftmiddlePath()
+    {
+        if (rotation[3] < 10 || (rotation[3] > 170 && rotation[3] < 190))
+        {
+            if (rotation[2] > 260)
+            {
+                _lamps[7].material = _red;
+            }
+            else
+            {
+                _lamps[7].material = _green;
+            }
+        }
+        else
+        {
+            _lamps[7].material = _red;
+        }
+
+        if (rotation[3] > 80 && rotation[3] < 190)
+        {
+            _lamps[6].material = _green;
+        }
+        else
+        {
+            _lamps[6].material = _red;
+        }
     }
 
     [ClientRpc]
@@ -145,8 +161,7 @@ public class PipelineManager : NetworkBehaviour
                     if (_doors[5] != null) _doors[5].Play("LT_Tür_Animation_Close", 0, 0.0f);
                     break;
             }
-
-        }
-        
+        }   
     }
+
 }

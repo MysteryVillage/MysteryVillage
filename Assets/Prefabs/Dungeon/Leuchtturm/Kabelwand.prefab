@@ -67,8 +67,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.5, z: 1}
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Size: {x: 1.5, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &854240290483627661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3541,6 +3541,7 @@ GameObject:
   - component: {fileID: 8123842688778708761}
   - component: {fileID: 5171085657306998254}
   - component: {fileID: 1010756326867493610}
+  - component: {fileID: 5120821454981206603}
   - component: {fileID: 6390464077922459097}
   m_Layer: 9
   m_Name: Drehpunkt_10
@@ -3612,8 +3613,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 6, z: 1}
-  m_Center: {x: 0, y: -2.5, z: 0}
+  m_Size: {x: 1, y: 10, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &5120821454981206603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854730275717730459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6390464077922459097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6796,8 +6810,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 1}
-  m_Center: {x: -0.5, y: 0, z: 0}
+  m_Size: {x: 1.5, y: 1.5, z: 1}
+  m_Center: {x: -0.1, y: 0, z: 0}
 --- !u!114 &510409527074493386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8428,6 +8442,7 @@ GameObject:
   - component: {fileID: 6094029411905321523}
   - component: {fileID: 2592494833995414350}
   - component: {fileID: 3591490522562700915}
+  - component: {fileID: 3984121550584412880}
   - component: {fileID: 8448369770017023446}
   m_Layer: 9
   m_Name: Drehpunkt_6
@@ -8498,8 +8513,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4, z: 1}
-  m_Center: {x: 0, y: -1.5, z: 0}
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &3984121550584412880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461156814872211556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8448369770017023446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10340,6 +10368,7 @@ GameObject:
   - component: {fileID: 3432080813849180516}
   - component: {fileID: 491367317526521519}
   - component: {fileID: 4975030157666773967}
+  - component: {fileID: 5064333545342679070}
   - component: {fileID: 4430949947433263087}
   m_Layer: 9
   m_Name: Drehpunkt_5
@@ -10411,8 +10440,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 5.5, z: 1}
-  m_Center: {x: 0, y: -2, z: 0}
+  m_Size: {x: 1, y: 8, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &5064333545342679070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215614200194318928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4430949947433263087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11245,6 +11287,7 @@ GameObject:
   - component: {fileID: 2493628019050380526}
   - component: {fileID: 4289320940566260617}
   - component: {fileID: 511298386656063877}
+  - component: {fileID: 8855427137448334061}
   - component: {fileID: 3866978820976779730}
   m_Layer: 9
   m_Name: Drehpunkt_3
@@ -11316,8 +11359,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.5, z: 1}
-  m_Center: {x: 0.2, y: -1, z: 0}
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0.2, y: 0, z: 0}
+--- !u!65 &8855427137448334061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015803827041850449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1, z: 1}
+  m_Center: {x: 0.2, y: 0, z: 0}
 --- !u!114 &3866978820976779730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12047,6 +12103,7 @@ GameObject:
   - component: {fileID: 4266328761676228280}
   - component: {fileID: 4036586261996853420}
   - component: {fileID: 2066851933241503872}
+  - component: {fileID: 7811763886882657667}
   - component: {fileID: 7165557526135876791}
   m_Layer: 9
   m_Name: Drehpunkt_1
@@ -12118,8 +12175,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 7, z: 1}
-  m_Center: {x: -0.3, y: -2.5, z: 0}
+  m_Size: {x: 1, y: 11, z: 1}
+  m_Center: {x: -0.3, y: 0, z: 0}
+--- !u!65 &7811763886882657667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7742591284009984463}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 1, z: 1}
+  m_Center: {x: -0.3, y: 0, z: 0}
 --- !u!114 &7165557526135876791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12815,6 +12885,7 @@ GameObject:
   - component: {fileID: 9189554862784230078}
   - component: {fileID: 7063413711897947270}
   - component: {fileID: 1261707600448198119}
+  - component: {fileID: 1293911052206023437}
   - component: {fileID: 120774491891120312}
   m_Layer: 9
   m_Name: Drehpunkt_2
@@ -12875,6 +12946,19 @@ MonoBehaviour:
   syncInterval: 0
   speed: 300
 --- !u!65 &1261707600448198119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914281212273785474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1293911052206023437
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13736,8 +13820,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1}
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Size: {x: 1.5, y: 1.5, z: 1}
+  m_Center: {x: -0.2, y: 0, z: 0}
 --- !u!114 &6550789372323215847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14685,6 +14769,7 @@ GameObject:
   - component: {fileID: 850585655902166816}
   - component: {fileID: 3606925688341863334}
   - component: {fileID: 5039016211150559063}
+  - component: {fileID: 1644993738643507023}
   - component: {fileID: 6634303624245311053}
   m_Layer: 9
   m_Name: Drehpunkt_9
@@ -14745,6 +14830,19 @@ MonoBehaviour:
   syncInterval: 0
   speed: 300
 --- !u!65 &5039016211150559063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022526558909650751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1644993738643507023
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
