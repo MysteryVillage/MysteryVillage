@@ -23,6 +23,11 @@ namespace UI
         public GameObject optionsFirstButton,
         optionsClosedButton;
 
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         public void QuitApplication()
         {
             Application.Quit();
