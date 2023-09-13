@@ -1,4 +1,5 @@
 using Mirror;
+using Network;
 using Player;
 using UnityEngine;
 using UnityEngine.Events;
@@ -45,8 +46,7 @@ namespace NPC
             var dia = GameObject.Find("Dialogue");
             if (dia.GetComponent<DialogueRunner>() != null)
             {
-                NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Dialogue");
-                dia.GetComponent<DialogueRunner>().StartDialogue(!string.IsNullOrEmpty(nextDialogueOverwrite) ? nextDialogueOverwrite : dialogueFlow[currentDialogue]);
+                dia.GetComponent<DialogueManager>().StartActiveDialogue(!string.IsNullOrEmpty(nextDialogueOverwrite) ? nextDialogueOverwrite : dialogueFlow[currentDialogue]);
             }
         }
 

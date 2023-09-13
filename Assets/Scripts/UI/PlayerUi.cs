@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Inputs;
 using Inventory;
 using Mirror;
+using Network;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,9 +27,9 @@ namespace UI
         public InputIconMap iconMap;
 
         [Header("Dialogue")]
-        private DialogueRunner _dialogue;
-        public GameObject dialogueText;
-        public GameObject dialogueOptions;
+        private DialogueManager _dialogue;
+        public GameObject activeDialogueText;
+        public GameObject passiveDialogueText;
 
         [Header("Items")] 
         public ItemPickupController itemPickupController;
@@ -44,9 +45,9 @@ namespace UI
             _playerController = transform.parent.GetComponent<PlayerController>();
             if (GameObject.Find("Dialogue") != null)
             {
-                _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueRunner>();
-                _dialogue.dialogueViews[0] = dialogueText.GetComponent<LineView>();
-                _dialogue.dialogueViews[1] = dialogueOptions.GetComponent<OptionsListView>();
+                _dialogue = GameObject.Find("Dialogue").GetComponent<DialogueManager>();
+                _dialogue.activeDialogueViews[0] = activeDialogueText.GetComponent<LineView>();
+                _dialogue.passiveDialogueViews[0] = passiveDialogueText.GetComponent<LineView>();
             }
         }
 
@@ -167,11 +168,6 @@ namespace UI
             {
                 transform.parent.GetComponent<PlayerInventory>().OnDropItemButton();
             }
-        }
-
-        public void AdvanceText(InputAction.CallbackContext context)
-        {
-            if (context.started) dialogueText.GetComponent<LineView>().UserRequestedViewAdvancement();
         }
 
         public void PauseButton(InputAction.CallbackContext context)
