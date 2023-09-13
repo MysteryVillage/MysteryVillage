@@ -14,6 +14,8 @@ namespace Items
         public ItemData item;
         public EventSystem eventSystem;
 
+        public SpawnArea spawnArea;
+
         public UnityEvent<ItemData> OnCollect;
 
         private void Start()
@@ -40,6 +42,13 @@ namespace Items
             player.GetComponent<PlayerInventory>().CollectItem(item.GetId());
 
             if (eventSystem) eventSystem.OnItemPickup.Invoke(item);
+            
+            // Tell spawn area that something was picked up
+            // var spawnArea = SpawnArea.GetSpawnArea(transform.position, item);
+            if (spawnArea != null)
+            {
+                spawnArea.itemCount--;
+            }
         }
     }
 }
