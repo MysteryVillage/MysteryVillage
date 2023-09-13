@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,14 +13,163 @@ public class PipelineManager : NetworkBehaviour
     [SerializeField] Material _green;
 
     private float[] rotation;
-
+    private bool [] doorState = new bool[6] ;
+    private bool[] lightState = new bool[10];
+    private bool test1, test2, test3 = false;
     void Start()
     {
         rotation = new float[_tubes.Count];
+        for(int i=0; i< doorState.Length; i++)
+        {
+            doorState[i] = false;
+        }
+        for (int i = 0; i < lightState.Length; i++)
+        {
+            lightState[i] = false;
+        }
     }
 
     void Update()
     {
+        /* ------------------------ Tür Mangament ------------------------ */
+        /* Tür 1 */
+
+        Debug.Log("Mond: "+  test1  + "Punkt: " + test2 + "Viereck: " + test3);
+        if (lightState[6] == true) test1 = true;
+        if (lightState[1] == true) test2 = true;
+        if (lightState[5] == true) test3 = true;
+
+        if (lightState[6] == true &&
+            lightState[1] == true &&
+            lightState[5] == true)
+        {
+            Debug.Log("Tür 1 Auf ..................................................");
+            AnimateDoor(1, true); // Tür 1 öffnen 
+            doorState[0] = true;
+        }
+        /* Tür zu wenn sie offen ist und eine der Lampen ausgeht */
+        if (lightState[6] == false ||
+            lightState[1] == false ||
+            lightState[5] == false)
+        {
+            if (doorState[0] == true)
+            {
+               
+                AnimateDoor(1, false); // Tür 1 öffnen 
+                doorState[0] = false;
+            }
+        }
+
+
+        /* Tür 2 */
+        if (lightState[9] == true && 
+            lightState[3] == true &&
+            lightState[0] == true)
+        {
+            AnimateDoor(2, true); // Tür 2 öffnen 
+            doorState[1] = true;
+        }
+        /* Tür zu wenn sie offen ist und eine der Lampen ausgeht */
+        if (lightState[9] == false || 
+            lightState[3] == false ||
+            lightState[0] == false)
+        {
+            if (doorState[1] == true)
+            {
+                AnimateDoor(2, false); // Tür 1 öffnen 
+                doorState[1] = false;
+            }
+        }
+
+
+        /* Tür 3 */
+        if (lightState[9] == true && 
+            lightState[8] == true &&
+            lightState[2] == true)
+        {
+            AnimateDoor(3, true); // Tür 3 öffnen 
+            doorState[2] = true;
+        }  
+        /* Tür zu wenn sie offen ist und eine der Lampen ausgeht */
+        if (lightState[9] == false || 
+            lightState[8] == false ||
+            lightState[2] == false)
+        {
+            if (doorState[2] == true)
+            {
+                AnimateDoor(3, false); // Tür 1 öffnen 
+                doorState[2] = false;
+            }
+        }
+
+
+        /* Tür 4 */
+        if (lightState[8] == true && 
+            lightState[0] == true &&
+            lightState[1] == true)
+        {
+            AnimateDoor(4, true); // Tür 4 öffnen 
+            doorState[3] = true;
+        }
+        /* Tür zu wenn sie offen ist und eine der Lampen ausgeht */
+        if (lightState[8] == false ||
+            lightState[0] == false ||
+            lightState[1] == false)
+        {
+            if (doorState[3] == true)
+            {
+                AnimateDoor(4, false); // Tür 1 öffnen 
+                doorState[3] = false;
+            }
+        }
+
+
+        /* Tür 5 */
+        if (lightState[1] == true && 
+            lightState[4] == true &&
+            lightState[7] == true)
+        {
+            AnimateDoor(5, true); // Tür 5 öffnen 
+            doorState[4] = true;
+        }
+        /* Tür zu wenn sie offen ist und eine der Lampen ausgeht */
+        if (lightState[1] == false || 
+            lightState[4] == false ||
+            lightState[7] == false)
+        {
+            if (doorState[4] == true)
+            {
+                AnimateDoor(5, false); // Tür 1 öffnen 
+                doorState[4] = false;
+            }
+        }
+
+
+        /* Tür 6 */
+        if (lightState[6] == true && 
+            lightState[9] == true &&
+            lightState[4] == true)
+        {
+            AnimateDoor(6, true); // Tür 6 öffnen 
+            doorState[5] = true;
+        }
+        /* Tür zu wenn sie offen ist und eine der Lampen ausgeht */
+        if (lightState[6] == false || 
+            lightState[9] == false ||
+            lightState[4] == false)
+        {
+            if (doorState[5] == true)
+            {
+                AnimateDoor(6, false); // Tür 1 öffnen 
+                doorState[5] = false;
+            }
+        }
+
+
+
+
+
+
         for (int i = 0; i < _tubes.Count; i++)
         {
             rotation[i] = (_tubes[i].eulerAngles.z);
@@ -32,6 +182,7 @@ public class PipelineManager : NetworkBehaviour
             CheckLeftLeftPath();
             CheckLeftMiddlePath();
             _lamps[0].material = _red;
+            lightState[0] = false;
         }
         if (rotation[0] > 80 && rotation[0] < 100)
         {
@@ -39,16 +190,23 @@ public class PipelineManager : NetworkBehaviour
             _lamps[6].material = _red;
             _lamps[7].material = _red;
             _lamps[8].material = _red;
+            lightState[0] = false;
+            lightState[6] = false;
+            lightState[7] = false;
+            lightState[8] = false;
         }
         if (rotation[0] > 170 && rotation[0] < 190)
         {
             CheckLeftMiddlePath();
             _lamps[0].material = _green;
+            lightState[0] = true;
         }
         if (rotation[0] > 260 && rotation[0] < 280)
         {
             CheckLeftLeftPath();
             _lamps[0].material = _green;
+            lightState[0] = true;
+
         }
 
         //---- mitte ----
@@ -58,6 +216,10 @@ public class PipelineManager : NetworkBehaviour
             _lamps[9].material = _red;
             _lamps[2].material = _red;
             _lamps[3].material = _red;
+            lightState[1] = true;
+            lightState[9] = false;
+            lightState[2] = false;
+            lightState[3] = false;
         }
 
         if (rotation[4] > 80 && rotation[4] < 100)
@@ -65,6 +227,8 @@ public class PipelineManager : NetworkBehaviour
             CheckMiddleMiddlePath();
             _lamps[1].material = _red;
             _lamps[9].material = _green;
+            lightState[1] = false;
+            lightState[9] = true;
         }
         if (rotation[4] > 170 && rotation[4] < 190)
         {
@@ -72,12 +236,18 @@ public class PipelineManager : NetworkBehaviour
             _lamps[9].material = _red;
             _lamps[2].material = _red;
             _lamps[3].material = _red;
+            lightState[1] = false;
+            lightState[9] = false;
+            lightState[2] = false;
+            lightState[3] = false;
         }
         if (rotation[4] > 260 && rotation[4] < 280)
         {
             CheckMiddleMiddlePath();
             _lamps[1].material = _green;
             _lamps[9].material = _green;
+            lightState[1] = true;
+            lightState[9] = true;
         }
 
         //---- rechte Seite ----
@@ -90,6 +260,8 @@ public class PipelineManager : NetworkBehaviour
         {
             _lamps[4].material = _red;
             _lamps[5].material = _red;
+            lightState[4] = false;
+            lightState[5] = false;
         }
         if (rotation[9] > 170 && rotation[9] < 190)
         {
@@ -97,10 +269,12 @@ public class PipelineManager : NetworkBehaviour
             if (rotation[7] > 170 && rotation[7] <280)
             {
                 _lamps[4].material = _green;
+                lightState[4] = true;
             }
             else
             {
                 _lamps[4].material = _red;
+                lightState[4] = false;
             }
         }
         if (rotation[9] > 260 && rotation[9] < 280)
@@ -110,16 +284,17 @@ public class PipelineManager : NetworkBehaviour
         }
     }
 
-
     private void CheckLeftLeftPath()
     {
         if (rotation[1] < 10)
         {
             _lamps[8].material = _green;
+            lightState[8] = true;
         }
         else
         {
             _lamps[8].material = _red;
+            lightState[8] = false;
         }
     }
     private void CheckLeftMiddlePath()
@@ -129,24 +304,29 @@ public class PipelineManager : NetworkBehaviour
             if (rotation[2] > 260)
             {
                 _lamps[7].material = _red;
+                lightState[7] = false;
             }
             else
             {
                 _lamps[7].material = _green;
+                lightState[7] = true;
             }
         }
         else
         {
             _lamps[7].material = _red;
+            lightState[7] = false;
         }
 
         if (rotation[3] > 80 && rotation[3] < 190)
         {
             _lamps[6].material = _green;
+            lightState[6] = true;
         }
         else
         {
             _lamps[6].material = _red;
+            lightState[6] = false;
         }
     }
     private void CheckMiddleMiddlePath()
@@ -157,27 +337,37 @@ public class PipelineManager : NetworkBehaviour
             {
                 _lamps[2].material = _green;
                 _lamps[3].material = _red;
+                lightState[2] = true;
+                lightState[3] = false;
             }
             if (rotation[6] > 80 && rotation[6] < 100)
             {
                 _lamps[2].material = _red;
                 _lamps[3].material = _green;
+                lightState[2] = false;
+                lightState[3] = true;
             }
             if (rotation[6] > 170 && rotation[6] < 190)
             {
                 _lamps[2].material = _red;
                 _lamps[3].material = _red;
+                lightState[2] = false;
+                lightState[3] = false;
             }
             if (rotation[6] > 260 && rotation[6] < 280)
             {
                 _lamps[2].material = _green;
                 _lamps[3].material = _green;
+                lightState[2] = true;
+                lightState[3] = true;
             }
         }
         else
         {
             _lamps[2].material = _red;
             _lamps[3].material = _red;
+            lightState[2] = false;
+            lightState[3] = false;
         }
     }
     private void CheckRightUpPath() 
@@ -185,10 +375,12 @@ public class PipelineManager : NetworkBehaviour
         if (rotation[8] < 10)
         {
             _lamps[5].material = _green;
+            lightState[5] = true;
         }
         else
         {
             _lamps[5].material = _red;
+            lightState[5] = false;
         }
     }
     private void CheckRightDownPath()
@@ -197,21 +389,29 @@ public class PipelineManager : NetworkBehaviour
         {
             _lamps[4].material = _red;
             _lamps[5].material = _green;
+            lightState[4] = false;
+            lightState[5] = true;
         }
         if (rotation[7] > 80 && rotation[7] < 100)
         {
             _lamps[4].material = _green;
             _lamps[5].material = _red;
+            lightState[4] = true;
+            lightState[5] = false;
         }
         if (rotation[7] > 170 && rotation[7] < 190)
         {
             _lamps[4].material = _red;
             _lamps[5].material = _red;
+            lightState[4] = false;
+            lightState[5] = false;
         }
         if (rotation[7] > 260 && rotation[7] < 280)
         {
             _lamps[4].material = _green;
             _lamps[5].material = _green;
+            lightState[4] = true;
+            lightState[5] = true;
         }
     }
 
