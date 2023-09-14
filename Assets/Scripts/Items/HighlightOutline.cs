@@ -14,8 +14,11 @@ namespace Items
         [SerializeField]
         private Color outlineColor = Color.white;
 
+        private Color disabled = Color.black;
+
         private List<Material> materials;
         private static readonly int Thickness = Shader.PropertyToID("_Thickness");
+        private static readonly int Alpha = Shader.PropertyToID("_Alpha");
         private static readonly int OutlineColor = Shader.PropertyToID("_OutlineColor");
 
         //Get materials from each renderer
@@ -42,6 +45,7 @@ namespace Items
                     //Enable thickness and change color
                     material.SetFloat(Thickness, thickness);
                     material.SetColor(OutlineColor, outlineColor);
+                    material.SetFloat(Alpha, 1.0f);
                     Debug.Log("Highlight " + gameObject.name);
                 }
             }
@@ -51,6 +55,8 @@ namespace Items
                 {
                     //disable thickness
                     material.SetFloat(Thickness, 0.0f);
+                    material.SetColor(OutlineColor, disabled);
+                    material.SetFloat(Alpha, 0.0f);
                 }
             }
         }
