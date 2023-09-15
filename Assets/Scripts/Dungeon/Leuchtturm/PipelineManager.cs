@@ -41,7 +41,8 @@ public class PipelineManager : NetworkBehaviour
 
         if (lightState[6] == true &&
             lightState[1] == true &&
-            lightState[5] == true)
+            lightState[5] == true &&
+            doorState[0]  == false)
         {
             Debug.Log("Tür 1 Auf ..................................................");
             AnimateDoor(1, true); // Tür 1 öffnen 
@@ -64,7 +65,8 @@ public class PipelineManager : NetworkBehaviour
         /* Tür 2 */
         if (lightState[9] == true && 
             lightState[3] == true &&
-            lightState[0] == true)
+            lightState[0] == true &&
+            doorState[1]  == false)
         {
             AnimateDoor(2, true); // Tür 2 öffnen 
             doorState[1] = true;
@@ -85,7 +87,8 @@ public class PipelineManager : NetworkBehaviour
         /* Tür 3 */
         if (lightState[9] == true && 
             lightState[8] == true &&
-            lightState[2] == true)
+            lightState[2] == true &&
+             doorState[2] == false)
         {
             AnimateDoor(3, true); // Tür 3 öffnen 
             doorState[2] = true;
@@ -106,7 +109,8 @@ public class PipelineManager : NetworkBehaviour
         /* Tür 4 */
         if (lightState[8] == true && 
             lightState[0] == true &&
-            lightState[1] == true)
+            lightState[1] == true &&
+             doorState[3] == false)
         {
             AnimateDoor(4, true); // Tür 4 öffnen 
             doorState[3] = true;
@@ -127,7 +131,8 @@ public class PipelineManager : NetworkBehaviour
         /* Tür 5 */
         if (lightState[1] == true && 
             lightState[4] == true &&
-            lightState[7] == true)
+            lightState[7] == true &&
+             doorState[4] == false)
         {
             AnimateDoor(5, true); // Tür 5 öffnen 
             doorState[4] = true;
@@ -148,7 +153,8 @@ public class PipelineManager : NetworkBehaviour
         /* Tür 6 */
         if (lightState[6] == true && 
             lightState[9] == true &&
-            lightState[4] == true)
+            lightState[4] == true &&
+             doorState[5] == false)
         {
             AnimateDoor(6, true); // Tür 6 öffnen 
             doorState[5] = true;
@@ -423,22 +429,22 @@ public class PipelineManager : NetworkBehaviour
             switch (door)
             {
                 case 1:
-                    if (_doors[0] != null) _doors[0].Play("LT_Tür_Animation_Open", 0, 0.0f);
+                    if (_doors[0] != null ) _doors[0].Play("LT_Door_Animation_Open", 0, 0.0f); Debug.Log(" Tür 1 Öffnet sich");
                     break;
                 case 2:
-                    if (_doors[1] != null) _doors[1].Play("LT_Tür_Animation_Open", 0, 0.0f);
+                    if (_doors[1] != null) _doors[1].Play("LT_Door_Animation_Open", 0, 0.0f); Debug.Log(" Tür 2 Öffnet sich");
                     break;
                 case 3:
-                    if (_doors[2] != null) _doors[2].Play("LT_Tür_Animation_Open", 0, 0.0f);
+                    if (_doors[2] != null) _doors[2].Play("LT_Door_Animation_Open", 0, 0.0f); Debug.Log(" Tür 3 Öffnet sich");
                     break;
                 case 4:
-                    if (_doors[3] != null) _doors[3].Play("LT_Tür_Animation_Open", 0, 0.0f);
+                    if (_doors[3] != null) _doors[3].Play("LT_Door_Animation_Open", 0, 0.0f); Debug.Log(" Tür 4 Öffnet sich");
                     break;
                 case 5:
-                    if (_doors[4] != null) _doors[4].Play("LT_Tür_Animation_Open", 0, 0.0f);
+                    if (_doors[4] != null) _doors[4].Play("LT_Door_Animation_Open", 0, 0.0f); Debug.Log(" Tür 5 Öffnet sich");
                     break;
                 case 6:
-                    if (_doors[5] != null) _doors[5].Play("LT_Tür_Animation_Open", 0, 0.0f);
+                    if (_doors[5] != null) _doors[5].Play("LT_Door_Animation_Open", 0, 0.0f); Debug.Log(" Tür 6 Öffnet sich");
                     break;
             }
         }
@@ -448,22 +454,22 @@ public class PipelineManager : NetworkBehaviour
             switch (door)
             {
                 case 1:
-                    if (_doors[0] != null) _doors[0].Play("LT_Tür_Animation_Close", 0, 0.0f);
+                    if (_doors[0] != null) _doors[0].Play("LT_Door_Animation_Close", 0, 0.0f); Debug.Log(" Tür 1 schließt sich");
                     break;
                 case 2:
-                    if (_doors[1] != null) _doors[1].Play("LT_Tür_Animation_Close", 0, 0.0f);
+                    if (_doors[1] != null) _doors[1].Play("LT_Door_Animation_Close", 0, 0.0f); Debug.Log(" Tür 2 schließt sich");
                     break;
                 case 3:
-                    if (_doors[2] != null) _doors[2].Play("LT_Tür_Animation_Close", 0, 0.0f);
+                    if (_doors[2] != null) _doors[2].Play("LT_Door_Animation_Close", 0, 0.0f); Debug.Log(" Tür 3 schließt sich");
                     break;
                 case 4:
-                    if (_doors[3] != null) _doors[3].Play("LT_Tür_Animation_Close", 0, 0.0f);
+                    if (_doors[3] != null) _doors[3].Play("LT_Door_Animation_Close", 0, 0.0f); Debug.Log(" Tür 4 schließt sich");
                     break;
                 case 5:
-                    if (_doors[4] != null) _doors[4].Play("LT_Tür_Animation_Close", 0, 0.0f);
+                    if (_doors[4] != null) _doors[4].Play("LT_Door_Animation_Close", 0, 0.0f); Debug.Log(" Tür 5 schließt sich");
                     break;
                 case 6:
-                    if (_doors[5] != null) _doors[5].Play("LT_Tür_Animation_Close", 0, 0.0f);
+                    if (_doors[5] != null) _doors[5].Play("LT_Door_Animation_Close", 0, 0.0f); Debug.Log(" Tür 6 schließt sich");
                     break;
             }
         }   
