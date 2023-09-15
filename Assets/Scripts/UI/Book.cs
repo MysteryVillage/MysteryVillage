@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Book : MonoBehaviour
 {
+
     [SerializeField] float _pageSpeed = 0.5f;
     [SerializeField] List<Transform> _pages;
     [SerializeField] GameObject backButton;
