@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Mirror;
 
-public class FlashlightController : MonoBehaviour
+public class FlashlightController : NetworkBehaviour
 {
     public GameObject lightSource;
     public AudioClip audioClip;
@@ -39,6 +40,7 @@ public class FlashlightController : MonoBehaviour
         }
     }
 
+    [ClientRpc]
     public void ToggleFlashlight()
     {
         if (!flashlightOn)

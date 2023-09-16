@@ -14,7 +14,7 @@ namespace Environment.Buildings
         void Start()
         {
             animator = GetComponent<Animator>();
-            prompt = "�ffnen";
+            prompt = "Öffnen";
             GetInteractPrompt();
         }
 
@@ -44,14 +44,14 @@ namespace Environment.Buildings
             {
                 isOpen = true;
                 animator.SetBool("isOpen", isOpen);
-                prompt = "Schlie�en";
+                prompt = "Schließen";
                 GetInteractPrompt();
             }
             else
             {
                 isOpen = false;
                 animator.SetBool("isOpen", isOpen);
-                prompt = "�ffnen";
+                prompt = "Öffnen";
                 GetInteractPrompt();
             }
         }
