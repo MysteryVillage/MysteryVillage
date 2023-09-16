@@ -38399,6 +38399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 440315725258607488}
     m_Modifications:
+    - target: {fileID: 2019219117063599995, guid: 0fd0a86e49706b24597ba83d5e893ec2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2288499767127303660, guid: 0fd0a86e49706b24597ba83d5e893ec2, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -38406,6 +38410,10 @@ PrefabInstance:
     - target: {fileID: 7510559650992298584, guid: 0fd0a86e49706b24597ba83d5e893ec2, type: 3}
       propertyPath: m_Name
       value: LT_Door_Eingang
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510559650992298584, guid: 0fd0a86e49706b24597ba83d5e893ec2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7705891038251809798, guid: 0fd0a86e49706b24597ba83d5e893ec2, type: 3}
       propertyPath: m_RootOrder
