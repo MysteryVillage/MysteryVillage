@@ -34,11 +34,6 @@ public class PipelineManager : NetworkBehaviour
         /* ------------------------ Tür Mangament ------------------------ */
         /* Tür 1 */
 
-        Debug.Log("Mond: "+  test1  + "Punkt: " + test2 + "Viereck: " + test3);
-        if (lightState[6] == true) test1 = true;
-        if (lightState[1] == true) test2 = true;
-        if (lightState[5] == true) test3 = true;
-
         if (lightState[6] == true &&
             lightState[1] == true &&
             lightState[5] == true &&
