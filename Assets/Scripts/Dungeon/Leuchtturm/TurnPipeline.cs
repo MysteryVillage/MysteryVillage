@@ -12,7 +12,7 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
 
 
     public int speed = 300;
-    bool isMoving = false;
+    [SyncVar] bool isMoving = false;
 
     public string GetInteractPrompt()
     {
@@ -28,7 +28,7 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
         StopAllCoroutines();
         StartCoroutine(Turn());
     }
-
+    
     IEnumerator Turn()
     {
         isMoving = true;

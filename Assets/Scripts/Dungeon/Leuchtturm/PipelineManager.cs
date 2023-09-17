@@ -156,6 +156,7 @@ public class PipelineManager : NetworkBehaviour
             lightState[4] == true &&
              doorState[5] == false)
         {
+            Debug.Log("Tür 6 Sollte sich öffnen");
             AnimateDoor(6, true); // Tür 6 öffnen 
             doorState[5] = true;
         }
@@ -166,7 +167,7 @@ public class PipelineManager : NetworkBehaviour
         {
             if (doorState[5] == true)
             {
-                AnimateDoor(6, false); // Tür 1 öffnen 
+                AnimateDoor(6, false); // Tür 6 schließen 
                 doorState[5] = false;
             }
         }

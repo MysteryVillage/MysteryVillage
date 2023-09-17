@@ -4865,6 +4865,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 7290703892053452740, guid: eb8a7411860b14637ad57491fce41342, type: 3}
+      propertyPath: DampingFromCollision
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290703892053452740, guid: eb8a7411860b14637ad57491fce41342, type: 3}
+      propertyPath: DampingIntoCollision
+      value: 2.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8a7411860b14637ad57491fce41342, type: 3}
 --- !u!1 &689362496702715641 stripped
@@ -6363,6 +6371,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3893294197879345259}
     m_Modifications:
+    - target: {fileID: 2084487772325053502, guid: 01d95f5005eb04029a71e3f33ee44f9d, type: 3}
+      propertyPath: m_Damping
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084487772325053502, guid: 01d95f5005eb04029a71e3f33ee44f9d, type: 3}
+      propertyPath: m_SmoothingTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3028593729719759046, guid: 01d95f5005eb04029a71e3f33ee44f9d, type: 3}
       propertyPath: m_RootOrder
       value: 3
