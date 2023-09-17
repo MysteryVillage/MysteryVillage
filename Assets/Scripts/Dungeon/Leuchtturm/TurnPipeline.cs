@@ -12,13 +12,14 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
 
 
     public int speed = 300;
-    [SyncVar] bool isMoving = false;
+    bool isMoving = false;
 
     public string GetInteractPrompt()
     {
         return "Turned Tube";
     }
 
+    [ClientRpc]
     public void OnInteract(uint networkIdentifier)
     {
         if(isMoving)
@@ -28,7 +29,9 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
         StopAllCoroutines();
         StartCoroutine(Turn());
     }
-    
+
+
+
     IEnumerator Turn()
     {
         isMoving = true;
@@ -44,4 +47,6 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
 
         isMoving = false;
     }
+
+   
 }
