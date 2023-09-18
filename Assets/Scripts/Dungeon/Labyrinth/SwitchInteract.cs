@@ -55,7 +55,7 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
     }
     public string GetInteractPrompt()
     {
-        return string.Format("Activate Switch {0}", "here");
+        return string.Format("Schalter {0}", "umlegen");
     }
 
     public void OnInteract(uint networkIdentifier)
