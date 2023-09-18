@@ -2355,6 +2355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02e5fbb5d056f0469a97b78a528678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   lightSource: {fileID: 4792151539685409692}
   audioClip: {fileID: 8300000, guid: 9ec8192cfc68502459da98443d05d5b2, type: 3}
 --- !u!1 &4495334270945781815
@@ -4769,6 +4772,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4918131323930167376, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921776493882158398, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5020196987027368912, guid: 50d4810710c6941569180ced649cf585, type: 3}
