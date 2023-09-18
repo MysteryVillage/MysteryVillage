@@ -1,3 +1,4 @@
+ using Cinemachine;
  using Inventory;
  using Mirror;
  using Network;
@@ -76,6 +77,7 @@ namespace Player
         [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
         public GameObject cinemachineCameraTarget;
         [FormerlySerializedAs("CinemachineFollowCamera")] public GameObject cinemachineFollowCamera;
+        public CinemachineVirtualCamera lastUsedCamera;
         [FormerlySerializedAs("CinemachineMainCamera")] public GameObject cinemachineMainCamera;
         public GameObject minimapCamera;
         public SpriteRenderer playerIcon;
