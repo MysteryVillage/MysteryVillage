@@ -136,6 +136,8 @@ namespace Player
 
         public AudioSource audioSource;
 
+        [Header("Progress")] public bool hasBook;
+
         private bool IsCurrentDeviceMouse
         {
             get

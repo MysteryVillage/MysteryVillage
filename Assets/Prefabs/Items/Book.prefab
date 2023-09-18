@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 324158801098991427}
   - component: {fileID: 4789465335352970144}
   - component: {fileID: 4869568101651235416}
+  - component: {fileID: -287621830565412553}
   m_Layer: 10
   m_Name: Book
   m_TagString: Untagged
@@ -60,11 +61,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383943728200056096}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.49, y: 0.58, z: 0.6}
-  m_Center: {x: 0, y: 0.24, z: 0}
+  m_Size: {x: 0.49, y: 0.1, z: 0.6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4789465335352970144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,18 +92,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383943728200056096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082d5cc2bd2044b898fc26b392811dc1, type: 3}
+  m_Script: {fileID: 11500000, guid: e6e3c842cc544e81a18462a2763a2212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
   item: {fileID: 11400000, guid: 356cf9091b416f748aa6ac7fa947ad55, type: 2}
-  eventSystem: {fileID: 0}
-  spawnArea: {fileID: 0}
-  OnCollect:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!136 &-287621830565412553
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383943728200056096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.18, z: 0}
 --- !u!1 &3258388187833347840
 GameObject:
   m_ObjectHideFlags: 0
