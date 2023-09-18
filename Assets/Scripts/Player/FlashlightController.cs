@@ -31,14 +31,17 @@ public class FlashlightController : NetworkBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnToggleFlashlight()
     {
-        if (Keyboard.current.lKey.wasPressedThisFrame)
-        {
-            ToggleFlashlight();
-        }
+        ToggleFlashlightCMD();
     }
+
+    [Command]
+    void ToggleFlashlightCMD()
+    {
+        ToggleFlashlight();
+    }
+
 
     [ClientRpc]
     public void ToggleFlashlight()
