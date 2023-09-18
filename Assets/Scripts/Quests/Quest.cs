@@ -54,6 +54,10 @@ namespace Quests
                 {
                     Debug.Log("Try to init bring to goal");
                     bringToGoal.Init();
+                } else if (goal is EventGoal eventGoal)
+                {
+                    Debug.Log("Try to init event goal");
+                    eventGoal.Init();
                 }
                 else
                 {

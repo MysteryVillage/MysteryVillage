@@ -12,5 +12,6 @@ namespace Events
 
         public UnityEvent<Quest> onQuestStart;
         public UnityEvent<Quest> onQuestFinish;
+        public UnityEvent<string> onQuestEvent;
     }
 }

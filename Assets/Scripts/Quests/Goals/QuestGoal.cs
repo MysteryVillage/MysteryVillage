@@ -69,6 +69,12 @@ public static class CustomReadWriteFunctions
         } else if (questGoal.GetType() == typeof(GoToGoal))
         {
             GoToGoal.WriteGoToGoal(writer, questGoal);
+        } else if (questGoal.GetType() == typeof(BringToGoal))
+        {
+            BringToGoal.WriteBringToGoal(writer, questGoal);
+        } else if (questGoal.GetType() == typeof(EventGoal))
+        {
+            EventGoal.WriteEventGoal(writer, questGoal);
         }
         
         // write general data
@@ -96,6 +102,12 @@ public static class CustomReadWriteFunctions
         } else if (classType == typeof(GoToGoal))
         {
             goal = GoToGoal.ReadGoToGoal(reader);
+        } else if (classType == typeof(BringToGoal))
+        {
+            goal = BringToGoal.ReadBringToGoal(reader);
+        } else if (classType == typeof(EventGoal))
+        {
+            goal = EventGoal.ReadEventGoal(reader);
         }
 
         // if goal was not initialized at this point, abort
