@@ -43,6 +43,19 @@ namespace Inventory
             return _instance;
         }
 
+        public InventoryData GetInventoryForPlayer(GameObject player)
+        {
+            foreach (var inventory in Inventories)
+            {
+                if (inventory.Value._player == player)
+                {
+                    return inventory.Value;
+                }
+            }
+
+            return null;
+        }
+
         public void AddItemToInventory(int itemId, uint netId)
         {
             // Retrieve inventory component by netId

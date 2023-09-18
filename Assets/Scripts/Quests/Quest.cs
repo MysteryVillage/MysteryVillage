@@ -50,6 +50,10 @@ namespace Quests
                 {
                     Debug.Log("Try to init collect goal");
                     collectGoal.Init();
+                } else if (goal is BringToGoal bringToGoal)
+                {
+                    Debug.Log("Try to init bring to goal");
+                    bringToGoal.Init();
                 }
                 else
                 {
@@ -85,6 +89,21 @@ namespace Quests
         {
             if (other == null) return false;
             return Information.name + Information.description == other.Information.name + other.Information.description;
+        }
+        
+        public int GetId()
+        {
+            return FindId(this);
+        }
+        
+        public static Quest FindById(int questId)
+        {
+            return QuestManager.Current.availableQuests[questId];
+        }
+
+        public static int FindId(Quest quest)
+        {
+            return QuestManager.Current.availableQuests.FindIndex(x => x.Equals(quest));
         }
     }
 

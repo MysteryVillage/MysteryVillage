@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 520059485}
-  m_IndirectSpecularColor: {r: 0.17277355, g: 0.2158997, b: 0.29783309, a: 1}
+  m_IndirectSpecularColor: {r: 0.17277241, g: 0.21589847, b: 0.29783142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1991,7 +1991,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470326580}
-  m_LocalRotation: {x: 0.25567728, y: 0.7059071, z: -0.58371115, w: 0.3092016}
+  m_LocalRotation: {x: 0.25567743, y: 0.705907, z: -0.58371115, w: 0.30920166}
   m_LocalPosition: {x: 334.57382, y: 19.812222, z: 98.68961}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5609,6 +5609,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 3885091337728031010, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
+      propertyPath: sceneId
+      value: 1144629349
+      objectReference: {fileID: 0}
     - target: {fileID: 3908903271357252499, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5752,6 +5756,10 @@ PrefabInstance:
     - target: {fileID: 5212010232293845602, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5212576028850839465, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
+      propertyPath: sceneId
+      value: 41707441
       objectReference: {fileID: 0}
     - target: {fileID: 5264754015999414032, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
       propertyPath: m_RootOrder
@@ -5968,6 +5976,10 @@ PrefabInstance:
     - target: {fileID: 6723937216903856416, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
       propertyPath: m_RootOrder
       value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725572003184924750, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
+      propertyPath: sceneId
+      value: 1958580
       objectReference: {fileID: 0}
     - target: {fileID: 6751853592321428414, guid: 0b5008ea346bc7542903fe73f857e9f1, type: 3}
       propertyPath: m_RootOrder
@@ -6841,7 +6853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06670332
+      value: -0.06670314
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6849,7 +6861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.066700935
+      value: 0.066700995
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7473,7 +7485,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228830059}
-  m_LocalRotation: {x: 0.30237138, y: -0.000000016400952, z: 0.000000005202716, w: 0.9531902}
+  m_LocalRotation: {x: 0.30237138, y: 0.000000028407282, z: -0.000000009011369, w: 0.9531902}
   m_LocalPosition: {x: 0, y: 2.7299995, z: -3.869995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9427,7 +9439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8527773208907400127, guid: b782106476bbf654fa8fbd58ddf4195c, type: 3}
       propertyPath: m_Name
-      value: zelt (1)
+      value: zelt
       objectReference: {fileID: 0}
     - target: {fileID: 9012666171252840709, guid: b782106476bbf654fa8fbd58ddf4195c, type: 3}
       propertyPath: m_RootOrder
@@ -9718,6 +9730,14 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   currentQuest: {fileID: 0}
+  availableQuests:
+  - {fileID: 11400000, guid: f45de22a77a484ece980673d39b0a9e1, type: 2}
+  - {fileID: 11400000, guid: 478a1675292ae4aabadb8abec8ddcabe, type: 2}
+  - {fileID: 11400000, guid: 9697a751efd774736a2ea44b6338d178, type: 2}
+  - {fileID: 11400000, guid: 89329ffc1eabd465cafc5e73941e586b, type: 2}
+  - {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
+  - {fileID: 11400000, guid: de53769986f91457492ebfc4ca2c7acf, type: 2}
+  - {fileID: 11400000, guid: e017e14b15047455a852cb1da6358047, type: 2}
   OnQuestChanged:
     m_PersistentCalls:
       m_Calls: []

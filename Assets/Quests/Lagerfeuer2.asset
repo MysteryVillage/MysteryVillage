@@ -16,9 +16,9 @@ MonoBehaviour:
     name: Lagerfeuer
     description: "Bringt die Materialien zur\xFCck zu Heribert."
   goals:
-  - {fileID: 465552657062462893}
+  - {fileID: 3629479948110086327}
   followUpQuest: {fileID: 0}
---- !u!114 &465552657062462893
+--- !u!114 &3629479948110086327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,15 +27,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf0bbed49ae4111b8e9bb0d1d4c22c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 447902bf682f43bfb11c633638af5ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: Sprich mit Heribert
+  Description: Bringe die Sachen zu Heribert.
   RequiredAmount: 1
   QuestGoalCompleted:
     m_PersistentCalls:
       m_Calls: []
-  npc: {fileID: 1126663781578650093, guid: 4ae926bc95a140843a1b5ae18fdf6dda, type: 3}
+  RequestedItems:
+  - item: {fileID: 11400000, guid: 1f00b56e719354af98bfd1961700b850, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: 3159e2aaf9c434ceda53cb006a69b07a, type: 2}
+    amount: 1
   target: {fileID: 0}
   npcName: 3
-  dialogueScript: LagerfeuerQuestFinished
+  successDialogue: LagerfeuerQuestFinished
+  failureDialogue: LagerfeuerQuestFailed

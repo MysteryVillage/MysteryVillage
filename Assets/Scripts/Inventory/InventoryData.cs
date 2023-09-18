@@ -78,12 +78,12 @@ namespace Inventory
             // inventory.ThrowItem(item);
         }
 
-        public void RemoveItemFromIndex(int slotIndex)
+        public void RemoveItemFromIndex(int slotIndex, int amount = 1)
         {
             Debug.Log(this);
         
             var selectedItem = slots[slotIndex];
-            selectedItem.quantity--;
+            selectedItem.quantity = selectedItem.quantity - amount;
 
             if (selectedItem.quantity == 0)
             {
@@ -162,6 +162,20 @@ namespace Inventory
             return -1;
         }
 
+        public bool HasItem(ItemData item, int amount)
+        {
+            foreach (var slot in slots)
+            {
+                Debug.Log(slot);
+                if (slot.item.Equals(item) && slot.quantity >= amount)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public override string ToString()
         {
             var text = "Items of player " + _player.name + ": \n";
@@ -171,6 +185,24 @@ namespace Inventory
             }
 
             return text;
+        }
+
+        public void TryRemoveItem(ItemData item, int amount)
+        {
+            if (!HasItem(item, amount))
+            {
+                return;
+            }
+            
+            for (int i = 0; i < slots.Length; i++)
+            {
+                var slot = slots[i];
+                if (slot.item.Equals(item) && slot.quantity >= amount)
+                {
+                    RemoveItemFromIndex(i, amount);
+                    return;
+                }
+            }
         }
     }
 }

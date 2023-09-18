@@ -108,9 +108,9 @@ namespace Player
         }
 
         [Command]
-        public void AddQuest(Quest quest)
+        public void AddQuest(int questId)
         {
-            QuestManager.Current.AddQuest(quest);
+            QuestManager.Current.AddQuest(Quest.FindById(questId));
         }
 
         private void OnDrawGizmos()
