@@ -16,7 +16,7 @@ public class TurnPipeline : NetworkBehaviour, IIinteractable
 
     public string GetInteractPrompt()
     {
-        return "Turned Tube";
+        return "Rohr drehen";
     }
 
     [ClientRpc]
