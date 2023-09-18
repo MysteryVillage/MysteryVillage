@@ -22,6 +22,7 @@ public class SwitchesLeuchtturm : NetworkBehaviour, IIinteractable
     {
         if (levlerAnimation != null) _hasAnimator = true;
         _animID = Animator.StringToHash("Schalter");
+        _lamp.material = _red;
     }
 
     public string GetInteractPrompt()
