@@ -113,6 +113,18 @@ namespace Player
             QuestManager.Current.AddQuest(Quest.FindById(questId));
         }
 
+        
+        public void SelectQuest(int questId)
+        {
+            SelectQuestCmd(questId);
+        }
+        
+        [Command]
+        public void SelectQuestCmd(int questId)
+        {
+            QuestManager.Current.SelectQuest(Quest.FindById(questId));
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;

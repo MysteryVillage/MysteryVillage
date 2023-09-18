@@ -10,6 +10,7 @@ namespace Quests.UI
     {
         public TextMeshProUGUI title;
         public TextMeshProUGUI description;
+        public int questId;
         public GameObject questGoals;
         public GameObject questGoalRow;
         public List<GameObject> questGoalRows;
@@ -23,6 +24,7 @@ namespace Quests.UI
         {
             title.text = quest.Information.name;
             description.text = quest.Information.description;
+            questId = quest.GetId();
 
             ClearGoals();
             
@@ -39,6 +41,7 @@ namespace Quests.UI
         {
             title.text = "";
             description.text = "";
+            questId = -1;
             
             ClearGoals();
         }
