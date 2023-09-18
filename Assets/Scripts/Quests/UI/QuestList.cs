@@ -1,13 +1,14 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mirror;
+using Player;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Quests.UI
 {
-    public class QuestList : MonoBehaviour
+    public class QuestList : NetworkBehaviour
     {
         public GameObject questListItem;
         public List<GameObject> questList;
@@ -54,6 +55,11 @@ namespace Quests.UI
         public void ClearWindow()
         {
             questInfo.Clear();
+        }
+        
+        public void SelectActiveQuest()
+        {
+            GetComponentInParent<InteractionManager>().SelectQuest(questInfo.questId);
         }
     }
 }
