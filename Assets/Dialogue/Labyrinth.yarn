@@ -1,5 +1,5 @@
 title: Arnold
-position: -140,-97
+position: -568,163
 ---
 Arnold: Habt ihr schon von dem Labyrinth im Süden der Stadt gehört?
 Arnold: Es heißt, eine alte Zivilisation hätte es gebaut.
@@ -17,7 +17,7 @@ Arnold: Am linken Rand des Weges werdet ihr es finden.
 ===
 
 title: goodLuck
-position: 28,112
+position: -44,160
 ---
 Arnold: Viel Erfolg!
 <<set_dialogue Arnold 1>>
@@ -25,42 +25,43 @@ Arnold: Viel Erfolg!
 <<give_quest Arnold>>
 ===
 title: WegZumLabyrinth
+position: -563,-256
 ---
 Collin: Ich frage mich wo wir hin müssen...
 Alina: Hm.. ich glaube, ich weiß, wo wir suchen sollten. Folge mir!
 ===
 title: HubertQuest
-position: -245,-418
+position: -1016,309
 ---
 Hubert: Für ein Lagerfeuer müsstet ihr 2 Stöcker und einen Stein sammeln.
 <<give_quest Hubert>>
 <<set_dialogue Hubert 1>>
 ===
 title: Hubert
-position: -245,-418
+position: -795,307
 ---
 Hubert: Arnold ist ganz besessen von diesem Labyrinth..
 Hubert: Vielleicht solltet ihr euch das mal anschauen.
 ===
 title: HubertGoodLuck
-position: -245,-418
+position: -568,310
 ---
 Hubert: Viel Glück!
 ===
 title: ArnoldGenervt
-position: 253,-89
+position: -314,312
 ---
 Arnold: Um das Labyrinth zu finden, müsst ihr in Richtung Süden zum Leuchtturm laufen.
 Arnold: Am linken Rand des Weges werdet ihr es finden.
 Arnold: Nun geht schon!
 ===
 title: LabyrinthGeschafft
-position: 251,57
+position: -43,307
 ---
 Arnold: Wow, ihr habt tatsächlich das Labyrinth gelöst! Beeindruckend!
 ===
 title: Lagerfeuer
-position: 251,57
+position: 381,-55
 ---
 Heribert: Lasst uns doch ein Lagerfeuer für unser Camp machen! Dafür bräuchten wir allerdings ein paar Steine und Äste.
 <<give_quest Heribert>>
@@ -68,13 +69,20 @@ Heribert: Lasst uns doch ein Lagerfeuer für unser Camp machen! Dafür bräuchte
 <<jump LagerfeuerQuest>>
 ===
 title: LagerfeuerQuest
-position: 251,57
+position: 631,-45
 ---
 Heribert: Am Waldrand beim Dorf hatte ich vorhin einige brauchbare Dinge gesehen, vielleicht schaut ihr da mal nach. Ich warte hier auf euch.
 ===
 title: LagerfeuerQuestFinished
-position: 251,57
+position: 635,101
 ---
 Collin: Hier, wir haben alles gesammelt.
 Heribert: Prima! Dann können wir uns ja jetzt aufwärmen! 
+===
+title: LagerfeuerQuestFailed
+position: 635,101
+---
+Collin: Hier, wir haben alles gesammelt.
+Heribert: ... Moment mal! Da fehlt doch noch was!
+Heribert: Kommt wieder, wenn ihr alles gesammelt habt. 
 ===

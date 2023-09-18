@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 520059485}
-  m_IndirectSpecularColor: {r: 0.17277355, g: 0.2158997, b: 0.29783309, a: 1}
+  m_IndirectSpecularColor: {r: 0.17277241, g: 0.21589847, b: 0.29783142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9460,7 +9460,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8527773208907400127, guid: b782106476bbf654fa8fbd58ddf4195c, type: 3}
       propertyPath: m_Name
-      value: zelt (1)
+      value: zelt
       objectReference: {fileID: 0}
     - target: {fileID: 9012666171252840709, guid: b782106476bbf654fa8fbd58ddf4195c, type: 3}
       propertyPath: m_RootOrder
@@ -9751,6 +9751,14 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   currentQuest: {fileID: 0}
+  availableQuests:
+  - {fileID: 11400000, guid: f45de22a77a484ece980673d39b0a9e1, type: 2}
+  - {fileID: 11400000, guid: 478a1675292ae4aabadb8abec8ddcabe, type: 2}
+  - {fileID: 11400000, guid: 9697a751efd774736a2ea44b6338d178, type: 2}
+  - {fileID: 11400000, guid: 89329ffc1eabd465cafc5e73941e586b, type: 2}
+  - {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
+  - {fileID: 11400000, guid: de53769986f91457492ebfc4ca2c7acf, type: 2}
+  - {fileID: 11400000, guid: e017e14b15047455a852cb1da6358047, type: 2}
   OnQuestChanged:
     m_PersistentCalls:
       m_Calls: []

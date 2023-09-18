@@ -32,7 +32,7 @@ namespace Quests
         public void Give()
         {
             Debug.Log("Give new Quest: " + quest.Information.name);
-            NetworkClient.localPlayer.GetComponent<InteractionManager>().AddQuest(quest);
+            NetworkClient.localPlayer.GetComponent<InteractionManager>().AddQuest(quest.GetId());
             _waypointManager.RemoveWaypoint(waypoint);
             Destroy(waypoint2D.gameObject);
         }

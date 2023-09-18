@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Mirror;
 using Quests.Goals;
 using Quests.UI;
@@ -16,6 +17,7 @@ namespace Quests
         public readonly SyncList<Quest> Quests = new();
         [SerializeField, SyncVar]
         public Quest currentQuest;
+        public List<Quest> availableQuests;
 
         public static QuestManager Current;
 
