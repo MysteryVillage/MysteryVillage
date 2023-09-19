@@ -1856,6 +1856,7 @@ MonoBehaviour:
     m_Bits: 513
   cinemachineCameraTarget: {fileID: 8338988566280778634}
   cinemachineFollowCamera: {fileID: 1897370196914165752}
+  lastUsedCamera: {fileID: 0}
   cinemachineMainCamera: {fileID: 689362496702715641}
   minimapCamera: {fileID: 7554812597065666319}
   playerIcon: {fileID: 8303101464524270996}
@@ -5830,6 +5831,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2968131265696094418, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ce2bf3da91e9fdd4985e4080464f574e, type: 3}
     - target: {fileID: 3097264747129343876, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6245,6 +6250,14 @@ PrefabInstance:
     - target: {fileID: 6562080057416111184, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -190
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6762873758793600489, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
