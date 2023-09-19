@@ -5,6 +5,7 @@ using UnityEngine;
 using Mirror;
 using Player;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Environment.Buildings
 {
@@ -47,16 +48,16 @@ namespace Environment.Buildings
             if (!isOpen)
             {
                 isOpen = true;
-                animator.SetBool("isOpen", isOpen);
-                prompt = "Zuschließen";
-                GetInteractPrompt();
-            }
-            else
-            {
-                isOpen = false;
-                animator.SetBool("isOpen", isOpen);
+                //animator.SetBool("isOpen", isOpen);
+                if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f); //Debug.Log(" Tür 1 Öffnet sich");
                 prompt = "Aufschließen";
                 GetInteractPrompt();
+
+                EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
+                if (eventSystem)
+                {
+                    //eventSystem.onQuestEvent.Invoke("LT_DoorUnlock");
+                }
             }
         }
     }
