@@ -1,4 +1,4 @@
-title: Arnold
+﻿title: Arnold
 position: -568,163
 ---
 Arnold: Habt ihr schon von dem Labyrinth im Süden der Stadt gehört?
@@ -87,8 +87,98 @@ Heribert: ... Moment mal! Da fehlt doch noch was!
 Heribert: Kommt wieder, wenn ihr alles gesammelt habt. 
 ===
 title: Intro
-position: 635,101
+position: 635,102
 ---
-Heribert: Ich erzähle euch jetzt mal was spannendes.
-Alina: Wir sind gespannt!
+<<change_cam DollyCam1>>
+Heribert: Willkommen in <b>Enigma Oaks</b>. Dieses Dorf hat eine besondere Geschichte, und ich bin froh, dass ich euch hierher gebracht habe.
+Colin: Erzähl uns mehr darüber. Es sieht wirklich anders aus als die anderen Orte, die wir besucht haben.
+<<change_cam LeuchtturmCam>>
+Alina: Ja, es hat eine gewisse Magie in der Luft, findest du nicht?
+Heribert: Oh, das ist 'Enigma Oaks' in der Tat. Es ist ein Ort, an dem die Realität und die Fantasie miteinander verschmelzen. Die Geschichten von magischen Wesen und Märchen, von denen ich euch erzählt habe...
+Colin: Du meinst, dass du wirklich daran glaubst, Heribert?
+Heribert: Nun, Colin, ich liebe Geschichten, das wisst ihr. Aber diese sind nur Geschichten, die die Fantasie der Menschen anregen. Hier gibt es sicherlich ein paar mysteriöse Dinge, aber die haben wahrscheinlich eine ganz natürliche Erklärung.
+<<fade_out>>
+<<wait 2>>
+<<reset_cam>>
+<<wait 2>>
+<<fade_in>>
+Alina: Mysteriöse Dinge? Wie was denn zum Beispiel?
+Heribert: Nun, Leute erzählen von seltsamen Lichtern im Wald und merkwürdigen Geräuschen in der Nacht. Aber das sind wahrscheinlich nur Tiere oder so. Nichts, worüber man sich Sorgen machen müsste.
+Colin: Verstehe. Also, du denkst nicht, dass es hier wirklich magische Wesen oder so etwas gibt?
+Heribert: Ehrlich gesagt, glaube ich nicht daran. Aber hey, das bedeutet nicht, dass wir hier nicht eine Menge Spaß haben können. Lasst uns das Beste aus unserem Abenteuer in Enigma Oaks machen und die Rätsel des Dorfes erkunden.
+Heribert: Tatsächlich habe ich vor, schon einmal zum Campingplatz zu gehen und das Lager aufzubauen. Ihr könnt euch hier noch etwas umsehen und dann nachkommen, sobald ihr bereit seid.
+<<fade_out>>
+<<wait 5>>
+<<move_npc Heribert HeribertCampingplatz>>
+<<fade_in>>
+<<give_quest_by_id 7>>
 ===
+title: DorfErkunden
+position: 640,110
+---
+Colin: Alina, das Dorf hat wirklich etwas Mystisches an sich, oder? Ich meine, es ist schwer zu glauben, dass es hier keine Geheimnisse gibt.
+Alina: Ja, Colin, es ist, als ob die Geschichten, die Heribert uns erzählt hat, hier lebendig werden. Aber warum sollten Menschen solche Geschichten erfinden?
+Colin: Das frage ich mich auch. Und dieser Turm, von dem im Tagebuch die Rede ist, klingt wirklich interessant. Vielleicht sollten wir herausfinden, was es damit auf sich hat.
+Alina: Ich stimme dir zu, Colin. Es gibt hier bestimmt mehr, als Heribert uns erzählt hat. Vielleicht sollten wir uns auf eigene Faust auf die Suche nach Hinweisen machen.
+Colin: Abenteuer angenommen, Alina. Lasst uns das Dorf weiter erkunden und sehen, ob wir etwas über die Mysterien von 'Enigma Oaks' herausfinden können.
+===
+title: AmCampingplatzAngekommen
+position: 640,120
+---
+Heribert: Schön, dass ihr da seid, ihr beiden! Ich habe schon angefangen, das Zelt aufzubauen. Aber bevor die Nacht hereinbricht, sollten wir ein gemütliches Lagerfeuer machen. Ihr könntet mir einen großen Gefallen tun und Material für das Feuer sammeln.
+Colin: Klar, Heribert! Das klingt nach einer großartigen Idee. Wo sollen wir nach Holz und Steinen suchen?
+Heribert: Ihr könnt im umliegenden Wald nach trockenem Holz suchen, das sich gut zum Brennen eignet. Und in der Nähe des Flussufers sollten genügend glatte Steine zu finden sein, die wir für das Feuer verwenden können.
+Alina: Wir machen uns gleich auf den Weg, Heribert. Du kannst in der Zwischenzeit weiter das Zelt aufstellen.
+<<give_quest_by_id 4>>
+===
+title: BeimHolzSammeln
+position: 640,120
+---
+Alina: Wir sollten uns beeilen, es wird bereits dunkel.
+===
+title: AmLagerfeuer
+position: 640,120
+---
+Colin: Hier, wir haben alles gesammelt.
+Heribert: Prima! Dann können wir uns ja jetzt aufwärmen! 
+<<fade_out>>
+<<wait 5>>
+<<show_go Lagerfeuer>>
+<<fade_in>>
+Heribert: Ihr beiden, ich hatte gerade Besuch vom Besitzer dieses Campingplatzes. Er hat nach euch gefragt und schien etwas aufgeregt zu sein. Er meinte, wir sollten morgen früh in sein Büro kommen, um mit ihm zu sprechen. Es klang, als ob er euch auch eine Geschichte erzählen wollte.
+Colin: Oh, das ist seltsam. Aber sicher, wir werden morgen früh vorbeischauen.
+Alina: Ja, wir sollten hören, was er zu sagen hat. Bestimmt hat es etwas mit den Mysterien des Dorfes zu tun.
+<<fade_out>>
+<<wait 5>>
+<<fade_in>>
+Alina: Na dann lass uns mal sehen, was uns der Besitzer erzählen wollte.
+Heribert: Passt auf euch auf!
+===
+title: BeimBesitzer
+position: 600,200
+---
+Alina: Schau mal, Colin, hier liegt ein Tagebuch. Vielleicht gehört es dem Besitzer des Platzes. Sollten wir es einsammeln und später lesen?
+Colin: Ja, das sollten wir. Vielleicht enthält es Hinweise darauf, warum das Büro verschlossen ist und was der Besitzer von uns wollte.
+===
+title: BuchEingesammelt
+position: 700,300
+---
+<<fade_out>>
+<<wait 5>>
+<<move_npc Arnold ArnoldCampingplatzBuero>>
+<<fade_in>>
+Arnold: Hallo, ihr seid also die jungen Abenteurer, nach denen ich gefragt habe. Ich bin Arnold, der Besitzer dieses Campingplatzes.
+Colin: Hallo Arnold, ja, das sind wir. Du hast nach uns gefragt?
+Arnold: Ja, ich hatte das Vergnügen, euer Lagerfeuer letzte Nacht zu sehen. Und ich habe bemerkt, dass ihr euch für die Geheimnisse von 'Enigma Oaks' interessiert.
+Alina: Stimmt, wir haben uns einige Gedanken darüber gemacht. Aber wie kommst du ins Spiel, Arnold?
+Arnold: Nun, es ist eine interessante Geschichte. Vor vielen Jahren habe ich ein mysteriöses Buch an einer Höhle auf der anderen Seite des Dorfes gefunden. Es ist das Tagebuch, das ihr hier gerade gefunden habt.
+Colin: Das ist wirklich seltsam. Du hast das Buch gefunden?
+Arnold: Ja, genau. Das Buch erzählt von einer geheimnisvollen Höhle, die ein Labyrinth sein soll. Doch niemand, der jemals versucht hat, es zu erkunden, ist zurückgekehrt. Es heißt, es birgt ein großes Rätsel, das bisher niemand lösen konnte.
+Alina: Ein Rätsel in einer Höhle? Das klingt faszinierend. Aber warum erzählst du uns das?
+Arnold: Nun, ich frage mich, ob ihr vielleicht diejenigen seid, die das Rätsel der Höhle lösen können. Ihr scheint neugierig und abenteuerlustig zu sein. Daher möchte ich euch das Buch überlassen und euch ermutigen, die Höhle zu erkunden.
+Colin: Das klingt aufregend! Wir werden es versuchen, Arnold.
+Alina: Vielen Dank, dass du uns das Buch gegeben hast. Wir werden unser Bestes geben, um das Rätsel zu lösen.
+Arnold:  Das freut mich zu hören. Die Höhle liegt jenseits der Berge, und der Weg dorthin kann gefährlich sein. Seid vorsichtig und viel Glück, meine jungen Abenteurer. Möge das Geheimnis von Enigma Oaks euch zu neuen Erkenntnissen führen.
+===
+
+
