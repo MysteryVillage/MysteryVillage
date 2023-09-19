@@ -1,48 +1,46 @@
 using Mirror;
 using UnityEngine;
+using Yarn.Unity;
 
 namespace Environment.Time
 {
     public class DayNightCycle : NetworkBehaviour
     {
         // Start is called before the first frame update
-        [Header("Einstellungen SkyBox")]
-        public bool AktivateCycle = true;
+        [Header("Einstellungen SkyBox")] public bool AktivateCycle = true;
         public bool useDefaultSkyBox = false;
 
 
-        [Range(0.0f,1.0f)]
-        [SyncVar] public float time;
+        [Range(0.0f, 1.0f)] [SyncVar] public float time;
         public float fullDayLength; // in Seconds 
         public float startTime = 0.4f;
         private float timeRate;
         public Vector3 noon;
 
 
-        [Header("Sun")]
-        public Light sun;
+        [Header("Sun")] public Light sun;
         public Gradient sunColor;
         public AnimationCurve sunIntensity;
 
-        [Header("Moon")]
-        public Light moon;
+        [Header("Moon")] public Light moon;
         public Gradient moonColor;
         public AnimationCurve moonIntensity;
 
-        [Header("Other Lighting")]
-        public AnimationCurve lighthingIntensityMultiplier;
+        [Header("Other Lighting")] public AnimationCurve lighthingIntensityMultiplier;
         public AnimationCurve reflectionsIntensityMultipler;
         [SerializeField] private Material skyBoxDefault;
         [SerializeField] private Material skyBox;
         private int skyboxExposure = Shader.PropertyToID("_Exposure");
+
         private void Start()
         {
             timeRate = 1.0f / fullDayLength;
             time = startTime;
-            if(useDefaultSkyBox && skyBoxDefault != null)
+            if (useDefaultSkyBox && skyBoxDefault != null)
             {
                 RenderSettings.skybox = skyBoxDefault;
-            }else if(!useDefaultSkyBox && skyBox != null)
+            }
+            else if (!useDefaultSkyBox && skyBox != null)
             {
                 RenderSettings.skybox = skyBox;
             }
@@ -54,9 +52,9 @@ namespace Environment.Time
             {
                 time += timeRate * UnityEngine.Time.deltaTime;
             }
-        
 
-            if(time >= 1.0f)
+
+            if (time >= 1.0f)
             {
                 time = 0.0f;
             }
@@ -78,10 +76,11 @@ namespace Environment.Time
 
             // enable / disable sun
 
-            if(sun.intensity == 0 && sun.gameObject.activeInHierarchy)
+            if (sun.intensity == 0 && sun.gameObject.activeInHierarchy)
             {
                 sun.gameObject.SetActive(false);
-            }else if(sun.intensity > 0 && !sun.gameObject.activeInHierarchy)
+            }
+            else if (sun.intensity > 0 && !sun.gameObject.activeInHierarchy)
             {
                 sun.gameObject.SetActive(true);
             }
@@ -100,6 +99,44 @@ namespace Environment.Time
             RenderSettings.ambientIntensity = lighthingIntensityMultiplier.Evaluate(time);
             RenderSettings.reflectionIntensity = reflectionsIntensityMultipler.Evaluate(time);
             skyBox.SetFloat(skyboxExposure, Mathf.Lerp(0.15f, 0.85f, lighthingIntensityMultiplier.Evaluate(time)));
+        }
+
+        public void SetTime(float newTime)
+        {
+            time = newTime;
+        }
+
+        [YarnCommand("start_time")]
+        public static void StartCycleYarn()
+        {
+            var cycle = FindObjectOfType<DayNightCycle>();
+            cycle.AktivateCycle = true;
+        }
+
+        public void StartCycle()
+        {
+            AktivateCycle = true;
+        }
+
+        [YarnCommand("stop_time")]
+        public static void StopCycleYarn()
+        {
+            var cycle = FindObjectOfType<DayNightCycle>();
+            cycle.AktivateCycle = false;
+        }
+        
+        public void StopCycle()
+        {
+            AktivateCycle = false;
+        }
+        
+        
+
+        [YarnCommand("set_time")]
+        public static void SetTimeYarn(float newTime)
+        {
+            var cycle = FindObjectOfType<DayNightCycle>();
+            cycle.SetTime(newTime);
         }
     }
 }
