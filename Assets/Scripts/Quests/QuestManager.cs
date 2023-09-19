@@ -7,7 +7,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using Yarn.Unity;
 
 namespace Quests
 {
@@ -63,8 +62,6 @@ namespace Quests
         
         public void AddQuest(Quest quest)
         {
-            if (quest == null) return;
-            
             if (!Quests.Contains(quest))
             {
                 Quests.Add(quest);
@@ -147,41 +144,6 @@ namespace Quests
         public void PlaySound(AudioClip clip)
         {
             if (NetworkClient.localPlayer != null) NetworkClient.localPlayer.GetComponent<AudioSource>().PlayOneShot(clip);
-        }
-
-        [YarnCommand("move_npc")]
-        public static void MoveNpc(string npcName, string targetName)
-        {
-            var npc = GameObject.Find(npcName);
-            var target = GameObject.Find(targetName);
-
-            if (npc == null || target == null) return;
-            npc.transform.position = target.transform.position;
-            npc.transform.rotation = target.transform.rotation;
-        }
-
-        [YarnCommand("show_go")]
-        public static void ShowGameObject(string goName)
-        {
-            var go = GameObject.Find(goName);
-            if (go == null) return;
-            go.SetActive(true);
-        }
-
-        [YarnCommand("hide_go")]
-        public static void HideGameObject(string goName)
-        {
-            var go = GameObject.Find(goName);
-            if (go == null) return;
-            go.SetActive(false);
-        }
-
-        [YarnCommand("give_quest_by_id")]
-        public static void GiveQuest(int questId)
-        {
-            var quest = Quest.FindById(questId);
-            if (quest == null) return;
-            Current.AddQuest(quest);
         }
     }
 }
