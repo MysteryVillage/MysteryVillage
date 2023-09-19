@@ -15,7 +15,7 @@ public class PipelineManager : NetworkBehaviour
     private float[] rotation;
     private bool [] doorState = new bool[6] ;
     private bool[] lightState = new bool[10];
-    private bool test1, test2, test3 = false;
+    
     void Start()
     {
         rotation = new float[_tubes.Count];
@@ -37,6 +37,13 @@ public class PipelineManager : NetworkBehaviour
         if (lightState[6] == true &&
             lightState[1] == true &&
             lightState[5] == true &&
+            lightState[2] == false &&
+            lightState[3] == false &&
+            lightState[4] == false &&
+            lightState[7] == false &&
+            lightState[8] == false &&
+            lightState[9] == false &&
+            lightState[0] == false &&
             doorState[0]  == false)
         {
             Debug.Log("Tür 1 Auf ..................................................");
@@ -61,6 +68,13 @@ public class PipelineManager : NetworkBehaviour
         if (lightState[9] == true && 
             lightState[3] == true &&
             lightState[0] == true &&
+            lightState[1] == false &&
+            lightState[2] == false &&
+            lightState[4] == false &&
+            lightState[5] == false &&
+            lightState[6] == false &&
+            lightState[7] == false &&
+            lightState[8] == false &&
             doorState[1]  == false)
         {
             AnimateDoor(2, true); // Tür 2 öffnen 
@@ -83,6 +97,13 @@ public class PipelineManager : NetworkBehaviour
         if (lightState[9] == true && 
             lightState[8] == true &&
             lightState[2] == true &&
+            lightState[1] == false &&
+            lightState[3] == false &&
+            lightState[4] == false &&
+            lightState[5] == false &&
+            lightState[6] == false &&
+            lightState[7] == false &&
+            lightState[0] == false &&
              doorState[2] == false)
         {
             AnimateDoor(3, true); // Tür 3 öffnen 
@@ -105,6 +126,13 @@ public class PipelineManager : NetworkBehaviour
         if (lightState[8] == true && 
             lightState[0] == true &&
             lightState[1] == true &&
+            lightState[2] == false &&
+            lightState[3] == false &&
+            lightState[4] == false &&
+            lightState[5] == false &&
+            lightState[6] == false &&
+            lightState[7] == false &&
+            lightState[9] == false &&
              doorState[3] == false)
         {
             AnimateDoor(4, true); // Tür 4 öffnen 
@@ -127,6 +155,13 @@ public class PipelineManager : NetworkBehaviour
         if (lightState[1] == true && 
             lightState[4] == true &&
             lightState[7] == true &&
+            lightState[0] == false &&
+            lightState[2] == false &&
+            lightState[3] == false &&
+            lightState[5] == false &&
+            lightState[6] == false &&
+            lightState[8] == false &&
+            lightState[9] == false &&
              doorState[4] == false)
         {
             AnimateDoor(5, true); // Tür 5 öffnen 
@@ -149,6 +184,13 @@ public class PipelineManager : NetworkBehaviour
         if (lightState[6] == true && 
             lightState[9] == true &&
             lightState[4] == true &&
+            lightState[0] == false &&
+            lightState[1] == false &&
+            lightState[2] == false &&
+            lightState[3] == false &&
+            lightState[5] == false &&
+            lightState[7] == false &&
+            lightState[8] == false &&
              doorState[5] == false)
         {
             Debug.Log("Tür 6 Sollte sich öffnen");
