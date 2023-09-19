@@ -5,6 +5,9 @@ using UnityEngine;
 
 using Mirror;
 using Player;
+using Inventory;
+using Items;
+using static Quests.Goals.BringToGoal;
 
 namespace Environment.Buildings
 {
@@ -14,18 +17,11 @@ namespace Environment.Buildings
         private bool isOpen = false;
         private string prompt;
 
-        // Start is called before the first frame update
         void Start()
         {
             animator = GetComponent<Animator>();
             prompt = "Aufschließen";
             GetInteractPrompt();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public string GetInteractPrompt()
@@ -44,18 +40,32 @@ namespace Environment.Buildings
         [ClientRpc]
         public void Door()
         {
+            // evaluate inventory
+            //var players = PlayerController.GetPlayers();
+            //var collin = players[0].isBoy ? players[0] : players[1];
+
+            //var inventory = InventoryManager.Instance().GetInventoryForPlayer(collin.gameObject);
+
             if (!isOpen)
             {
-                isOpen = true;
-                //animator.SetBool("isOpen", isOpen);
-                if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f); //Debug.Log(" Tür 1 Öffnet sich");
-                prompt = "Aufschließen";
-                GetInteractPrompt();
+                //if (inventory.HasItem(ItemData.FindById(2357733091), 1))
+                //{
+                    isOpen = true;
+                    //animator.SetBool("isOpen", isOpen);
+                    if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f); //Debug.Log(" Tür 1 Öffnet sich");
+                    prompt = "Aufschließen";
+                    GetInteractPrompt();
 
-                EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
-                if (eventSystem)
+                    EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
+                    if (eventSystem)
+                    {
+                        eventSystem.onQuestEvent.Invoke("LT_DoorUnlock");
+                    }
+                //}
+                else
                 {
-                    eventSystem.onQuestEvent.Invoke("LT_DoorUnlock");
+                    prompt = "Diese Tür ist verschlossen";
+                    GetInteractPrompt();
                 }
             }
         }
