@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 using Mirror;
 using Player;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Environment.Buildings
 {
@@ -56,7 +55,7 @@ namespace Environment.Buildings
                 EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
                 if (eventSystem)
                 {
-                    //eventSystem.onQuestEvent.Invoke("LT_DoorUnlock");
+                    eventSystem.onQuestEvent.Invoke("LT_DoorUnlock");
                 }
             }
         }
