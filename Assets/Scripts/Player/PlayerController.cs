@@ -343,7 +343,7 @@ namespace Player
             //laufen
             if(_input.move != Vector2.zero && _animationBlend < 2.0f && targetSpeed != sprintSpeed)
             {
-                _animationBlend += Time.deltaTime * speedChangeRate;                
+                _animationBlend = 2.0f;                
             }
             //sprinten
             if (_input.move != Vector2.zero && _animationBlend < 6.0f && targetSpeed == sprintSpeed)
