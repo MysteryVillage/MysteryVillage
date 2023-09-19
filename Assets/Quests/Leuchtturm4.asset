@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8135781776056666224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1382f392aafa4317b78149bf78c323f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Versuche alle Laempchen zum Leuchten zu bringen. Waren da vorhin nicht
+    Schalter?
+  RequiredAmount: 0
+  QuestGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  listenFor: LampsAreGreen
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
+  m_Name: Leuchtturm4
+  m_EditorClassIdentifier: 
+  Information:
+    name: Leuchtturm
+    description: Alle Schalter umlegen
+  goals:
+  - {fileID: -8135781776056666224}
+  followUpQuest: {fileID: 0}
