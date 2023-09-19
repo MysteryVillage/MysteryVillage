@@ -12,8 +12,6 @@ namespace Quests
 {
     public class QuestManager : NetworkBehaviour
     {
-        Animator doorAnimationLeft = null;
-        Animator doorAnimationRight = null;
         public readonly SyncList<Quest> Quests = new();
         [SerializeField, SyncVar]
         public Quest currentQuest;
