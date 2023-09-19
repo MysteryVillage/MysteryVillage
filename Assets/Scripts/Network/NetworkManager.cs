@@ -69,11 +69,6 @@ namespace Network
             base.OnRoomServerSceneChanged(sceneName);
         }
 
-        public override void OnStartClient()
-        {
-            base.OnStartClient();
-        }
-
         bool ScanForInventoryManager()
         {
             var inventoryManagerGo = GameObject.Find("ItemManager");
@@ -132,6 +127,12 @@ namespace Network
         {
             playerPrefab = roomPlayer.GetComponent<RoomPlayer>().character == "Collin" ? boyPrefab : girlPrefab;
             return base.OnRoomServerCreateGamePlayer(conn, roomPlayer);
+        }
+
+        [Server]
+        public void EndGame()
+        {
+            ServerChangeScene("Credits");
         }
     }
 }

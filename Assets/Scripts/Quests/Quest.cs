@@ -81,6 +81,12 @@ namespace Quests
                 Debug.Log(name + ": All goals completed");
                 QuestCompleted.Invoke(this);
                 if (followUpQuest != null) QuestManager.Current.SetNewQuest(followUpQuest);
+                
+                Events.EventSystem eventSystem = EventSystem.current as Events.EventSystem;
+                if (eventSystem)
+                {
+                    eventSystem.onQuestFinish.Invoke(this);
+                }
             }
         }
 
