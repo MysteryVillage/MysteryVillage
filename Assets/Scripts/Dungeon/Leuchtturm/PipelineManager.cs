@@ -249,7 +249,11 @@ public class PipelineManager : NetworkBehaviour
         {
             CheckLeftLeftPath();
             _lamps[0].material = _green;
+            _lamps[6].material = _red;
+            _lamps[7].material = _red;
             lightState[0] = true;
+            lightState[6] = false;
+            lightState[7] = false;
 
         }
 
