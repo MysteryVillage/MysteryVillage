@@ -6782,6 +6782,7 @@ Transform:
   - {fileID: 8032351012785021877}
   - {fileID: 5495115921177146366}
   - {fileID: 4712023984121550053}
+  - {fileID: 7118588172766868334}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12172,6 +12173,68 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10093193, y: 0.10153243, z: 0.025393538}
   m_Center: {x: 0.00017178805, y: -0.00004723482, z: -0.0014312167}
+--- !u!1 &1795505043967289173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7118588172766868334}
+  - component: {fileID: 942772755189977040}
+  - component: {fileID: 3194105296344531040}
+  m_Layer: 0
+  m_Name: LeuchtturmTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7118588172766868334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795505043967289173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 3.57, z: -32.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 440315725258607488}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &942772755189977040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795505043967289173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -0.0000009536744, z: -4.5474735e-13}
+--- !u!114 &3194105296344531040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795505043967289173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd6455710ef41f1a7042fb8410f90ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGoalTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  goal: {fileID: -5042169237662740744, guid: fc5dd93a4ed889f498c637574651ca34, type: 2}
 --- !u!1 &1802764546810189196
 GameObject:
   m_ObjectHideFlags: 0
@@ -21133,9 +21196,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3236304377553650582}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 198.39847, z: 0}
-  m_LocalScale: {x: 1587.2537, y: 1587.2537, z: 1587.2537}
+  m_LocalRotation: {x: -0.50000006, y: 0.5, z: 0.50000006, w: 0.49999997}
+  m_LocalPosition: {x: 3.1600015, y: 198.39848, z: 7.05}
+  m_LocalScale: {x: 1587.2534, y: 1587.2535, z: 1587.2535}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 440315725258607488}
