@@ -189,8 +189,21 @@ Alina: Ein Rätsel in einer Höhle? Das klingt faszinierend. Aber warum erzähls
 Arnold: Nun, ich frage mich, ob ihr vielleicht diejenigen seid, die das Rätsel der Höhle lösen können. Ihr scheint neugierig und abenteuerlustig zu sein. Daher möchte ich euch das Buch überlassen und euch ermutigen, die Höhle zu erkunden.
 Colin: Das klingt aufregend! Wir werden es versuchen, Arnold.
 Alina: Vielen Dank, dass du uns das Buch gegeben hast. Wir werden unser Bestes geben, um das Rätsel zu lösen.
-Arnold:  Das freut mich zu hören. Die Höhle liegt jenseits der Berge, und der Weg dorthin kann gefährlich sein. Seid vorsichtig und viel Glück, meine jungen Abenteurer. Möge das Geheimnis von Enigma Oaks euch zu neuen Erkenntnissen führen.
+Arnold: Das freut mich zu hören. Die Höhle liegt jenseits der Berge, und der Weg dorthin kann gefährlich sein. Seid vorsichtig und viel Glück, meine jungen Abenteurer. Möge das Geheimnis von Enigma Oaks euch zu neuen Erkenntnissen führen.
+Arnold: Falls ihr das Rätsel tatsächlich lösen solltet, findet ihr mich im Dorf. Dort mache ich es mir meist auf der Terrasse am Fluss bequem. 
 <<give_quest_by_id 0>>
+===
+title: KeyFound
+position: 800,300
+---
+Colin: Hier ist ein Schlüssel!
+===
+title: LabyrinthGeschafft
+position: 800,300
+---
+Colin: Ich habe einen Schlüssel! Jetzt muss ich nurnoch hier wieder rausfinden..
+Alina: Wir sollten gleich mit dem Schlüssel zu Arnold gehen!
+<<move_npc Arnold ArnoldVillage>> 
 ===
 
 
