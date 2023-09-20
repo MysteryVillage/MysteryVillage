@@ -14,6 +14,7 @@ namespace Dialogue
 
         public void RunDialogue()
         {
+            if (!isServer) return;
             Invoke(nameof(Dialogue), delay);
         }
 
