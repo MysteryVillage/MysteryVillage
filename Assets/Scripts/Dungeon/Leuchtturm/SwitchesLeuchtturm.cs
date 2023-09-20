@@ -45,7 +45,11 @@ public class SwitchesLeuchtturm : NetworkBehaviour, IIinteractable
     }
     private void changeLamps(bool lampState)
     {
-        toggleLamp(lampState);
+        if (isServer)
+        {
+            toggleLamp(lampState);
+        }
+        
     }
 
     private void AnimateSwitchDown()
