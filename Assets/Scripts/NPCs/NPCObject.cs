@@ -35,12 +35,12 @@ namespace NPC
 
         public void OnInteract(uint networkIdentifier)
         {
-            if (PlayerController.GetPlayerSeperation() > 10f) return; 
+            if (PlayerController.GetPlayerSeperation() > 10f) return;
+            if (!isServer) return;
             OnTalk.Invoke(); 
             StartDialogue();
         }
-
-        [ClientRpc]
+        
         private void StartDialogue()
         {
             var dia = GameObject.Find("Dialogue");

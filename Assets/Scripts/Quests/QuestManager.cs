@@ -67,6 +67,7 @@ namespace Quests
         
         public void AddQuest(Quest quest)
         {
+            if (!isServer) return;
             if (quest == null) return;
             
             if (!Quests.Contains(quest))
