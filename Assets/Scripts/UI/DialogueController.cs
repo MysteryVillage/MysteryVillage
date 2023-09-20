@@ -11,6 +11,8 @@ namespace UI
 
         public void AdvanceLine(InputAction.CallbackContext context)
         {
+            Debug.Log("Notice: Line Advancement disabled.", this);
+            return;
             if (context.started) lineView.UserRequestedViewAdvancement();
         }
     }
