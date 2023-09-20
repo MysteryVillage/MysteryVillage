@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using Events;
-using UnityEngine;
-
-using Mirror;
-using Player;
 using Inventory;
 using Items;
-using static Quests.Goals.BringToGoal;
+using Mirror;
+using Player;
+using UnityEngine;
 
-namespace Environment.Buildings
+namespace Dungeon.Leuchtturm
 {
     public class LeuchtturmDoorController : NetworkBehaviour, IIinteractable
     {
@@ -19,6 +15,8 @@ namespace Environment.Buildings
         public ItemData key;
         private InventoryData inventory;
         private bool locked = true;
+        [SyncVar]
+        private bool keyAvailable;
 
         void Start()
         {
@@ -39,9 +37,10 @@ namespace Environment.Buildings
 
         public string GetInteractPrompt()
         {
+            CheckForKey();
             if (locked)
             {
-                if (GetInventory().HasItem(key, 1)) return "Tür aufschließen";
+                if (keyAvailable) return "Tür aufschließen";
                 return "Die Tür ist verschlossen.";
             }
             else
@@ -51,12 +50,18 @@ namespace Environment.Buildings
             }
         }
 
+        [Command]
+        public bool CheckForKey()
+        {
+            keyAvailable = GetInventory().HasItem(key, 1);
+            return keyAvailable;
+        }
+
         public void OnInteract(uint networkIdentifier)
         {
             Door();
         }
-
-        [ClientRpc]
+        
         public void Door()
         {
             // evaluate inventory
@@ -66,7 +71,7 @@ namespace Environment.Buildings
                 {
                     isOpen = true;
                     // animator.SetBool("isOpen", isOpen);
-                    if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f);
+                    OpenDoor();
 
                     locked = false;
 
@@ -82,14 +87,25 @@ namespace Environment.Buildings
                 if (isOpen)
                 {
                     isOpen = false;
-                    if (animator != null) animator.Play("LT_Door_Animation_Close", 0, 0.0f);
+                    CloseDoor();
                 }
                 else
                 {
                     isOpen = true;
-                    if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f);
+                    OpenDoor();
                 }
             }
+        }
+
+        [ClientRpc]
+        public void OpenDoor()
+        {
+            if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f);
+        }
+        [ClientRpc]
+        public void CloseDoor()
+        {
+            if (animator != null) animator.Play("LT_Door_Animation_Close", 0, 0.0f);
         }
     }
 }
