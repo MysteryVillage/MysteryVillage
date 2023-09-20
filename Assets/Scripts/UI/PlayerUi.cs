@@ -82,6 +82,7 @@ namespace UI
         {
             if (context.started)
             {
+                if (!_playerController.hasBook) return;
                 var index = FindIndexFor(menuList.book);
                 if (index >= 0) Open(index);
             }

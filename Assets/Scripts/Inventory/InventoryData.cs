@@ -167,9 +167,11 @@ namespace Inventory
             foreach (var slot in slots)
             {
                 Debug.Log(slot);
-                if (slot.item.Equals(item) && slot.quantity >= amount)
-                {
-                    return true;
+                if (slot.item != null) {
+                    if (slot.item.Equals(item) && slot.quantity >= amount)
+                    {
+                        return true;
+                    }
                 }
             }
 

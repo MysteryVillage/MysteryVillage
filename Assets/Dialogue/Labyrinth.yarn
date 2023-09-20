@@ -93,6 +93,8 @@ position: 635,102
     Debug: Dies ist ein Testintro.
     <<change_cam DollyCam1>>
     <<reset_cam>>
+    <<move_npc Heribert HeribertCampingplatz>>
+    <<give_quest_by_id 7>>
     <<stop>>
 <<endif>>
 <<change_cam DollyCam1>>
@@ -156,6 +158,7 @@ Colin: Oh, das ist seltsam. Aber sicher, wir werden morgen früh vorbeischauen.
 Alina: Ja, wir sollten hören, was er zu sagen hat. Bestimmt hat es etwas mit den Mysterien des Dorfes zu tun.
 <<fade_out>>
 <<wait 5>>
+<<spawn_item 3 BookPosition>>
 <<fade_in>>
 Alina: Na dann lass uns mal sehen, was uns der Besitzer erzählen wollte.
 Heribert: Passt auf euch auf!

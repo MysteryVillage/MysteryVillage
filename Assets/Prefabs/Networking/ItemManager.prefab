@@ -66,6 +66,10 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  rock: {fileID: 0}
+  stoneSpawns: []
+  stick: {fileID: 0}
+  stickSpawns: []
 --- !u!114 &3937577065723487812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,3 +88,6 @@ MonoBehaviour:
   availableItems:
   - {fileID: 11400000, guid: 1f00b56e719354af98bfd1961700b850, type: 2}
   - {fileID: 11400000, guid: 3159e2aaf9c434ceda53cb006a69b07a, type: 2}
+  - {fileID: 11400000, guid: 8835e03322da44e43ab0f89e69813977, type: 2}
+  - {fileID: 11400000, guid: 356cf9091b416f748aa6ac7fa947ad55, type: 2}
+  - {fileID: 11400000, guid: 5af3f17410946fc4e929fdee5d228007, type: 2}

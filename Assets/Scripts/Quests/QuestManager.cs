@@ -1,13 +1,17 @@
 using System;
 using System.Collections.Generic;
+using Items;
 using Mirror;
+using Network;
 using Quests.Goals;
 using Quests.UI;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
+using NetworkManager = Network.NetworkManager;
 
 namespace Quests
 {
@@ -182,6 +186,21 @@ namespace Quests
             var quest = Quest.FindById(questId);
             if (quest == null) return;
             Current.AddQuest(quest);
+        }
+
+        [YarnCommand("spawn_item")]
+        public static void SpawnItem(int itemId, string position)
+        {
+            if (!NetworkServer.active) return;
+            
+            var go = GameObject.Find(position);
+            var pos = go.transform.position;
+            var rot = go.transform.rotation;
+
+            var item = ItemData.FindById(itemId);
+            var itemObject = Instantiate(item.dropPrefab, pos, rot);
+            
+            NetworkServer.Spawn(itemObject);
         }
     }
 }
