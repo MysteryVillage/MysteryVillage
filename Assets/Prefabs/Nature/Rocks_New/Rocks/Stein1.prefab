@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2971043602671319915}
   - component: {fileID: 2203562035581859022}
   - component: {fileID: 4138923192631967748}
+  - component: {fileID: 920543528444155828}
   m_Layer: 0
   m_Name: Stein1
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &920543528444155828
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481646976292872657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.007968056
+  m_Center: {x: -0.00025945087, y: 0.000016909093, z: 0.00043512182}

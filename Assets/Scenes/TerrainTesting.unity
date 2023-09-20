@@ -11678,13 +11678,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4808838175391082445, guid: 682be4ab5335fa64da9eb4f94ae6dc69, type: 3}
+      propertyPath: m_Size.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4808838175391082445, guid: 682be4ab5335fa64da9eb4f94ae6dc69, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 682be4ab5335fa64da9eb4f94ae6dc69, type: 3}
 --- !u!4 &6622234104524411594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1781736057907115230, guid: 682be4ab5335fa64da9eb4f94ae6dc69, type: 3}
   m_PrefabInstance: {fileID: 6622234104524411593}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6622234104524411595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5506574957054526546, guid: 682be4ab5335fa64da9eb4f94ae6dc69, type: 3}
+  m_PrefabInstance: {fileID: 6622234104524411593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &6622234104524411596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622234104524411595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3063222094358355465, guid: 89c4f74ede5f80643ae541329b5c1e62, type: 3}
 --- !u!1001 &7880518168546978287
 PrefabInstance:
   m_ObjectHideFlags: 0
