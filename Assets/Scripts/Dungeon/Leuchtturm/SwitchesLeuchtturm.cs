@@ -22,7 +22,7 @@ public class SwitchesLeuchtturm : NetworkBehaviour, IIinteractable
     {
         if (levlerAnimation != null) _hasAnimator = true;
         _animID = Animator.StringToHash("Schalter");
-        _lamp.material = _red;
+        toggleLamp(false);
     }
 
     public string GetInteractPrompt()
@@ -35,12 +35,12 @@ public class SwitchesLeuchtturm : NetworkBehaviour, IIinteractable
         if (switchState == true && !toggle)
         {
             AnimateSwitchDown(); // Schalter Oben -> Unten
-            _lamp.material = _green;
+            toggleLamp(true);
         }
         else if (!switchState && toggle)
         {
             AnimateSwitchUp(); // Schalter Unten -> Oben 
-            _lamp.material = _red;
+            toggleLamp(false);
         }
     }
 
@@ -85,6 +85,19 @@ public class SwitchesLeuchtturm : NetworkBehaviour, IIinteractable
             levlerAnimation.Play("Switch_Up", 0, 0.0f);
         }
 
+    }
+
+    [ClientRpc]
+    private void toggleLamp(bool lampState)
+    {
+        if (lampState)
+        {
+            _lamp.material = _green;
+        }
+        else
+        {
+            _lamp.material = _red;
+        }
     }
 
     IEnumerator SwitchDelayUp(float delay = 0)
