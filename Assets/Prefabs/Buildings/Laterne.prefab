@@ -291,6 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7429844892310454965}
   - component: {fileID: 5409272873066376158}
+  - component: {fileID: 7363777287064777584}
   m_Layer: 0
   m_Name: Laterne
   m_TagString: Untagged
@@ -332,6 +333,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 3906267048871239455}
   glassRenderer: {fileID: 6602024865430720107}
+--- !u!136 &7363777287064777584
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806933037624203279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.25
+  m_Height: 15.32
+  m_Direction: 1
+  m_Center: {x: 0, y: 6.39, z: 0}
 --- !u!1 &8150763662509941129
 GameObject:
   m_ObjectHideFlags: 0
