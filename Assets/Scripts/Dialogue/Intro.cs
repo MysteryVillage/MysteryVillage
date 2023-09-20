@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Mirror;
 using Network;
 using UI;
@@ -18,6 +19,13 @@ namespace Dialogue
             // intro stuff
             
             FindObjectOfType<Crossfade>().FadeIn();
+
+            StartCoroutine(StartIntro());
+        }
+
+        private IEnumerator StartIntro()
+        {
+            yield return new WaitForSeconds(1);
             
             if (isServer) FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
         }
