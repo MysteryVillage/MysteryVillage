@@ -12,21 +12,19 @@ namespace Dialogue
     public class Intro : NetworkBehaviour
     {
         private bool ready = false;
+        [SyncVar] private bool skipIntro;
         
         private void Start()
         {
-            Debug.Log("Start intro");
-            
-            FindObjectOfType<InMemoryVariableStorage>().SetValue("$debug", GameSettings.Get().isTestRun);
-            
-            // intro stuff
-            
-            FindObjectOfType<Crossfade>().FadeIn();
-
             if (isServer)
-            { 
+            {
+                skipIntro = GameSettings.Get().isTestRun;
                 StartCoroutine(StartIntro());
             }
+            
+            FindObjectOfType<InMemoryVariableStorage>().SetValue("$debug", skipIntro);
+            
+            FindObjectOfType<Crossfade>().FadeIn();
         }
         
         public void ReadyUp()
