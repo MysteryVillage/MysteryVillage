@@ -561,24 +561,6 @@ namespace Player
             }
         }
 
-        private void OnTriggerStay(Collider other)
-        {
-            if (other.gameObject.CompareTag("NoMiniMap"))
-            {
-               
-                if (miniMap != null) miniMap.SetActive(false);
-            }
-
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.gameObject.CompareTag("NoMiniMap"))
-            {
-                if (miniMap != null) miniMap.SetActive(true);
-            }
-        }
-
         public static float GetPlayerSeperation()
         {
             var players = GetPlayers();
