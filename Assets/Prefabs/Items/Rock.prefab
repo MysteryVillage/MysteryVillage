@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 1377036484077850861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2485229428151141348}
@@ -139,6 +139,7 @@ MonoBehaviour:
   syncInterval: 0
   item: {fileID: 11400000, guid: 3159e2aaf9c434ceda53cb006a69b07a, type: 2}
   eventSystem: {fileID: 0}
+  spawnArea: {fileID: 0}
   OnCollect:
     m_PersistentCalls:
       m_Calls: []
