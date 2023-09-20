@@ -2498,8 +2498,8 @@ MonoBehaviour:
   yOffset: 2
   minRange: 10
   playerIcon: {fileID: 5743103880012246345}
-  boyIcon: {fileID: 3286163911610860551, guid: 437e22584b996fa46b8f4de16680532a, type: 3}
-  girlIcon: {fileID: 3286163911610860551, guid: 0cefa2b10e9b9e94abc776deea0a1236, type: 3}
+  boyIcon: {fileID: 21300000, guid: 9015dc9773c45b642995256696ce5edd, type: 3}
+  girlIcon: {fileID: 21300000, guid: 866ea23bdfdbcb643b3449b78851ba55, type: 3}
 --- !u!114 &4063424919711572399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5724,6 +5724,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ce2bf3da91e9fdd4985e4080464f574e, type: 3}
+    - target: {fileID: 3002384937161073221, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: boySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9015dc9773c45b642995256696ce5edd, type: 3}
+    - target: {fileID: 3002384937161073221, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: girlSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 866ea23bdfdbcb643b3449b78851ba55, type: 3}
     - target: {fileID: 3097264747129343876, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
