@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Quests.UI
 {
-    public class QuestList : NetworkBehaviour
+    public class QuestList : MonoBehaviour
     {
         public GameObject questListItem;
         public List<GameObject> questList;
