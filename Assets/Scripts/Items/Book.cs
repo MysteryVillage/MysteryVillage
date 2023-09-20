@@ -27,7 +27,11 @@ namespace Items
             NetworkServer.Destroy(gameObject);
             player.GetComponent<PlayerController>().hasBook = true;
             
-            Debug.Log("Book collected");
+            EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
+            if (eventSystem)
+            {
+                eventSystem.onQuestEvent.Invoke("bookCollected");
+            }
         }
     }
 }

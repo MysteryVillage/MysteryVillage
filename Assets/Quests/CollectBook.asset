@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3965097493323639405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafaff00d31b48c7924416241dc314fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: "Gehe zum B\xFCro"
+  RequiredAmount: 1
+  QuestGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a783da39145caa53cba2f8dee418f, type: 3}
+  m_Name: CollectBook
+  m_EditorClassIdentifier: 
+  Information:
+    name: Campingplatz-Besitzer
+    description: Suche nach dem Besitzer des Campingplatzes
+  goals:
+  - {fileID: -3965097493323639405}
+  followUpQuest: {fileID: 11400000, guid: 802309b3b102f4950ae4e701985b933f, type: 2}
