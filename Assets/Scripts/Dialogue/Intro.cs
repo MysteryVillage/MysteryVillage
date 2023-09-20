@@ -5,6 +5,7 @@ using Network;
 using UI;
 using UnityEngine;
 using Yarn.Unity;
+using NetworkManager = Network.NetworkManager;
 
 namespace Dialogue
 {
@@ -35,7 +36,11 @@ namespace Dialogue
 
         private IEnumerator StartIntro()
         {
-            yield return new WaitUntil(() => ready);
+            var playercount = NetworkManager.singleton.roomSlots.Count;
+            Debug.Log("Room players: " + playercount);
+            if (playercount > 1) {
+                yield return new WaitUntil(() => ready);
+            }
             
             FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
         }

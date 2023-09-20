@@ -14,10 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Information:
     name: Leuchtturm
-    description: Gehe nach oben
+    description: "Versuche das R\xE4tsel des Leuchtturms zu l\xF6sen."
   goals:
   - {fileID: 6794628291493299080}
-  followUpQuest: {fileID: 11400000, guid: 7f3240a5af23cf34296a451cd9f36f70, type: 2}
+  - {fileID: 5119657579750253854}
+  followUpQuest: {fileID: 0}
+--- !u!114 &5119657579750253854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1382f392aafa4317b78149bf78c323f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: "Versuche alle L\xE4mpchen zum Leuchten zu bringen. Waren da vorhin
+    nicht Schalter?"
+  RequiredAmount: 1
+  QuestGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  listenFor: LampsAreGreen
 --- !u!114 &6794628291493299080
 MonoBehaviour:
   m_ObjectHideFlags: 0

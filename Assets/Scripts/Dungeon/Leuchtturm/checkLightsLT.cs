@@ -13,7 +13,7 @@ public class checkLightsLT : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_lamp[0].material && _lamp[1].material && _lamp[2].material == _green)
+        if (_lamp[0].material == _green && _lamp[1].material == _green && _lamp[2].material == _green)
         {
             EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
             if (eventSystem)

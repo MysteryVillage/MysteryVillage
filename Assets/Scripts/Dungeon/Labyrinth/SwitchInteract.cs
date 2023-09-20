@@ -78,14 +78,6 @@ public class SwitchInteract : NetworkBehaviour, IIinteractable
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-        
-
-    }
-
     
     private void OpenDoor()
     {
