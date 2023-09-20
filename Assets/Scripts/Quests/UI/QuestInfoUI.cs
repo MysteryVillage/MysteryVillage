@@ -1,6 +1,3 @@
-using System;
-using System.Security.Cryptography;
-using Quests.Goals;
 using Quests.UI;
 using TMPro;
 using UnityEngine;
