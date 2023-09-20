@@ -10,9 +10,14 @@ namespace Network
         public DialogueRunner dialogueRunner;
         public DialogueViewBase[] activeDialogueViews;
         public DialogueViewBase[] passiveDialogueViews;
+        
+        public void EndDialogue()
+        {
+            if (isServer) EndDialogueRpc();
+        }
 
         [ClientRpc]
-        public void EndDialogue()
+        public void EndDialogueRpc()
         {
             NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Player");
         }
@@ -39,6 +44,7 @@ namespace Network
 
         private void StartDialogue(string startNode)
         {
+            dialogueRunner.Stop();
             dialogueRunner.StartDialogue(startNode);
         }
 

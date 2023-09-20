@@ -81,6 +81,23 @@ namespace Quests.Goals
         {
             public int itemId;
             public int amount;
+
+            public static void WriteRequestedItem(NetworkWriter writer, RequestedItem item)
+            {
+                writer.WriteInt(item.itemId);
+                writer.WriteInt(item.amount);
+            }
+
+            public static RequestedItem ReadRequestedItem(NetworkReader reader)
+            {
+                var item = new RequestedItem
+                {
+                    itemId = reader.ReadInt(),
+                    amount = reader.ReadInt()
+                };
+
+                return item;
+            }
         }
         
         public static void WriteBringToGoal(NetworkWriter writer, QuestGoal goal)
@@ -88,7 +105,12 @@ namespace Quests.Goals
             BringToGoal bringToGoal = goal as BringToGoal;
             if (bringToGoal == null) return;
             
-            writer.WriteArray(bringToGoal.RequestedItems);
+            writer.WriteInt(bringToGoal.RequestedItems.Length);
+
+            foreach (var item in bringToGoal.RequestedItems)
+            {
+                RequestedItem.WriteRequestedItem(writer, item);
+            }
             
             NetworkIdentity networkIdentity = bringToGoal.target == null ? null : bringToGoal.target.GetComponent<NetworkIdentity>();
             writer.WriteNetworkIdentity(networkIdentity);
@@ -101,7 +123,15 @@ namespace Quests.Goals
         {
             var goal = CreateInstance<BringToGoal>();
 
-            goal.RequestedItems = reader.ReadArray<RequestedItem>();
+            var requestedItemsLength = reader.ReadInt();
+            var requestedItems = new RequestedItem[requestedItemsLength];
+
+            for (int i = 0; i < requestedItemsLength; i++)
+            {
+                requestedItems[i] = RequestedItem.ReadRequestedItem(reader);
+            }
+
+            goal.RequestedItems = requestedItems;
             
             NetworkIdentity networkIdentity = reader.ReadNetworkIdentity();
             NPCObject target = networkIdentity != null
