@@ -1,5 +1,6 @@
 using Mirror;
 using NPC;
+using Quests.UI;
 using UnityEngine;
 
 namespace Quests.Goals
@@ -12,10 +13,10 @@ namespace Quests.Goals
 
         public string dialogueScript = "";
         
-        public new void Init()
+        public new void Init(int questId)
         {
             Debug.Log(npcName, this);
-            base.Init();
+            base.Init(questId);
             
             var NPCs = FindObjectsOfType<NPCObject>();
             foreach (var npcObject in NPCs)
@@ -28,12 +29,15 @@ namespace Quests.Goals
                     target.nextDialogueOverwrite = dialogueScript;
                 }
                 target.OnTalk.AddListener(Talk);
+                target.gameObject.AddComponent<QuestMarker>();
+                target.gameObject.GetComponent<QuestMarker>().quest = GetQuest();
             }
         }
 
         public void Talk()
         {
             target.OnTalk.RemoveListener(Talk);
+            Destroy(target.gameObject.GetComponent<QuestMarker>());
             Debug.Log("Talked to target");
             CurrentAmount++;
             Evaluate();

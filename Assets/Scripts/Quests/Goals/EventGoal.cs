@@ -13,10 +13,10 @@ namespace Quests.Goals
         {
         }
 
-        public new void Init()
+        public new void Init(int questId)
         {
             Debug.Log("Init EventGoal");
-            base.Init();
+            base.Init(questId);
             
             EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
             if (eventSystem)

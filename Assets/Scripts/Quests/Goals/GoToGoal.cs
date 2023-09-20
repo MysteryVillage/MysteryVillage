@@ -1,5 +1,6 @@
 using Mirror;
 using NPC;
+using Quests.UI;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -8,9 +9,10 @@ namespace Quests.Goals
 {
     public class GoToGoal : QuestGoal
     {
-        public new void Init()
+        public GameObject triggerGO;
+        public new void Init(int questId)
         {
-            base.Init();
+            base.Init(questId);
             
             var triggers = FindObjectsOfType<QuestGoalTrigger>();
             
@@ -19,6 +21,9 @@ namespace Quests.Goals
                 if (trigger.goal.Description == Description)
                 {
                     trigger.OnGoalTrigger.AddListener(TargetReached);
+                    triggerGO = trigger.gameObject;
+                    trigger.AddComponent<QuestMarker>();
+                    trigger.GetComponent<QuestMarker>().quest = GetQuest();
                 }
             }
         }
@@ -27,6 +32,7 @@ namespace Quests.Goals
         {
             CurrentAmount++;
             Evaluate();
+            Destroy(triggerGO.GetComponent<QuestMarker>());
         }
 
         public GoToGoal(string description, int currentAmount, int requiredAmount, bool completed) : base(description, currentAmount, requiredAmount, completed)

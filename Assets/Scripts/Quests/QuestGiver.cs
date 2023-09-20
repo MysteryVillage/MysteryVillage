@@ -21,7 +21,7 @@ namespace Quests
             if (quest != null) {
                 _waypointManager = waypointManager;
                 var icon = QuestManager.Current.newQuestWaypoint;
-                waypoint = _waypointManager.AddWaypoint(icon, transform);
+                waypoint = _waypointManager.AddWaypoint(icon, transform.position);
                 
                 waypoint2D = Instantiate(_waypointManager.waypoint2DPrefab, transform).GetComponent<Waypoint2D>();
                 waypoint2D.waypointImage.sprite = icon;

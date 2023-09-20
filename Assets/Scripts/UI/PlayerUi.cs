@@ -236,7 +236,7 @@ namespace UI
             itemPickupController.AddItemNotice(itemId);
         }
 
-        public Vector2 GetScreenPosition(Transform target, Image waypointImage, Vector3 offset, Camera cam)
+        public Vector2 GetScreenPosition(Vector3 position, Image waypointImage, Vector3 offset, Camera cam)
         {
             // Giving limits to the icon so it sticks on the screen
             // Below calculations witht the assumption that the icon anchor point is in the middle
@@ -251,12 +251,12 @@ namespace UI
             float maxY = Screen.height - minY;
 
             // Temporary variable to store the converted position from 3D world point to 2D screen point
-            Vector2 pos = cam.WorldToScreenPoint(target.position + offset);
+            Vector2 pos = cam.WorldToScreenPoint(position + offset);
 
             // var heading = cam.transform
             
             // Check if the target is behind us, to only show the icon once the target is in front
-            if(Vector3.Dot((target.position - cam.transform.position), cam.transform.forward) < 0)
+            if(Vector3.Dot((position - cam.transform.position), cam.transform.forward) < 0)
             {
                 // Check if the target is on the left side of the screen
                 if(pos.x < Screen.width / 2)

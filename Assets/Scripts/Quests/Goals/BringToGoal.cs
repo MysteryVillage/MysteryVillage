@@ -4,6 +4,7 @@ using Items;
 using Mirror;
 using NPC;
 using Player;
+using Quests.UI;
 using UnityEngine;
 
 namespace Quests.Goals
@@ -22,10 +23,10 @@ namespace Quests.Goals
             
         }
         
-        public new void Init()
+        public new void Init(int questId)
         {
             Debug.Log("Init BringToGoal");
-            base.Init();
+            base.Init(questId);
             
             var NPCs = FindObjectsOfType<NPCObject>();
             foreach (var npcObject in NPCs)
@@ -34,6 +35,8 @@ namespace Quests.Goals
                 if (npcName != npcObject.npcName) continue;
                 target = npcObject;
                 target.OnTalk.AddListener(Talk);
+                target.gameObject.AddComponent<QuestMarker>();
+                target.gameObject.GetComponent<QuestMarker>().quest = GetQuest();
             }
         }
 
@@ -69,6 +72,7 @@ namespace Quests.Goals
                 
                 CurrentAmount++;
                 Evaluate();
+                Destroy(target.gameObject.GetComponent<QuestMarker>());
             }
             else
             {

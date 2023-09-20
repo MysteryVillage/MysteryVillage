@@ -30,7 +30,7 @@ namespace Network
             // Prevent players from acting while dialogue is running
             NetworkClient.localPlayer.GetComponent<PlayerController>().SetActionMap("Dialogue");
             // Start the actual dialogue
-            dialogueRunner.StartDialogue(startNode);
+            StartDialogue(startNode);
         }
 
         [ClientRpc]

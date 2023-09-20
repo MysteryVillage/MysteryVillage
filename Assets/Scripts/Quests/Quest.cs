@@ -41,28 +41,28 @@ namespace Quests
                 if (goal is GoToGoal goToGoal)
                 {
                     Debug.Log("Try to init go to goal");
-                    goToGoal.Init();
+                    goToGoal.Init(GetId());
                 } else if (goal is TalkToGoal talkToGoal)
                 {
                     Debug.Log("Try to init talk to goal");
-                    talkToGoal.Init();
+                    talkToGoal.Init(GetId());
                 } else if (goal is CollectGoal collectGoal)
                 {
                     Debug.Log("Try to init collect goal");
-                    collectGoal.Init();
+                    collectGoal.Init(GetId());
                 } else if (goal is BringToGoal bringToGoal)
                 {
                     Debug.Log("Try to init bring to goal");
-                    bringToGoal.Init();
+                    bringToGoal.Init(GetId());
                 } else if (goal is EventGoal eventGoal)
                 {
                     Debug.Log("Try to init event goal");
-                    eventGoal.Init();
+                    eventGoal.Init(GetId());
                 }
                 else
                 {
                     Debug.Log("Try to init default goal");
-                    goal.Init();
+                    goal.Init(GetId());
                 }
                 goal.QuestGoalCompleted.AddListener(CheckGoals);
 
@@ -121,22 +121,3 @@ namespace Quests
     {
     }
 }
-
-// public static class CustomReadWriteFunctions
-// {
-//     public static void WriteList(this NetworkWriter writer, List<QuestGoal> list)
-//     {
-//         NetworkIdentity networkIdentity = list.GetComponent<NetworkIdentity>();
-//         writer.WriteNetworkIdentity(networkIdentity);
-//     }
-//
-//     public static Rigidbody ReadRigidbody(this NetworkReader reader)
-//     {
-//         NetworkIdentity networkIdentity = reader.ReadNetworkIdentity();
-//         Rigidbody rigidBody = networkIdentity != null
-//             ? networkIdentity.GetComponent<Rigidbody>()
-//             : null;
-//
-//         return rigidBody;
-//     }
-// }

@@ -92,7 +92,7 @@ public class PlayerDistance : MonoBehaviour
         if (otherPlayer != null && distanceText != null)
         {
             var pos = GetComponent<PlayerController>().playerUi
-                .GetScreenPosition(otherPlayer.transform, playerIcon, Vector3.up * yOffset, Camera.main);
+                .GetScreenPosition(otherPlayer.transform.position, playerIcon, Vector3.up * yOffset, Camera.main);
             
             // text position ändern
             distanceText.transform.parent.position = pos;

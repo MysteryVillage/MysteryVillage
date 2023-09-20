@@ -15,20 +15,29 @@ namespace UI
         
         public List<Waypoint> activeWaypoints;
 
-        private void Start()
+        private void Update()
         {
-            var questGivers = FindObjectsOfType<QuestGiver>();
+            var questMarkers = FindObjectsOfType<QuestMarker>();
 
-            foreach (var giver in questGivers)
+            Debug.Log(questMarkers.Length);
+
+            foreach (Transform child in transform)
             {
-                giver.EvaluateWaypoint(this);
+                Destroy(child.gameObject);
+            }
+
+            foreach (var marker in questMarkers)
+            {
+                Debug.Log("Manager: Try EvaluateWaypoint for " + marker.gameObject.name);
+                marker.EvaluateWaypoint(this);
             }
         }
 
-        public Waypoint AddWaypoint(Sprite icon, Transform position)
+        public Waypoint AddWaypoint(Sprite icon, Vector3 position)
         {
             Camera mapCam = useMapCam ? GameObject.Find("CameraMap").GetComponent<Camera>() : null ;
-            
+
+            Debug.Log("Add new waypoint");
             var newWaypoint = Instantiate(waypointPrefab, transform).GetComponent<Waypoint>();
             newWaypoint.icon = icon;
             newWaypoint.target = position;

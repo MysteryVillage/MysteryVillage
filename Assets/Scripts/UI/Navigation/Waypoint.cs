@@ -13,7 +13,7 @@ namespace UI
         public Image waypointImage;
         
         // The target (location, enemy, etc..)
-        public Transform target;
+        public Vector3 target;
         // UI Text to display the distance
         public Text meter;
         // To adjust the position of the icon

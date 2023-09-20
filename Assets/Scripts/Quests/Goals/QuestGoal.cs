@@ -18,6 +18,8 @@ namespace Quests.Goals
         public bool Completed { get; set; }
         public UnityEvent QuestGoalCompleted;
 
+        private int _questId;
+
         public QuestGoal(string description, int currentAmount, int requiredAmount, bool completed)
         {
             Description = description;
@@ -26,8 +28,9 @@ namespace Quests.Goals
             Completed = completed;
         }
 
-        public void Init()
+        public void Init(int questId)
         {
+            _questId = questId;
             Completed = false;
             CurrentAmount = 0;
             QuestGoalCompleted = new UnityEvent();
@@ -47,6 +50,11 @@ namespace Quests.Goals
             Completed = true;
             QuestGoalCompleted.Invoke();
             QuestGoalCompleted.RemoveAllListeners();
+        }
+
+        public Quest GetQuest()
+        {
+            return Quest.FindById(_questId);
         }
     }
 }
