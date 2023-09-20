@@ -1,3 +1,4 @@
+
 using System;
 using Mirror;
 using Network;
@@ -17,6 +18,7 @@ namespace Quests.UI.Lobby
         [Header("UI Elements")]
         public GameObject settingsPanel;
         public TMP_Dropdown gamemodeDropdown;
+        public TMP_Dropdown testmodeDropdown;
         public Button readyButton;
 
         private void Awake()
@@ -49,6 +51,11 @@ namespace Quests.UI.Lobby
         public void OnChangeGamemode()
         {
             _settings.isLocalGame = gamemodeDropdown.value != 1;
+        }
+
+        public void OnChangeTesting()
+        {
+            _settings.isTestRun = testmodeDropdown.value == 1;
         }
 
         public void StartGame()

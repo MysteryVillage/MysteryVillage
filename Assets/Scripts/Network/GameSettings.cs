@@ -7,6 +7,7 @@ namespace Network
     public class GameSettings : MonoBehaviour
     {
         public bool isLocalGame;
+        public bool isTestRun;
 
         private static GameSettings _instance;
 

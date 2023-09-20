@@ -89,6 +89,12 @@ Heribert: Kommt wieder, wenn ihr alles gesammelt habt.
 title: Intro
 position: 635,102
 ---
+<<if $debug == true>>
+    Debug: Dies ist ein Testintro.
+    <<change_cam DollyCam1>>
+    <<reset_cam>>
+    <<stop>>
+<<endif>>
 <<change_cam DollyCam1>>
 Heribert: Willkommen in <b>Enigma Oaks</b>. Dieses Dorf hat eine besondere Geschichte, und ich bin froh, dass ich euch hierher gebracht habe.
 Colin: Erzähl uns mehr darüber. Es sieht wirklich anders aus als die anderen Orte, die wir besucht haben.
