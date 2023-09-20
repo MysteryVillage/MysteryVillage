@@ -51,10 +51,9 @@ namespace Dungeon.Leuchtturm
         }
 
         [Command]
-        public bool CheckForKey()
+        public void CheckForKey()
         {
             keyAvailable = GetInventory().HasItem(key, 1);
-            return keyAvailable;
         }
 
         public void OnInteract(uint networkIdentifier)
