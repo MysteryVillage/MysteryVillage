@@ -10,6 +10,8 @@ namespace Dialogue
 {
     public class Intro : NetworkBehaviour
     {
+        private bool ready = false;
+        
         private void Start()
         {
             Debug.Log("Start intro");
@@ -20,14 +22,22 @@ namespace Dialogue
             
             FindObjectOfType<Crossfade>().FadeIn();
 
-            StartCoroutine(StartIntro());
+            if (isServer)
+            { 
+                StartCoroutine(StartIntro());
+            }
+        }
+        
+        public void ReadyUp()
+        {
+            ready = true;
         }
 
         private IEnumerator StartIntro()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitUntil(() => ready);
             
-            if (isServer) FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
+            FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
         }
     }
 }

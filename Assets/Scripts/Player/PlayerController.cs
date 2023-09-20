@@ -1,4 +1,5 @@
  using Cinemachine;
+ using Dialogue;
  using Inventory;
  using Mirror;
  using Network;
@@ -228,6 +229,16 @@ namespace Player
                 
 
             }
+            else
+            {
+                ClientReady();
+            }
+        }
+
+        [Command]
+        private void ClientReady()
+        {
+            FindObjectOfType<Intro>().ReadyUp();
         }
 
         private void Update()
