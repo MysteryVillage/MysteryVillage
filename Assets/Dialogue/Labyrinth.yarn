@@ -89,6 +89,7 @@ Heribert: Kommt wieder, wenn ihr alles gesammelt habt.
 title: Intro
 position: 635,102
 ---
+<<hide campfire>>
 <<if $debug == true>>
     Debug: Dies ist ein Testintro.
     <<change_cam DollyCam1>>
@@ -151,7 +152,7 @@ Colin: Hier, wir haben alles gesammelt.
 Heribert: Prima! Dann können wir uns ja jetzt aufwärmen! 
 <<fade_out>>
 <<wait 5>>
-<<show_go Lagerfeuer>>
+<<show campfire>>
 <<fade_in>>
 Heribert: Ihr beiden, ich hatte gerade Besuch vom Besitzer dieses Campingplatzes. Er hat nach euch gefragt und schien etwas aufgeregt zu sein. Er meinte, wir sollten morgen früh in sein Büro kommen, um mit ihm zu sprechen. Es klang, als ob er euch auch eine Geschichte erzählen wollte.
 Colin: Oh, das ist seltsam. Aber sicher, wir werden morgen früh vorbeischauen.

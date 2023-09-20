@@ -7849,10 +7849,6 @@ PrefabInstance:
       propertyPath: renderers.Array.data[8]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2697442112755211713, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
-      propertyPath: quest
-      value: 
-      objectReference: {fileID: 11400000, guid: f45de22a77a484ece980673d39b0a9e1, type: 2}
     - target: {fileID: 3215766256094435472, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
@@ -7989,8 +7985,7 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 238038138}
-    m_RemovedComponents:
-    - {fileID: 5933573681183154189, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
 --- !u!4 &1227088200 stripped
 Transform:
@@ -10404,24 +10399,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5157724860812301314, guid: 4052bae3b6ac3614e95e8b8369b37b8b, type: 3}
   m_PrefabInstance: {fileID: 149271001}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2100400022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100400016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857f8a72f1f341e2a251333371c8a973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  quest: {fileID: 11400000, guid: 3cf8e33f15da44d8186e46893dafeb67, type: 2}
-  waypoint: {fileID: 0}
-  waypoint2D: {fileID: 0}
 --- !u!195 &2100400023
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11367,6 +11344,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 991177624}
     m_Modifications:
+    - target: {fileID: 1553115246573367505, guid: a760ebe4592edbd4c9be91a111cd5fab, type: 3}
+      propertyPath: sceneId
+      value: 3561186111
+      objectReference: {fileID: 0}
     - target: {fileID: 4841199165490483864, guid: a760ebe4592edbd4c9be91a111cd5fab, type: 3}
       propertyPath: m_Name
       value: campfire

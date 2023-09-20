@@ -419,7 +419,6 @@ GameObject:
   - component: {fileID: 6272840479401608949}
   - component: {fileID: 5054955099395956982}
   - component: {fileID: 2274314172039020449}
-  - component: {fileID: 2697442112755211713}
   m_Layer: 10
   m_Name: Arnold
   m_TagString: NPC
@@ -518,24 +517,6 @@ MonoBehaviour:
   - {fileID: 3008430568460404184}
   thickness: 0.005
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &2697442112755211713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621466806945478623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 857f8a72f1f341e2a251333371c8a973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  quest: {fileID: 11400000, guid: f45de22a77a484ece980673d39b0a9e1, type: 2}
-  waypoint: {fileID: 0}
-  waypoint2D: {fileID: 0}
 --- !u!1 &1668441419219477353
 GameObject:
   m_ObjectHideFlags: 0
