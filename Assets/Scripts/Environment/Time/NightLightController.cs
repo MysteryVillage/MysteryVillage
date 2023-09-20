@@ -5,11 +5,13 @@ using UnityEngine;
 public class NightLightController : MonoBehaviour
 {
     private GameObject moon;
-    private Light light;
+    public GameObject light;
+    public Renderer glassRenderer;
+
+    private bool enabled = false;
 
     private void Awake()
     {
-        light = GetComponent<Light>();
         moon = GameObject.FindGameObjectWithTag("moon");
     }
     void Update()
@@ -29,17 +31,21 @@ public class NightLightController : MonoBehaviour
 
     private void TurnOnNightLight()
     {
-        if(light != null && !light.enabled)
+        if(light != null && !enabled)
         {
-            light.enabled = true;
+            light.SetActive(true);
+            enabled = true;
+            glassRenderer.material.EnableKeyword("_EMISSION");
         }
     }
 
     private void TurnOffNightLight()
     {
-        if(light != null && light.enabled)
+        if(light != null && enabled)
         {
-            light.enabled = false;
+            light.SetActive(false);
+            enabled = false;
+            glassRenderer.material.DisableKeyword("_EMISSION");
         }
     }
 }
