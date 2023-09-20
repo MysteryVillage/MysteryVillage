@@ -16,24 +16,43 @@ namespace Environment.Buildings
         private Animator animator;
         private bool isOpen = false;
         private string prompt;
+        public ItemData key;
+        private InventoryData inventory;
+        private bool locked = true;
 
         void Start()
         {
             animator = GetComponent<Animator>();
-            prompt = "Aufschließen";
-            GetInteractPrompt();
+        }
+
+        InventoryData GetInventory()
+        {
+            if (inventory == null)
+            {
+                var players = PlayerController.GetPlayers();
+                var collin = players[0].isBoy ? players[0] : players[1];
+                
+                inventory = InventoryManager.Instance().GetInventoryForPlayer(collin.gameObject);
+            }
+            return inventory;
         }
 
         public string GetInteractPrompt()
         {
-
-            return string.Format(prompt);
-
+            if (locked)
+            {
+                if (GetInventory().HasItem(key, 1)) return "TÃ¼r aufschlieÃŸen";
+                return "Die TÃ¼r ist verschlossen.";
+            }
+            else
+            {
+                if (isOpen) return "TÃ¼r schlieÃŸen";
+                return "TÃ¼r Ã¶ffnen";
+            }
         }
 
         public void OnInteract(uint networkIdentifier)
         {
-
             Door();
         }
 
@@ -41,31 +60,34 @@ namespace Environment.Buildings
         public void Door()
         {
             // evaluate inventory
-            //var players = PlayerController.GetPlayers();
-            //var collin = players[0].isBoy ? players[0] : players[1];
-
-            //var inventory = InventoryManager.Instance().GetInventoryForPlayer(collin.gameObject);
-
-            if (!isOpen)
+            if (locked)
             {
-                //if (inventory.HasItem(ItemData.FindById(2357733091), 1))
-                //{
+                if (GetInventory().HasItem(key, 1))
+                {
                     isOpen = true;
-                    //animator.SetBool("isOpen", isOpen);
-                    if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f); //Debug.Log(" Tür 1 Öffnet sich");
-                    prompt = "Aufschließen";
-                    GetInteractPrompt();
+                    // animator.SetBool("isOpen", isOpen);
+                    if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f);
+
+                    locked = false;
 
                     EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
                     if (eventSystem)
                     {
                         eventSystem.onQuestEvent.Invoke("LT_DoorUnlock");
                     }
-                //}
+                }
+            }
+            else
+            {
+                if (isOpen)
+                {
+                    isOpen = false;
+                    if (animator != null) animator.Play("LT_Door_Animation_Close", 0, 0.0f);
+                }
                 else
                 {
-                    prompt = "Diese Tür ist verschlossen";
-                    GetInteractPrompt();
+                    isOpen = true;
+                    if (animator != null) animator.Play("LT_Door_Animation_Open", 0, 0.0f);
                 }
             }
         }
