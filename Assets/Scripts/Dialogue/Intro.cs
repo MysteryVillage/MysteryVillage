@@ -19,7 +19,7 @@ namespace Dialogue
             
             FindObjectOfType<Crossfade>().FadeIn();
             
-            FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
+            if (isServer) FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
         }
     }
 }
