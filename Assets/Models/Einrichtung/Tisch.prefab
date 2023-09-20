@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2599116222579269220}
   - component: {fileID: 1422629483428827585}
   - component: {fileID: 3772546112743089419}
+  - component: {fileID: 3384179979354424407}
   m_Layer: 0
   m_Name: Tisch
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3384179979354424407
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412104279337108702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3398373307187855580, guid: 8c1b5780e2d698046b5f8e80a3a11894, type: 3}

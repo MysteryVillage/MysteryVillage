@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2729833785057943260}
   - component: {fileID: 1318862859504062841}
   - component: {fileID: 3866759750530295219}
+  - component: {fileID: 3713519461266539971}
   m_Layer: 0
   m_Name: Schrank
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3713519461266539971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362361471656608870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: f23f2e95418659c4ca5f968a795acd2a, type: 3}
