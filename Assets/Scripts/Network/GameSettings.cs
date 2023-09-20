@@ -1,6 +1,7 @@
 using System;
 using Mirror;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Network
 {
@@ -14,6 +15,14 @@ namespace Network
         private void Awake()
         {
             _instance = this;
+        }
+
+        private void Update()
+        {
+            if (Keyboard.current.f3Key.wasPressedThisFrame)
+            {
+                Debug.developerConsoleVisible = !Debug.developerConsoleVisible;
+            }
         }
 
         public static GameSettings Get()
