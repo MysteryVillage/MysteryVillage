@@ -1789,11 +1789,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:Head'\n\tTransform 'mixamorig:Neck'\n\tTransform
-    'mixamorig:Head'\n\tTransform 'mixamorig:Neck'\n\tTransform 'mixamorig:Head'\n\tTransform
-    'mixamorig:Neck'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -5520,6 +5516,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2461428810486121022, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 2461428811137418985, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6137,12 +6137,28 @@ PrefabInstance:
       value: -190
       objectReference: {fileID: 0}
     - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_SizeDelta.x
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_SizeDelta.y
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735877847529440331, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6762873758793600489, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
