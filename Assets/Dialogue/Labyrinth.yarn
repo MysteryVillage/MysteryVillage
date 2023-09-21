@@ -205,5 +205,11 @@ Colin: Ich habe einen Schlüssel! Jetzt muss ich nurnoch hier wieder rausfinden.
 Alina: Wir sollten gleich mit dem Schlüssel zu Arnold gehen!
 <<move_npc Arnold ArnoldVillage>> 
 ===
+title: Spielende
+position: 800,300
+---
+Arnold: Danke für's Spielen!
+<<end_game NetworkManager>>
+===
 
 

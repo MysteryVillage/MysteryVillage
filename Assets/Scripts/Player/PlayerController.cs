@@ -231,7 +231,7 @@ namespace Player
             }
             else
             {
-                ClientReady();
+                if (isLocalPlayer) ClientReady();
             }
         }
 

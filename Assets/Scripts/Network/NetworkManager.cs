@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 namespace Network
 {
@@ -129,7 +130,7 @@ namespace Network
             return base.OnRoomServerCreateGamePlayer(conn, roomPlayer);
         }
 
-        [Server]
+        [Server, YarnCommand("end_game")]
         public void EndGame()
         {
             ServerChangeScene("Credits");
