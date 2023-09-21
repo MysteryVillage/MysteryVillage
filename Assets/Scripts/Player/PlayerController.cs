@@ -139,7 +139,7 @@ namespace Player
 
         public AudioSource audioSource;
 
-        [Header("Progress")] public bool hasBook; 
+        [Header("Progress")] [SyncVar] public bool hasBook; 
         [SerializeField] public GameObject bookIcon;
 
         private bool IsCurrentDeviceMouse
