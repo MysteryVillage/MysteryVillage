@@ -2060,10 +2060,10 @@ MonoBehaviour:
     m_ActionName: Player/Map[/Keyboard/m,/DualShock4GamepadHID/dpad/down]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4899278166712264172}
         m_TargetAssemblyTypeName: Book, Assembly-CSharp
-        m_MethodName: NextPage
-        m_Mode: 0
+        m_MethodName: RotateNext
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2076,10 +2076,10 @@ MonoBehaviour:
     m_ActionName: UI/GoToNextPage[/Keyboard/n,/DualShock4GamepadHID/leftStick/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4899278166712264172}
         m_TargetAssemblyTypeName: Book, Assembly-CSharp
-        m_MethodName: PriorPage
-        m_Mode: 0
+        m_MethodName: RotateBack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
