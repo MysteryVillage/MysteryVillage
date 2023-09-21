@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafaff00d31b48c7924416241dc314fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: "Gehe zum Labyrinth s\xFCdlich der Stadt. Anscheinend liegt es direkt
-    an der Stra\xDFe zum Leuchtturm.."
+  Description: Gehe zum Labyrinth westlich der Stadt. Anscheinend liegt es dort in
+    den Bergen.
   RequiredAmount: 1
   QuestGoalCompleted:
     m_PersistentCalls:
       m_Calls: []
+  triggerGO: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,7 +32,7 @@ MonoBehaviour:
   m_Name: Labyrinth
   m_EditorClassIdentifier: 
   Information:
-    name: Labyrinth
+    name: Zum Labyrinth
     description: Gehe zum Labyrinth
   goals:
   - {fileID: -7832362548740153401}

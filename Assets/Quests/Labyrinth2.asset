@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafaff00d31b48c7924416241dc314fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: "Finde den Schl\xFCssel"
+  Description: "L\xF6se das R\xE4tsel"
   RequiredAmount: 1
   QuestGoalCompleted:
     m_PersistentCalls:
       m_Calls: []
+  triggerGO: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,8 +31,8 @@ MonoBehaviour:
   m_Name: Labyrinth2
   m_EditorClassIdentifier: 
   Information:
-    name: Labyrinth
-    description: "Finde den Schl\xFCssel"
+    name: "Labyrinth-R\xE4tsel"
+    description: Finde das Geheimnis des Labyrinths
   goals:
   - {fileID: -5338685401637814784}
   followUpQuest: {fileID: 11400000, guid: 9697a751efd774736a2ea44b6338d178, type: 2}

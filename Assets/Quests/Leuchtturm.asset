@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafaff00d31b48c7924416241dc314fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Description: Begebe dich zum Leuchtturm, vielleicht seid ihr bereit bei ihm vorbeigekommen
+  Description: Begib dich zum Leuchtturm. Vielleicht habt ihr ihn bereits gesehen
   RequiredAmount: 1
   QuestGoalCompleted:
     m_PersistentCalls:
       m_Calls: []
+  triggerGO: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,7 +31,7 @@ MonoBehaviour:
   m_Name: Leuchtturm
   m_EditorClassIdentifier: 
   Information:
-    name: Leuchtturm
+    name: Zum Leuchtturm
     description: Gehe zum Leuchtturm
   goals:
   - {fileID: -5042169237662740744}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Leuchtturm3
   m_EditorClassIdentifier: 
   Information:
-    name: Leuchtturm
+    name: "Das R\xE4tsel des Turms"
     description: "Versuche das R\xE4tsel des Leuchtturms zu l\xF6sen."
   goals:
   - {fileID: 6794628291493299080}
@@ -55,3 +55,4 @@ MonoBehaviour:
   QuestGoalCompleted:
     m_PersistentCalls:
       m_Calls: []
+  triggerGO: {fileID: 0}
