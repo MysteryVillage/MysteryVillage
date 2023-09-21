@@ -218,7 +218,7 @@ namespace Player
 
                 if (roomPlayer != null)
                 {
-                    isBoy = roomPlayer.character == "Collin" ? true : false;
+                    isBoy = roomPlayer.character == "Colin" ? true : false;
                 }
                 // GetComponent<GeometryController>().SetGeometry();
 

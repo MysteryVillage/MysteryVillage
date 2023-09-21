@@ -126,7 +126,7 @@ namespace Network
 
         public override GameObject OnRoomServerCreateGamePlayer(NetworkConnectionToClient conn, GameObject roomPlayer)
         {
-            playerPrefab = roomPlayer.GetComponent<RoomPlayer>().character == "Collin" ? boyPrefab : girlPrefab;
+            playerPrefab = roomPlayer.GetComponent<RoomPlayer>().character == "Colin" ? boyPrefab : girlPrefab;
             return base.OnRoomServerCreateGamePlayer(conn, roomPlayer);
         }
 
