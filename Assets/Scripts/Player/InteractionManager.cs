@@ -45,10 +45,9 @@ namespace Player
                             }
                             _curInteractGameObject = hit.collider.gameObject;
                             _curInteractable = hit.collider.GetComponent<IIinteractable>();
-                            Debug.Log("Is Server: " + isServer);
                             _curInteractGameObject.GetComponent<HighlightOutline>()?.ToggleOutline(true);
-                            SetPromptText();
-                        }
+                        } 
+                        SetPromptText();
                     }
                     else
                     {
