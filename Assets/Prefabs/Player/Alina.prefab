@@ -4719,31 +4719,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 249.08199
+      value: 0.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.725683
+      value: 1.375
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 306.81067
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.094597846
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.008479247
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9915044
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08887317
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4763,19 +4763,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: field of view
-      value: 60
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: far clip plane
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: near clip plane
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: orthographic size
-      value: 27.6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7290703892053452740, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: DampingFromCollision
@@ -5873,6 +5873,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095759548012906908, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095759548012906908, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5232889748525193265, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6478,7 +6486,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8969318703271891374, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969318703271891374, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969318703271891374, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8983132642098784836, guid: 50d4810710c6941569180ced649cf585, type: 3}
