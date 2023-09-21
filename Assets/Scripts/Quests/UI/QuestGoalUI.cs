@@ -34,20 +34,23 @@ namespace Quests.UI
         void SetInfo(QuestGoal questGoal)
         {
             description.text = questGoal.Description;
-            if (questGoal.RequiredAmount == 1)
-            {
-                checkmark.gameObject.SetActive(true);
-                status.gameObject.SetActive(false);
-
-                checkmark.sprite = questGoal.CurrentAmount < 1 ? todo : done;
-            }
-            else
-            {
-                checkmark.gameObject.SetActive(false);
-                status.gameObject.SetActive(true);
-                
-                status.text = $"{questGoal.CurrentAmount}/{questGoal.RequiredAmount}";
-            }
+            // if (questGoal.RequiredAmount == 1)
+            // {
+            //     checkmark.gameObject.SetActive(true);
+            //     status.gameObject.SetActive(false);
+            //
+            //     checkmark.sprite = questGoal.CurrentAmount < 1 ? todo : done;
+            // }
+            // else
+            // {
+            //     checkmark.gameObject.SetActive(false);
+            //     status.gameObject.SetActive(true);
+            //     
+            //     status.text = $"{questGoal.CurrentAmount}/{questGoal.RequiredAmount}";
+            // }
+            
+            checkmark.gameObject.SetActive(false);
+            status.gameObject.SetActive(false);
         }
     }
 }

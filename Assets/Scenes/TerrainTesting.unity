@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 520059485}
-  m_IndirectSpecularColor: {r: 0.17277355, g: 0.2158997, b: 0.29783309, a: 1}
+  m_IndirectSpecularColor: {r: 0.17277241, g: 0.21589847, b: 0.29783142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2401,7 +2401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470326580}
-  m_LocalRotation: {x: 0.041175783, y: 0.93368775, z: 0.11411043, w: -0.3369133}
+  m_LocalRotation: {x: 0.04117578, y: 0.93368775, z: 0.11411042, w: -0.33691335}
   m_LocalPosition: {x: 0.703537, y: 3.6513462, z: 222.3488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3883,7 +3883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769898646}
-  m_LocalRotation: {x: 0.08986576, y: 0.35212153, z: 0.03398854, w: -0.93100995}
+  m_LocalRotation: {x: 0.08986576, y: 0.35212153, z: 0.033988535, w: -0.93100995}
   m_LocalPosition: {x: 208.6, y: 29.2, z: -330.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7829,7 +7829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06670332
+      value: -0.06670305
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7837,7 +7837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.066700935
+      value: 0.06670122
       objectReference: {fileID: 0}
     - target: {fileID: 5499386766480768370, guid: eac33a878a153c845b0f9eacfe3ff6b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8705,6 +8705,14 @@ PrefabInstance:
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 238038138}
+    - target: {fileID: 6272840479401608949, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
+      propertyPath: dialogueFlow.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272840479401608949, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
+      propertyPath: dialogueFlow.Array.data[1]
+      value: LabyrinthGeschafft
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1efb030c586a545a78a83093d51e4e, type: 3}
 --- !u!4 &1227088200 stripped
