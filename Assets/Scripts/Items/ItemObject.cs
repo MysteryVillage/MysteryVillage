@@ -27,7 +27,7 @@ namespace Items
         {
             if (!NetworkClient.localPlayer.GetComponent<PlayerController>().isBoy)
             {
-                return $"Nur Collin kann {item.displayName} einsammeln.";
+                return $"Nur Colin kann {item.displayName} einsammeln.";
             }
             return $"{item.displayName} einsammeln";
         }

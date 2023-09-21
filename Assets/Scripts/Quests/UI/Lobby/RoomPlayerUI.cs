@@ -81,9 +81,10 @@ namespace Quests.UI.Lobby
 
         public bool CharacterChoiceIsValid()
         {
+            
             if (playerSlots[0].roomPlayer != null && playerSlots[1].roomPlayer != null)
             {
-                return (playerSlots[0].roomPlayer.character == "Collin" && playerSlots[1].roomPlayer.character == "Alina") || (playerSlots[1].roomPlayer.character == "Collin" && playerSlots[0].roomPlayer.character == "Alina");
+                return (playerSlots[0].roomPlayer.character == "Colin" && playerSlots[1].roomPlayer.character == "Alina") || (playerSlots[1].roomPlayer.character == "Colin" && playerSlots[0].roomPlayer.character == "Alina");
             }
 
             return true;
