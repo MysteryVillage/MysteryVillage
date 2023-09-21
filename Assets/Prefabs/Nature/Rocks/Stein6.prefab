@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6888650983836751508}
   - component: {fileID: 7509396167997987121}
   - component: {fileID: 5751742476060978683}
+  - component: {fileID: 9117084206798086377}
   m_Layer: 0
   m_Name: Stein6
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9117084206798086377
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6112149125028662318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3063222094358355465, guid: 89c4f74ede5f80643ae541329b5c1e62, type: 3}
