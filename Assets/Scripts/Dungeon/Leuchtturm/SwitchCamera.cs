@@ -39,6 +39,7 @@ public class SwitchCamera : MonoBehaviour
         {
             isUsingCamera1 = true;
             CamSwitch();
+            GetComponent<CameraController>().ZoomIn();
         }
     }
 
