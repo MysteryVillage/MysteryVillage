@@ -134,6 +134,7 @@ namespace Network
         [Server, YarnCommand("end_game")]
         public void EndGame()
         {
+            if (!NetworkServer.active) return;
             ServerChangeScene("Credits");
         }
     }
