@@ -118,7 +118,6 @@ position: 635,102
     <<give_quest_by_id 7>>
     <<stop>>
 <<endif>>
-<<change_cam DollyCam1>>
 Heribert: Willkommen in <b>Enigma Oaks</b>. Dieses Dorf hat eine besondere Geschichte, und ich bin froh, dass ich euch hierher gebracht habe.
 Colin: Erzähl uns mehr darüber. Es sieht wirklich anders aus als die anderen Orte, die wir besucht haben.
 <<change_cam LeuchtturmCam>>
@@ -128,6 +127,7 @@ Colin: Du meinst, dass du wirklich daran glaubst, Heribert?
 Heribert: Nun, Colin, ich liebe Geschichten, das wisst ihr. Aber diese sind nur Geschichten, die die Fantasie der Menschen anregen. Hier gibt es sicherlich ein paar mysteriöse Dinge, aber die haben wahrscheinlich eine ganz natürliche Erklärung.
 <<fade_out>>
 <<wait 2>>
+<<change_cam DollyCam1>>
 <<reset_cam>>
 <<wait 2>>
 <<fade_in>>

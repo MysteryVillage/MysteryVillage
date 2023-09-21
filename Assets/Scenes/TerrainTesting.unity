@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 520059485}
-  m_IndirectSpecularColor: {r: 0.17277241, g: 0.21589847, b: 0.29783142, a: 1}
+  m_IndirectSpecularColor: {r: 0.17277355, g: 0.2158997, b: 0.29783309, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2401,8 +2401,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470326580}
-  m_LocalRotation: {x: -0.008479247, y: 0.9915044, z: -0.08887317, w: -0.094597846}
-  m_LocalPosition: {x: 13.84729, y: 9.536476, z: 81.47273}
+  m_LocalRotation: {x: 0.041175783, y: 0.93368775, z: 0.11411043, w: -0.3369133}
+  m_LocalPosition: {x: 0.703537, y: 3.6513462, z: 222.3488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3883,7 +3883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769898646}
-  m_LocalRotation: {x: 0.08986576, y: 0.35212153, z: 0.033988535, w: -0.93100995}
+  m_LocalRotation: {x: 0.08986576, y: 0.35212153, z: 0.03398854, w: -0.93100995}
   m_LocalPosition: {x: 208.6, y: 29.2, z: -330.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5042,15 +5042,19 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: -3.308014, y: 2.9456825, z: 74.85066}
+  - position: {x: -16.451767, y: -2.9394474, z: 215.72673}
     roll: 0
-  - position: {x: 20.019913, y: 0, z: 55.779953}
+  - position: {x: -50.291504, y: 13.523333, z: 142.69112}
     roll: 0
-  - position: {x: 15.855057, y: 0, z: 24.554367}
+  - position: {x: 10.437698, y: 2.24827, z: 84.675705}
     roll: 0
-  - position: {x: 0, y: 0, z: -5}
+  - position: {x: 11.1905365, y: 1.1218433, z: 35.44536}
     roll: 0
-  - position: {x: -79.96501, y: 0, z: -45.220734}
+  - position: {x: -25.684448, y: 1.4782696, z: -41.55252}
+    roll: 0
+  - position: {x: -137.205, y: -11.485851, z: -131.25159}
+    roll: 0
+  - position: {x: -289.4101, y: -17.189346, z: -158.43796}
     roll: 0
 --- !u!95 &992698950
 Animator:
@@ -10275,6 +10279,7 @@ GameObject:
   - component: {fileID: 1859423501}
   - component: {fileID: 1859423500}
   - component: {fileID: 1859423499}
+  - component: {fileID: 1859423502}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -10313,13 +10318,13 @@ MonoBehaviour:
   m_PathPosition: 0
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
-  m_XDamping: 0
-  m_YDamping: 0
-  m_ZDamping: 1
-  m_CameraUp: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
+  m_XDamping: 3
+  m_YDamping: 3
+  m_ZDamping: 3
+  m_CameraUp: 1
+  m_PitchDamping: 5
+  m_YawDamping: 5
+  m_RollDamping: 5
   m_AutoDolly:
     m_Enabled: 0
     m_PositionOffset: 0
@@ -10364,6 +10369,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1859423502
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859423497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &1862378673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12796,7 +12818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7880518169509110541, guid: 78cd4c9ce4aa34199abde90d32b63eb2, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7880518169509110541, guid: 78cd4c9ce4aa34199abde90d32b63eb2, type: 3}
       propertyPath: m_LocalPosition.x
