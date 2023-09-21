@@ -6,20 +6,25 @@ using static UnityEngine.InputSystem.Controls.AxisControl;
 
 public class checkLightsLT : MonoBehaviour
 {
-    [SerializeField] List<Renderer> _lamp;
-    [SerializeField] Material _red;
-    [SerializeField] Material _green;
+    public List<SwitchesLeuchtturm> switches;
+    private EventSystem eventSystem;
 
     // Update is called once per frame
     void Update()
     {
-        if (_lamp[0].material == _green && _lamp[1].material == _green && _lamp[2].material == _green)
+        foreach (var ltSwitch in switches)
         {
-            EventSystem eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
-            if (eventSystem)
-            {
-                eventSystem.onQuestEvent.Invoke("LampsAreGreen");
-            }
+            if (!ltSwitch.IsActivated()) return;
         }
+        
+        if (eventSystem == null) GetEventSystem();
+
+        Debug.Log("Game completed");
+        if (eventSystem != null) eventSystem.onQuestEvent.Invoke("LampsAreGreen");
+    }
+
+    public void GetEventSystem()
+    {
+        eventSystem = UnityEngine.EventSystems.EventSystem.current as EventSystem;
     }
 }

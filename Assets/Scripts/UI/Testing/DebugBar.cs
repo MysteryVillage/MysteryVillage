@@ -27,6 +27,10 @@ namespace UI
         private void Start()
         {
             connectionTimestamp = DateTime.Now;
+            if (!Debug.isDebugBuild)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private void Update()

@@ -35,6 +35,12 @@ namespace Quests.UI.Lobby
             {
                 settingsPanel.SetActive(false);
             }
+
+            if (!Debug.isDebugBuild)
+            {
+                testmodeDropdown.gameObject.SetActive(false);
+                startQuestDropdown.gameObject.SetActive(false);
+            }
         }
 
         private void Update()

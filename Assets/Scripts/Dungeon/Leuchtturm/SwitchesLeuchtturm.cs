@@ -119,4 +119,9 @@ public class SwitchesLeuchtturm : NetworkBehaviour, IIinteractable
         yield return new WaitForSeconds(delay);
         toggle = true;
     }
+
+    public bool IsActivated()
+    {
+        return toggle;
+    }
 }
