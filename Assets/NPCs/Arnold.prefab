@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 6272840479401608949}
   - component: {fileID: 5054955099395956982}
   - component: {fileID: 2274314172039020449}
+  - component: {fileID: 7571298787374612072}
   m_Layer: 10
   m_Name: Arnold
   m_TagString: NPC
@@ -517,6 +518,22 @@ MonoBehaviour:
   - {fileID: 3008430568460404184}
   thickness: 0.005
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &7571298787374612072
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621466806945478623}
+  serializedVersion: 2
+  m_Mass: 99
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1668441419219477353
 GameObject:
   m_ObjectHideFlags: 0

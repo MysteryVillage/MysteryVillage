@@ -86,10 +86,30 @@ Collin: Hier, wir haben alles gesammelt.
 Heribert: ... Moment mal! Da fehlt doch noch was!
 Heribert: Kommt wieder, wenn ihr alles gesammelt habt. 
 ===
-title: Intro
+title: StartGame
 position: 635,102
 ---
 <<hide campfire>>
+<<if $startQuest == 0>>
+    <<jump Intro>>
+<<elseif $startQuest == 1>>
+    Quest: Löst das Labyrinth.
+    <<give_quest_by_id 0>>
+    <<change_cam DollyCam1>>
+    <<reset_cam>>
+    <<stop>>
+<<elseif $startQuest == 2>>
+    Quest: Löst den Leuchtturm.
+    <<give_quest_by_id 9>>
+    <<change_cam DollyCam1>>
+    <<reset_cam>>
+    <<give_item 2>>
+    <<stop>>
+<<endif>>
+===
+title: Intro
+position: 635,102
+---
 <<if $debug == true>>
     Debug: Dies ist ein Testintro.
     <<change_cam DollyCam1>>

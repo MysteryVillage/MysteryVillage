@@ -19,6 +19,7 @@ namespace Quests.UI.Lobby
         public GameObject settingsPanel;
         public TMP_Dropdown gamemodeDropdown;
         public TMP_Dropdown testmodeDropdown;
+        public TMP_Dropdown startQuestDropdown;
         public Button readyButton;
 
         private void Awake()
@@ -56,6 +57,11 @@ namespace Quests.UI.Lobby
         public void OnChangeTesting()
         {
             _settings.isTestRun = testmodeDropdown.value == 1;
+        }
+
+        public void OnChangeStartQuest()
+        {
+            _settings.startQuest = startQuestDropdown.value;
         }
 
         public void StartGame()

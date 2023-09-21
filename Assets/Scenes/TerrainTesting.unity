@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 520059485}
-  m_IndirectSpecularColor: {r: 0.17277355, g: 0.2158997, b: 0.29783309, a: 1}
+  m_IndirectSpecularColor: {r: 0.17277241, g: 0.21589847, b: 0.29783142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3883,7 +3883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769898646}
-  m_LocalRotation: {x: 0.08986576, y: 0.35212153, z: 0.03398854, w: -0.93100995}
+  m_LocalRotation: {x: 0.08986576, y: 0.35212153, z: 0.033988535, w: -0.93100995}
   m_LocalPosition: {x: 208.6, y: 29.2, z: -330.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11644,18 +11644,6 @@ PrefabInstance:
       propertyPath: sceneId
       value: 309028393
       objectReference: {fileID: 0}
-    - target: {fileID: 1560537300352770542, guid: 6d9b119d57f2d4ce59e658ac9e61f265, type: 3}
-      propertyPath: availableQuests.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1560537300352770542, guid: 6d9b119d57f2d4ce59e658ac9e61f265, type: 3}
-      propertyPath: availableQuests.Array.data[13]
-      value: 
-      objectReference: {fileID: 11400000, guid: e2489f09f203643aab9cb010c04ffaa3, type: 2}
-    - target: {fileID: 1560537300352770542, guid: 6d9b119d57f2d4ce59e658ac9e61f265, type: 3}
-      propertyPath: availableQuests.Array.data[14]
-      value: 
-      objectReference: {fileID: 11400000, guid: 802309b3b102f4950ae4e701985b933f, type: 2}
     - target: {fileID: 1560537300352770543, guid: 6d9b119d57f2d4ce59e658ac9e61f265, type: 3}
       propertyPath: m_Name
       value: QuestManager

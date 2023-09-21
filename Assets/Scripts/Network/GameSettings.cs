@@ -9,6 +9,12 @@ namespace Network
     {
         public bool isLocalGame;
         public bool isTestRun;
+        /**
+         * 0 = Intro
+         * 1 = Labyrinth
+         * 2 = Leuchtturm
+         */
+        public int startQuest = 0;
 
         private static GameSettings _instance;
 

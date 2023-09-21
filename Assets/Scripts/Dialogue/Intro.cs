@@ -12,16 +12,19 @@ namespace Dialogue
     {
         private bool ready = false;
         [SyncVar] private bool skipIntro;
+        [SyncVar] private int startQuest;
         
         private void Start()
         {
             if (isServer)
             {
                 skipIntro = GameSettings.Get().isTestRun;
+                startQuest = GameSettings.Get().startQuest;
                 StartCoroutine(StartIntro());
             }
             
             FindObjectOfType<InMemoryVariableStorage>().SetValue("$debug", skipIntro);
+            FindObjectOfType<InMemoryVariableStorage>().SetValue("$startQuest", startQuest);
             
             FindObjectOfType<Crossfade>().FadeIn();
         }
@@ -39,7 +42,7 @@ namespace Dialogue
                 yield return new WaitUntil(() => ready);
             }
             
-            FindObjectOfType<DialogueManager>().StartActiveDialogue("Intro");
+            FindObjectOfType<DialogueManager>().StartActiveDialogue("StartGame");
         }
     }
 }

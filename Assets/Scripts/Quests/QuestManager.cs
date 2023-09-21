@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Inventory;
 using Items;
 using Mirror;
 using Network;
+using Player;
 using Quests.Goals;
 using Quests.UI;
 using Unity.VisualScripting;
@@ -202,6 +204,26 @@ namespace Quests
             var itemObject = Instantiate(item.dropPrefab, pos, rot);
             
             NetworkServer.Spawn(itemObject);
+        }
+
+        [YarnCommand("give_item")]
+        public static void GiveItem(int itemId)
+        {
+            Debug.Log("isServer: " + Current.isServer);
+            if (!Current.isServer) return;
+            PlayerController colin = null;
+            var players = PlayerController.GetPlayers();
+            foreach (var player in players)
+            {
+                if (player.isBoy) colin = player;
+            }
+
+            Debug.Log("inventory: " + colin);
+            if (colin == null) return;
+
+            var inv = colin.GetComponent<PlayerInventory>();
+            
+            inv.CollectItem(itemId);
         }
     }
 }
