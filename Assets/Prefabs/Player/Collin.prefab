@@ -1661,7 +1661,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.8
   m_Radius: 0.28
-  m_SlopeLimit: 45
+  m_SlopeLimit: 50
   m_StepOffset: 0.25
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0
@@ -1725,6 +1725,7 @@ MonoBehaviour:
   isBoy: 1
   audioSource: {fileID: 788476724465324060}
   hasBook: 0
+  bookIcon: {fileID: 0}
   miniMap: {fileID: 6503692114356471139}
 --- !u!114 &5885216827943657505
 MonoBehaviour:
@@ -5974,31 +5975,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20000005
+      value: 249.08199
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.375
+      value: 26.725683
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 306.81067
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.094597846
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.008479247
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.9915044
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.08887317
       objectReference: {fileID: 0}
     - target: {fileID: 2558067974887012922, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6022,19 +6023,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: field of view
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: far clip plane
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: near clip plane
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5647302376636447982, guid: eb8a7411860b14637ad57491fce41342, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 27.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8a7411860b14637ad57491fce41342, type: 3}
