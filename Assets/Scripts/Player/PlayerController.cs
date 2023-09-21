@@ -139,7 +139,8 @@ namespace Player
 
         public AudioSource audioSource;
 
-        [Header("Progress")] public bool hasBook;
+        [Header("Progress")] public bool hasBook; 
+        [SerializeField] public GameObject bookIcon;
 
         private bool IsCurrentDeviceMouse
         {
@@ -255,6 +256,11 @@ namespace Player
                     _input.jump = false;
                 }
                 Move();
+            }
+
+            if (hasBook)
+            {
+                bookIcon.SetActive(true);
             }
         }
 

@@ -1832,6 +1832,7 @@ MonoBehaviour:
   isBoy: 0
   audioSource: {fileID: 788476724465324060}
   hasBook: 0
+  bookIcon: {fileID: 7233619912691192946}
   miniMap: {fileID: 146247342668530858}
 --- !u!114 &5885216827943657505
 MonoBehaviour:
@@ -5252,6 +5253,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -320
       objectReference: {fileID: 0}
+    - target: {fileID: 2461428810076814822, guid: 50d4810710c6941569180ced649cf585, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2461428810455770101, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -5290,7 +5295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461428810871296628, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2461428811137418985, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_IsActive
@@ -6314,19 +6319,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7931371895383501578, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7931371895383501578, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7931371895383501578, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7931371895383501578, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8012998372113835053, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6776,6 +6781,11 @@ MonoBehaviour:
 --- !u!1 &6754174272689566477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2013565594130094745, guid: 50d4810710c6941569180ced649cf585, type: 3}
+  m_PrefabInstance: {fileID: 5064925095591209364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7233619912691192946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2461428810076814822, guid: 50d4810710c6941569180ced649cf585, type: 3}
   m_PrefabInstance: {fileID: 5064925095591209364}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7233619912945155040 stripped
