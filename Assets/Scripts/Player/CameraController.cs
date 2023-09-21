@@ -18,15 +18,21 @@ namespace Player
         
             if (virtualCamera.m_Lens.FieldOfView == 40)
             {
-                virtualCamera.m_Lens.FieldOfView = 70;
-                return;
-            
-            } 
-        
-            if (virtualCamera.m_Lens.FieldOfView == 70)
+                ZoomOut();
+            } else if (virtualCamera.m_Lens.FieldOfView == 70)
             {
-                virtualCamera.m_Lens.FieldOfView = 40;
+                ZoomIn();
             }
+        }
+
+        public void ZoomIn()
+        {
+            virtualCamera.m_Lens.FieldOfView = 40;
+        }
+
+        public void ZoomOut()
+        {
+            virtualCamera.m_Lens.FieldOfView = 70;
         }
 
         [YarnCommand("fade_out")]

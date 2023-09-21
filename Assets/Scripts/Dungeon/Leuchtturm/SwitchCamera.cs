@@ -1,5 +1,7 @@
 using UnityEngine;
 using Cinemachine;
+using Mirror;
+using Player;
 using Unity.VisualScripting;
 
 public class SwitchCamera : MonoBehaviour
@@ -16,19 +18,18 @@ public class SwitchCamera : MonoBehaviour
    
     private void Start()
     {
-        //composer = cam.GetCinemachineComponent<CinemachineComposer>();
         follow = cam.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
-
         
         CamSwitch();
     }
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LT_CamTrigger"))
         {
             isUsingCamera1 = false;
             CamSwitch();
+            GetComponent<CameraController>().ZoomOut();
         }
     }
 
@@ -48,7 +49,6 @@ public class SwitchCamera : MonoBehaviour
             if (follow == null) return;
             follow.CameraDistance = 4;
             follow.ShoulderOffset = defaultCam;
-          
         }
         else
         {
@@ -56,8 +56,7 @@ public class SwitchCamera : MonoBehaviour
             follow.CameraDistance = 1;
             follow.ShoulderOffset = LTcam;
         }
-  
-
+        
         isUsingCamera1 = !isUsingCamera1;
     }
 }
