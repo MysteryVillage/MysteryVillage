@@ -2107,35 +2107,11 @@ MonoBehaviour:
     m_ActionId: 3ef71a43-e36e-4fa1-a2e2-fb56b8106895
     m_ActionName: UI/CloseUI[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7233619913839245647}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
-        m_MethodName: MenuSwitchLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: bdea677e-11d9-4a91-9ac9-5605c1e4ec72
     m_ActionName: UI/SwitchMenuL[/Keyboard/q]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7233619913839245647}
-        m_TargetAssemblyTypeName: PlayerUi, Assembly-CSharp
-        m_MethodName: MenuSwitchRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 6a5f401d-f4bf-4360-b0c0-c7349aa6891b
     m_ActionName: UI/SwitchMenuR[/Keyboard/e]
   - m_PersistentCalls:
@@ -2171,19 +2147,7 @@ MonoBehaviour:
     m_ActionId: deac4ec6-e4bf-4de5-8eab-88fe477a2f5d
     m_ActionName: Pause/CloseUI[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5423024373800373229}
-        m_TargetAssemblyTypeName: UI.DialogueController, Assembly-CSharp
-        m_MethodName: AdvanceLine
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 7512939b-aa7e-4f62-8d6a-e6a7de645b68
     m_ActionName: Dialogue/Advance[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
   - m_PersistentCalls:
@@ -5290,7 +5254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461428810871296628, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2461428811137418985, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: m_IsActive
@@ -5403,7 +5367,7 @@ PrefabInstance:
     - target: {fileID: 2461428811212296411, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: menuOrder.Array.data[2]
       value: 
-      objectReference: {fileID: 8186132350786358239}
+      objectReference: {fileID: 0}
     - target: {fileID: 2461428811212296411, guid: 50d4810710c6941569180ced649cf585, type: 3}
       propertyPath: menuOrder.Array.data[3]
       value: 
@@ -6713,17 +6677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba23df177fb7425b85144c9d28b926a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5423024373800373229 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 939081222863512185, guid: 50d4810710c6941569180ced649cf585, type: 3}
-  m_PrefabInstance: {fileID: 5064925095591209364}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85f844fa43f54e8a95a6ae6d19f364b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5438159773672733544 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 950825814779761404, guid: 50d4810710c6941569180ced649cf585, type: 3}
@@ -6815,11 +6768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba23df177fb7425b85144c9d28b926a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8186132350786358239 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4021932764664734283, guid: 50d4810710c6941569180ced649cf585, type: 3}
-  m_PrefabInstance: {fileID: 5064925095591209364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8501949439934167364 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3726385036169547984, guid: 50d4810710c6941569180ced649cf585, type: 3}
