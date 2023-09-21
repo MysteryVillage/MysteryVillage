@@ -106,14 +106,14 @@ namespace UI
             }
         }
 
-        public void OpenQuestButton(InputAction.CallbackContext context)
+        /*public void OpenQuestButton(InputAction.CallbackContext context)
         {
             if (context.started)
             {
                 var index = FindIndexFor(menuList.quests);
                 if (index >= 0) Open(index);
             }
-        }
+        }*/
 
         public void Open(int index)
         {
@@ -282,7 +282,7 @@ namespace UI
     [Serializable]
     public class MenuList
     {
-        public GameObject quests;
+        //public GameObject quests;
         public GameObject inventory;
         public GameObject book;
         public GameObject map;
