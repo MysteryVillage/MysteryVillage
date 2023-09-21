@@ -29,15 +29,14 @@ namespace Quests.Goals
                     target.nextDialogueOverwrite = dialogueScript;
                 }
                 target.OnTalk.AddListener(Talk);
-                target.gameObject.AddComponent<QuestMarker>();
-                target.gameObject.GetComponent<QuestMarker>().quest = GetQuest();
+                target.AddQuestMarker(questId);
             }
         }
 
         public void Talk()
         {
             target.OnTalk.RemoveListener(Talk);
-            Destroy(target.gameObject.GetComponent<QuestMarker>());
+            target.RemoveQuestMarker();
             Debug.Log("Talked to target");
             CurrentAmount++;
             Evaluate();

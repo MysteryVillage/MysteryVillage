@@ -2,12 +2,13 @@ using System;
 using Mirror;
 using Quests;
 using Quests.Goals;
+using Quests.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Quests
 {
-    public class QuestGoalTrigger : MonoBehaviour
+    public class QuestGoalTrigger : NetworkBehaviour
     {
         public UnityEvent OnGoalTrigger;
 
@@ -20,6 +21,29 @@ namespace Quests
             {
                 player.GetComponent<PlayerQuestController>().OnGoalCollision(this);
             }
+        }
+
+        public void AddQuestMarker()
+        {
+            if (isServer) AddQuestMarkerRpc();
+        }
+
+        [ClientRpc]
+        private void AddQuestMarkerRpc()
+        {
+            var marker = gameObject.AddComponent<QuestMarker>();
+            marker.quest = goal.GetQuest();
+        }
+
+        public void RemoveQuestMarker()
+        {
+            RemoveQuestMarkerRpc();
+        }
+
+        [ClientRpc]
+        private void RemoveQuestMarkerRpc()
+        {
+            Destroy(GetComponent<QuestMarker>());
         }
     }
 }

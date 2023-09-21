@@ -1,3 +1,4 @@
+using Mirror;
 using NPC;
 using Quests.Goals;
 using UI;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace Quests.UI
 {
-    public class QuestMarker : MonoBehaviour
+    public class QuestMarker : NetworkBehaviour
     {
         public Quest quest;
         public Waypoint waypoint;

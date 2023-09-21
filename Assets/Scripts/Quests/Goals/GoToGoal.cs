@@ -22,8 +22,7 @@ namespace Quests.Goals
                 {
                     trigger.OnGoalTrigger.AddListener(TargetReached);
                     triggerGO = trigger.gameObject;
-                    trigger.AddComponent<QuestMarker>();
-                    trigger.GetComponent<QuestMarker>().quest = GetQuest();
+                    trigger.AddQuestMarker();
                 }
             }
         }
@@ -32,7 +31,7 @@ namespace Quests.Goals
         {
             CurrentAmount++;
             Evaluate();
-            Destroy(triggerGO.GetComponent<QuestMarker>());
+            triggerGO.GetComponent<QuestGoalTrigger>().RemoveQuestMarker();
         }
 
         public GoToGoal(string description, int currentAmount, int requiredAmount, bool completed) : base(description, currentAmount, requiredAmount, completed)

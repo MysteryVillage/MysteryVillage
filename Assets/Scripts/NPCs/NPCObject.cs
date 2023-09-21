@@ -1,6 +1,8 @@
 using Mirror;
 using Network;
 using Player;
+using Quests;
+using Quests.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using Yarn.Unity;
@@ -48,6 +50,29 @@ namespace NPC
             {
                 dia.GetComponent<DialogueManager>().StartActiveDialogue(!string.IsNullOrEmpty(nextDialogueOverwrite) ? nextDialogueOverwrite : dialogueFlow[currentDialogue]);
             }
+        }
+
+        public void AddQuestMarker(int questId)
+        {
+            if (isServer) AddQuestMarkerRpc(questId);
+        }
+
+        [ClientRpc]
+        private void AddQuestMarkerRpc(int questid)
+        {
+            var marker = gameObject.AddComponent<QuestMarker>();
+            marker.quest = Quest.FindById(questid);
+        }
+
+        public void RemoveQuestMarker()
+        {
+            RemoveQuestMarkerRpc();
+        }
+
+        [ClientRpc]
+        private void RemoveQuestMarkerRpc()
+        {
+            Destroy(GetComponent<QuestMarker>());
         }
 
         [YarnCommand("set_dialogue")]

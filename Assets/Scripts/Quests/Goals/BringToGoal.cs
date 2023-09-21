@@ -35,8 +35,7 @@ namespace Quests.Goals
                 if (npcName != npcObject.npcName) continue;
                 target = npcObject;
                 target.OnTalk.AddListener(Talk);
-                target.gameObject.AddComponent<QuestMarker>();
-                target.gameObject.GetComponent<QuestMarker>().quest = GetQuest();
+                target.AddQuestMarker(questId);
             }
         }
 
@@ -72,7 +71,7 @@ namespace Quests.Goals
                 
                 CurrentAmount++;
                 Evaluate();
-                Destroy(target.gameObject.GetComponent<QuestMarker>());
+                target.RemoveQuestMarker();
             }
             else
             {
