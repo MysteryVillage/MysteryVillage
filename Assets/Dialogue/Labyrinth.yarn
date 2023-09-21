@@ -1,85 +1,4 @@
-﻿title: Arnold
-position: -568,163
----
-Arnold: Habt ihr schon von dem Labyrinth im Süden der Stadt gehört?
-Arnold: Es heißt, eine alte Zivilisation hätte es gebaut.
-Arnold: Nachdem es vor ein paar Jahren entdeckt wurde, hat die ganze Stadt davon gesprochen.
-Arnold: Aber nun ist es, als hätte es diesen Fund niemals gegeben..
-Arnold: Vielleicht ist es ja für euch interessant. Am Ende seid ihr ja vielleicht so diejenigen, die das Rätsel lösen?
-<<jump labPosition>>
-===
-title: labPosition
-position: -315,162
----
-Arnold: Um das Labyrinth zu finden, müsst ihr in Richtung Süden zum Leuchtturm laufen.
-Arnold: Am linken Rand des Weges werdet ihr es finden.
-<<jump goodLuck>>
-===
-
-title: goodLuck
-position: -44,160
----
-Arnold: Viel Erfolg!
-<<set_dialogue Arnold 1>>
-<<set_dialogue Hubert 2>>
-<<give_quest Arnold>>
-===
-title: WegZumLabyrinth
-position: -563,-256
----
-Collin: Ich frage mich wo wir hin müssen...
-Alina: Hm.. ich glaube, ich weiß, wo wir suchen sollten. Folge mir!
-===
-title: HubertQuest
-position: -1016,309
----
-Hubert: Für ein Lagerfeuer müsstet ihr 2 Stöcker und einen Stein sammeln.
-<<give_quest Hubert>>
-<<set_dialogue Hubert 1>>
-===
-title: Hubert
-position: -795,307
----
-Hubert: Arnold ist ganz besessen von diesem Labyrinth..
-Hubert: Vielleicht solltet ihr euch das mal anschauen.
-===
-title: HubertGoodLuck
-position: -568,310
----
-Hubert: Viel Glück!
-===
-title: ArnoldGenervt
-position: -314,312
----
-Arnold: Um das Labyrinth zu finden, müsst ihr in Richtung Süden zum Leuchtturm laufen.
-Arnold: Am linken Rand des Weges werdet ihr es finden.
-Arnold: Nun geht schon!
-===
-title: LabyrinthGeschafft
-position: -43,307
----
-Arnold: Wow, ihr habt tatsächlich das Labyrinth gelöst! Beeindruckend!
-===
-title: Lagerfeuer
-position: 381,-55
----
-Heribert: Lasst uns doch ein Lagerfeuer für unser Camp machen! Dafür bräuchten wir allerdings ein paar Steine und Äste.
-<<give_quest Heribert>>
-<<set_dialogue Heribert 1>>
-<<jump LagerfeuerQuest>>
-===
-title: LagerfeuerQuest
-position: 631,-45
----
-Heribert: Am Waldrand beim Dorf hatte ich vorhin einige brauchbare Dinge gesehen, vielleicht schaut ihr da mal nach. Ich warte hier auf euch.
-===
-title: LagerfeuerQuestFinished
-position: 635,101
----
-Collin: Hier, wir haben alles gesammelt.
-Heribert: Prima! Dann können wir uns ja jetzt aufwärmen! 
-===
-title: LagerfeuerQuestFailed
+﻿title: LagerfeuerQuestFailed
 position: 635,101
 ---
 Collin: Hier, wir haben alles gesammelt.
@@ -236,6 +155,16 @@ position: 800,300
 Arnold: Danke für's Spielen!
 <<wait 5>>
 <<end_game NetworkManager>>
+===
+title: HeribertDefault
+position: 800,300
+---
+Heribert: Hach. Ich bin wirklich froh, mit euch diesen Ausflug zu machen.
+===
+title: ArnoldDefault
+position: 800,300
+---
+Heribert: Früher war Enigma Oaks viel belebter. Seit all die Dinge in Vergessenheit geraten sind, haben die meisten Leute ihr Interesse an unserem Örtchen verloren.
 ===
 
 
