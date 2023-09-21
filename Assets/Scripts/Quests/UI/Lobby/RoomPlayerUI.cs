@@ -6,6 +6,7 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using NetworkManager = Mirror.NetworkManager;
 
 namespace Quests.UI.Lobby
 {
@@ -88,6 +89,20 @@ namespace Quests.UI.Lobby
             }
 
             return true;
+        }
+
+        public void BackToMainMenu()
+        {
+            var manager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+            if (NetworkServer.active)
+            {
+                manager.StopHost();
+            }
+
+            if (NetworkClient.active)
+            {
+                manager.StopClient();
+            }
         }
     }
 }

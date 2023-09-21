@@ -87,7 +87,8 @@ namespace Network
         public override void OnStopHost()
         {
             ScanForInventoryManager();
-            if (NetworkServer.active) _inventoryManager.ClearInventories();
+            if (!NetworkServer.active) return;
+            if (_inventoryManager != null) _inventoryManager.ClearInventories();
         }
 
         public void RemoveDebugCam()
